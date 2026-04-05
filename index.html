@@ -368,6 +368,47 @@
     color: var(--text-dim);
   }
 
+  .presets {
+    padding: 16px 40px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .presets-label {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  .preset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 15px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .preset-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .preset-btn.active {
+    background: rgba(232,255,0,0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   @media (max-width: 800px) {
     header, .search-bar, .results-header, thead th:first-child, tbody td:first-child {
       padding-left: 20px;
@@ -409,6 +450,18 @@
   </div>
   <button id="search">Search</button>
   <button id="clear">Clear</button>
+</div>
+
+<div class="presets">
+  <span class="presets-label">Presets</span>
+  <button class="preset-btn" data-w="7680" data-h="4320">8K</button>
+  <button class="preset-btn" data-w="4096" data-h="2160">4K DCI</button>
+  <button class="preset-btn" data-w="3840" data-h="2160">4K UHD</button>
+  <button class="preset-btn" data-w="2048" data-h="1080">2K DCI</button>
+  <button class="preset-btn" data-w="1920" data-h="1080">1080p</button>
+  <button class="preset-btn" data-w="1280" data-h="720">720p</button>
+  <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
+  <button class="preset-btn" data-w="640" data-h="480">VGA</button>
 </div>
 
 <div id="intro-block">
@@ -591,6 +644,30 @@ document.getElementById('clear').addEventListener('click', () => {
 
 [document.getElementById('inp-w'), document.getElementById('inp-h'), document.getElementById('inp-fps')]
   .forEach(el => el.addEventListener('keydown', e => { if (e.key === 'Enter') search(); }));
+
+// Preset buttons
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('inp-w').value = btn.dataset.w;
+    document.getElementById('inp-h').value = btn.dataset.h;
+    // Keep fps as-is, let user set it
+    search();
+  });
+});
+
+// Clear also deactivates presets
+document.getElementById('clear').addEventListener('click', () => {
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+}, true);
+
+// Typing in the inputs deactivates the active preset
+[document.getElementById('inp-w'), document.getElementById('inp-h')].forEach(el => {
+  el.addEventListener('input', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  });
+});
 
 loadDB();
 </script>
