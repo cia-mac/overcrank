@@ -1,0 +1,100 @@
+{
+  "verified_date": "2026-04-01",
+  "source_url": "https://docs.freeflysystems.com/products/products/ember-camera/resolutions-and-frame-rates",
+  "source_specs_url": "https://docs.freeflysystems.com/products/products/ember-camera/specifications",
+  "source_store_url": "https://store.freeflysystems.com/products/ember",
+  "cameras": [
+    {
+      "brand": "Freefly",
+      "model": "Ember S5K",
+      "sensor_size": "23.04x18.43mm",
+      "sensor_format": "Super 35",
+      "crop_factor": 1.47,
+      "native_resolution": "5120x4096",
+      "pixel_size_um": 4.5,
+      "bit_depth": 10,
+      "recording_format": "Apple ProRes 422 LT",
+      "shutter_type": "Global Electronic",
+      "dynamic_range_stops": 11,
+      "iso_range": "100-400",
+      "price_usd_base": 17995,
+      "price_usd_notes": "Base = 2.56TB pSLC drive. 4TB TLC drive = $19,995.",
+      "price_tier": "Purchase",
+      "status": "Current",
+      "notes": "Two heights have no standard-width preset in the official table: 1920h@913fps and 1440h@1203fps. These rows show all dashes across 5K/4K/3K/2K columns. FPS values are confirmed from the table; usable widths require further verification.",
+      "modes": [
+        {"mode_name": "5120x4096", "res_width": 5120, "res_height": 4096, "max_fps": 436, "aspect_ratio": "5:4"},
+        {"mode_name": "4096x4096", "res_width": 4096, "res_height": 4096, "max_fps": 436, "aspect_ratio": "1:1"},
+        {"mode_name": "5120x3840", "res_width": 5120, "res_height": 3840, "max_fps": 464, "aspect_ratio": "4:3"},
+        {"mode_name": "4096x3072", "res_width": 4096, "res_height": 3072, "max_fps": 578, "aspect_ratio": "4:3"},
+        {"mode_name": "3072x3072", "res_width": 3072, "res_height": 3072, "max_fps": 578, "aspect_ratio": "1:1"},
+        {"mode_name": "5120x2880", "res_width": 5120, "res_height": 2880, "max_fps": 616, "aspect_ratio": "16:9"},
+        {"mode_name": "5120x2560", "res_width": 5120, "res_height": 2560, "max_fps": 691, "aspect_ratio": "2:1"},
+        {"mode_name": "4096x2304", "res_width": 4096, "res_height": 2304, "max_fps": 765, "aspect_ratio": "16:9"},
+        {"mode_name": "3072x2304", "res_width": 3072, "res_height": 2304, "max_fps": 765, "aspect_ratio": "4:3"},
+        {"mode_name": "5120x2160", "res_width": 5120, "res_height": 2160, "max_fps": 809, "aspect_ratio": "~2.37:1"},
+        {"mode_name": "4096x2160", "res_width": 4096, "res_height": 2160, "max_fps": 809, "aspect_ratio": "~17:9"},
+        {"mode_name": "4096x2048", "res_width": 4096, "res_height": 2048, "max_fps": 858, "aspect_ratio": "2:1"},
+        {"mode_name": "3072x2048", "res_width": 3072, "res_height": 2048, "max_fps": 858, "aspect_ratio": "3:2"},
+        {"mode_name": "2048x2048", "res_width": 2048, "res_height": 2048, "max_fps": 858, "aspect_ratio": "1:1"},
+        {"mode_name": "1920h_custom", "res_width": null, "res_height": 1920, "max_fps": 913, "aspect_ratio": null, "notes": "No standard-width preset. 913fps confirmed. Width TBD."},
+        {"mode_name": "4096x1728", "res_width": 4096, "res_height": 1728, "max_fps": 1011, "aspect_ratio": "~2.37:1"},
+        {"mode_name": "3072x1728", "res_width": 3072, "res_height": 1728, "max_fps": 1011, "aspect_ratio": "16:9"},
+        {"mode_name": "3072x1536", "res_width": 3072, "res_height": 1536, "max_fps": 1131, "aspect_ratio": "2:1"},
+        {"mode_name": "2048x1536", "res_width": 2048, "res_height": 1536, "max_fps": 1131, "aspect_ratio": "4:3"},
+        {"mode_name": "1440h_custom", "res_width": null, "res_height": 1440, "max_fps": 1203, "aspect_ratio": null, "notes": "No standard-width preset. 1203fps confirmed. Width TBD."},
+        {"mode_name": "3072x1280", "res_width": 3072, "res_height": 1280, "max_fps": 1346, "aspect_ratio": "2.4:1"},
+        {"mode_name": "2048x1152", "res_width": 2048, "res_height": 1152, "max_fps": 1487, "aspect_ratio": "16:9"},
+        {"mode_name": "2048x1080", "res_width": 2048, "res_height": 1080, "max_fps": 1569, "aspect_ratio": "~17:9"},
+        {"mode_name": "2048x1024", "res_width": 2048, "res_height": 1024, "max_fps": 1661, "aspect_ratio": "2:1"},
+        {"mode_name": "2048x864",  "res_width": 2048, "res_height": 864,  "max_fps": 1946, "aspect_ratio": "~2.37:1"}
+      ]
+    },
+    {
+      "brand": "Freefly",
+      "model": "Ember S2.5K",
+      "sensor_size": "23.04x18.43mm",
+      "sensor_format": "Super 35",
+      "crop_factor": 1.47,
+      "native_resolution": "2560x2048",
+      "pixel_size_um": 9.0,
+      "bit_depth": 10,
+      "recording_format": "Apple ProRes 422 LT",
+      "shutter_type": "Global Electronic",
+      "dynamic_range_stops": 11,
+      "iso_range": "100-400",
+      "price_usd_base": 24995,
+      "price_usd_notes": "Ships with 2.56TB pSLC drive optimized for pre-record. Also available as S5K Mono configuration at same price.",
+      "price_tier": "Purchase",
+      "status": "Current",
+      "notes": "2x2 binned readout of the same physical sensor as S5K. Same 23.04x18.43mm active area, same crop factor. Higher per-pixel sensitivity and higher max FPS than S5K. One height has no standard-width preset: 1728h@1929fps.",
+      "modes": [
+        {"mode_name": "2560x1920", "res_width": 2560, "res_height": 1920, "max_fps": 1751, "aspect_ratio": "4:3"},
+        {"mode_name": "1728h_custom", "res_width": null, "res_height": 1728, "max_fps": 1929, "aspect_ratio": null, "notes": "No standard-width preset. 1929fps confirmed. Width TBD."},
+        {"mode_name": "2048x1536", "res_width": 2048, "res_height": 1536, "max_fps": 2118, "aspect_ratio": "4:3"},
+        {"mode_name": "2560x1440", "res_width": 2560, "res_height": 1440, "max_fps": 2277, "aspect_ratio": "16:9"},
+        {"mode_name": "2560x1280", "res_width": 2560, "res_height": 1280, "max_fps": 2531, "aspect_ratio": "2:1"},
+        {"mode_name": "2048x1152", "res_width": 2048, "res_height": 1152, "max_fps": 2779, "aspect_ratio": "16:9"},
+        {"mode_name": "2560x1080", "res_width": 2560, "res_height": 1080, "max_fps": 2922, "aspect_ratio": "~2.37:1"},
+        {"mode_name": "2048x1080", "res_width": 2048, "res_height": 1080, "max_fps": 2922, "aspect_ratio": "~17:9"},
+        {"mode_name": "2048x1024", "res_width": 2048, "res_height": 1024, "max_fps": 3080, "aspect_ratio": "2:1"},
+        {"mode_name": "2048x864",  "res_width": 2048, "res_height": 864,  "max_fps": 3563, "aspect_ratio": "~2.37:1"}
+      ]
+    }
+  ],
+  "gemini_discrepancies": {
+    "summary": "Gemini data was severely incomplete for both models.",
+    "s5k": {
+      "gemini_mode_count": 4,
+      "verified_mode_count": 25,
+      "gemini_modes_were": "Only 4 modes listed (native + 3 partial). Missing 21 additional supported presets.",
+      "gemini_missed_model": false
+    },
+    "s2_5k": {
+      "gemini_mode_count": 0,
+      "verified_mode_count": 10,
+      "gemini_missed_model": true,
+      "note": "Gemini had no entry for S2.5K at all. Model was entirely missing from the batch."
+    }
+  }
+}

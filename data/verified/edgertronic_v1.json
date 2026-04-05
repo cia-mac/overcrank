@@ -1,0 +1,182 @@
+{
+  "verified_date": "2026-04-01",
+  "source_base_url": "https://edgertronic.com/our-cameras",
+  "notes": "All specs pulled directly from edgertronic.com product pages. Bit depth not stated on product pages — cameras record compressed video (motion JPEG based). SC1 [2] values are overclock mode. Crop factors calculated from stated CMOS active area dimensions.",
+  "cameras": [
+
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1",
+      "sensor_type": "CMOS",
+      "native_resolution": "1280x1024",
+      "sensor_size": "17.92x14.34mm",
+      "crop_factor": 1.89,
+      "bit_depth": null,
+      "video_memory_gb": 8,
+      "video_memory_gb_option": 16,
+      "exposure_range": "1/10 to 1/250,000 sec",
+      "iso_color": "1600-25600",
+      "iso_mono": "6400-102400",
+      "ir_filter": "Optional",
+      "subsampling": true,
+      "enhanced_dynamic_range": true,
+      "overclock": true,
+      "price_usd": 6495,
+      "price_tier": "Purchase",
+      "status": "Current",
+      "source_url": "https://edgertronic.com/our-cameras/sc1",
+      "notes": "SC1 is the entry model. [2] values require overclock mode (up to ~40%). Subsampling and enhanced dynamic range (5 settings) available. 8GB or 16GB RAM option.",
+      "modes": [
+        {"mode_name": "1280x1024",          "res_width": 1280, "res_height": 1024, "max_fps": 494,   "mode_type": "standard"},
+        {"mode_name": "1280x720",           "res_width": 1280, "res_height": 720,  "max_fps": 701,   "mode_type": "standard"},
+        {"mode_name": "1280x128",           "res_width": 1280, "res_height": 128,  "max_fps": 3855,  "mode_type": "standard"},
+        {"mode_name": "640x480",            "res_width": 640,  "res_height": 480,  "max_fps": 1849,  "mode_type": "standard"},
+        {"mode_name": "320x240",            "res_width": 320,  "res_height": 240,  "max_fps": 5712,  "mode_type": "standard"},
+        {"mode_name": "192x96",             "res_width": 192,  "res_height": 96,   "max_fps": 17791, "mode_type": "standard"},
+        {"mode_name": "1280x1024 OC",       "res_width": 1280, "res_height": 1024, "max_fps": 621,   "mode_type": "overclock"},
+        {"mode_name": "1280x720 OC",        "res_width": 1280, "res_height": 720,  "max_fps": 882,   "mode_type": "overclock"},
+        {"mode_name": "1280x128 OC",        "res_width": 1280, "res_height": 128,  "max_fps": 4846,  "mode_type": "overclock"},
+        {"mode_name": "640x480 OC",         "res_width": 640,  "res_height": 480,  "max_fps": 2324,  "mode_type": "overclock"},
+        {"mode_name": "320x240 OC",         "res_width": 320,  "res_height": 240,  "max_fps": 7181,  "mode_type": "overclock"},
+        {"mode_name": "192x96 OC",          "res_width": 192,  "res_height": 96,   "max_fps": 22336, "mode_type": "overclock"}
+      ]
+    },
+
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1+",
+      "sensor_type": "CMOS",
+      "native_resolution": "1280x864",
+      "sensor_size": "17.53x11.83mm",
+      "crop_factor": 2.05,
+      "bit_depth": null,
+      "video_memory_gb": 16,
+      "exposure_range": "1/30 to 1/800,000 sec",
+      "iso_color": "1600-25600",
+      "iso_mono": "6400-102400",
+      "ir_filter": "Optional (can delete at build time)",
+      "subsampling": false,
+      "enhanced_dynamic_range": false,
+      "overclock": true,
+      "price_usd": 7495,
+      "price_tier": "Purchase",
+      "status": "Current",
+      "source_url": "https://edgertronic.com/our-cameras/sc1plus",
+      "notes": "Same sensor dimensions as SC2+. Faster than SC1, sub-1080p sensor.",
+      "modes": [
+        {"mode_name": "1280x864",  "res_width": 1280, "res_height": 864, "max_fps": 1869,  "mode_type": "standard"},
+        {"mode_name": "1280x720",  "res_width": 1280, "res_height": 720, "max_fps": 2240,  "mode_type": "standard"},
+        {"mode_name": "1280x128",  "res_width": 1280, "res_height": 128, "max_fps": 12287, "mode_type": "standard"},
+        {"mode_name": "640x480",   "res_width": 640,  "res_height": 480, "max_fps": 3351,  "mode_type": "standard"},
+        {"mode_name": "320x240",   "res_width": 320,  "res_height": 240, "max_fps": 6238,  "mode_type": "standard"},
+        {"mode_name": "1280x96",   "res_width": 1280, "res_height": 96,  "max_fps": 16219, "mode_type": "standard"}
+      ]
+    },
+
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1X",
+      "sensor_type": "CMOS",
+      "native_resolution": "1920x1088",
+      "sensor_size": "19.20x10.88mm",
+      "crop_factor": 1.96,
+      "bit_depth": null,
+      "video_memory_gb": 16,
+      "exposure_range": "1/30 to 1/800,000 sec",
+      "iso_color": "1200-19200",
+      "iso_mono": "4800-76800",
+      "ir_filter": "Optional",
+      "subsampling": false,
+      "enhanced_dynamic_range": false,
+      "overclock": true,
+      "overclock_settings": 5,
+      "price_usd": 8995,
+      "price_tier": "Purchase",
+      "status": "Current",
+      "source_url": "https://edgertronic.com/our-cameras/sc1x",
+      "notes": "1080p-class sensor (1920x1088). Same sensor dimensions as SC2X. Overclock 0-20% (5 settings). Slower than SC2X.",
+      "modes": [
+        {"mode_name": "1920x1088", "res_width": 1920, "res_height": 1088, "max_fps": 958,   "mode_type": "standard"},
+        {"mode_name": "1280x720",  "res_width": 1280, "res_height": 720,  "max_fps": 1414,  "mode_type": "standard"},
+        {"mode_name": "1280x128",  "res_width": 1280, "res_height": 128,  "max_fps": 7930,  "mode_type": "standard"},
+        {"mode_name": "640x480",   "res_width": 640,  "res_height": 480,  "max_fps": 2162,  "mode_type": "standard"},
+        {"mode_name": "320x240",   "res_width": 320,  "res_height": 240,  "max_fps": 4026,  "mode_type": "standard"},
+        {"mode_name": "1920x96",   "res_width": 1920, "res_height": 96,   "max_fps": 10468, "mode_type": "standard"}
+      ]
+    },
+
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC2+",
+      "sensor_type": "CMOS",
+      "native_resolution": "1280x864",
+      "sensor_size": "17.53x11.83mm",
+      "crop_factor": 2.05,
+      "bit_depth": null,
+      "video_memory_gb": 16,
+      "exposure_range": "1/30 to 1/800,000 sec",
+      "iso_color": "1600-25600",
+      "iso_mono": "6400-102400",
+      "ir_filter": "Optional (can delete at build time)",
+      "subsampling": false,
+      "enhanced_dynamic_range": false,
+      "overclock": false,
+      "price_usd": 12990,
+      "price_tier": "Purchase",
+      "status": "Current",
+      "source_url": "https://edgertronic.com/our-cameras/sc2plus",
+      "notes": "Same sensor dimensions as SC1+. Roughly 2x faster than SC1+ at equivalent resolutions.",
+      "modes": [
+        {"mode_name": "1280x864",  "res_width": 1280, "res_height": 864, "max_fps": 3720,  "mode_type": "standard"},
+        {"mode_name": "1280x720",  "res_width": 1280, "res_height": 720, "max_fps": 4456,  "mode_type": "standard"},
+        {"mode_name": "1280x128",  "res_width": 1280, "res_height": 128, "max_fps": 23852, "mode_type": "standard"},
+        {"mode_name": "640x480",   "res_width": 640,  "res_height": 480, "max_fps": 6647,  "mode_type": "standard"},
+        {"mode_name": "320x240",   "res_width": 320,  "res_height": 240, "max_fps": 13982, "mode_type": "standard"},
+        {"mode_name": "1280x96",   "res_width": 1280, "res_height": 96,  "max_fps": 31191, "mode_type": "standard"}
+      ]
+    },
+
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC2X",
+      "sensor_type": "CMOS",
+      "native_resolution": "1920x1088",
+      "sensor_size": "19.20x10.88mm",
+      "crop_factor": 1.96,
+      "bit_depth": null,
+      "video_memory_gb": 16,
+      "exposure_range": "1/30 to 1/800,000 sec",
+      "iso_color": "1200-19200",
+      "ir_filter": "Always installed (color); optional for mono",
+      "subsampling": false,
+      "enhanced_dynamic_range": false,
+      "overclock": false,
+      "price_usd": 15990,
+      "price_tier": "Purchase",
+      "status": "Current",
+      "source_url": "https://edgertronic.com/our-cameras/sc2x",
+      "notes": "Flagship 1080p model. Same sensor dimensions as SC1X. Roughly 2x faster than SC1X at equivalent resolutions. Color-only variant (no mono build option on this model per product page).",
+      "modes": [
+        {"mode_name": "1920x1088", "res_width": 1920, "res_height": 1088, "max_fps": 1910,  "mode_type": "standard"},
+        {"mode_name": "1280x720",  "res_width": 1280, "res_height": 720,  "max_fps": 2940,  "mode_type": "standard"},
+        {"mode_name": "1280x128",  "res_width": 1280, "res_height": 128,  "max_fps": 15395, "mode_type": "standard"},
+        {"mode_name": "640x480",   "res_width": 640,  "res_height": 480,  "max_fps": 4290,  "mode_type": "standard"},
+        {"mode_name": "320x240",   "res_width": 320,  "res_height": 240,  "max_fps": 9024,  "mode_type": "standard"},
+        {"mode_name": "1920x96",   "res_width": 1920, "res_height": 96,   "max_fps": 20132, "mode_type": "standard"}
+      ]
+    }
+
+  ],
+
+  "gemini_discrepancies": {
+    "summary": "Gemini had 4 models but with wrong names. Actual lineup is 5 models.",
+    "gemini_models": ["SC1", "SC2+", "SC2X", "SC2X+ (does not exist)"],
+    "verified_models": ["SC1", "SC1+", "SC1X", "SC2+", "SC2X"],
+    "errors": [
+      "SC2X+ does not exist — Gemini hallucinated this model",
+      "SC1+ was missed entirely by Gemini",
+      "SC1X was missed entirely by Gemini",
+      "Gemini FPS values were approximate but roughly correct for SC1, SC2+, SC2X"
+    ]
+  }
+}

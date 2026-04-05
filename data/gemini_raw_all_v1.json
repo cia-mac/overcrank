@@ -1,0 +1,960 @@
+{
+  "Vision Research (Phantom)": {
+    "parse_status": "TRUNCATED",
+    "camera_count": 0,
+    "cameras": [],
+    "raw_response_length": 1279,
+    "usage": {
+      "input_tokens": 183,
+      "output_tokens": 654
+    },
+    "sources": []
+  },
+  "Photron": {
+    "parse_status": "TRUNCATED",
+    "camera_count": 0,
+    "cameras": [],
+    "raw_response_length": 1606,
+    "usage": {
+      "input_tokens": 182,
+      "output_tokens": 653
+    },
+    "sources": []
+  },
+  "Kron Technologies (Chronos)": {
+    "parse_status": "COMPLETE",
+    "camera_count": 4,
+    "cameras": [
+      {
+        "model_name": "Chronos 1.4",
+        "sensor_size_mm": "6.4 x 5.12",
+        "bit_depth": 12,
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1280,
+            "height": 1024,
+            "max_fps": 1000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 1580,
+            "crop_factor": 1.0,
+            "note": "HD"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 3390,
+            "crop_factor": 2.0,
+            "note": "VGA"
+          },
+          {
+            "width": 640,
+            "height": 240,
+            "max_fps": 6660,
+            "crop_factor": 2.0,
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 12500,
+            "crop_factor": 4.0,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Chronos 2.1",
+        "sensor_size_mm": "8.45 x 4.75",
+        "bit_depth": 12,
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 1000,
+            "crop_factor": 1.0,
+            "note": "Full HD"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 2160,
+            "crop_factor": 1.5,
+            "note": "HD"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 5000,
+            "crop_factor": 3.0,
+            "note": "VGA"
+          },
+          {
+            "width": 640,
+            "height": 240,
+            "max_fps": 10000,
+            "crop_factor": 3.0,
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 20000,
+            "crop_factor": 6.0,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Chronos 2.1-HD",
+        "sensor_size_mm": "8.45 x 4.75",
+        "bit_depth": 12,
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 1000,
+            "crop_factor": 1.0,
+            "note": "Full HD"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 2160,
+            "crop_factor": 1.5,
+            "note": "HD"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 5000,
+            "crop_factor": 3.0,
+            "note": "VGA"
+          },
+          {
+            "width": 640,
+            "height": 240,
+            "max_fps": 10000,
+            "crop_factor": 3.0,
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 20000,
+            "crop_factor": 6.0,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Chronos 4K10",
+        "sensor_size_mm": "18.8 x 9.9",
+        "bit_depth": 12,
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 4096,
+            "height": 2160,
+            "max_fps": 1000,
+            "crop_factor": 1.0,
+            "note": "Full 4K"
+          },
+          {
+            "width": 3840,
+            "height": 2160,
+            "max_fps": 1000,
+            "crop_factor": 1.066,
+            "note": "UHD"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 2000,
+            "crop_factor": 2.133,
+            "note": "Full HD"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 3000,
+            "crop_factor": 3.2,
+            "note": "HD"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 6000,
+            "crop_factor": 6.4,
+            "note": "VGA"
+          },
+          {
+            "width": 640,
+            "height": 240,
+            "max_fps": 12000,
+            "crop_factor": 6.4,
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 24000,
+            "crop_factor": 12.8,
+            "note": ""
+          }
+        ]
+      }
+    ],
+    "raw_response_length": 3806,
+    "usage": {
+      "input_tokens": 182,
+      "output_tokens": 1662
+    },
+    "sources": []
+  },
+  "Freefly": {
+    "parse_status": "COMPLETE",
+    "camera_count": 1,
+    "cameras": [
+      {
+        "model_name": "Ember S5K",
+        "sensor_size_mm": "25.6 x 13.5",
+        "bit_depth": 10,
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 5120,
+            "height": 2048,
+            "max_fps": 600,
+            "crop_factor": "UNVERIFIED",
+            "note": "UNVERIFIED"
+          },
+          {
+            "width": 4096,
+            "height": 2160,
+            "max_fps": 800,
+            "crop_factor": "UNVERIFIED",
+            "note": "UNVERIFIED"
+          },
+          {
+            "width": 3072,
+            "height": 1620,
+            "max_fps": 1000,
+            "crop_factor": "UNVERIFIED",
+            "note": "UNVERIFIED"
+          },
+          {
+            "width": 2048,
+            "height": 1080,
+            "max_fps": 1500,
+            "crop_factor": "UNVERIFIED",
+            "note": "UNVERIFIED"
+          }
+        ]
+      }
+    ],
+    "raw_response_length": 808,
+    "usage": {
+      "input_tokens": 182,
+      "output_tokens": 336
+    },
+    "sources": []
+  },
+  "Edgertronic": {
+    "parse_status": "COMPLETE",
+    "camera_count": 4,
+    "cameras": [
+      {
+        "model_name": "Edgertronic SC1",
+        "sensor_size_mm": "UNVERIFIED",
+        "bit_depth": "UNVERIFIED",
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1280,
+            "height": 1024,
+            "max_fps": 700,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 1000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 2000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 5000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 192,
+            "height": 128,
+            "max_fps": 10000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Edgertronic SC2+",
+        "sensor_size_mm": "UNVERIFIED",
+        "bit_depth": "UNVERIFIED",
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 500,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1920,
+            "height": 720,
+            "max_fps": 700,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 1000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 2000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 5000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 192,
+            "height": 128,
+            "max_fps": 10000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Edgertronic SC2X",
+        "sensor_size_mm": "UNVERIFIED",
+        "bit_depth": "UNVERIFIED",
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 1000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1920,
+            "height": 720,
+            "max_fps": 1400,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 2000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 4000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 10000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 192,
+            "height": 128,
+            "max_fps": 20000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "model_name": "Edgertronic SC2X+",
+        "sensor_size_mm": "UNVERIFIED",
+        "bit_depth": "UNVERIFIED",
+        "price_tier": "Purchase",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 1500,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1920,
+            "height": 720,
+            "max_fps": 2100,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 3000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 6000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 320,
+            "height": 240,
+            "max_fps": 15000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          },
+          {
+            "width": 192,
+            "height": 128,
+            "max_fps": 30000,
+            "crop_factor": "UNVERIFIED",
+            "note": ""
+          }
+        ]
+      }
+    ],
+    "raw_response_length": 4125,
+    "usage": {
+      "input_tokens": 181,
+      "output_tokens": 1646
+    },
+    "sources": []
+  },
+  "Shimadzu": {
+    "parse_status": "TRUNCATED_IN_MARKDOWN",
+    "camera_count": 0,
+    "cameras": [],
+    "raw_response_length": 3199,
+    "usage": {
+      "input_tokens": 191,
+      "output_tokens": 1485
+    },
+    "sources": [
+      {
+        "title": "photonicsonline.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6GU1QXEsuEfBtCzXB38t2hjpq9GPNmG0-HLNqy7n1WoISJIp9HFcNci-ExdLIhlfiB1rfdpjp1RrOjkhSsL3Ab30tEK_p4PaLJv74GJiIYmtoWpbW9iaJqdkW9maScT9lBMdG3Cyo_jJui-AJAv3yiTDEHpe9BHrMRzQu1hIDx5EhfIt1Az-VtRY="
+      },
+      {
+        "title": "hadlandimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUsU1isix_8T-6JKKS5gu7tN_mkU2n47u9SEAEyyiL54Sm-71HSNUeOnHK86EmG76cu23pDejEoE8FYlHD1J79tbGPVmRDeZSzoIzA0LZJS5CB5Spa-1nUVDMrD8L91mf8Ew1U8c74_c8z2NKLiFIGKZuxSCJS8sE4H0w40xdfKQK_nqmxikxfNHlzb3rqR_0btg=="
+      },
+      {
+        "title": "gizmodo.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHbHJOixC7Lz_3XLaLSRRsw1yVfxXUJQlqKxytK-chNU4a9D9e8Mro-wFndNHsJ972s8Bp6k9W4h3gAr_mHL7qCWauNjQ-OsJyHhZbfOavxGWKiG2iFuzsaFjT4MvGVDQ1mKmfi0lvEa9pvePhspZ2A7dmJIad8MB13td6YXefMWI8"
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGETu23BPB57zu1eaquUXJaXZeda79-OfLXZPOl3tzmRfl7YcRiVyTpW7JCv_vrZe3KOxdglBCuNMOACdw-HcLi3_o4mK0TUTxESPo-qMKqbUw8qJ9L6MvS_frcp6BMdYZ6e6AT6ooQ21YEcDdipGejG--cl7WJsqTqYdsahUE-s8RyXV6GwsiIlN3eAD4Zqzs="
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr0Z8wBONY2wVi9C1qkBXCjJOcjA7kzMiu9ffL8M3AMWJRvycgXFW-HNe6n4N-3T_vW3dgaa_1SXIQI6Bxi8jjf2v18JH9HP-ZqFmUrlk032XkvzhP7kyCiK3Ehfa2Nbwet1q-yflYyFzeKsRJ6tAAP33qgl-yQEMpky2C0QcVvoCtZwPLpBALgXhcrE0OXiTjS38nBcE="
+      },
+      {
+        "title": "techimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVtxUOCxBNPkmFAz2qs2ufgzlXKI-hdwUV6m7wLAUQH0PoOIC_81NUICCfOSxky0ZpvPhv1fsASXnJykgcSge2QzodjNHKhazZzgXHbJWK0hBiQc3Sb_sMrlp3xSymqFC6c0fkKIMVupe8QCn-Rtw65M-Jvxws7-vgHkQFuWBoOWsb4yl6MnSVAj_NJr4xgb0e4T4fHa0pF8RZeQ=="
+      },
+      {
+        "title": "dynimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhmnikbQ_PxjRdqauWr22qx87BSoHBTlS1oF6tR4eMpmL_Wzv09GyleQRpy6l2gG7MZLOnv28bxTKsOS8WGTEpspLHSXgylk954dkqm2Sdu5-OgxlvehCopdU_1VDMBjr8ioV_a2yGj1dVetPZq281_KWkCkmQqRHUZSQ4M4JWWMFFpl5W1J1bWa8g8Dlu"
+      },
+      {
+        "title": "directindustry.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDO-AcMKNGBtwREaWtAp59QtD9CeftINxGWgq_WwRJ61-r-HYhvPH5fq1u84nirHE-yeb5qzYnkJzB6MsKo1qxhoeqy3YRxntLKl1p08eVeJNnbt0LQZuYP3s13gMklTEYh1OYhSVtW-o6xNe_PUU5NE_Qk5U2QR4de1D70tSxTU1H6ihO_BD-ZU9TUUQuPEiAFc8GmHH8nEgshAK6yuhgp_3XSrw7qFVONg=="
+      },
+      {
+        "title": "selectscience.net",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGsVSo9xOpp5qFy7ycPRrUlpWocCN_m-S-7pQkgwEFPJIvnuZoK3WpZet3Lggz89hOUoOpJ-1X1Vdk0Kwc0_VSpI_MZrFXpxDzSSnlrXHK64_I7W3b8AsGMZnYK9oXBOfLfMauNg9M5RLRBRQtgC1nscc4bsmTZXASJvbSglcq9HIZv086gYJ2Sm3iHNMhzdqqhF1FLeiEYnHgrC-F-90_rQGv-gk="
+      },
+      {
+        "title": "hadlandimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF8ew82WDHEpIb2GY2fxdiC36RSrmku1Y4lwsd5yZ_O7_Kno9UJQHn35FFer6ly40swtxf1TPyvlpFpoi0hY4MRyuwKQuSEe5BN1KuaUMMGyOBOrQ_ABxIyDx6TdMHZPYLmVxyafoiIQN-Q58aqADKjeSInQtqzNN4lA5j8w-KIzZDGV84t-Z4lFJXTpExhzQ8QSi9paw="
+      },
+      {
+        "title": "techimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEacksNgmPIAJ-vZhyGW3ACdrQ8LOsFrpCDxaPyFJlu-HqJh03mTM1TkBZXMX7jGi02orDiOqCcsSRsFpPppH6tmhiFcmFWpKO47Bl93wrTQsk_rO2tAh-7vNexDirnNhmB3GkGnQjFcbksMkEMIg1TnFRjnrhpScOGIcVhm6yx14p3m0K4ImsTnfBBQSOcu6V8Tm9aJtMPOl9K_9g="
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLB1tb733xrSqQmUkpmhUJY5pYf7j2OK4WVcygxUDo_SzQygX3qbXiZ9CRSSWzeyppbO9QtBWEkAbb8QTb4en_e000kEs8MpNVgY1IF0GYVjplgYCDsJXCIZbHf5MhnnqO6YFc55NUbOgoeCP1G0NNj1_lyvbIA3_TUg6onrNpL0L3n-uyku-EwpaSEVA-G9FzcUuRVOY2QoHT_6EEEYFsn9ya_e3tIA=="
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExsiUZaFWyu41tyfg8jgSPKeUmPLK90FncA1bHeWjvF3H4aowmzRfMcfs80FbGjxVMH12aTG2tsFH39Ux9-cxsznkkMb2Cou7fz0ah3ptnhIROPatoAWIc7lp5zLJtG2cxZHfAKfWz3mghpot3gg1FVMI7v_39WSMHOojZda0D44nFWm0gHYfzYBxTKKtlG7CRzIvK"
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzsfYoRJGFgNmdglHtO7TCOOWnQfLnJ75OEqOfnjaxAg7dOxDntiw1otXopj1dtP_naX1IpB9uE71-J-Kw7sqgW-9UCkpcSDZoykDt9HFxTp9zUfiiabYblbdhd159qXwkexO-ZxFtgFzdgYohKLge4gcgDkKrCDUpZxal0NWU7t0VfWQE-x3H4AGlQcYa1bK2zLXghux_024c2ri9d9mIGopuuI71PA=="
+      },
+      {
+        "title": "shimadzu-testing.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1hUdgs0oi4ExVw9B9u7g5e87Ov3BLO37obAs8kCTI1r8NaGX8n_tLoyyoGKt0IipIVgJabCEtdmfZdEN2e0K-vvVOxHjntcvtm_CBG2O7yhpc0KuwgKlZylMtTtVjQvxpEVYYQk9EAqVd5CYE6EGb4m_yjcaKw0I9Mgu89j-VYnF9wiYgP-AV0PV_3Ic_5Q_m3qk6MsOa481e85BUjwkBgHrjjkOCU174gdI="
+      },
+      {
+        "title": "shimadzu-testing.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGfkz2jfaKXpl1ZsuZaFCwQAxfcgU9VK7040Fd1oubHKr5KLriz2kmJY-C7AuWvW9fR5xNmnGs9Tgjxnrm5BFeFdp6xcoBmrsfDh3L4OzDR3Wtr9_T7ERlx4Vm1ezuXzlUXrvUDKwTPvM1DA5sJE3nVFFh0mgDr_qR446yt0Di4c7GcD__c7s_53v9P6qCnlc="
+      },
+      {
+        "title": "polarismarketresearch.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERzYaVAwBwsQ76RTyjt9dJ7fS406o2IqE5YpWhZ0lBBu9zQvtb65bGcc9BOFsmkgnlVu44c-j8FcQLrVbfHDgCfwxayJAq-L6fbOz70avWzys8Seg7GliNeVvsdA6LJzw7AuDqCfT8opcLNRVI1MToqebo9UTmnqaMAe2xPYDYiyRk7-IjL6BM5p6M"
+      },
+      {
+        "title": "shimadzu.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7KJ93e0IHNl-aw9-OP4ReQxzcvsMHQDSxaQMCujDijv4qcDpc2yVz7-DY8IZBG4904cyozdxZvzdK7mArpOA1SBu6V74hRw03CYJ5Nfp5FOOl2XS5fZMehdsWQoV0qh7jfhc1MzAyoXxrwcYyRbv5hbzL"
+      },
+      {
+        "title": "lab-worldwide.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcDo919C_u054fZ_e-DEFGOaWd0twdh6Rk468ncziseRhOhWYBKTZpRrESOqlpc98RsZ1iaAi3Mb-hdUNnT68MSaa8vNcl3jFaMzryZpn_tk10rVjGSRlLURV5dNUaHF7plK7AL4Vx1CtougjRUlDwbQ14i8aBCmECVT4CBgvfABgOGjAzmib8IY5CeZeqKJAnmcKsvRP05sOobCjpXq8h92DnYh9dbzJrj1NeJxuDcQZ0"
+      },
+      {
+        "title": "hadlandimaging.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXC0XSnkj025rr-1DeguYRMKYuIr-4hA1wt07lgUrV356XcHckplFc8o7iXuQgOIrbRTSk-bQ5MER-lzRFTPPvranUP4mz-EzCYxBJoFlEOAyiPPvxnP6OWqQ8RwVKjn_JHU1ZNRoo-Al77D27kItzqU7P9ixIslL-ooZN8J2KXN3SNTm-SQDVZ9_4I-8="
+      }
+    ]
+  },
+  "NAC Image Technology": {
+    "parse_status": "TRUNCATED",
+    "camera_count": 0,
+    "cameras": [],
+    "raw_response_length": 1560,
+    "usage": {
+      "input_tokens": 181,
+      "output_tokens": 651
+    },
+    "sources": []
+  },
+  "Weisscam": {
+    "parse_status": "COMPLETE",
+    "camera_count": 1,
+    "cameras": [
+      {
+        "model_name": "HS-2 MKII",
+        "sensor_size_mm": "23.76 x 13.37",
+        "bit_depth": 12,
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1152,
+            "max_fps": 1500,
+            "crop_factor": 1.0,
+            "note": "Native Sensor Resolution"
+          },
+          {
+            "width": 2048,
+            "height": 1080,
+            "max_fps": 2000,
+            "crop_factor": "UNVERIFIED",
+            "note": "2K Recording Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 2000,
+            "crop_factor": "UNVERIFIED",
+            "note": "HD Recording Resolution"
+          }
+        ]
+      }
+    ],
+    "raw_response_length": 690,
+    "usage": {
+      "input_tokens": 180,
+      "output_tokens": 280
+    },
+    "sources": []
+  },
+  "IDT Integrated Design Tools": {
+    "parse_status": "TRUNCATED",
+    "camera_count": 0,
+    "cameras": [],
+    "raw_response_length": 1567,
+    "usage": {
+      "input_tokens": 183,
+      "output_tokens": 656
+    },
+    "sources": []
+  },
+  "iX Cameras": {
+    "parse_status": "COMPLETE",
+    "camera_count": 7,
+    "cameras": [
+      {
+        "model_name": "i-SPEED 716",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 16000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 20000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 30000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 60000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 1000000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 720",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 20000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 25000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 40000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 80000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 1250000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 721",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 21000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 26000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 42000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 84000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 1300000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 722",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 22000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 27000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 44000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 88000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 1350000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 507",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 7000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 8000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 12000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 24000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 400000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 510",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 10000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 12000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 18000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 36000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 600000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      },
+      {
+        "model_name": "i-SPEED 513",
+        "sensor_size_mm": "20.48 x 15.36 mm",
+        "bit_depth": "12-bit",
+        "price_tier": "UNVERIFIED",
+        "status": "Current",
+        "resolution_fps_modes": [
+          {
+            "width": 2048,
+            "height": 1536,
+            "max_fps": 13000,
+            "crop_factor": 1.0,
+            "note": "Full Resolution"
+          },
+          {
+            "width": 1920,
+            "height": 1080,
+            "max_fps": 15000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 1280,
+            "height": 720,
+            "max_fps": 24000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 640,
+            "height": 480,
+            "max_fps": 48000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          },
+          {
+            "width": 128,
+            "height": 16,
+            "max_fps": 800000,
+            "crop_factor": "UNVERIFIED",
+            "note": "Windowed Readout"
+          }
+        ]
+      }
+    ],
+    "raw_response_length": 6990,
+    "usage": {
+      "input_tokens": 181,
+      "output_tokens": 2875
+    },
+    "sources": []
+  }
+}
