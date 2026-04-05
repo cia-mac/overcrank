@@ -427,7 +427,7 @@ let currentSort = 'fps'; // 'fps' | 'brand'
 let lastResults = [];
 
 async function loadDB() {
-  const r = await fetch('data/overcrank_db_v2.json');
+  const r = await fetch('data/overcrank_db_v3.json');
   DB = await r.json();
   document.getElementById('db-stats').innerHTML =
     `<span>${DB.camera_count} cameras</span> · <span>${DB.total_modes} modes</span> · <span>${DB.manufacturers_included.join(', ')}</span>`;

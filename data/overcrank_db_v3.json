@@ -1,0 +1,4498 @@
+{
+  "version": 3,
+  "generated": "2026-04-05",
+  "camera_count": 61,
+  "total_modes": 527,
+  "manufacturers_included": [
+    "Phantom",
+    "Edgertronic",
+    "Freefly",
+    "Kron Technologies",
+    "iX Cameras",
+    "Photron"
+  ],
+  "cameras": [
+    {
+      "brand": "Phantom",
+      "model": "Phantom TMX 7510",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 76000,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 308820,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 456520,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 744670,
+          "mode_type": "standard",
+          "note": "1280x64 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 875000,
+          "mode_type": "standard_fast",
+          "note": "1280x64 FAST"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 1750000,
+          "mode_type": "standard_fast",
+          "note": "1280x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 308820,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 375000,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 456520,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 617640,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 744670,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 875000,
+          "mode_type": "binned_fast",
+          "note": "640x128 Bin FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1750000,
+          "mode_type": "binned_fast",
+          "note": "640x64 Bin FAST"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom TMX 6410",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 65940,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 267640,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 395650,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 736280,
+          "mode_type": "standard",
+          "note": "1280x64 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 758330,
+          "mode_type": "standard_fast",
+          "note": "1280x64 FAST"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 1516000,
+          "mode_type": "standard_fast",
+          "note": "1280x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 267640,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 325000,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 395650,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 535290,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 736280,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 758330,
+          "mode_type": "binned_fast",
+          "note": "640x128 Bin FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1516600,
+          "mode_type": "binned_fast",
+          "note": "640x64 Bin FAST"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom TMX 5010",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 50720,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 205880,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 304340,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 583330,
+          "mode_type": "standard",
+          "note": "1280x64 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 583330,
+          "mode_type": "standard_fast",
+          "note": "1280x64 FAST"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 1166660,
+          "mode_type": "standard_fast",
+          "note": "1280x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 205880,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 250000,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 304340,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 411760,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 583330,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 583330,
+          "mode_type": "binned_fast",
+          "note": "640x128 Bin FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1166660,
+          "mode_type": "binned_fast",
+          "note": "640x64 Bin FAST"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom T4040",
+      "sensor_size": "23.73x15.43mm",
+      "crop_factor": 1.53,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1664,
+          "max_fps": 9350,
+          "mode_type": "standard",
+          "note": "2560x1664 Std"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1536,
+          "max_fps": 10130,
+          "mode_type": "standard",
+          "note": "1536x1536 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 10810,
+          "mode_type": "standard",
+          "note": "2560x1440 Std"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 13510,
+          "mode_type": "standard",
+          "note": "2048x1152 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 256,
+          "max_fps": 60500,
+          "mode_type": "standard",
+          "note": "2560x256 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 32,
+          "max_fps": 444440,
+          "mode_type": "standard",
+          "note": "2560x32 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 37200,
+          "mode_type": "binned",
+          "note": "1280x832 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 48190,
+          "mode_type": "binned",
+          "note": "1280x640 Bin"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 60150,
+          "mode_type": "binned",
+          "note": "1024x512 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 256,
+          "max_fps": 119400,
+          "mode_type": "binned",
+          "note": "768x256 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 228570,
+          "mode_type": "binned",
+          "note": "1280x128 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 444440,
+          "mode_type": "binned",
+          "note": "1280x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom T2540",
+      "sensor_size": "23.73x15.43mm",
+      "crop_factor": 1.53,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1664,
+          "max_fps": 5840,
+          "mode_type": "standard",
+          "note": "2560x1664 Std"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1536,
+          "max_fps": 6330,
+          "mode_type": "standard",
+          "note": "1536x1536 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 6750,
+          "mode_type": "standard",
+          "note": "2560x1440 Std"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 8440,
+          "mode_type": "standard",
+          "note": "2048x1152 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 256,
+          "max_fps": 37590,
+          "mode_type": "standard",
+          "note": "2560x256 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 32,
+          "max_fps": 277770,
+          "mode_type": "standard",
+          "note": "2560x32 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 23250,
+          "mode_type": "binned",
+          "note": "1280x832 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 30120,
+          "mode_type": "binned",
+          "note": "1280x640 Bin"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 37590,
+          "mode_type": "binned",
+          "note": "1024x512 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 256,
+          "max_fps": 74620,
+          "mode_type": "binned",
+          "note": "768x256 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 142850,
+          "mode_type": "binned",
+          "note": "1280x128 Bin"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 277770,
+          "mode_type": "binned",
+          "note": "1280x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom T3610",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 38040,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 46250,
+          "mode_type": "standard",
+          "note": "1280x640 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 320,
+          "max_fps": 94590,
+          "mode_type": "standard",
+          "note": "1280x320 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 156710,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 233330,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 525000,
+          "mode_type": "standard",
+          "note": "1280x32 Std"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 156710,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 187500,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 233330,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 308820,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 456520,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 525000,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom T2410",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 24270,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 30310,
+          "mode_type": "standard",
+          "note": "1280x640 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 320,
+          "max_fps": 60360,
+          "mode_type": "standard",
+          "note": "1280x320 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 148880,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 525000,
+          "mode_type": "standard",
+          "note": "1280x32 Std"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 100000,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 119640,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 148880,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 197050,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 291300,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 525000,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom T2110",
+      "sensor_size": "23.68x14.8mm",
+      "crop_factor": 1.55,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 21010,
+          "mode_type": "standard",
+          "note": "1280x800 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 26460,
+          "mode_type": "standard",
+          "note": "1280x640 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 320,
+          "max_fps": 52250,
+          "mode_type": "standard",
+          "note": "1280x320 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 192,
+          "max_fps": 86560,
+          "mode_type": "standard",
+          "note": "1280x192 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 128880,
+          "mode_type": "standard",
+          "note": "1280x128 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 483330,
+          "mode_type": "standard",
+          "note": "1280x32 Std"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 86560,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 103570,
+          "mode_type": "binned",
+          "note": "640x320 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 128880,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 170580,
+          "mode_type": "binned",
+          "note": "640x192 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 252170,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 483330,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT1640",
+      "sensor_size": "23.73x15.43mm",
+      "crop_factor": 1.53,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1664,
+          "max_fps": 3760,
+          "mode_type": "standard",
+          "note": "2560x1664 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1024,
+          "max_fps": 6120,
+          "mode_type": "standard",
+          "note": "2560x1024 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 512,
+          "max_fps": 12210,
+          "mode_type": "standard",
+          "note": "2560x512 Std"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 58820,
+          "mode_type": "standard",
+          "note": "2048x128 Std"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 64,
+          "max_fps": 125840,
+          "mode_type": "standard",
+          "note": "1536x64 Std"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 32,
+          "max_fps": 421000,
+          "mode_type": "standard",
+          "note": "1024x32 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 15030,
+          "mode_type": "binned",
+          "note": "1280x832 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 26310,
+          "mode_type": "binned",
+          "note": "768x768 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 640,
+          "max_fps": 31490,
+          "mode_type": "binned",
+          "note": "768x640 Bin"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 256,
+          "max_fps": 58820,
+          "mode_type": "binned",
+          "note": "1024x256 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 128,
+          "max_fps": 222200,
+          "mode_type": "binned",
+          "note": "512x128 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 64,
+          "max_fps": 421000,
+          "mode_type": "binned",
+          "note": "512x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT1240",
+      "sensor_size": "23.73x15.43mm",
+      "crop_factor": 1.53,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1664,
+          "max_fps": 2920,
+          "mode_type": "standard",
+          "note": "2560x1664 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1024,
+          "max_fps": 4740,
+          "mode_type": "standard",
+          "note": "2560x1024 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 512,
+          "max_fps": 9460,
+          "mode_type": "standard",
+          "note": "2560x512 Std"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 45580,
+          "mode_type": "standard",
+          "note": "2048x128 Std"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 64,
+          "max_fps": 119230,
+          "mode_type": "standard",
+          "note": "1536x64 Std"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 32,
+          "max_fps": 326310,
+          "mode_type": "standard",
+          "note": "1024x32 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 11650,
+          "mode_type": "binned",
+          "note": "1280x832 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 20390,
+          "mode_type": "binned",
+          "note": "768x768 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 640,
+          "max_fps": 24400,
+          "mode_type": "binned",
+          "note": "768x640 Bin"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 256,
+          "max_fps": 45580,
+          "mode_type": "binned",
+          "note": "1024x256 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 128,
+          "max_fps": 172200,
+          "mode_type": "binned",
+          "note": "512x128 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 64,
+          "max_fps": 326310,
+          "mode_type": "binned",
+          "note": "512x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT840",
+      "sensor_size": "23.73x15.43mm",
+      "crop_factor": 1.53,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1664,
+          "max_fps": 1850,
+          "mode_type": "standard",
+          "note": "2560x1664 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1024,
+          "max_fps": 3010,
+          "mode_type": "standard",
+          "note": "2560x1024 Std"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 512,
+          "max_fps": 6020,
+          "mode_type": "standard",
+          "note": "2560x512 Std"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 29520,
+          "mode_type": "standard",
+          "note": "2048x128 Std"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 64,
+          "max_fps": 77660,
+          "mode_type": "standard",
+          "note": "1536x64 Std"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 32,
+          "max_fps": 222220,
+          "mode_type": "standard_fast",
+          "note": "1024x32 FAST"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 7420,
+          "mode_type": "binned",
+          "note": "1280x832 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 13170,
+          "mode_type": "binned",
+          "note": "768x768 Bin"
+        },
+        {
+          "res_width": 768,
+          "res_height": 640,
+          "max_fps": 15810,
+          "mode_type": "binned",
+          "note": "768x640 Bin"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 256,
+          "max_fps": 29520,
+          "mode_type": "binned",
+          "note": "1024x256 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 128,
+          "max_fps": 115940,
+          "mode_type": "binned",
+          "note": "512x128 Bin"
+        },
+        {
+          "res_width": 512,
+          "res_height": 64,
+          "max_fps": 222220,
+          "mode_type": "binned",
+          "note": "512x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT1610",
+      "sensor_size": "23.68x15.39mm",
+      "crop_factor": 1.54,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 15640,
+          "mode_type": "standard",
+          "note": "1280x832 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 25400,
+          "mode_type": "standard",
+          "note": "1280x512 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 320,
+          "max_fps": 40590,
+          "mode_type": "standard",
+          "note": "1280x320 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "1280x64 Std"
+        },
+        {
+          "res_width": 768,
+          "res_height": 32,
+          "max_fps": 578940,
+          "mode_type": "standard",
+          "note": "768x32 Std"
+        },
+        {
+          "res_width": 512,
+          "res_height": 32,
+          "max_fps": 916660,
+          "mode_type": "standard_fast",
+          "note": "512x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 67480,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 100910,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 200000,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 392850,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        },
+        {
+          "res_width": 384,
+          "res_height": 64,
+          "max_fps": 578940,
+          "mode_type": "binned",
+          "note": "384x64 Bin"
+        },
+        {
+          "res_width": 256,
+          "res_height": 64,
+          "max_fps": 916660,
+          "mode_type": "binned",
+          "note": "256x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT1210",
+      "sensor_size": "23.68x15.39mm",
+      "crop_factor": 1.54,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 12090,
+          "mode_type": "standard",
+          "note": "1280x832 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 19630,
+          "mode_type": "standard",
+          "note": "1280x512 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 320,
+          "max_fps": 31360,
+          "mode_type": "standard",
+          "note": "1280x320 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 154540,
+          "mode_type": "standard",
+          "note": "1280x64 Std"
+        },
+        {
+          "res_width": 768,
+          "res_height": 32,
+          "max_fps": 500000,
+          "mode_type": "standard",
+          "note": "768x32 Std"
+        },
+        {
+          "res_width": 512,
+          "res_height": 32,
+          "max_fps": 708330,
+          "mode_type": "standard_fast",
+          "note": "512x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 52140,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 77980,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 154540,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 303570,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        },
+        {
+          "res_width": 384,
+          "res_height": 64,
+          "max_fps": 500000,
+          "mode_type": "binned",
+          "note": "384x64 Bin"
+        },
+        {
+          "res_width": 256,
+          "res_height": 64,
+          "max_fps": 708330,
+          "mode_type": "binned",
+          "note": "256x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom KT810",
+      "sensor_size": "23.68x15.39mm",
+      "crop_factor": 1.54,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 832,
+          "max_fps": 7750,
+          "mode_type": "standard",
+          "note": "1280x832 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 12600,
+          "mode_type": "standard",
+          "note": "1280x512 Std"
+        },
+        {
+          "res_width": 768,
+          "res_height": 320,
+          "max_fps": 33230,
+          "mode_type": "standard",
+          "note": "768x320 Std"
+        },
+        {
+          "res_width": 768,
+          "res_height": 64,
+          "max_fps": 164170,
+          "mode_type": "standard",
+          "note": "768x64 Std"
+        },
+        {
+          "res_width": 512,
+          "res_height": 32,
+          "max_fps": 478260,
+          "mode_type": "standard",
+          "note": "512x32 Std"
+        },
+        {
+          "res_width": 256,
+          "res_height": 32,
+          "max_fps": 916660,
+          "mode_type": "standard_fast",
+          "note": "256x32 FAST"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 33530,
+          "mode_type": "binned",
+          "note": "640x384 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 50220,
+          "mode_type": "binned",
+          "note": "640x256 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 100000,
+          "mode_type": "binned",
+          "note": "640x128 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 200000,
+          "mode_type": "binned",
+          "note": "640x64 Bin"
+        },
+        {
+          "res_width": 256,
+          "res_height": 64,
+          "max_fps": 478260,
+          "mode_type": "binned",
+          "note": "256x64 Bin"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 916660,
+          "mode_type": "binned",
+          "note": "128x64 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom VEO 640",
+      "sensor_size": "25.6x16.0mm",
+      "crop_factor": 1.43,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1600,
+          "max_fps": 1400,
+          "mode_type": "standard",
+          "note": "2560x1600"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1600,
+          "max_fps": 1800,
+          "mode_type": "standard",
+          "note": "2048x1600"
+        },
+        {
+          "res_width": 1600,
+          "res_height": 1600,
+          "max_fps": 2100,
+          "mode_type": "standard",
+          "note": "1600x1600"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2800,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1280,
+          "max_fps": 3270,
+          "mode_type": "standard",
+          "note": "1280x1280"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 5700,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 14000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 36000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 64,
+          "max_fps": 109000,
+          "mode_type": "standard",
+          "note": "256x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 4,
+          "max_fps": 290000,
+          "mode_type": "standard",
+          "note": "128x4"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom VEO 440",
+      "sensor_size": "25.6x16.0mm",
+      "crop_factor": 1.43,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1600,
+          "max_fps": 1100,
+          "mode_type": "standard",
+          "note": "2560x1600"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 1230,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2100,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1280,
+          "max_fps": 2510,
+          "mode_type": "standard",
+          "note": "1280x1280"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 11900,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 32700,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 64,
+          "max_fps": 100500,
+          "mode_type": "standard",
+          "note": "256x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 4,
+          "max_fps": 290000,
+          "mode_type": "standard",
+          "note": "128x4"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom VEO 1310",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 960,
+          "max_fps": 10860,
+          "mode_type": "standard",
+          "note": "1280x960 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 804,
+          "max_fps": 12900,
+          "mode_type": "standard",
+          "note": "1280x804 Std"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 14350,
+          "mode_type": "standard",
+          "note": "1280x720 Std"
+        },
+        {
+          "res_width": 960,
+          "res_height": 960,
+          "max_fps": 13333,
+          "mode_type": "standard",
+          "note": "960x960 Std"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 30030,
+          "mode_type": "standard",
+          "note": "640x480 Std"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 57360,
+          "mode_type": "standard",
+          "note": "320x240 Std"
+        },
+        {
+          "res_width": 320,
+          "res_height": 120,
+          "max_fps": 105260,
+          "mode_type": "standard",
+          "note": "320x120 Std"
+        },
+        {
+          "res_width": 320,
+          "res_height": 24,
+          "max_fps": 316930,
+          "mode_type": "standard",
+          "note": "320x24 Std"
+        },
+        {
+          "res_width": 320,
+          "res_height": 12,
+          "max_fps": 423350,
+          "mode_type": "standard",
+          "note": "320x12 Std"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 40300,
+          "mode_type": "binned",
+          "note": "640x480 Bin"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 73510,
+          "mode_type": "binned",
+          "note": "640x240 Bin"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 105260,
+          "mode_type": "binned",
+          "note": "320x240 Bin"
+        },
+        {
+          "res_width": 320,
+          "res_height": 120,
+          "max_fps": 180680,
+          "mode_type": "binned",
+          "note": "320x120 Bin"
+        },
+        {
+          "res_width": 320,
+          "res_height": 72,
+          "max_fps": 253270,
+          "mode_type": "binned",
+          "note": "320x72 Bin"
+        },
+        {
+          "res_width": 320,
+          "res_height": 24,
+          "max_fps": 423350,
+          "mode_type": "binned",
+          "note": "320x24 Bin"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom VEO-E 310L",
+      "sensor_size": "25.6x16.0mm",
+      "crop_factor": 1.43,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 3200,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 10100,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 11500,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 256,
+          "max_fps": 23000,
+          "mode_type": "standard",
+          "note": "512x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 39800,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 64,
+          "res_height": 8,
+          "max_fps": 650000,
+          "mode_type": "standard",
+          "note": "64x8"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom VEO-E 340L",
+      "sensor_size": "25.6x16.0mm",
+      "crop_factor": 1.43,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1600,
+          "max_fps": 800,
+          "mode_type": "standard",
+          "note": "2560x1600"
+        },
+        {
+          "res_width": 1600,
+          "res_height": 1600,
+          "max_fps": 1190,
+          "mode_type": "standard",
+          "note": "1600x1600"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 1460,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 3310,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 8570,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 128,
+          "res_height": 4,
+          "max_fps": 287000,
+          "mode_type": "standard",
+          "note": "128x4"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom C980J",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1180,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 1080,
+          "max_fps": 2330,
+          "mode_type": "standard",
+          "note": "3840x1080"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 480,
+          "max_fps": 5090,
+          "mode_type": "standard",
+          "note": "3840x480"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 372,
+          "max_fps": 6470,
+          "mode_type": "standard",
+          "note": "3840x372"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 120,
+          "max_fps": 17580,
+          "mode_type": "standard",
+          "note": "3840x120"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 24,
+          "max_fps": 50820,
+          "mode_type": "standard",
+          "note": "3840x24"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 2160,
+          "max_fps": 1180,
+          "mode_type": "standard",
+          "note": "2560x2160"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1152,
+          "max_fps": 2190,
+          "mode_type": "standard",
+          "note": "2560x1152"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 96,
+          "max_fps": 21020,
+          "mode_type": "standard",
+          "note": "2560x96"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1920,
+          "max_fps": 1320,
+          "mode_type": "standard",
+          "note": "1920x1920"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2330,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 96,
+          "max_fps": 21020,
+          "mode_type": "standard",
+          "note": "1920x96"
+        }
+      ]
+    },
+    {
+      "brand": "Phantom",
+      "model": "Phantom C540J",
+      "sensor_size": "1-inch format",
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1680,
+          "max_fps": 1140,
+          "mode_type": "standard",
+          "note": "2560x1680"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 1330,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1140,
+          "max_fps": 1670,
+          "mode_type": "standard",
+          "note": "2560x1140"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 720,
+          "max_fps": 2620,
+          "mode_type": "standard",
+          "note": "2560x720"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 240,
+          "max_fps": 7410,
+          "mode_type": "standard",
+          "note": "2560x240"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 48,
+          "max_fps": 27410,
+          "mode_type": "standard",
+          "note": "2560x48"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1680,
+          "max_fps": 1510,
+          "mode_type": "standard",
+          "note": "1920x1680"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2330,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 804,
+          "max_fps": 3100,
+          "mode_type": "standard",
+          "note": "1920x804"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 360,
+          "max_fps": 6670,
+          "mode_type": "standard",
+          "note": "1920x360"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 120,
+          "max_fps": 17580,
+          "mode_type": "standard",
+          "note": "1920x120"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 24,
+          "max_fps": 50820,
+          "mode_type": "standard",
+          "note": "1920x24"
+        }
+      ]
+    },
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1",
+      "sensor_size": "17.92x14.34mm",
+      "crop_factor": 1.89,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 6495,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 494,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 701,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 3855,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 1849,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 5712,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 192,
+          "res_height": 96,
+          "max_fps": 17791,
+          "mode_type": "standard",
+          "note": "192x96"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 621,
+          "mode_type": "overclock",
+          "note": "1280x1024 OC"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 882,
+          "mode_type": "overclock",
+          "note": "1280x720 OC"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 4846,
+          "mode_type": "overclock",
+          "note": "1280x128 OC"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 2324,
+          "mode_type": "overclock",
+          "note": "640x480 OC"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 7181,
+          "mode_type": "overclock",
+          "note": "320x240 OC"
+        },
+        {
+          "res_width": 192,
+          "res_height": 96,
+          "max_fps": 22336,
+          "mode_type": "overclock",
+          "note": "192x96 OC"
+        }
+      ]
+    },
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1+",
+      "sensor_size": "17.53x11.83mm",
+      "crop_factor": 2.05,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 7495,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 864,
+          "max_fps": 1869,
+          "mode_type": "standard",
+          "note": "1280x864"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 2240,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 12287,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 3351,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 6238,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 16219,
+          "mode_type": "standard",
+          "note": "1280x96"
+        }
+      ]
+    },
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC1X",
+      "sensor_size": "19.20x10.88mm",
+      "crop_factor": 1.96,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 8995,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1088,
+          "max_fps": 958,
+          "mode_type": "standard",
+          "note": "1920x1088"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 1414,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 7930,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 2162,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 4026,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 96,
+          "max_fps": 10468,
+          "mode_type": "standard",
+          "note": "1920x96"
+        }
+      ]
+    },
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC2+",
+      "sensor_size": "17.53x11.83mm",
+      "crop_factor": 2.05,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 12990,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 864,
+          "max_fps": 3720,
+          "mode_type": "standard",
+          "note": "1280x864"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 4456,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 23852,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 6647,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 13982,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 31191,
+          "mode_type": "standard",
+          "note": "1280x96"
+        }
+      ]
+    },
+    {
+      "brand": "Edgertronic",
+      "model": "Edgertronic SC2X",
+      "sensor_size": "19.20x10.88mm",
+      "crop_factor": 1.96,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 15990,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1088,
+          "max_fps": 1910,
+          "mode_type": "standard",
+          "note": "1920x1088"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 2940,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 15395,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 4290,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 9024,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 96,
+          "max_fps": 20132,
+          "mode_type": "standard",
+          "note": "1920x96"
+        }
+      ]
+    },
+    {
+      "brand": "Freefly",
+      "model": "Ember S5K",
+      "sensor_size": "23.04x18.43mm",
+      "crop_factor": 1.47,
+      "bit_depth": 10,
+      "price_tier": "Purchase",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 5120,
+          "res_height": 4096,
+          "max_fps": 436,
+          "mode_type": "standard",
+          "note": "5120x4096"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 4096,
+          "max_fps": 436,
+          "mode_type": "standard",
+          "note": "4096x4096"
+        },
+        {
+          "res_width": 5120,
+          "res_height": 3840,
+          "max_fps": 464,
+          "mode_type": "standard",
+          "note": "5120x3840"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 3072,
+          "max_fps": 578,
+          "mode_type": "standard",
+          "note": "4096x3072"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 3072,
+          "max_fps": 578,
+          "mode_type": "standard",
+          "note": "3072x3072"
+        },
+        {
+          "res_width": 5120,
+          "res_height": 2880,
+          "max_fps": 616,
+          "mode_type": "standard",
+          "note": "5120x2880"
+        },
+        {
+          "res_width": 5120,
+          "res_height": 2560,
+          "max_fps": 691,
+          "mode_type": "standard",
+          "note": "5120x2560"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 765,
+          "mode_type": "standard",
+          "note": "4096x2304"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 2304,
+          "max_fps": 765,
+          "mode_type": "standard",
+          "note": "3072x2304"
+        },
+        {
+          "res_width": 5120,
+          "res_height": 2160,
+          "max_fps": 809,
+          "mode_type": "standard",
+          "note": "5120x2160"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 2160,
+          "max_fps": 809,
+          "mode_type": "standard",
+          "note": "4096x2160"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 2048,
+          "max_fps": 858,
+          "mode_type": "standard",
+          "note": "4096x2048"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 2048,
+          "max_fps": 858,
+          "mode_type": "standard",
+          "note": "3072x2048"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 858,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1728,
+          "max_fps": 1011,
+          "mode_type": "standard",
+          "note": "4096x1728"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1728,
+          "max_fps": 1011,
+          "mode_type": "standard",
+          "note": "3072x1728"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1536,
+          "max_fps": 1131,
+          "mode_type": "standard",
+          "note": "3072x1536"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1536,
+          "max_fps": 1131,
+          "mode_type": "standard",
+          "note": "2048x1536"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1280,
+          "max_fps": 1346,
+          "mode_type": "standard",
+          "note": "3072x1280"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 1487,
+          "mode_type": "standard",
+          "note": "2048x1152"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 1569,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 1661,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 864,
+          "max_fps": 1946,
+          "mode_type": "standard",
+          "note": "2048x864"
+        }
+      ]
+    },
+    {
+      "brand": "Freefly",
+      "model": "Ember S2.5K",
+      "sensor_size": "23.04x18.43mm",
+      "crop_factor": 1.47,
+      "bit_depth": 10,
+      "price_tier": "Purchase",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2560,
+          "res_height": 1920,
+          "max_fps": 1751,
+          "mode_type": "standard",
+          "note": "2560x1920"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1536,
+          "max_fps": 2118,
+          "mode_type": "standard",
+          "note": "2048x1536"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 2277,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1280,
+          "max_fps": 2531,
+          "mode_type": "standard",
+          "note": "2560x1280"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 2779,
+          "mode_type": "standard",
+          "note": "2048x1152"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1080,
+          "max_fps": 2922,
+          "mode_type": "standard",
+          "note": "2560x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 2922,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 3080,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 864,
+          "max_fps": 3563,
+          "mode_type": "standard",
+          "note": "2048x864"
+        }
+      ]
+    },
+    {
+      "brand": "Kron Technologies",
+      "model": "Chronos 1.4",
+      "sensor_size": "8.45 x 6.76mm",
+      "crop_factor": 3.9,
+      "bit_depth": 12,
+      "price_tier": "Purchase",
+      "price_usd": 5600,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 1069,
+          "mode_type": "standard",
+          "note": "Max resolution"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 1519,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 2134,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 360,
+          "max_fps": 3030,
+          "mode_type": "standard",
+          "note": "1280x360"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 240,
+          "max_fps": 4532,
+          "mode_type": "standard",
+          "note": "1280x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 120,
+          "max_fps": 8986,
+          "mode_type": "standard",
+          "note": "1280x120"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 11184,
+          "mode_type": "standard",
+          "note": "1280x96"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 1770,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 576,
+          "max_fps": 2357,
+          "mode_type": "standard",
+          "note": "1024x576"
+        },
+        {
+          "res_width": 800,
+          "res_height": 600,
+          "max_fps": 2871,
+          "mode_type": "standard",
+          "note": "800x600"
+        },
+        {
+          "res_width": 800,
+          "res_height": 480,
+          "max_fps": 3585,
+          "mode_type": "standard",
+          "note": "800x480"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 4434,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 640,
+          "res_height": 360,
+          "max_fps": 5899,
+          "mode_type": "standard",
+          "note": "640x360"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 8810,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 120,
+          "max_fps": 17391,
+          "mode_type": "standard",
+          "note": "640x120"
+        },
+        {
+          "res_width": 640,
+          "res_height": 96,
+          "max_fps": 21598,
+          "mode_type": "standard",
+          "note": "640x96"
+        },
+        {
+          "res_width": 336,
+          "res_height": 240,
+          "max_fps": 15968,
+          "mode_type": "standard",
+          "note": "336x240"
+        },
+        {
+          "res_width": 336,
+          "res_height": 120,
+          "max_fps": 31294,
+          "mode_type": "standard",
+          "note": "336x120"
+        },
+        {
+          "res_width": 336,
+          "res_height": 96,
+          "max_fps": 38726,
+          "mode_type": "standard",
+          "note": "336x96"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 16682,
+          "mode_type": "standard",
+          "note": "320x240"
+        },
+        {
+          "res_width": 320,
+          "res_height": 120,
+          "max_fps": 32667,
+          "mode_type": "standard",
+          "note": "320x120"
+        },
+        {
+          "res_width": 320,
+          "res_height": 96,
+          "max_fps": 40413,
+          "mode_type": "standard",
+          "note": "Min resolution / max fps"
+        }
+      ]
+    },
+    {
+      "brand": "Kron Technologies",
+      "model": "Chronos 2.1-HD",
+      "sensor_size": "19.2 x 10.8mm",
+      "crop_factor": 2.0,
+      "bit_depth": 12,
+      "price_tier": "Purchase",
+      "price_usd": 7900,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "Max resolution"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 720,
+          "max_fps": 1495,
+          "mode_type": "standard",
+          "note": "1920x720"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 512,
+          "max_fps": 2095,
+          "mode_type": "standard",
+          "note": "1920x512"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 360,
+          "max_fps": 2963,
+          "mode_type": "standard",
+          "note": "1920x360"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 240,
+          "max_fps": 4403,
+          "mode_type": "standard",
+          "note": "1920x240"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 120,
+          "max_fps": 8569,
+          "mode_type": "standard",
+          "note": "1920x120"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 96,
+          "max_fps": 10569,
+          "mode_type": "standard",
+          "note": "1920x96"
+        },
+        {
+          "res_width": 1440,
+          "res_height": 1080,
+          "max_fps": 1434,
+          "mode_type": "standard",
+          "note": "1440x1080"
+        },
+        {
+          "res_width": 1440,
+          "res_height": 720,
+          "max_fps": 2142,
+          "mode_type": "standard",
+          "note": "1440x720"
+        },
+        {
+          "res_width": 1440,
+          "res_height": 512,
+          "max_fps": 2997,
+          "mode_type": "standard",
+          "note": "1440x512"
+        },
+        {
+          "res_width": 1440,
+          "res_height": 240,
+          "max_fps": 6265,
+          "mode_type": "standard",
+          "note": "1440x240"
+        },
+        {
+          "res_width": 1440,
+          "res_height": 96,
+          "max_fps": 14825,
+          "mode_type": "standard",
+          "note": "1440x96"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 1512,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 2142,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 2996,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 360,
+          "max_fps": 4230,
+          "mode_type": "standard",
+          "note": "1280x360"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 240,
+          "max_fps": 6265,
+          "mode_type": "standard",
+          "note": "1280x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 120,
+          "max_fps": 12075,
+          "mode_type": "standard",
+          "note": "1280x120"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 14825,
+          "mode_type": "standard",
+          "note": "1280x96"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 2531,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 576,
+          "max_fps": 3358,
+          "mode_type": "standard",
+          "note": "1024x576"
+        },
+        {
+          "res_width": 800,
+          "res_height": 600,
+          "max_fps": 4352,
+          "mode_type": "standard",
+          "note": "800x600"
+        },
+        {
+          "res_width": 640,
+          "res_height": 96,
+          "max_fps": 24046,
+          "mode_type": "standard",
+          "note": "Min resolution / max fps per product page \u2014 modes between 800x480 and 640x96 not yet captured"
+        }
+      ]
+    },
+    {
+      "brand": "Kron Technologies",
+      "model": "Chronos 4K12",
+      "sensor_size": "20.74 x 9.79mm",
+      "crop_factor": 2.0,
+      "bit_depth": null,
+      "price_tier": "Purchase",
+      "price_usd": 15995,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2160,
+          "max_fps": 1397,
+          "mode_type": "standard",
+          "note": "4K DCI \u2014 Max resolution 8-bit"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 2160,
+          "max_fps": 1006,
+          "mode_type": "standard",
+          "note": "4096x2160"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 2160,
+          "max_fps": 481,
+          "mode_type": "standard",
+          "note": "4096x2160"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1491,
+          "mode_type": "standard",
+          "note": "UHD"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1006,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 481,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 1080,
+          "max_fps": 2845,
+          "mode_type": "standard",
+          "note": "3840x1080"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 1080,
+          "max_fps": 1947,
+          "mode_type": "standard",
+          "note": "3840x1080"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 1080,
+          "max_fps": 942,
+          "mode_type": "standard",
+          "note": "3840x1080"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 544,
+          "max_fps": 5211,
+          "mode_type": "standard",
+          "note": "3840x544"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 544,
+          "max_fps": 3659,
+          "mode_type": "standard",
+          "note": "3840x544"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 544,
+          "max_fps": 1810,
+          "mode_type": "standard",
+          "note": "3840x544"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 2176,
+          "max_fps": 1816,
+          "mode_type": "standard",
+          "note": "3072x2176"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 2176,
+          "max_fps": 1006,
+          "mode_type": "standard",
+          "note": "3072x2176"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 2176,
+          "max_fps": 481,
+          "mode_type": "standard",
+          "note": "3072x2176"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1728,
+          "max_fps": 2257,
+          "mode_type": "standard",
+          "note": "3072x1728"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1728,
+          "max_fps": 1256,
+          "mode_type": "standard",
+          "note": "3072x1728"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1728,
+          "max_fps": 602,
+          "mode_type": "standard",
+          "note": "3072x1728"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 864,
+          "max_fps": 4244,
+          "mode_type": "standard",
+          "note": "3072x864"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 864,
+          "max_fps": 2412,
+          "mode_type": "standard",
+          "note": "3072x864"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 864,
+          "max_fps": 1174,
+          "mode_type": "standard",
+          "note": "3072x864"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 448,
+          "max_fps": 7365,
+          "mode_type": "standard",
+          "note": "3072x448"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 448,
+          "max_fps": 4332,
+          "mode_type": "standard",
+          "note": "3072x448"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 448,
+          "max_fps": 2161,
+          "mode_type": "standard",
+          "note": "3072x448"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 2048,
+          "max_fps": 2034,
+          "mode_type": "standard",
+          "note": "2560x2048"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 2048,
+          "max_fps": 1066,
+          "mode_type": "standard",
+          "note": "2560x2048"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 2048,
+          "max_fps": 510,
+          "mode_type": "standard",
+          "note": "2560x2048"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 2827,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 1494,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 1440,
+          "max_fps": 719,
+          "mode_type": "standard",
+          "note": "2560x1440"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 720,
+          "max_fps": 5153,
+          "mode_type": "standard",
+          "note": "2560x720"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 720,
+          "max_fps": 2793,
+          "mode_type": "standard",
+          "note": "2560x720"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 720,
+          "max_fps": 1366,
+          "mode_type": "standard",
+          "note": "2560x720"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 384,
+          "max_fps": 8751,
+          "mode_type": "standard",
+          "note": "2560x384"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 384,
+          "max_fps": 4936,
+          "mode_type": "standard",
+          "note": "2560x384"
+        },
+        {
+          "res_width": 2560,
+          "res_height": 384,
+          "max_fps": 2483,
+          "mode_type": "standard",
+          "note": "2560x384"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2016,
+          "max_fps": 2065,
+          "mode_type": "standard",
+          "note": "2K"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2016,
+          "max_fps": 1082,
+          "mode_type": "standard",
+          "note": "2048x2016"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2016,
+          "max_fps": 518,
+          "mode_type": "standard",
+          "note": "2048x2016"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 3653,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 1947,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1080,
+          "max_fps": 942,
+          "mode_type": "standard",
+          "note": "2048x1080"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 720,
+          "max_fps": 5153,
+          "mode_type": "standard",
+          "note": "2048x720"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 720,
+          "max_fps": 2793,
+          "mode_type": "standard",
+          "note": "2048x720"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 720,
+          "max_fps": 1366,
+          "mode_type": "standard",
+          "note": "2048x720"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 6337,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 3479,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 1717,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 480,
+          "max_fps": 7351,
+          "mode_type": "standard",
+          "note": "2048x480"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 480,
+          "max_fps": 4082,
+          "mode_type": "standard",
+          "note": "2048x480"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 480,
+          "max_fps": 2030,
+          "mode_type": "standard",
+          "note": "2048x480"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 11729,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 6847,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 3533,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3651,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1947,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 942,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 544,
+          "max_fps": 6643,
+          "mode_type": "standard",
+          "note": "1920x544"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 544,
+          "max_fps": 3659,
+          "mode_type": "standard",
+          "note": "1920x544"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 544,
+          "max_fps": 1810,
+          "mode_type": "standard",
+          "note": "1920x544"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1536,
+          "max_fps": 2663,
+          "mode_type": "standard",
+          "note": "1536x1536"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1536,
+          "max_fps": 1405,
+          "mode_type": "standard",
+          "note": "1536x1536"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1536,
+          "max_fps": 675,
+          "mode_type": "standard",
+          "note": "1536x1536"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1152,
+          "max_fps": 3468,
+          "mode_type": "standard",
+          "note": "1536x1152"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1152,
+          "max_fps": 1846,
+          "mode_type": "standard",
+          "note": "1536x1152"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1152,
+          "max_fps": 892,
+          "mode_type": "standard",
+          "note": "1536x1152"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 864,
+          "max_fps": 4482,
+          "mode_type": "standard",
+          "note": "1536x864"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 864,
+          "max_fps": 2412,
+          "mode_type": "standard",
+          "note": "1536x864"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 864,
+          "max_fps": 1174,
+          "mode_type": "standard",
+          "note": "1536x864"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 448,
+          "max_fps": 7765,
+          "mode_type": "standard",
+          "note": "1536x448"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 448,
+          "max_fps": 4332,
+          "mode_type": "standard",
+          "note": "1536x448"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 448,
+          "max_fps": 2161,
+          "mode_type": "standard",
+          "note": "1536x448"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 256,
+          "max_fps": 11729,
+          "mode_type": "standard",
+          "note": "1536x256"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 256,
+          "max_fps": 6847,
+          "mode_type": "standard",
+          "note": "1536x256"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 256,
+          "max_fps": 3533,
+          "mode_type": "standard",
+          "note": "1536x256"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 3856,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 2060,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 998,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 5153,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 2793,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 1366,
+          "mode_type": "standard",
+          "note": "1280x720"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 20413,
+          "mode_type": "standard",
+          "note": "1280x96"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 13268,
+          "mode_type": "standard",
+          "note": "1280x96"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 96,
+          "max_fps": 7495,
+          "mode_type": "standard",
+          "note": "1280x96"
+        },
+        {
+          "res_width": 768,
+          "res_height": 576,
+          "max_fps": 6337,
+          "mode_type": "standard",
+          "note": "768x576"
+        },
+        {
+          "res_width": 768,
+          "res_height": 576,
+          "max_fps": 3479,
+          "mode_type": "standard",
+          "note": "768x576"
+        },
+        {
+          "res_width": 768,
+          "res_height": 576,
+          "max_fps": 1717,
+          "mode_type": "standard",
+          "note": "768x576"
+        },
+        {
+          "res_width": 512,
+          "res_height": 480,
+          "max_fps": 7351,
+          "mode_type": "standard",
+          "note": "512x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 480,
+          "max_fps": 4082,
+          "mode_type": "standard",
+          "note": "512x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 480,
+          "max_fps": 2030,
+          "mode_type": "standard",
+          "note": "512x480"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 11729,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 6847,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 3533,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 384,
+          "res_height": 96,
+          "max_fps": 20413,
+          "mode_type": "standard",
+          "note": "384x96"
+        },
+        {
+          "res_width": 384,
+          "res_height": 96,
+          "max_fps": 13268,
+          "mode_type": "standard",
+          "note": "384x96"
+        },
+        {
+          "res_width": 384,
+          "res_height": 96,
+          "max_fps": 7495,
+          "mode_type": "standard",
+          "note": "384x96"
+        },
+        {
+          "res_width": 256,
+          "res_height": 160,
+          "max_fps": 15749,
+          "mode_type": "standard",
+          "note": "256x160"
+        },
+        {
+          "res_width": 256,
+          "res_height": 160,
+          "max_fps": 9649,
+          "mode_type": "standard",
+          "note": "256x160"
+        },
+        {
+          "res_width": 256,
+          "res_height": 160,
+          "max_fps": 5174,
+          "mode_type": "standard",
+          "note": "256x160"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 29002,
+          "mode_type": "standard",
+          "note": "Min resolution / max fps"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 21231,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 13590,
+          "mode_type": "standard",
+          "note": "128x32"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 717",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 5315,
+          "mode_type": "standard",
+          "note": "full resolution"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 7960,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 721",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 6642,
+          "mode_type": "standard",
+          "note": "full resolution"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 9944,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 727",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 8512,
+          "mode_type": "standard",
+          "note": "full resolution"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 12742,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 509",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3980,
+          "mode_type": "standard",
+          "note": "full resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 511",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 4980,
+          "mode_type": "standard",
+          "note": "full resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 514",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 6382,
+          "mode_type": "standard",
+          "note": "full resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 203",
+      "sensor_size": "17.54x11.83mm",
+      "crop_factor": 2.05,
+      "bit_depth": null,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "verified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 864,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "full resolution"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova S6",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 800000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova S9",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 900000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova S12",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 12800,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1000000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova S16",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 16000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1100000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova S20",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 10,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1100000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova R2",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2560,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 256,
+          "res_height": 32,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "256x32"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova R3-4K",
+      "sensor_size": "26.62 x 14.98mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "4096x2304"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 800,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 150000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Nova R5-4K",
+      "sensor_size": "26.62 x 14.98mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 1250,
+          "mode_type": "standard",
+          "note": "4096x2304"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM SA-Z",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 128,
+          "res_height": 8,
+          "max_fps": 2100000,
+          "mode_type": "standard",
+          "note": "128x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini WX100",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1080,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 80000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini WX50",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1500,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 67500,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini CX",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": 10,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x256"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini AX200",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 900000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini AX100",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 540000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini AX50",
+      "sensor_size": "20.48 x 20.48mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 170000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini UX100",
+      "sensor_size": "12.80 x 10.24mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1000,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x1000"
+        },
+        {
+          "res_width": 640,
+          "res_height": 8,
+          "max_fps": 800000,
+          "mode_type": "standard",
+          "note": "640x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini UX50",
+      "sensor_size": "12.80 x 10.24mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 8,
+          "max_fps": 160000,
+          "mode_type": "standard",
+          "note": "1280x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini W5",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "2048x1152"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 5280,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini W2",
+      "sensor_size": null,
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "2048x1152"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2750,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 150000,
+          "mode_type": "standard",
+          "note": "128x16"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini R3-4K",
+      "sensor_size": "26.62 x 14.98mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "4096x2304"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 800,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 150000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM Mini R5-4K",
+      "sensor_size": "26.62 x 14.98mm",
+      "crop_factor": null,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 1250,
+          "mode_type": "standard",
+          "note": "4096x2304"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "3840x2160"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM MH6",
+      "sensor_size": "12.67 x 9.24mm",
+      "crop_factor": null,
+      "bit_depth": 8,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1400,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "1920x1400"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x256"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model": "FASTCAM MH6 LT",
+      "sensor_size": "12.67 x 9.24mm",
+      "crop_factor": null,
+      "bit_depth": 8,
+      "price_tier": "Purchase (Quote)",
+      "price_usd": null,
+      "status": "Current",
+      "data_quality": "gemini_unverified",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1400,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "1920x1400"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "1920x1080"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x256"
+        }
+      ]
+    }
+  ]
+}
