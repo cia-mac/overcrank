@@ -1,0 +1,69 @@
+{
+  "generated": "2026-04-05T21:01:07.316005+00:00",
+  "db_version": 4,
+  "cameras_checked": 25,
+  "urls_checked": 7,
+  "issues_found": 2,
+  "summary": {
+    "errors": 0,
+    "warnings": 2,
+    "ok": 24
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "mode_not_found",
+      "brand": "IDT",
+      "model": "Helios 8K",
+      "expected": "8192\u00d76000 @ 120 fps",
+      "detail": "Neither resolution nor fps found on page",
+      "source_url": "https://idtcameras.com/helios-8k-high-speed-camera/"
+    },
+    {
+      "severity": "warning",
+      "type": "mode_not_found",
+      "brand": "IDT",
+      "model": "Helios 8K",
+      "expected": "8192\u00d73000 @ 240 fps",
+      "detail": "Neither resolution nor fps found on page",
+      "source_url": "https://idtcameras.com/helios-8k-high-speed-camera/"
+    }
+  ],
+  "url_results": {
+    "https://idtcameras.com/galileo-xstream-high-speed-camera/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/galileo-xstream-high-speed-camera/",
+      "extracted_count": 4
+    },
+    "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/",
+      "extracted_count": 4
+    },
+    "https://idtcameras.com/phoenix-high-speed-streaming-camera/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/phoenix-high-speed-streaming-camera/",
+      "extracted_count": 8
+    },
+    "https://idtcameras.com/phoenix-cr/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/phoenix-cr/",
+      "extracted_count": 2
+    },
+    "https://idtcameras.com/xstream-high-speed-mini-remote-camera/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "extracted_count": 5
+    },
+    "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "extracted_count": 7
+    },
+    "https://idtcameras.com/helios-8k-high-speed-camera/": {
+      "status": "ok",
+      "final_url": "https://idtcameras.com/helios-8k-high-speed-camera/",
+      "extracted_count": 2
+    }
+  }
+}
