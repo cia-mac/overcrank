@@ -1,0 +1,454 @@
+{
+  "brand": "IDT",
+  "verified_date": "2026-04-05",
+  "source_base_url": "https://idtcameras.com",
+  "notes": "Scraped live from idtcameras.com via Chrome. All specs from FAQ schema / product page text. Galileo and Phoenix GOLD share identical sensor platforms — different form factors only. Phoenix-HD and Phoenix CR-HD share the same sensor (20x15mm / 10.4um). Phoenix-UHD and Phoenix CR-UHD also share the same sensor. CCM-3510/3530/4K Veloce sensor specs not published on product page — marked null.",
+  "cameras": [
+
+    {
+      "brand": "IDT",
+      "series": "Galileo",
+      "model": "Galileo 3K",
+      "sensor_size": "23x18.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 7.2,
+      "bit_depth": 12,
+      "megapixels": 8.2,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/galileo-xstream-high-speed-camera/",
+      "modes": [
+        {"res_width": 3200, "res_height": 2560, "max_fps": 3675, "mode_type": "standard", "note": "Max res"},
+        {"res_width": 1920, "res_height": 1080, "max_fps": 13000, "mode_type": "standard", "note": "1080p (from sample footage)"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Galileo",
+      "model": "Galileo 5K",
+      "sensor_size": "20.4x9.8mm",
+      "crop_factor": null,
+      "pixel_size_um": 4.0,
+      "bit_depth": 12,
+      "megapixels": 12.5,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/galileo-xstream-high-speed-camera/",
+      "modes": [
+        {"res_width": 5120, "res_height": 2448, "max_fps": 2000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Galileo",
+      "model": "Galileo 5K Veloce",
+      "sensor_size": "30.2x20.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 5.9,
+      "bit_depth": 12,
+      "megapixels": 17.7,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/galileo-xstream-high-speed-camera/",
+      "modes": [
+        {"res_width": 5120, "res_height": 3456, "max_fps": 889, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Galileo",
+      "model": "Galileo 6K",
+      "sensor_size": "23x18.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 3.6,
+      "bit_depth": 12,
+      "megapixels": 32.8,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/galileo-xstream-high-speed-camera/",
+      "modes": [
+        {"res_width": 6400, "res_height": 5120, "max_fps": 1000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix GOLD",
+      "model": "Phoenix GOLD 3K",
+      "sensor_size": "23x18.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 7.2,
+      "bit_depth": 12,
+      "megapixels": 8.2,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/",
+      "notes": "Same sensor platform as Galileo 3K. Cinema-focused form factor.",
+      "modes": [
+        {"res_width": 3200, "res_height": 2560, "max_fps": 3675, "mode_type": "standard", "note": "Max res"},
+        {"res_width": 3840, "res_height": 2160, "max_fps": 400, "mode_type": "standard", "note": "UHD (from sample footage)"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix GOLD",
+      "model": "Phoenix GOLD 5K",
+      "sensor_size": "20.4x9.8mm",
+      "crop_factor": null,
+      "pixel_size_um": 4.0,
+      "bit_depth": 12,
+      "megapixels": 12.5,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/",
+      "modes": [
+        {"res_width": 5120, "res_height": 2448, "max_fps": 2000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix GOLD",
+      "model": "Phoenix GOLD 5K Veloce",
+      "sensor_size": "30.2x20.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 5.9,
+      "bit_depth": 12,
+      "megapixels": 17.7,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/",
+      "modes": [
+        {"res_width": 5120, "res_height": 3456, "max_fps": 889, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix GOLD",
+      "model": "Phoenix GOLD 6K",
+      "sensor_size": "23x18.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 3.6,
+      "bit_depth": 12,
+      "megapixels": 32.8,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-gold-slow-motion-camera-for-cinema/",
+      "modes": [
+        {"res_width": 6400, "res_height": 5120, "max_fps": 1000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix",
+      "model": "Phoenix HD",
+      "sensor_size": "20x15mm",
+      "crop_factor": null,
+      "pixel_size_um": 10.4,
+      "bit_depth": 10,
+      "megapixels": 2.7,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-high-speed-streaming-camera/",
+      "modes": [
+        {"res_width": 1920, "res_height": 1440, "max_fps": 15140, "mode_type": "standard", "note": "Max res"},
+        {"res_width": 1920, "res_height": 1080, "max_fps": 20040, "mode_type": "standard", "note": "Full HD"},
+        {"res_width": 1920, "res_height": 720,  "max_fps": 29610, "mode_type": "standard", "note": "HD Wide"},
+        {"res_width": 1920, "res_height": 512,  "max_fps": 40610, "mode_type": "standard", "note": "1MP reduced"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix",
+      "model": "Phoenix UHD",
+      "sensor_size": "20x15mm",
+      "crop_factor": null,
+      "pixel_size_um": 5.2,
+      "bit_depth": 10,
+      "megapixels": 11,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-high-speed-streaming-camera/",
+      "modes": [
+        {"res_width": 3840, "res_height": 2880, "max_fps": 3788,  "mode_type": "standard", "note": "Max res"},
+        {"res_width": 3840, "res_height": 2160, "max_fps": 5044,  "mode_type": "standard", "note": "UHD"},
+        {"res_width": 2560, "res_height": 1440, "max_fps": 7550,  "mode_type": "standard", "note": "1440p"},
+        {"res_width": 1920, "res_height": 1080, "max_fps": 10043, "mode_type": "standard", "note": "HD"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix CR",
+      "model": "Phoenix CR HD",
+      "sensor_size": "20x15mm",
+      "crop_factor": null,
+      "pixel_size_um": 10.4,
+      "bit_depth": 10,
+      "megapixels": 2.0,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-cr/",
+      "notes": "Compact rugged form factor. RTIV Speed Booster unlocks >16,000 fps.",
+      "modes": [
+        {"res_width": 1920, "res_height": 1080, "max_fps": 13000, "mode_type": "standard", "note": "Max res"},
+        {"res_width": 1920, "res_height": 1080, "max_fps": 16000, "mode_type": "speed_booster", "note": "With RTIV Speed Booster"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Phoenix CR",
+      "model": "Phoenix CR UHD",
+      "sensor_size": "20x15mm",
+      "crop_factor": null,
+      "pixel_size_um": 5.2,
+      "bit_depth": 10,
+      "megapixels": 8.0,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/phoenix-cr/",
+      "notes": "Compact rugged form factor. RTIV Speed Booster unlocks >4,000 fps.",
+      "modes": [
+        {"res_width": 3840, "res_height": 2160, "max_fps": 3260, "mode_type": "standard", "note": "Max res"},
+        {"res_width": 3840, "res_height": 2160, "max_fps": 4000, "mode_type": "speed_booster", "note": "With RTIV Speed Booster"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "XSM",
+      "model": "XSM 1540",
+      "sensor_size": "16.7x11.9mm",
+      "crop_factor": null,
+      "pixel_size_um": 11.6,
+      "bit_depth": 10,
+      "megapixels": 1.5,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "modes": [
+        {"res_width": 1440, "res_height": 1024, "max_fps": 4700, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "XSM",
+      "model": "XSM HD",
+      "sensor_size": "17.5x9.8mm",
+      "crop_factor": null,
+      "pixel_size_um": 9.1,
+      "bit_depth": 10,
+      "megapixels": 2.0,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "modes": [
+        {"res_width": 1920, "res_height": 1080, "max_fps": 5350, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "XSM",
+      "model": "XSM 3520",
+      "sensor_size": "19.2x10.8mm",
+      "crop_factor": null,
+      "pixel_size_um": 7.5,
+      "bit_depth": 10,
+      "megapixels": 3.7,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "modes": [
+        {"res_width": 2560, "res_height": 1440, "max_fps": 2350, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "XSM",
+      "model": "XSM 4K Veloce",
+      "sensor_size": "12.8x7.2mm",
+      "crop_factor": null,
+      "pixel_size_um": 3.33,
+      "bit_depth": 10,
+      "megapixels": 8.8,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "modes": [
+        {"res_width": 3840, "res_height": 2160, "max_fps": 1000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "XSM",
+      "model": "XSM 5K",
+      "sensor_size": "18.34x13.76mm",
+      "crop_factor": null,
+      "pixel_size_um": 3.58,
+      "bit_depth": 10,
+      "megapixels": 12,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/xstream-high-speed-mini-remote-camera/",
+      "modes": [
+        {"res_width": 5120, "res_height": 2880, "max_fps": 400, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 1520",
+      "sensor_size": "16.7x11.9mm",
+      "crop_factor": null,
+      "pixel_size_um": 11.6,
+      "bit_depth": 12,
+      "megapixels": 1.5,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "modes": [
+        {"res_width": 1440, "res_height": 1024, "max_fps": 2000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 1550",
+      "sensor_size": "16.7x11.9mm",
+      "crop_factor": null,
+      "pixel_size_um": 11.6,
+      "bit_depth": 12,
+      "megapixels": 1.5,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "modes": [
+        {"res_width": 1440, "res_height": 1024, "max_fps": 4850, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 1970",
+      "sensor_size": "13.9x10.4mm",
+      "crop_factor": null,
+      "pixel_size_um": 8.68,
+      "bit_depth": null,
+      "megapixels": 1.9,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "notes": "Color only — no mono option.",
+      "modes": [
+        {"res_width": 1600, "res_height": 1200, "max_fps": 6500, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM HD",
+      "sensor_size": "19.2x10.8mm",
+      "crop_factor": null,
+      "pixel_size_um": 7.5,
+      "bit_depth": 12,
+      "megapixels": 3.7,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "modes": [
+        {"res_width": 1920, "res_height": 1280, "max_fps": 4850, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 3510",
+      "sensor_size": null,
+      "crop_factor": null,
+      "pixel_size_um": null,
+      "bit_depth": null,
+      "megapixels": null,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "notes": "Sensor specs not published on product page.",
+      "modes": [
+        {"res_width": 2560, "res_height": 1440, "max_fps": 1000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 3530",
+      "sensor_size": null,
+      "crop_factor": null,
+      "pixel_size_um": null,
+      "bit_depth": null,
+      "megapixels": null,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "notes": "Sensor specs not published on product page.",
+      "modes": [
+        {"res_width": 2560, "res_height": 1440, "max_fps": 3000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "CCM",
+      "model": "CCM 4K Veloce",
+      "sensor_size": null,
+      "crop_factor": null,
+      "pixel_size_um": null,
+      "bit_depth": null,
+      "megapixels": null,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/crash-cam-mini-high-speed-imaging-crash-camera/",
+      "notes": "Sensor specs not published on product page.",
+      "modes": [
+        {"res_width": 3840, "res_height": 2160, "max_fps": 1000, "mode_type": "standard", "note": "Max res"}
+      ]
+    },
+
+    {
+      "brand": "IDT",
+      "series": "Helios",
+      "model": "Helios 8K",
+      "sensor_size": "20.48x20.48mm",
+      "crop_factor": null,
+      "pixel_size_um": 2.5,
+      "bit_depth": 12,
+      "megapixels": 67,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://idtcameras.com/helios/",
+      "modes": [
+        {"res_width": 8192, "res_height": 8192, "max_fps": 90,  "mode_type": "standard", "note": "8K²"},
+        {"res_width": 8192, "res_height": 6000, "max_fps": 120, "mode_type": "standard", "note": "8K×6K"},
+        {"res_width": 8192, "res_height": 4096, "max_fps": 180, "mode_type": "standard", "note": "8K×4K"},
+        {"res_width": 8192, "res_height": 3000, "max_fps": 240, "mode_type": "standard", "note": "8K×3K"}
+      ]
+    }
+
+  ]
+}
