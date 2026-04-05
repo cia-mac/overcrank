@@ -4,20 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Overcrank — High-Speed Camera Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0d0d;
-    --surface: #161616;
-    --border: #2a2a2a;
-    --accent: #e8ff00;
-    --accent-dim: #b8cc00;
-    --text: #e8e8e8;
-    --text-dim: #888;
-    --text-muted: #555;
-    --green: #39ff14;
-    --orange: #ff8c00;
-    --red: #ff3333;
-    --radius: 6px;
+    --bg:           #0d0d0d;
+    --surface:      #141414;
+    --surface-2:    #1a1a1a;
+    --surface-3:    #222222;
+    --border:       #272727;
+    --border-focus: #3a3a3a;
+    --accent:       #e8ff00;
+    --accent-dim:   #b8cc00;
+    --accent-glow:  rgba(232,255,0,0.08);
+    --text:         #f0f0f0;
+    --text-dim:     #909090;
+    --text-muted:   #4a4a4a;
+    --green:        #22c55e;
+    --green-bg:     rgba(34,197,94,0.1);
+    --green-border: rgba(34,197,94,0.25);
+    --orange:       #f97316;
+    --orange-bg:    rgba(249,115,22,0.1);
+    --orange-border:rgba(249,115,22,0.25);
+    --radius-sm:    6px;
+    --radius:       10px;
+    --radius-lg:    14px;
+    --mono:         'SF Mono', 'Fira Code', 'Consolas', monospace;
+    --sans:         'Inter', system-ui, -apple-system, sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,351 +39,211 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 18px;
-    line-height: 1.5;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
+  /* ── Header ── */
   header {
-    padding: 32px 40px 24px;
+    padding: 28px 48px 24px;
     border-bottom: 1px solid var(--border);
     display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo {
+    display: flex;
     align-items: baseline;
-    gap: 16px;
+    gap: 14px;
   }
 
   header h1 {
-    font-size: 28px;
+    font-family: var(--sans);
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+
+  header h1 span {
     color: var(--accent);
   }
 
-  header span {
-    color: var(--text-dim);
-    font-size: 17px;
+  header .tagline {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding-left: 18px;
+    border-left: 1px solid var(--border);
   }
 
-  .search-bar {
-    padding: 24px 40px;
+  /* ── Search panel ── */
+  .search-panel {
+    padding: 32px 48px 28px;
     border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .search-panel-inner {
+    max-width: 900px;
+  }
+
+  .search-row {
     display: flex;
     align-items: flex-end;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
   .field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
   .field label {
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
 
   .field input {
-    background: var(--surface);
+    background: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
     color: var(--text);
-    font-family: inherit;
-    font-size: 22px;
-    padding: 11px 16px;
-    width: 160px;
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 16px;
+    width: 148px;
     outline: none;
-    transition: border-color 0.15s;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
   }
 
   .field input:focus {
-    border-color: var(--accent);
+    border-color: var(--border-focus);
+    background: var(--surface-3);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
   }
 
   .field input::placeholder {
     color: var(--text-muted);
+    font-family: var(--mono);
   }
 
-  .sep {
-    font-size: 26px;
+  .input-sep {
+    font-family: var(--mono);
+    font-size: 24px;
     color: var(--text-muted);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    user-select: none;
   }
 
-  .at {
-    font-size: 26px;
-    color: var(--text-muted);
-    padding-bottom: 10px;
+  .search-actions {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    padding-bottom: 0;
   }
 
   button#search {
     background: var(--accent);
     color: #000;
     border: none;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: 18px;
+    border-radius: var(--radius-sm);
+    font-family: var(--sans);
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 13px 28px;
+    letter-spacing: 0.02em;
+    padding: 13px 26px;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.1s;
+    height: 48px;
   }
 
   button#search:hover {
     background: var(--accent-dim);
   }
 
+  button#search:active {
+    transform: scale(0.98);
+  }
+
   button#clear {
     background: transparent;
     color: var(--text-dim);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: 17px;
-    padding: 13px 22px;
+    border-radius: var(--radius-sm);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px 20px;
     cursor: pointer;
     transition: border-color 0.15s, color 0.15s;
+    height: 48px;
   }
 
   button#clear:hover {
-    border-color: var(--text-dim);
+    border-color: var(--border-focus);
     color: var(--text);
   }
 
-  .results-header {
-    padding: 16px 40px;
-    color: var(--text-dim);
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid var(--border);
+  /* ── Presets ── */
+  .presets-row {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
-  .results-header .count {
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  .results-header .sort-label {
-    margin-left: auto;
-  }
-
-  .sort-btn {
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text-dim);
-    font-family: inherit;
-    font-size: 15px;
-    padding: 4px 12px;
-    cursor: pointer;
-    margin-left: 8px;
-    transition: all 0.15s;
-  }
-
-  .sort-btn.active {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .sort-btn:hover:not(.active) {
-    border-color: var(--text-dim);
-    color: var(--text);
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  thead tr {
-    border-bottom: 1px solid var(--border);
-  }
-
-  thead th {
-    padding: 10px 40px 10px 0;
-    text-align: left;
-    font-size: 14px;
-    letter-spacing: 1px;
+  .presets-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-muted);
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+  .preset-btn {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.15s;
     white-space: nowrap;
   }
 
-  thead th:first-child {
-    padding-left: 40px;
-  }
-
-  tbody tr {
-    border-bottom: 1px solid var(--border);
-    transition: background 0.1s;
-  }
-
-  tbody tr:hover {
-    background: var(--surface);
-  }
-
-  tbody td {
-    padding: 12px 40px 12px 0;
-    vertical-align: top;
-  }
-
-  tbody td:first-child {
-    padding-left: 40px;
-  }
-
-  .brand {
-    color: var(--text-dim);
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  .model {
+  .preset-btn:hover {
+    border-color: var(--border-focus);
     color: var(--text);
-    font-weight: 600;
-    font-size: 20px;
-    margin-top: 2px;
+    background: var(--surface-3);
   }
 
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  .badge-unverified {
-    background: rgba(255,140,0,0.15);
-    color: var(--orange);
-    border: 1px solid rgba(255,140,0,0.3);
-  }
-
-  .badge-verified {
-    background: rgba(57,255,20,0.1);
-    color: var(--green);
-    border: 1px solid rgba(57,255,20,0.25);
-  }
-
-  .fps-value {
-    font-size: 25px;
-    font-weight: 700;
+  .preset-btn.active {
+    background: var(--accent-glow);
+    border-color: rgba(232,255,0,0.4);
     color: var(--accent);
-    letter-spacing: -0.5px;
   }
 
-  .fps-unit {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-left: 2px;
-  }
-
-  .res-value {
-    font-size: 18px;
-    color: var(--text);
-  }
-
-  .res-note {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-top: 1px;
-  }
-
-  .sensor-value {
-    color: var(--text);
-  }
-
-  .sensor-na {
-    color: var(--text-muted);
-  }
-
-  .modes-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .mode-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.03);
-  }
-
-  .mode-row.match {
-    background: rgba(232,255,0,0.06);
-    border: 1px solid rgba(232,255,0,0.15);
-  }
-
-  .mode-res {
-    width: 150px;
-    color: var(--text);
-    font-size: 17px;
-  }
-
-  .mode-fps {
-    width: 110px;
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 17px;
-  }
-
-  .mode-note {
-    color: var(--text-muted);
-    font-size: 15px;
-    flex: 1;
-  }
-
-  .empty {
-    padding: 60px 40px;
-    color: var(--text-muted);
-    text-align: center;
-  }
-
-  .empty h2 {
-    font-size: 22px;
-    margin-bottom: 8px;
-    color: var(--text-dim);
-  }
-
-  .intro {
-    padding: 40px 40px 0;
-    max-width: 700px;
-    color: var(--text-dim);
-    font-size: 17px;
-    line-height: 1.8;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-
-  .intro p + p {
-    margin-top: 10px;
-  }
-
-  .db-stats {
-    padding: 16px 40px 0;
-    color: var(--text-muted);
-    font-size: 15px;
-  }
-
-  .db-stats span {
-    color: var(--text-dim);
-  }
-
-  .presets {
-    padding: 16px 40px 20px;
+  /* ── Results header / toolbar ── */
+  .results-toolbar {
+    padding: 16px 48px;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -377,51 +251,327 @@
     flex-wrap: wrap;
   }
 
-  .presets-label {
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-right: 4px;
+  .results-count {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
   }
 
-  .preset-btn {
+  .results-desc {
+    font-size: 15px;
+    color: var(--text-dim);
+  }
+
+  .sort-group {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sort-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .sort-btn {
     background: transparent;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     color: var(--text-dim);
-    font-family: inherit;
-    font-size: 15px;
-    padding: 5px 14px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
     cursor: pointer;
     transition: all 0.15s;
+  }
+
+  .sort-btn.active {
+    border-color: rgba(232,255,0,0.4);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .sort-btn:hover:not(.active) {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+
+  /* ── Card grid ── */
+  .cards-grid {
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  .camera-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    transition: border-color 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .camera-card:hover {
+    border-color: var(--border-focus);
+    background: var(--surface-2);
+  }
+
+  /* Card header */
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .card-identity {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card-brand {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .card-model {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .preset-btn:hover {
-    border-color: var(--accent);
+  .card-status {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  /* Verified badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .badge-verified {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-border);
+  }
+
+  .badge-unverified {
+    background: var(--orange-bg);
+    color: var(--orange);
+    border: 1px solid var(--orange-border);
+  }
+
+  /* Card meta row */
+  .card-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .meta-value {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  /* Mode chips */
+  .card-modes-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .modes-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .mode-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    transition: background 0.1s, border-color 0.1s;
+  }
+
+  .mode-chip.match {
+    background: rgba(232,255,0,0.05);
+    border-color: rgba(232,255,0,0.14);
+  }
+
+  .chip-res {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text-dim);
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .chip-fps {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
     color: var(--accent);
+    letter-spacing: -0.5px;
+    width: 110px;
+    flex-shrink: 0;
   }
 
-  .preset-btn.active {
-    background: rgba(232,255,0,0.08);
-    border-color: var(--accent);
-    color: var(--accent);
+  .chip-fps-unit {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 2px;
+    letter-spacing: 0;
   }
 
+  .chip-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .more-modes {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 4px 12px;
+    font-style: italic;
+  }
+
+  /* ── Intro block ── */
+  .intro-block {
+    padding: 48px 48px 0;
+    max-width: 680px;
+  }
+
+  .intro-block p {
+    font-size: 16px;
+    color: var(--text-dim);
+    line-height: 1.75;
+  }
+
+  .intro-block p + p {
+    margin-top: 10px;
+  }
+
+  .db-stats {
+    padding: 20px 48px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .db-stats .stat {
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+
+  .db-stats .dot {
+    color: var(--text-muted);
+  }
+
+  /* ── Empty state ── */
+  .empty {
+    padding: 80px 48px;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .empty h2 {
+    font-size: 20px;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .empty p {
+    font-size: 15px;
+  }
+
+  /* ── Responsive ── */
   @media (max-width: 800px) {
-    header, .search-bar, .results-header, thead th:first-child, tbody td:first-child {
+    header,
+    .search-panel,
+    .results-toolbar,
+    .cards-grid,
+    .intro-block,
+    .db-stats {
       padding-left: 20px;
-    }
-    thead th, tbody td {
       padding-right: 20px;
     }
-    .intro, .db-stats {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+
     .field input {
-      width: 90px;
+      width: 110px;
+      font-size: 18px;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+      padding-top: 20px;
+    }
+
+    header .tagline {
+      display: none;
+    }
+
+    .sort-group {
+      margin-left: 0;
+      width: 100%;
     }
   }
 </style>
@@ -429,43 +579,51 @@
 <body>
 
 <header>
-  <h1>OVERCRANK</h1>
-  <span>high-speed camera finder</span>
+  <div class="logo">
+    <h1>OVER<span>CRANK</span></h1>
+    <span class="tagline">high-speed camera finder</span>
+  </div>
 </header>
 
-<div class="search-bar">
-  <div class="field">
-    <label>Min Width (px)</label>
-    <input type="number" id="inp-w" placeholder="1920" min="1">
-  </div>
-  <div class="sep">×</div>
-  <div class="field">
-    <label>Min Height (px)</label>
-    <input type="number" id="inp-h" placeholder="1080" min="1">
-  </div>
-  <div class="at">@</div>
-  <div class="field">
-    <label>Min FPS</label>
-    <input type="number" id="inp-fps" placeholder="1000" min="1">
-  </div>
-  <button id="search">Search</button>
-  <button id="clear">Clear</button>
-</div>
+<div class="search-panel">
+  <div class="search-panel-inner">
+    <div class="search-row">
+      <div class="field">
+        <label>Min Width (px)</label>
+        <input type="number" id="inp-w" placeholder="1920" min="1">
+      </div>
+      <div class="input-sep">×</div>
+      <div class="field">
+        <label>Min Height (px)</label>
+        <input type="number" id="inp-h" placeholder="1080" min="1">
+      </div>
+      <div class="input-sep">@</div>
+      <div class="field">
+        <label>Min FPS</label>
+        <input type="number" id="inp-fps" placeholder="1000" min="1">
+      </div>
+      <div class="search-actions">
+        <button id="search">Search</button>
+        <button id="clear">Clear</button>
+      </div>
+    </div>
 
-<div class="presets">
-  <span class="presets-label">Presets</span>
-  <button class="preset-btn" data-w="7680" data-h="4320">8K</button>
-  <button class="preset-btn" data-w="4096" data-h="2160">4K DCI</button>
-  <button class="preset-btn" data-w="3840" data-h="2160">4K UHD</button>
-  <button class="preset-btn" data-w="2048" data-h="1080">2K DCI</button>
-  <button class="preset-btn" data-w="1920" data-h="1080">1080p</button>
-  <button class="preset-btn" data-w="1280" data-h="720">720p</button>
-  <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
-  <button class="preset-btn" data-w="640" data-h="480">VGA</button>
+    <div class="presets-row">
+      <span class="presets-label">Presets</span>
+      <button class="preset-btn" data-w="7680" data-h="4320">8K</button>
+      <button class="preset-btn" data-w="4096" data-h="2160">4K DCI</button>
+      <button class="preset-btn" data-w="3840" data-h="2160">4K UHD</button>
+      <button class="preset-btn" data-w="2048" data-h="1080">2K DCI</button>
+      <button class="preset-btn" data-w="1920" data-h="1080">1080p</button>
+      <button class="preset-btn" data-w="1280" data-h="720">720p</button>
+      <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
+      <button class="preset-btn" data-w="640" data-h="480">VGA</button>
+    </div>
+  </div>
 </div>
 
 <div id="intro-block">
-  <div class="intro">
+  <div class="intro-block">
     <p>Enter your minimum resolution and frame rate requirements. Results show every camera and mode that meets or exceeds those specs, sorted by max FPS at the matched resolution.</p>
     <p>Leave fields empty to browse all cameras.</p>
   </div>
@@ -482,8 +640,13 @@ let lastResults = [];
 async function loadDB() {
   const r = await fetch('data/overcrank_db_v4.json');
   DB = await r.json();
-  document.getElementById('db-stats').innerHTML =
-    `<span>${DB.camera_count} cameras</span> · <span>${DB.total_modes} modes</span> · <span>${DB.manufacturers_included.join(', ')}</span>`;
+  const statsEl = document.getElementById('db-stats');
+  statsEl.innerHTML =
+    `<span class="stat">${DB.camera_count} cameras</span>` +
+    `<span class="dot">·</span>` +
+    `<span class="stat">${DB.total_modes} modes</span>` +
+    `<span class="dot">·</span>` +
+    `<span style="color:var(--text-muted);font-size:13px;">${DB.manufacturers_included.join(', ')}</span>`;
 }
 
 function parseInput() {
@@ -541,76 +704,90 @@ function render(matches, w, h, fps, noFilter) {
   }
 
   const filterDesc = noFilter ? 'all cameras' :
-    `cameras shooting ${w > 0 ? w+'px' : ''}${(w > 0 && h > 0) ? ' × ' : ''}${h > 0 ? h+'px' : ''} at ${fps > 0 ? fps.toLocaleString()+' fps' : 'any fps'} minimum`;
+    `cameras shooting ${w > 0 ? w+'px' : ''}${(w > 0 && h > 0) ? ' &times; ' : ''}${h > 0 ? h+'px' : ''} at ${fps > 0 ? fps.toLocaleString()+' fps' : 'any fps'} minimum`;
 
   let html = `
-    <div class="results-header">
-      <span class="count">${matches.length}</span>&nbsp;${filterDesc}
-      <span class="sort-label">Sort by</span>
-      <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
-      <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
+    <div class="results-toolbar">
+      <span class="results-count">${matches.length}</span>
+      <span class="results-desc">${filterDesc}</span>
+      <div class="sort-group">
+        <span class="sort-label">Sort</span>
+        <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
+        <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
+      </div>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Camera</th>
-          <th>Matching Modes</th>
-          <th>Sensor</th>
-          <th>Bit Depth</th>
-          <th>Price Tier</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="cards-grid">
   `;
 
   for (const { cam, matchingModes, bestFps } of matches) {
     const isUnverified = cam.data_quality === 'gemini_unverified';
     const badgeHtml = isUnverified
-      ? `<span class="badge badge-unverified">unverified</span>`
-      : `<span class="badge badge-verified">verified</span>`;
+      ? `<span class="badge badge-unverified">Unverified</span>`
+      : `<span class="badge badge-verified">Verified</span>`;
 
-    const sensorHtml = cam.sensor_size
-      ? `<span class="sensor-value">${cam.sensor_size}</span>`
-      : `<span class="sensor-na">—</span>`;
-
-    const bitHtml = cam.bit_depth ? `${cam.bit_depth}-bit` : `<span class="sensor-na">—</span>`;
+    const sensorVal = cam.sensor_size || '—';
+    const bitVal = cam.bit_depth ? `${cam.bit_depth}-bit` : '—';
+    const priceVal = cam.price_tier || '—';
 
     const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
 
-    const modesHtml = sortedModes.slice(0, 6).map(m => {
+    const chipsHtml = sortedModes.slice(0, 6).map(m => {
       const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noFilter;
-      return `<div class="mode-row ${isMatch ? 'match' : ''}">
-        <span class="mode-res">${m.res_width} × ${m.res_height}</span>
-        <span class="mode-fps">${m.max_fps.toLocaleString()} fps</span>
-        ${m.note && m.note !== `${m.res_width}x${m.res_height}` ? `<span class="mode-note">${m.note}</span>` : ''}
+      const noteHtml = m.note && m.note !== `${m.res_width}x${m.res_height}`
+        ? `<span class="chip-note">${m.note}</span>`
+        : '';
+      return `<div class="mode-chip ${isMatch ? 'match' : ''}">
+        <span class="chip-res">${m.res_width} &times; ${m.res_height}</span>
+        <span class="chip-fps">${m.max_fps.toLocaleString()}<span class="chip-fps-unit">fps</span></span>
+        ${noteHtml}
       </div>`;
     }).join('');
 
     const moreCount = sortedModes.length - 6;
     const moreHtml = moreCount > 0
-      ? `<div style="color:var(--text-muted);font-size:11px;padding:2px 8px;">+${moreCount} more modes</div>`
+      ? `<div class="more-modes">+${moreCount} more modes</div>`
+      : '';
+
+    const statusHtml = cam.status !== 'Current'
+      ? `<div class="card-status">${cam.status}</div>`
       : '';
 
     html += `
-      <tr>
-        <td>
-          <div class="brand">${cam.brand}</div>
-          <div class="model">${cam.model} ${badgeHtml}</div>
-          ${cam.status !== 'Current' ? `<div style="color:var(--text-muted);font-size:11px;margin-top:2px;">${cam.status}</div>` : ''}
-        </td>
-        <td>
-          <div class="modes-list">${modesHtml}${moreHtml}</div>
-        </td>
-        <td>${sensorHtml}</td>
-        <td>${bitHtml}</td>
-        <td>
-          <span style="color:var(--text-dim)">${cam.price_tier || '—'}</span>
-        </td>
-      </tr>
+      <div class="camera-card">
+        <div class="card-header">
+          <div class="card-identity">
+            <div class="card-brand">${cam.brand}</div>
+            <div class="card-model">${cam.model}</div>
+            ${statusHtml}
+          </div>
+          ${badgeHtml}
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">
+            <span class="meta-label">Sensor</span>
+            <span class="meta-value">${sensorVal}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Bit Depth</span>
+            <span class="meta-value">${bitVal}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Tier</span>
+            <span class="meta-value">${priceVal}</span>
+          </div>
+        </div>
+        <div>
+          <div class="card-modes-label">Matching Modes</div>
+          <div class="modes-chips">
+            ${chipsHtml}
+            ${moreHtml}
+          </div>
+        </div>
+      </div>
     `;
   }
 
-  html += `</tbody></table>`;
+  html += `</div>`;
   el.innerHTML = html;
 }
 

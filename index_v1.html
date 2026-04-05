@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overcrank — High-Speed Camera Finder</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --accent: #e8ff00;
+    --accent-dim: #b8cc00;
+    --text: #e8e8e8;
+    --text-dim: #888;
+    --text-muted: #555;
+    --green: #39ff14;
+    --orange: #ff8c00;
+    --red: #ff3333;
+    --radius: 6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 18px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 32px 40px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+  }
+
+  header span {
+    color: var(--text-dim);
+    font-size: 17px;
+  }
+
+  .search-bar {
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field label {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .field input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 22px;
+    padding: 11px 16px;
+    width: 160px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .field input:focus {
+    border-color: var(--accent);
+  }
+
+  .field input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .sep {
+    font-size: 26px;
+    color: var(--text-muted);
+    padding-bottom: 10px;
+  }
+
+  .at {
+    font-size: 26px;
+    color: var(--text-muted);
+    padding-bottom: 10px;
+  }
+
+  button#search {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 13px 28px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  button#search:hover {
+    background: var(--accent-dim);
+  }
+
+  button#clear {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 17px;
+    padding: 13px 22px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  button#clear:hover {
+    border-color: var(--text-dim);
+    color: var(--text);
+  }
+
+  .results-header {
+    padding: 16px 40px;
+    color: var(--text-dim);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .results-header .count {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .results-header .sort-label {
+    margin-left: auto;
+  }
+
+  .sort-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 15px;
+    padding: 4px 12px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: all 0.15s;
+  }
+
+  .sort-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .sort-btn:hover:not(.active) {
+    border-color: var(--text-dim);
+    color: var(--text);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  thead th {
+    padding: 10px 40px 10px 0;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  thead th:first-child {
+    padding-left: 40px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  tbody tr:hover {
+    background: var(--surface);
+  }
+
+  tbody td {
+    padding: 12px 40px 12px 0;
+    vertical-align: top;
+  }
+
+  tbody td:first-child {
+    padding-left: 40px;
+  }
+
+  .brand {
+    color: var(--text-dim);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .model {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 2px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .badge-unverified {
+    background: rgba(255,140,0,0.15);
+    color: var(--orange);
+    border: 1px solid rgba(255,140,0,0.3);
+  }
+
+  .badge-verified {
+    background: rgba(57,255,20,0.1);
+    color: var(--green);
+    border: 1px solid rgba(57,255,20,0.25);
+  }
+
+  .fps-value {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .fps-unit {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-left: 2px;
+  }
+
+  .res-value {
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .res-note {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  .sensor-value {
+    color: var(--text);
+  }
+
+  .sensor-na {
+    color: var(--text-muted);
+  }
+
+  .modes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mode-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .mode-row.match {
+    background: rgba(232,255,0,0.06);
+    border: 1px solid rgba(232,255,0,0.15);
+  }
+
+  .mode-res {
+    width: 150px;
+    color: var(--text);
+    font-size: 17px;
+  }
+
+  .mode-fps {
+    width: 110px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .mode-note {
+    color: var(--text-muted);
+    font-size: 15px;
+    flex: 1;
+  }
+
+  .empty {
+    padding: 60px 40px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .empty h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--text-dim);
+  }
+
+  .intro {
+    padding: 40px 40px 0;
+    max-width: 700px;
+    color: var(--text-dim);
+    font-size: 17px;
+    line-height: 1.8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .intro p + p {
+    margin-top: 10px;
+  }
+
+  .db-stats {
+    padding: 16px 40px 0;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  .db-stats span {
+    color: var(--text-dim);
+  }
+
+  .presets {
+    padding: 16px 40px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .presets-label {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  .preset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 15px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .preset-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .preset-btn.active {
+    background: rgba(232,255,0,0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 800px) {
+    header, .search-bar, .results-header, thead th:first-child, tbody td:first-child {
+      padding-left: 20px;
+    }
+    thead th, tbody td {
+      padding-right: 20px;
+    }
+    .intro, .db-stats {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .field input {
+      width: 90px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>OVERCRANK</h1>
+  <span>high-speed camera finder</span>
+</header>
+
+<div class="search-bar">
+  <div class="field">
+    <label>Min Width (px)</label>
+    <input type="number" id="inp-w" placeholder="1920" min="1">
+  </div>
+  <div class="sep">×</div>
+  <div class="field">
+    <label>Min Height (px)</label>
+    <input type="number" id="inp-h" placeholder="1080" min="1">
+  </div>
+  <div class="at">@</div>
+  <div class="field">
+    <label>Min FPS</label>
+    <input type="number" id="inp-fps" placeholder="1000" min="1">
+  </div>
+  <button id="search">Search</button>
+  <button id="clear">Clear</button>
+</div>
+
+<div class="presets">
+  <span class="presets-label">Presets</span>
+  <button class="preset-btn" data-w="7680" data-h="4320">8K</button>
+  <button class="preset-btn" data-w="4096" data-h="2160">4K DCI</button>
+  <button class="preset-btn" data-w="3840" data-h="2160">4K UHD</button>
+  <button class="preset-btn" data-w="2048" data-h="1080">2K DCI</button>
+  <button class="preset-btn" data-w="1920" data-h="1080">1080p</button>
+  <button class="preset-btn" data-w="1280" data-h="720">720p</button>
+  <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
+  <button class="preset-btn" data-w="640" data-h="480">VGA</button>
+</div>
+
+<div id="intro-block">
+  <div class="intro">
+    <p>Enter your minimum resolution and frame rate requirements. Results show every camera and mode that meets or exceeds those specs, sorted by max FPS at the matched resolution.</p>
+    <p>Leave fields empty to browse all cameras.</p>
+  </div>
+  <div class="db-stats" id="db-stats"></div>
+</div>
+
+<div id="results"></div>
+
+<script>
+let DB = null;
+let currentSort = 'fps'; // 'fps' | 'brand'
+let lastResults = [];
+
+async function loadDB() {
+  const r = await fetch('data/overcrank_db_v4.json');
+  DB = await r.json();
+  document.getElementById('db-stats').innerHTML =
+    `<span>${DB.camera_count} cameras</span> · <span>${DB.total_modes} modes</span> · <span>${DB.manufacturers_included.join(', ')}</span>`;
+}
+
+function parseInput() {
+  const w = parseInt(document.getElementById('inp-w').value) || 0;
+  const h = parseInt(document.getElementById('inp-h').value) || 0;
+  const fps = parseInt(document.getElementById('inp-fps').value) || 0;
+  return { w, h, fps };
+}
+
+function search() {
+  if (!DB) return;
+  const { w, h, fps } = parseInput();
+  const noFilter = w === 0 && h === 0 && fps === 0;
+
+  document.getElementById('intro-block').style.display = 'none';
+
+  const matches = [];
+
+  for (const cam of DB.cameras) {
+    const matchingModes = cam.modes.filter(m =>
+      m.res_width >= (w || 0) &&
+      m.res_height >= (h || 0) &&
+      m.max_fps >= (fps || 0)
+    );
+
+    if (noFilter || matchingModes.length > 0) {
+      const bestFps = noFilter
+        ? Math.max(...cam.modes.map(m => m.max_fps))
+        : Math.max(...matchingModes.map(m => m.max_fps));
+
+      matches.push({ cam, matchingModes: noFilter ? cam.modes : matchingModes, bestFps });
+    }
+  }
+
+  if (currentSort === 'fps') {
+    matches.sort((a, b) => b.bestFps - a.bestFps);
+  } else {
+    matches.sort((a, b) => {
+      if (a.cam.brand < b.cam.brand) return -1;
+      if (a.cam.brand > b.cam.brand) return 1;
+      return a.cam.model.localeCompare(b.cam.model);
+    });
+  }
+
+  lastResults = matches;
+  render(matches, w, h, fps, noFilter);
+}
+
+function render(matches, w, h, fps, noFilter) {
+  const el = document.getElementById('results');
+
+  if (matches.length === 0) {
+    el.innerHTML = `<div class="empty"><h2>No cameras found</h2><p>Try lowering your resolution or FPS requirements.</p></div>`;
+    return;
+  }
+
+  const filterDesc = noFilter ? 'all cameras' :
+    `cameras shooting ${w > 0 ? w+'px' : ''}${(w > 0 && h > 0) ? ' × ' : ''}${h > 0 ? h+'px' : ''} at ${fps > 0 ? fps.toLocaleString()+' fps' : 'any fps'} minimum`;
+
+  let html = `
+    <div class="results-header">
+      <span class="count">${matches.length}</span>&nbsp;${filterDesc}
+      <span class="sort-label">Sort by</span>
+      <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
+      <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Camera</th>
+          <th>Matching Modes</th>
+          <th>Sensor</th>
+          <th>Bit Depth</th>
+          <th>Price Tier</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  for (const { cam, matchingModes, bestFps } of matches) {
+    const isUnverified = cam.data_quality === 'gemini_unverified';
+    const badgeHtml = isUnverified
+      ? `<span class="badge badge-unverified">unverified</span>`
+      : `<span class="badge badge-verified">verified</span>`;
+
+    const sensorHtml = cam.sensor_size
+      ? `<span class="sensor-value">${cam.sensor_size}</span>`
+      : `<span class="sensor-na">—</span>`;
+
+    const bitHtml = cam.bit_depth ? `${cam.bit_depth}-bit` : `<span class="sensor-na">—</span>`;
+
+    const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
+
+    const modesHtml = sortedModes.slice(0, 6).map(m => {
+      const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noFilter;
+      return `<div class="mode-row ${isMatch ? 'match' : ''}">
+        <span class="mode-res">${m.res_width} × ${m.res_height}</span>
+        <span class="mode-fps">${m.max_fps.toLocaleString()} fps</span>
+        ${m.note && m.note !== `${m.res_width}x${m.res_height}` ? `<span class="mode-note">${m.note}</span>` : ''}
+      </div>`;
+    }).join('');
+
+    const moreCount = sortedModes.length - 6;
+    const moreHtml = moreCount > 0
+      ? `<div style="color:var(--text-muted);font-size:11px;padding:2px 8px;">+${moreCount} more modes</div>`
+      : '';
+
+    html += `
+      <tr>
+        <td>
+          <div class="brand">${cam.brand}</div>
+          <div class="model">${cam.model} ${badgeHtml}</div>
+          ${cam.status !== 'Current' ? `<div style="color:var(--text-muted);font-size:11px;margin-top:2px;">${cam.status}</div>` : ''}
+        </td>
+        <td>
+          <div class="modes-list">${modesHtml}${moreHtml}</div>
+        </td>
+        <td>${sensorHtml}</td>
+        <td>${bitHtml}</td>
+        <td>
+          <span style="color:var(--text-dim)">${cam.price_tier || '—'}</span>
+        </td>
+      </tr>
+    `;
+  }
+
+  html += `</tbody></table>`;
+  el.innerHTML = html;
+}
+
+function setSort(s) {
+  currentSort = s;
+  if (lastResults.length > 0) {
+    const { w, h, fps } = parseInput();
+    const noFilter = w === 0 && h === 0 && fps === 0;
+    if (s === 'fps') {
+      lastResults.sort((a, b) => b.bestFps - a.bestFps);
+    } else {
+      lastResults.sort((a, b) => {
+        if (a.cam.brand < b.cam.brand) return -1;
+        if (a.cam.brand > b.cam.brand) return 1;
+        return a.cam.model.localeCompare(b.cam.model);
+      });
+    }
+    render(lastResults, w, h, fps, noFilter);
+  }
+}
+
+document.getElementById('search').addEventListener('click', search);
+document.getElementById('clear').addEventListener('click', () => {
+  document.getElementById('inp-w').value = '';
+  document.getElementById('inp-h').value = '';
+  document.getElementById('inp-fps').value = '';
+  document.getElementById('intro-block').style.display = '';
+  document.getElementById('results').innerHTML = '';
+  lastResults = [];
+});
+
+[document.getElementById('inp-w'), document.getElementById('inp-h'), document.getElementById('inp-fps')]
+  .forEach(el => el.addEventListener('keydown', e => { if (e.key === 'Enter') search(); }));
+
+// Preset buttons
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('inp-w').value = btn.dataset.w;
+    document.getElementById('inp-h').value = btn.dataset.h;
+    // Keep fps as-is, let user set it
+    search();
+  });
+});
+
+// Clear also deactivates presets
+document.getElementById('clear').addEventListener('click', () => {
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+}, true);
+
+// Typing in the inputs deactivates the active preset
+[document.getElementById('inp-w'), document.getElementById('inp-h')].forEach(el => {
+  el.addEventListener('input', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  });
+});
+
+loadDB();
+</script>
+</body>
+</html>
