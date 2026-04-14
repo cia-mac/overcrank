@@ -1,0 +1,47 @@
+{
+  "description": "Pending updates for overcrank_db_v5.json rebuild",
+  "created": "2026-04-13",
+  "field_updates": [
+    {"brand": "iX Cameras", "model": "i-SPEED 717", "set": {"sensor_size": "28.0x20.7mm", "bit_depth": 12, "crop_factor": 1.24}},
+    {"brand": "iX Cameras", "model": "i-SPEED 721", "set": {"sensor_size": "28.0x20.7mm", "bit_depth": 12, "crop_factor": 1.24}},
+    {"brand": "iX Cameras", "model": "i-SPEED 727", "set": {"sensor_size": "28.0x20.7mm", "bit_depth": 12, "crop_factor": 1.24}},
+    {"brand": "iX Cameras", "model": "i-SPEED 509", "set": {"sensor_size": "25.9x14.6mm", "bit_depth": 12, "crop_factor": 1.46}},
+    {"brand": "iX Cameras", "model": "i-SPEED 511", "set": {"sensor_size": "25.9x14.6mm", "bit_depth": 12, "crop_factor": 1.46}},
+    {"brand": "iX Cameras", "model": "i-SPEED 514", "set": {"sensor_size": "25.9x14.6mm", "bit_depth": 12, "crop_factor": 1.46}},
+    {"brand": "iX Cameras", "model": "i-SPEED 203", "set": {"sensor_size": "17.5x11.8mm", "bit_depth": 8, "crop_factor": 2.05}},
+    {"brand": "IDT", "model": "CCM 1970", "set": {"bit_depth": 12}},
+    {"brand": "IDT", "model": "CCM 3510", "set": {"sensor_size": "19.2x10.8mm", "bit_depth": 12}},
+    {"brand": "IDT", "model": "CCM 3530", "set": {"sensor_size": "19.2x10.8mm", "bit_depth": 12}},
+    {"brand": "IDT", "model": "CCM 4K Veloce", "set": {"sensor_size": "16.0x8.4mm", "bit_depth": 10}},
+    {"brand": "Kron Technologies", "model": "Chronos 4K12", "set": {"bit_depth": 12}},
+    {"brand": "Edgertronic", "model": "Edgertronic SC1", "set": {"bit_depth": 10}},
+    {"brand": "Edgertronic", "model": "Edgertronic SC1+", "set": {"bit_depth": 10}},
+    {"brand": "Edgertronic", "model": "Edgertronic SC1X", "set": {"bit_depth": 10}},
+    {"brand": "Edgertronic", "model": "Edgertronic SC2+", "set": {"bit_depth": 10}},
+    {"brand": "Edgertronic", "model": "Edgertronic SC2X", "set": {"bit_depth": 10}},
+    {"brand": "Phantom", "model": "Phantom VEO 1310", "set": {"sensor_size": "23.0x17.3mm"}},
+    {"brand": "Phantom", "model": "Phantom C980J", "set": {"sensor_size": "19.2x10.8mm", "bit_depth": 12}},
+    {"brand": "Phantom", "model": "Phantom C540J", "set": {"bit_depth": 12}}
+  ],
+  "mode_additions": [
+    {"brand": "IDT", "model": "Helios 8K", "add_modes": [
+      {"res_width": 8192, "res_height": 8192, "max_fps": 90, "mode_type": "standard", "note": "8K x 8K"},
+      {"res_width": 8192, "res_height": 4000, "max_fps": 180, "mode_type": "standard", "note": "8K x 4K"}
+    ]}
+  ],
+  "helios_8k_note": "verify.py false positive: both 8192x6000@120 and 8192x3000@240 ARE on the page. Extractor regex fails on K-shorthand format ('8K x 6K / 120 FPS'). Fix extractor, not data.",
+  "new_cameras": [
+    {"source": "data/verified/weisscam_v1.json", "action": "replace_existing_weisscam_and_add", "cameras": ["HS-2 MKII (corrected)", "HS-2 (new, discontinued)", "HS-1 (new, discontinued)"]}
+  ],
+  "data_quality_upgrades": [],
+  "notes": [
+    "iX sensor sizes calculated from pixel pitch (13.5um/13.7um) x resolution, confirmed from official datasheet PDFs",
+    "IDT CCM specs from idtcameras.com product page",
+    "Chronos 4K12 supports 8/10/12-bit; 12 is max",
+    "Shimadzu excluded from Phase 1 (burst capture only, not continuous video)",
+    "Phantom VEO 1310 full sensor is 1280x960 (23.0x17.3mm). DB has 1280x800 which may be cropped mode.",
+    "Phantom C980J/C540J specs from official C-Series datasheet (Rev 1, 03/2026)",
+    "IDT Helios 8K has 4 modes total: 8192x8192@90, 8192x6000@120, 8192x4000@180, 8192x3000@240"
+  ],
+  "pending_agents": ["Photron verification"]
+}
