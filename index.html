@@ -543,6 +543,87 @@
     font-size: 15px;
   }
 
+  /* ── Text search ── */
+  .text-search-row {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .text-search-row input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 16px;
+    width: 320px;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  }
+
+  .text-search-row input:focus {
+    border-color: var(--border-focus);
+    background: var(--surface-3);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+  }
+
+  .text-search-row input::placeholder {
+    color: var(--text-muted);
+  }
+
+  /* ── Manufacturer filter ── */
+  .mfr-filter-row {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mfr-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+  .mfr-chip {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .mfr-chip:hover {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+
+  .mfr-chip.active {
+    background: var(--accent-glow);
+    border-color: rgba(232,255,0,0.4);
+    color: var(--accent);
+  }
+
+  .mfr-chip.all-chip {
+    font-weight: 600;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 800px) {
     header,
@@ -572,6 +653,19 @@
     .sort-group {
       margin-left: 0;
       width: 100%;
+    }
+
+    .text-search-row input {
+      width: 100%;
+    }
+
+    .mfr-filter-row {
+      gap: 6px;
+    }
+
+    .mfr-chip {
+      font-size: 12px;
+      padding: 5px 10px;
     }
   }
 </style>
@@ -619,6 +713,12 @@
       <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
       <button class="preset-btn" data-w="640" data-h="480">VGA</button>
     </div>
+
+    <div class="mfr-filter-row" id="mfr-filter"></div>
+
+    <div class="text-search-row">
+      <input type="text" id="inp-text" placeholder="Search by camera or brand name...">
+    </div>
   </div>
 </div>
 
@@ -636,6 +736,7 @@
 let DB = null;
 let currentSort = 'fps'; // 'fps' | 'brand'
 let lastResults = [];
+let activeBrands = new Set(); // empty = all brands
 
 async function loadDB() {
   const r = await fetch('data/overcrank_db_v4.json?v=' + Date.now());
@@ -647,37 +748,90 @@ async function loadDB() {
     `<span class="stat">${DB.total_modes} modes</span>` +
     `<span class="dot">·</span>` +
     `<span style="color:var(--text-muted);font-size:13px;">${DB.manufacturers_included.join(', ')}</span>`;
+  buildMfrFilter();
+}
+
+function buildMfrFilter() {
+  const brands = [...new Set(DB.cameras.map(c => c.brand))].sort();
+  const container = document.getElementById('mfr-filter');
+  let html = '<span class="mfr-label">Brand</span>';
+  html += `<button class="mfr-chip all-chip active" data-brand="__all__">All</button>`;
+  for (const b of brands) {
+    const count = DB.cameras.filter(c => c.brand === b).length;
+    html += `<button class="mfr-chip" data-brand="${b}">${b} <span style="color:var(--text-muted);font-size:11px;">${count}</span></button>`;
+  }
+  container.innerHTML = html;
+
+  container.querySelectorAll('.mfr-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const brand = chip.dataset.brand;
+      if (brand === '__all__') {
+        activeBrands.clear();
+        container.querySelectorAll('.mfr-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      } else {
+        container.querySelector('[data-brand="__all__"]').classList.remove('active');
+        chip.classList.toggle('active');
+        if (chip.classList.contains('active')) {
+          activeBrands.add(brand);
+        } else {
+          activeBrands.delete(brand);
+        }
+        if (activeBrands.size === 0) {
+          container.querySelector('[data-brand="__all__"]').classList.add('active');
+        }
+      }
+      search();
+    });
+  });
 }
 
 function parseInput() {
   const w = parseInt(document.getElementById('inp-w').value) || 0;
   const h = parseInt(document.getElementById('inp-h').value) || 0;
   const fps = parseInt(document.getElementById('inp-fps').value) || 0;
-  return { w, h, fps };
+  const text = (document.getElementById('inp-text').value || '').trim().toLowerCase();
+  return { w, h, fps, text };
 }
 
 function search() {
   if (!DB) return;
-  const { w, h, fps } = parseInput();
-  const noFilter = w === 0 && h === 0 && fps === 0;
+  const { w, h, fps, text } = parseInput();
+  const noResFilter = w === 0 && h === 0 && fps === 0;
+  const hasAnyFilter = !noResFilter || text || activeBrands.size > 0;
 
+  if (!hasAnyFilter) {
+    document.getElementById('intro-block').style.display = '';
+    document.getElementById('results').innerHTML = '';
+    lastResults = [];
+    return;
+  }
   document.getElementById('intro-block').style.display = 'none';
 
   const matches = [];
 
   for (const cam of DB.cameras) {
+    // Brand filter
+    if (activeBrands.size > 0 && !activeBrands.has(cam.brand)) continue;
+
+    // Text search
+    if (text) {
+      const haystack = `${cam.brand} ${cam.model} ${cam.series || ''}`.toLowerCase();
+      if (!haystack.includes(text)) continue;
+    }
+
     const matchingModes = cam.modes.filter(m =>
       m.res_width >= (w || 0) &&
       m.res_height >= (h || 0) &&
       m.max_fps >= (fps || 0)
     );
 
-    if (noFilter || matchingModes.length > 0) {
-      const bestFps = noFilter
+    if (noResFilter || matchingModes.length > 0) {
+      const bestFps = noResFilter
         ? Math.max(...cam.modes.map(m => m.max_fps))
         : Math.max(...matchingModes.map(m => m.max_fps));
 
-      matches.push({ cam, matchingModes: noFilter ? cam.modes : matchingModes, bestFps });
+      matches.push({ cam, matchingModes: noResFilter ? cam.modes : matchingModes, bestFps });
     }
   }
 
@@ -692,10 +846,10 @@ function search() {
   }
 
   lastResults = matches;
-  render(matches, w, h, fps, noFilter);
+  render(matches, w, h, fps, noResFilter);
 }
 
-function render(matches, w, h, fps, noFilter) {
+function render(matches, w, h, fps, noResFilter) {
   const el = document.getElementById('results');
 
   if (matches.length === 0) {
@@ -703,8 +857,18 @@ function render(matches, w, h, fps, noFilter) {
     return;
   }
 
-  const filterDesc = noFilter ? 'all cameras' :
-    `cameras shooting ${w > 0 ? w+'px' : ''}${(w > 0 && h > 0) ? ' &times; ' : ''}${h > 0 ? h+'px' : ''} at ${fps > 0 ? fps.toLocaleString()+' fps' : 'any fps'} minimum`;
+  let filterParts = [];
+  if (!noResFilter) {
+    let resPart = '';
+    if (w > 0) resPart += w + 'px';
+    if (w > 0 && h > 0) resPart += ' &times; ';
+    if (h > 0) resPart += h + 'px';
+    if (fps > 0) resPart += ' at ' + fps.toLocaleString() + ' fps min';
+    filterParts.push(resPart);
+  }
+  const filterDesc = filterParts.length > 0
+    ? 'cameras matching ' + filterParts.join(', ')
+    : 'all cameras';
 
   let html = `
     <div class="results-toolbar">
@@ -732,7 +896,7 @@ function render(matches, w, h, fps, noFilter) {
     const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
 
     const chipsHtml = sortedModes.slice(0, 6).map(m => {
-      const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noFilter;
+      const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noResFilter;
       const noteHtml = m.note && m.note !== `${m.res_width}x${m.res_height}`
         ? `<span class="chip-note">${m.note}</span>`
         : '';
@@ -795,7 +959,7 @@ function setSort(s) {
   currentSort = s;
   if (lastResults.length > 0) {
     const { w, h, fps } = parseInput();
-    const noFilter = w === 0 && h === 0 && fps === 0;
+    const noResFilter = w === 0 && h === 0 && fps === 0;
     if (s === 'fps') {
       lastResults.sort((a, b) => b.bestFps - a.bestFps);
     } else {
@@ -805,7 +969,7 @@ function setSort(s) {
         return a.cam.model.localeCompare(b.cam.model);
       });
     }
-    render(lastResults, w, h, fps, noFilter);
+    render(lastResults, w, h, fps, noResFilter);
   }
 }
 
@@ -814,13 +978,27 @@ document.getElementById('clear').addEventListener('click', () => {
   document.getElementById('inp-w').value = '';
   document.getElementById('inp-h').value = '';
   document.getElementById('inp-fps').value = '';
+  document.getElementById('inp-text').value = '';
   document.getElementById('intro-block').style.display = '';
   document.getElementById('results').innerHTML = '';
   lastResults = [];
+  // Reset brand filter
+  activeBrands.clear();
+  document.querySelectorAll('.mfr-chip').forEach(c => c.classList.remove('active'));
+  const allChip = document.querySelector('[data-brand="__all__"]');
+  if (allChip) allChip.classList.add('active');
 });
 
 [document.getElementById('inp-w'), document.getElementById('inp-h'), document.getElementById('inp-fps')]
   .forEach(el => el.addEventListener('keydown', e => { if (e.key === 'Enter') search(); }));
+
+// Live text search (debounced)
+let textTimer = null;
+document.getElementById('inp-text').addEventListener('input', () => {
+  clearTimeout(textTimer);
+  textTimer = setTimeout(search, 200);
+});
+document.getElementById('inp-text').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
 
 // Preset buttons
 document.querySelectorAll('.preset-btn').forEach(btn => {
