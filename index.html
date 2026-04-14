@@ -1296,6 +1296,13 @@
     font-weight: 600;
     white-space: nowrap;
     width: 140px;
+    position: sticky;
+    left: 0;
+    background: var(--surface);
+    z-index: 1;
+  }
+  .compare-table tr.diff-row th {
+    background: #181900; /* surface + subtle accent tint so sticky column matches row bg */
   }
   .compare-table td {
     font-family: var(--mono);
@@ -1440,7 +1447,11 @@
     <button class="detail-close" id="compare-close" aria-label="Close">&times;</button>
     <div class="compare-head">
       <h2>Compare</h2>
-      <span id="compare-subtitle" style="font-size:12px;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;">0 cameras</span>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span id="compare-subtitle" style="font-size:12px;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;">0 cameras</span>
+        <button class="detail-share-btn" id="compare-copy-link" type="button">Copy Link</button>
+        <button class="detail-share-btn" id="compare-copy-csv" type="button">Copy CSV</button>
+      </div>
     </div>
     <div id="compare-body"></div>
   </div>
@@ -1455,6 +1466,7 @@ let activeMounts = new Set(); // empty = all mounts (cinema only)
 let activeCategory = 'all'; // 'all' | 'cinema' | 'high_speed'
 let compareSet = new Set(); // cam keys ("Brand|Model"), order preserved by insertion
 const COMPARE_MAX = 4;
+let compareLastSnapshot = null; // { headers: [label, ...camNames], rows: [[label, ...vals], ...] } for CSV export
 
 async function loadDB() {
   const r = await fetch('data/overcrank_db_v9.json?v=' + Date.now());
@@ -2003,6 +2015,7 @@ function updateCompareBar() {
   const openBtn = document.getElementById('compare-open');
   if (openBtn) openBtn.disabled = count < 2;
   if (openBtn) openBtn.style.opacity = count < 2 ? '0.5' : '1';
+  serializeStateToHash();
 }
 
 function clearCompare() {
@@ -2076,11 +2089,13 @@ function openCompareModal() {
   }
   thead += '</tr></thead>';
 
-  // Build body rows, skip rows where every cam is "—"
+  // Build body rows, skip rows where every cam is "—". Capture CSV snapshot along the way.
+  const snapRows = [];
   let tbody = '<tbody>';
   for (const row of rows) {
     const vals = cams.map(c => String(row.get(c)));
     if (vals.every(v => v === '—')) continue;
+    snapRows.push([row.label, ...vals]);
     const allSame = vals.every(v => v === vals[0]);
     const diffClass = !allSame && vals.length > 1 ? 'diff-row' : '';
     tbody += `<tr class="${diffClass}">
@@ -2089,6 +2104,10 @@ function openCompareModal() {
     </tr>`;
   }
   tbody += '</tbody>';
+  compareLastSnapshot = {
+    headers: ['Spec', ...cams.map(c => `${c.brand} ${c.model}`)],
+    rows: snapRows,
+  };
 
   document.getElementById('compare-body').innerHTML = `
     <div class="compare-table-wrap">
@@ -2112,6 +2131,39 @@ function openCompareModal() {
       else openCompareModal(); // re-render with remaining
     });
   });
+
+  // Wire up Copy Link and Copy CSV
+  const linkBtn = document.getElementById('compare-copy-link');
+  if (linkBtn) {
+    linkBtn.onclick = () => {
+      serializeStateToHash();
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const orig = linkBtn.textContent;
+        linkBtn.textContent = 'Copied';
+        setTimeout(() => { linkBtn.textContent = orig; }, 1500);
+      });
+    };
+  }
+  const csvBtn = document.getElementById('compare-copy-csv');
+  if (csvBtn) {
+    csvBtn.onclick = () => {
+      if (!compareLastSnapshot) return;
+      const esc = (v) => {
+        const s = String(v);
+        if (/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+        return s;
+      };
+      const lines = [compareLastSnapshot.headers.map(esc).join(',')];
+      for (const r of compareLastSnapshot.rows) lines.push(r.map(esc).join(','));
+      const csv = lines.join('\n');
+      navigator.clipboard.writeText(csv).then(() => {
+        const orig = csvBtn.textContent;
+        csvBtn.textContent = 'Copied';
+        setTimeout(() => { csvBtn.textContent = orig; }, 1500);
+      });
+    };
+  }
 
   document.getElementById('compare-backdrop').classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -2144,6 +2196,7 @@ function serializeStateToHash() {
   if (activeBrands.size > 0) parts.push('brands=' + encodeURIComponent([...activeBrands].join(',')));
   if (activeMounts.size > 0) parts.push('mounts=' + encodeURIComponent([...activeMounts].join(',')));
   if (currentSort !== 'fps') parts.push('sort=' + currentSort);
+  if (compareSet.size > 0) parts.push('cmp=' + encodeURIComponent([...compareSet].join(',')));
   const newHash = parts.length ? '#' + parts.join('&') : '';
   if (newHash !== window.location.hash) {
     history.replaceState(null, '', window.location.pathname + window.location.search + newHash);
@@ -2190,6 +2243,9 @@ function hydrateFromHash() {
   if (params.sort && ['fps', 'brand'].includes(params.sort)) {
     currentSort = params.sort;
     anyFilter = true;
+  }
+  if (params.cmp) {
+    compareSet = new Set(params.cmp.split(',').filter(Boolean));
   }
   return anyFilter;
 }
@@ -2334,6 +2390,13 @@ loadDB().then(() => {
   updateCinemaFieldsVisibility();
   suppressHashSync = false;
   if (hadFilters) search();
+  // Reflect compare state (rendered cards after search) and auto-open if ≥2
+  if (compareSet.size > 0) {
+    updateCompareBar();
+    if (compareSet.size >= 2) {
+      setTimeout(() => openCompareModal(), 100);
+    }
+  }
 });
 </script>
 </body>
