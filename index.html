@@ -1161,6 +1161,187 @@
       font-size: 22px;
     }
   }
+
+  /* ── Compare controls ── */
+  .compare-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    z-index: 2;
+    padding: 0;
+  }
+  .compare-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .compare-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+  }
+  .camera-card {
+    position: relative;
+  }
+  .compare-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    background: var(--surface-2);
+    border: 1px solid var(--border-focus);
+    border-radius: 999px;
+    padding: 10px 14px 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    z-index: 50;
+    transition: transform 0.25s ease;
+    font-family: var(--sans);
+  }
+  .compare-bar.show {
+    transform: translateX(-50%) translateY(0);
+  }
+  .compare-bar-count {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .compare-bar-count strong {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--mono);
+  }
+  .compare-bar-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .compare-bar-btn:hover { background: var(--accent-dim); }
+  .compare-bar-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .compare-bar-btn.secondary:hover {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+  .compare-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 1200px;
+    padding: 28px 32px 32px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .compare-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .compare-head h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .compare-table-wrap {
+    overflow-x: auto;
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .compare-table th,
+  .compare-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table th {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+    width: 140px;
+  }
+  .compare-table td {
+    font-family: var(--mono);
+    color: var(--text-dim);
+    min-width: 180px;
+    word-break: break-word;
+  }
+  .compare-table thead td {
+    font-family: var(--sans);
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .compare-table thead td .cam-brand {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  .compare-table thead td .cam-remove {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 6px;
+    line-height: 1;
+  }
+  .compare-table thead td .cam-remove:hover { color: var(--text); }
+  .compare-table td.accent { color: var(--accent); font-weight: 600; }
+  .compare-table .diff-row td { background: rgba(232,255,0,0.03); }
+  .compare-empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
@@ -1248,6 +1429,23 @@
   </div>
 </div>
 
+<div class="compare-bar" id="compare-bar" role="region" aria-label="Compare selected cameras">
+  <span class="compare-bar-count"><strong id="compare-count">0</strong> selected</span>
+  <button class="compare-bar-btn" id="compare-open" type="button">Compare</button>
+  <button class="compare-bar-btn secondary" id="compare-clear" type="button">Clear</button>
+</div>
+
+<div class="detail-backdrop" id="compare-backdrop" role="dialog" aria-modal="true" aria-label="Compare cameras">
+  <div class="compare-modal" id="compare-modal">
+    <button class="detail-close" id="compare-close" aria-label="Close">&times;</button>
+    <div class="compare-head">
+      <h2>Compare</h2>
+      <span id="compare-subtitle" style="font-size:12px;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;">0 cameras</span>
+    </div>
+    <div id="compare-body"></div>
+  </div>
+</div>
+
 <script>
 let DB = null;
 let currentSort = 'fps'; // 'fps' | 'brand'
@@ -1255,6 +1453,8 @@ let lastResults = [];
 let activeBrands = new Set(); // empty = all brands
 let activeMounts = new Set(); // empty = all mounts (cinema only)
 let activeCategory = 'all'; // 'all' | 'cinema' | 'high_speed'
+let compareSet = new Set(); // cam keys ("Brand|Model"), order preserved by insertion
+const COMPARE_MAX = 4;
 
 async function loadDB() {
   const r = await fetch('data/overcrank_db_v9.json?v=' + Date.now());
@@ -1563,8 +1763,11 @@ function render(matches, w, h, fps, noResFilter) {
     }
 
     const camKey = `${cam.brand}|${cam.model}`;
+    const safeKey = camKey.replace(/"/g, '&quot;');
+    const inCompare = compareSet.has(camKey);
     html += `
-      <div class="camera-card" data-cam-key="${camKey.replace(/"/g, '&quot;')}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
+      <div class="camera-card" data-cam-key="${safeKey}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
+        <button class="compare-btn ${inCompare ? 'active' : ''}" data-cam-key="${safeKey}" aria-label="Add to compare" aria-pressed="${inCompare}" title="Add to compare">${inCompare ? '&#10003;' : '+'}</button>
         <div class="card-header">
           <div class="card-identity">
             <div class="card-brand">${cam.brand}${catTagHtml}</div>
@@ -1593,9 +1796,19 @@ function render(matches, w, h, fps, noResFilter) {
   // Wire up card clicks to open detail modal
   el.querySelectorAll('.camera-card').forEach(card => {
     const open = () => openCameraDetail(card.dataset.camKey);
-    card.addEventListener('click', open);
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.compare-btn')) return; // compare button handled separately
+      open();
+    });
     card.addEventListener('keydown', (e) => {
+      if (e.target.classList.contains('compare-btn')) return;
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+  el.querySelectorAll('.compare-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleCompare(btn.dataset.camKey, btn);
     });
   });
 }
@@ -1746,6 +1959,169 @@ function openCameraDetail(camKey) {
 function closeCameraDetail() {
   document.getElementById('detail-backdrop').classList.remove('show');
   document.body.style.overflow = '';
+}
+
+// ── Compare ──
+function toggleCompare(camKey, btnEl) {
+  if (compareSet.has(camKey)) {
+    compareSet.delete(camKey);
+  } else {
+    if (compareSet.size >= COMPARE_MAX) {
+      if (btnEl) {
+        const orig = btnEl.innerHTML;
+        btnEl.innerHTML = '!';
+        btnEl.title = 'Max ' + COMPARE_MAX + ' cameras';
+        setTimeout(() => { btnEl.innerHTML = orig; btnEl.title = 'Add to compare'; }, 900);
+      }
+      return;
+    }
+    compareSet.add(camKey);
+  }
+  // Update this button immediately
+  if (btnEl) {
+    const active = compareSet.has(camKey);
+    btnEl.classList.toggle('active', active);
+    btnEl.setAttribute('aria-pressed', String(active));
+    btnEl.innerHTML = active ? '&#10003;' : '+';
+  }
+  // Sync any other buttons pointing at the same cam (shouldn't happen, but safe)
+  document.querySelectorAll(`.compare-btn[data-cam-key="${camKey.replace(/"/g, '&quot;')}"]`).forEach(b => {
+    if (b === btnEl) return;
+    const active = compareSet.has(camKey);
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', String(active));
+    b.innerHTML = active ? '&#10003;' : '+';
+  });
+  updateCompareBar();
+}
+
+function updateCompareBar() {
+  const bar = document.getElementById('compare-bar');
+  const count = compareSet.size;
+  document.getElementById('compare-count').textContent = count;
+  bar.classList.toggle('show', count > 0);
+  const openBtn = document.getElementById('compare-open');
+  if (openBtn) openBtn.disabled = count < 2;
+  if (openBtn) openBtn.style.opacity = count < 2 ? '0.5' : '1';
+}
+
+function clearCompare() {
+  compareSet.clear();
+  document.querySelectorAll('.compare-btn.active').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = '+';
+  });
+  updateCompareBar();
+  closeCompareModal();
+}
+
+function openCompareModal() {
+  if (compareSet.size < 2 || !DB) return;
+  const cams = [...compareSet].map(k => {
+    const [brand, model] = k.split('|');
+    return DB.cameras.find(c => c.brand === brand && c.model === model);
+  }).filter(Boolean);
+  if (cams.length < 2) return;
+
+  document.getElementById('compare-subtitle').textContent = `${cams.length} camera${cams.length > 1 ? 's' : ''}`;
+
+  const fmtArr = (v) => Array.isArray(v) ? (v.length ? v.join(', ') : '—') : (v === null || v === undefined || v === '' ? '—' : v);
+  const fmtBit = (v) => v ? v + '-bit' : '—';
+  const fmtCrop = (v) => v ? v + 'x' : '—';
+  const fmtUSD = (v) => v ? '$' + v.toLocaleString() : '—';
+  const fmtDeg = (v) => v ? v + '°' : '—';
+
+  const rows = [
+    { label: 'Category', get: c => (c.category || 'high_speed') === 'cinema' ? 'Cinema' : 'High-Speed' },
+    { label: 'Max FPS', get: c => Math.max(...c.modes.map(m => m.max_fps || 0)).toLocaleString() + ' fps', accent: true },
+    { label: 'Max Resolution', get: c => {
+        const max = c.modes.reduce((best, m) => {
+          const px = (m.res_width || 0) * (m.res_height || 0);
+          return px > (best.px || 0) ? { px, m } : best;
+        }, { px: 0 });
+        return max.m ? `${max.m.res_width} × ${max.m.res_height}` : '—';
+      }
+    },
+    { label: 'Modes', get: c => c.modes.length },
+    { label: 'Sensor Format', get: c => fmtArr(c.sensor_format) },
+    { label: 'Sensor Size', get: c => fmtArr(c.sensor_size) },
+    { label: 'Crop Factor', get: c => fmtCrop(c.crop_factor) },
+    { label: 'Native Res', get: c => fmtArr(c.native_resolution) },
+    { label: 'Max Rec Res', get: c => fmtArr(c.max_resolution_recording) },
+    { label: 'Bit Depth', get: c => fmtBit(c.bit_depth) },
+    { label: 'Dynamic Range', get: c => c.dynamic_range_stops ? c.dynamic_range_stops + ' stops' : '—', accent: true },
+    { label: 'Base ISO', get: c => fmtArr(c.base_iso) },
+    { label: 'Dual Native ISO', get: c => c.dual_native_iso === true ? 'Yes' : (c.dual_native_iso === false ? 'No' : '—') },
+    { label: 'Lens Mount', get: c => fmtArr(c.lens_mount_native) },
+    { label: 'Other Mounts', get: c => fmtArr(c.other_mounts) },
+    { label: 'ND Filter', get: c => fmtArr(c.nd_filter) },
+    { label: 'Codecs', get: c => fmtArr(c.codecs) },
+    { label: 'Media', get: c => fmtArr(c.media) },
+    { label: 'Max Shutter', get: c => fmtDeg(c.max_shutter_angle) },
+    { label: 'Price Tier', get: c => fmtArr(c.price_tier) },
+    { label: 'Price USD', get: c => fmtUSD(c.price_usd) },
+    { label: 'Status', get: c => fmtArr(c.status) },
+    { label: 'Data Quality', get: c => fmtArr(c.data_quality) },
+  ];
+
+  // Build header row
+  let thead = '<thead><tr><th></th>';
+  for (const cam of cams) {
+    const key = `${cam.brand}|${cam.model}`.replace(/"/g, '&quot;');
+    thead += `<td>
+      <button class="cam-remove" data-cam-key="${key}" title="Remove">&times;</button>
+      <span class="cam-brand">${cam.brand}</span>${cam.model}
+    </td>`;
+  }
+  thead += '</tr></thead>';
+
+  // Build body rows, skip rows where every cam is "—"
+  let tbody = '<tbody>';
+  for (const row of rows) {
+    const vals = cams.map(c => String(row.get(c)));
+    if (vals.every(v => v === '—')) continue;
+    const allSame = vals.every(v => v === vals[0]);
+    const diffClass = !allSame && vals.length > 1 ? 'diff-row' : '';
+    tbody += `<tr class="${diffClass}">
+      <th>${row.label}</th>
+      ${vals.map(v => `<td class="${row.accent ? 'accent' : ''}">${v}</td>`).join('')}
+    </tr>`;
+  }
+  tbody += '</tbody>';
+
+  document.getElementById('compare-body').innerHTML = `
+    <div class="compare-table-wrap">
+      <table class="compare-table">${thead}${tbody}</table>
+    </div>
+  `;
+
+  // Wire up remove buttons
+  document.querySelectorAll('#compare-body .cam-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.camKey;
+      compareSet.delete(key);
+      // Update any card compare button on the page
+      document.querySelectorAll(`.compare-btn[data-cam-key="${key.replace(/"/g, '&quot;')}"]`).forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+        b.innerHTML = '+';
+      });
+      updateCompareBar();
+      if (compareSet.size < 2) closeCompareModal();
+      else openCompareModal(); // re-render with remaining
+    });
+  });
+
+  document.getElementById('compare-backdrop').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCompareModal() {
+  document.getElementById('compare-backdrop').classList.remove('show');
+  if (!document.getElementById('detail-backdrop').classList.contains('show')) {
+    document.body.style.overflow = '';
+  }
 }
 
 // ── URL state ──
@@ -1921,10 +2297,16 @@ document.getElementById('detail-close').addEventListener('click', closeCameraDet
 document.getElementById('detail-backdrop').addEventListener('click', (e) => {
   if (e.target.id === 'detail-backdrop') closeCameraDetail();
 });
+document.getElementById('compare-close').addEventListener('click', closeCompareModal);
+document.getElementById('compare-backdrop').addEventListener('click', (e) => {
+  if (e.target.id === 'compare-backdrop') closeCompareModal();
+});
+document.getElementById('compare-open').addEventListener('click', openCompareModal);
+document.getElementById('compare-clear').addEventListener('click', clearCompare);
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && document.getElementById('detail-backdrop').classList.contains('show')) {
-    closeCameraDetail();
-  }
+  if (e.key !== 'Escape') return;
+  if (document.getElementById('compare-backdrop').classList.contains('show')) closeCompareModal();
+  else if (document.getElementById('detail-backdrop').classList.contains('show')) closeCameraDetail();
 });
 
 loadDB().then(() => {
