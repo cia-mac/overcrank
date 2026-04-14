@@ -1,0 +1,364 @@
+{
+  "verified_date": "2026-04-13",
+  "source_base_url": "https://www.ix-cameras.com",
+  "notes": "Current lineup: i-SPEED 7 (717/721/727), i-SPEED 5 (509/511/514), i-SPEED 2 (203). i-SPEED 3 series (3, TR, PL, DL) discontinued 2018 \u2014 parts only. Sensor dimensions and pixel pitch not published on product pages; full spec tables in datasheets. PDFs not downloaded. Sensor data marked null where not found on website. v2: stripped brand prefix from model names. v3: sensor_size, bit_depth, pixel_size_um filled from iX Cameras datasheet PDFs (i-SPEED 7, 5, 2 series).",
+  "discontinued_note": "i-SPEED 3 Series (i-SPEED 3, i-SPEED TR, i-SPEED PL, i-SPEED DL) discontinued 2018. iX Cameras continues service and parts support.",
+  "cameras": [
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 7",
+      "model": "i-SPEED 717",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "2072x1536",
+      "pixel_size_um": 13.5,
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "megapixels": 3.2,
+      "throughput_gpixels_sec": 27.1,
+      "ram_gb_options": [
+        36,
+        72,
+        96,
+        144,
+        192,
+        288
+      ],
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 2450000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "datasheet_url": "https://www.ix-cameras.com/downloads/high-speed_cameras_for_scientific_research_and_engineering_i-SPEED_7.pdf",
+      "notes": "Pixel size, sensor dimensions, and full resolution table are in the datasheet PDF only. Electromechanical shutter. Swappable xSSD option (1TB, 2TB). SILC integrated lighting control.",
+      "modes": [
+        {
+          "mode_name": "2072x1536",
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 5315,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 7960,
+          "mode_type": "standard"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 2450000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution \u2014 exact resolution not published on website"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 7",
+      "model": "i-SPEED 721",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "2072x1536",
+      "pixel_size_um": 13.5,
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "megapixels": 3.2,
+      "throughput_gpixels_sec": 27.1,
+      "ram_gb_options": [
+        36,
+        72,
+        96,
+        144,
+        192,
+        288
+      ],
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 2450000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "modes": [
+        {
+          "mode_name": "2072x1536",
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 6642,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 9944,
+          "mode_type": "standard"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 2450000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 7",
+      "model": "i-SPEED 727",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "2072x1536",
+      "pixel_size_um": 13.5,
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "megapixels": 3.2,
+      "throughput_gpixels_sec": 27.1,
+      "ram_gb_options": [
+        36,
+        72,
+        96,
+        144,
+        192,
+        288
+      ],
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 2450000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "modes": [
+        {
+          "mode_name": "2072x1536",
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 8512,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 12742,
+          "mode_type": "standard"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 2450000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 5",
+      "model": "i-SPEED 509",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "1920x1080",
+      "pixel_size_um": 13.5,
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "ram_gb_options": [
+        18,
+        36,
+        72,
+        96,
+        144
+      ],
+      "ssd_tb_max": 8,
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 1000000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "datasheet_url": "https://www.ix-cameras.com/downloads/High-Speed_Cameras_for_Slow_Motion_Analysis.pdf",
+      "notes": "Full HD native sensor. Internally sealed unit. Up to 8TB internal SSD. Full resolution table in datasheet PDF.",
+      "modes": [
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3980,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 1000000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 5",
+      "model": "i-SPEED 511",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "1920x1080",
+      "pixel_size_um": 13.5,
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "ram_gb_options": [
+        18,
+        36,
+        72,
+        96,
+        144
+      ],
+      "ssd_tb_max": 8,
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 1000000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "modes": [
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 4980,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 1000000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 5",
+      "model": "i-SPEED 514",
+      "sensor_type": "CMOS (AST \u2014 Advanced Sensor Technology)",
+      "native_resolution": "1920x1080",
+      "pixel_size_um": 13.5,
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "ram_gb_options": [
+        18,
+        36,
+        72,
+        96,
+        144
+      ],
+      "ssd_tb_max": 8,
+      "iso_mono_base": 16000,
+      "iso_mono_gain": 125000,
+      "iso_color_base": 4000,
+      "iso_color_gain": 32000,
+      "max_fps_any_res": 1000000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "modes": [
+        {
+          "mode_name": "1920x1080",
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 6382,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 1000000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "series": "i-SPEED 2",
+      "model": "i-SPEED 203",
+      "sensor_type": "CMOS",
+      "native_resolution": "1280x864",
+      "pixel_size_um": 13.7,
+      "sensor_size": "17.5x11.8mm",
+      "crop_factor": 2.05,
+      "bit_depth": 8,
+      "ram_gb_options": [
+        8,
+        16
+      ],
+      "iso_mono": 6400,
+      "iso_color": 5000,
+      "max_fps_any_res": 225000,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "source_url": "https://www.ix-cameras.com/compact_high_speed_cameras.php",
+      "notes": "Entry-level / compact model. Laptop controlled. 13.7\u03bcm pixel size confirmed on product page. Sensor dimensions calculated: 1280\u00d713.7\u03bcm = 17.54mm \u00d7 864\u00d713.7\u03bcm = 11.83mm. Same physical sensor size as Edgertronic SC1+/SC2+.",
+      "modes": [
+        {
+          "mode_name": "1280x864",
+          "res_width": 1280,
+          "res_height": 864,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "notes": "full resolution"
+        },
+        {
+          "mode_name": "max_any",
+          "res_width": null,
+          "res_height": null,
+          "max_fps": 225000,
+          "mode_type": "min_res",
+          "notes": "Max fps at minimum resolution"
+        }
+      ]
+    }
+  ],
+  "gemini_discrepancies": {
+    "summary": "Gemini had 7 models but likely included discontinued i-SPEED 3 series. Needs cross-check against original Gemini data.",
+    "verified_current_models": 7,
+    "discontinued_models_not_included": [
+      "i-SPEED 3",
+      "i-SPEED TR",
+      "i-SPEED PL",
+      "i-SPEED DL"
+    ],
+    "data_gaps": [
+      "Full resolution/fps tables only in datasheet PDFs \u2014 not accessible via browser JS",
+      "i-SPEED 5 and 7 series modes only show 2 key fps points \u2014 intermediate resolutions unknown without datasheet"
+    ]
+  },
+  "version": 3
+}
