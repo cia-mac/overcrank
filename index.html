@@ -632,7 +632,90 @@
     margin-top: 16px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .cinema-only-field {
+    display: none;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cinema-only-field.show {
+    display: inline-flex;
+  }
+
+  .cinema-only-field label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .cinema-only-field input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    width: 70px;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  }
+
+  .cinema-only-field input:focus {
+    border-color: var(--border-focus);
+    background: var(--surface-3);
+  }
+
+  .cinema-only-field input::placeholder {
+    color: var(--text-muted);
+    font-family: var(--mono);
+  }
+
+  /* ── Mount filter (cinema only) ── */
+  .mount-filter-row {
+    display: none;
+    margin-top: 12px;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mount-filter-row.show {
+    display: flex;
+  }
+
+  .mount-chip {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .mount-chip:hover {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+
+  .mount-chip.active {
+    background: rgba(196,181,253,0.08);
+    border-color: rgba(196,181,253,0.4);
+    color: #c4b5fd;
   }
 
   .cat-label {
@@ -915,9 +998,16 @@
         <button class="cat-btn" data-cat="cinema">Cinema <span class="cat-count" id="cat-count-cinema"></span></button>
         <button class="cat-btn" data-cat="high_speed">High-Speed <span class="cat-count" id="cat-count-high_speed"></span></button>
       </div>
+
+      <div class="cinema-only-field" id="dr-field">
+        <label>Min DR stops</label>
+        <input type="number" id="inp-dr" placeholder="13" min="0" step="0.5">
+      </div>
     </div>
 
     <div class="mfr-filter-row" id="mfr-filter"></div>
+
+    <div class="mount-filter-row cinema-only-row" id="mount-filter"></div>
 
     <div class="text-search-row">
       <input type="text" id="inp-text" placeholder="Search by camera or brand name...">
@@ -940,6 +1030,7 @@ let DB = null;
 let currentSort = 'fps'; // 'fps' | 'brand'
 let lastResults = [];
 let activeBrands = new Set(); // empty = all brands
+let activeMounts = new Set(); // empty = all mounts (cinema only)
 let activeCategory = 'all'; // 'all' | 'cinema' | 'high_speed'
 
 async function loadDB() {
@@ -954,6 +1045,8 @@ async function loadDB() {
     `<span style="color:var(--text-muted);font-size:13px;">${DB.manufacturers_included.join(', ')}</span>`;
   buildCatFilter();
   buildMfrFilter();
+  buildMountFilter();
+  updateCinemaFieldsVisibility();
 }
 
 function camerasInCategory(cat) {
@@ -972,9 +1065,53 @@ function buildCatFilter() {
       container.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeCategory = btn.dataset.cat;
-      // Reset brand filter when category changes, rebuild chips
+      // Reset brand + mount when category changes
       activeBrands.clear();
+      activeMounts.clear();
       buildMfrFilter();
+      buildMountFilter();
+      updateCinemaFieldsVisibility();
+      search();
+    });
+  });
+}
+
+function updateCinemaFieldsVisibility() {
+  const showCinema = activeCategory === 'cinema';
+  document.getElementById('dr-field').classList.toggle('show', showCinema);
+  document.getElementById('mount-filter').classList.toggle('show', showCinema);
+  if (!showCinema) {
+    document.getElementById('inp-dr').value = '';
+    activeMounts.clear();
+  }
+}
+
+function buildMountFilter() {
+  const cinemaCams = camerasInCategory('cinema');
+  const mountCounts = {};
+  for (const c of cinemaCams) {
+    const m = c.lens_mount_native;
+    if (!m) continue;
+    mountCounts[m] = (mountCounts[m] || 0) + 1;
+  }
+  // Sort by count desc
+  const mounts = Object.keys(mountCounts).sort((a, b) => mountCounts[b] - mountCounts[a]);
+  const container = document.getElementById('mount-filter');
+  let html = '<span class="mfr-label">Mount</span>';
+  for (const m of mounts) {
+    html += `<button class="mount-chip" data-mount="${m}">${m} <span style="color:var(--text-muted);font-size:11px;">${mountCounts[m]}</span></button>`;
+  }
+  container.innerHTML = html;
+
+  container.querySelectorAll('.mount-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const mount = chip.dataset.mount;
+      chip.classList.toggle('active');
+      if (chip.classList.contains('active')) {
+        activeMounts.add(mount);
+      } else {
+        activeMounts.delete(mount);
+      }
       search();
     });
   });
@@ -1021,14 +1158,15 @@ function parseInput() {
   const h = parseInt(document.getElementById('inp-h').value) || 0;
   const fps = parseInt(document.getElementById('inp-fps').value) || 0;
   const text = (document.getElementById('inp-text').value || '').trim().toLowerCase();
-  return { w, h, fps, text };
+  const dr = parseFloat(document.getElementById('inp-dr').value) || 0;
+  return { w, h, fps, text, dr };
 }
 
 function search() {
   if (!DB) return;
-  const { w, h, fps, text } = parseInput();
+  const { w, h, fps, text, dr } = parseInput();
   const noResFilter = w === 0 && h === 0 && fps === 0;
-  const hasAnyFilter = !noResFilter || text || activeBrands.size > 0;
+  const hasAnyFilter = !noResFilter || text || activeBrands.size > 0 || activeMounts.size > 0 || dr > 0;
 
   const hasCatFilter = activeCategory !== 'all';
 
@@ -1049,6 +1187,12 @@ function search() {
 
     // Brand filter
     if (activeBrands.size > 0 && !activeBrands.has(cam.brand)) continue;
+
+    // Mount filter (cinema only)
+    if (activeMounts.size > 0 && !activeMounts.has(cam.lens_mount_native)) continue;
+
+    // DR stops filter (cinema only)
+    if (dr > 0 && (!cam.dynamic_range_stops || cam.dynamic_range_stops < dr)) continue;
 
     // Text search
     if (text) {
@@ -1255,6 +1399,20 @@ document.getElementById('clear').addEventListener('click', () => {
   // Reset brand filter (rebuild since category changed)
   activeBrands.clear();
   buildMfrFilter();
+  // Reset mount + DR
+  activeMounts.clear();
+  buildMountFilter();
+  document.getElementById('inp-dr').value = '';
+  updateCinemaFieldsVisibility();
+});
+
+[document.getElementById('inp-dr')].forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+  let t = null;
+  el.addEventListener('input', () => {
+    clearTimeout(t);
+    t = setTimeout(search, 200);
+  });
 });
 
 [document.getElementById('inp-w'), document.getElementById('inp-h'), document.getElementById('inp-fps')]
