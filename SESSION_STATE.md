@@ -1,55 +1,55 @@
 ---
-workflow_step: card_detail_and_url_state_shipped
+workflow_step: compare_mode_shipped
 agent_type: execute
 token_budget: deep
 last_updated: 2026-04-14
 ---
 
 ## Current Objective
-Overcrank is live at https://cia-mac.github.io/overcrank/ with full card detail modal and URL state sync. Next: domain purchase (needs Ciamac approval), IDT data deepening (needs Ciamac insider access), analytics.
+Overcrank ships compare mode. Cross-brand side-by-side is the actual value proposition and it's now live. Next: domain + analytics + IDT insider data dump.
 
 ## Last Completed Action
-Shipped 108cac0: expanded card detail modal (click any card for full specs, all modes table, source URL, per-camera share link), URL hash state sync (all filters round-trip through #hash for linkable/bookmarkable results), Share button in results toolbar, support for data_quality="needs_review" badge. GH Pages redeployed and verified: 19 matches for new feature symbols on live HTML.
+Shipped de28ad4: compare mode. Each card has a + button (top-right) that adds the camera to a compare set (max 4). Floating bar shows count with Compare + Clear actions; Compare opens a side-by-side spec table (23 spec rows × up to 4 camera columns, only non-empty rows rendered, differing values subtly highlighted, per-column X to remove without closing modal). GH Pages redeployed and verified: all 6 new feature symbols present in deployed HTML.
 
 ## Open Blockers
-- Custom domain purchase blocked on Ciamac approval (financial transaction).
-- IDT data deepening blocked on Ciamac insider materials. Public scraping won't improve it; CLAUDE.md prohibits Gemini-sourced IDT data.
+- Custom domain purchase: financial, needs Ciamac approval.
+- IDT data deepening: needs Ciamac insider materials.
 
 ## Next Actions
-1. Decide overcrank domain (overcrank.app / .io / .tools). Needs user approval.
-2. IDT: Ciamac to provide insider spec sheets for 25 cams (currently 1.6 modes avg, thin). Each IDT camera should have full resolution table.
-3. Add analytics (Plausible or Cloudflare Web Analytics, privacy-friendly).
+1. Decide overcrank domain (overcrank.app / .io / .tools).
+2. IDT: Ciamac to provide insider spec sheets for 25 cams (currently 1.6 modes avg).
+3. Add analytics (Plausible or Cloudflare Web Analytics).
 4. Fill Weisscam dealer specs (3 cameras).
 5. Shimadzu in/out decision.
-6. Add "Compare" mode: pick 2-3 cameras, side-by-side spec table.
-7. Polish: mobile modal UX, keyboard nav between cards when grid focused.
-8. Consider: export filtered results as CSV.
+6. Persist compareSet to URL hash so a compare view is shareable (not wired yet; currently compare is session-local).
+7. Consider: export compare table as CSV or PNG.
+8. Mobile hands-on test (compare modal horizontal scroll works but hasn't been finger-tested).
 
 ## Decisions Made
-- Did not scrape idtvision.com. Public pages only show max-spec per camera; existing DB rows already reflect that. Deepening requires insider tables. Filling with Gemini-sourced data is explicitly banned in overcrank/CLAUDE.md.
-- Modal uses click-anywhere on card (not a dedicated button) for discoverability; ESC + backdrop click close it.
-- Share link structure is single-hash: `#w=X&h=Y&fps=Z&cat=...&brands=A,B&mounts=...&dr=...&q=...&sort=...&cam=Brand|Model`. Camera detail deep-link and filter state coexist.
-- Hash sync uses `history.replaceState` (not pushState) so typing doesn't spam browser history. Back button still works normally at the page level.
+- Compare ceiling = 4 cameras. Table readability deteriorates past that and real-world comparison rarely needs more.
+- Compare is a separate interaction from detail. Tap card = detail modal; tap + in top-right = compare toggle. Button stops propagation.
+- Differing rows highlighted subtly (3% accent tint) rather than loud; loud would overwhelm a long spec table where most rows differ.
+- Per-column X in compare header removes that camera and re-renders in place, so the user can iterate without closing/reopening.
+- compareSet is NOT persisted in URL hash yet. Low-priority until someone asks to share a compare link.
 
 ## Active Branch
 main (public, deployed)
 
 ## Uncommitted Changes
-None. SESSION_STATE_v3.md added (prior state preserved, per file-versioning rule). About to be committed as part of exit ritual.
+None. SESSION_STATE_v4.md saved as version. About to commit as part of exit.
 
 ## Fragile Areas
-- URL hash hydration happens after DB load; if DB load fails, filters silently don't hydrate. Acceptable because the page is non-functional at that point anyway.
-- Modal uses `document.body.style.overflow = 'hidden'` to prevent background scroll. If another feature toggles body overflow, could conflict.
-- Share button on results toolbar uses `onclick=` inline attribute (matches existing sort-btn pattern). Inconsistent with the event-listener style used elsewhere but keeps the toolbar re-render simple.
-- Card click handler uses `data-cam-key` = `brand|model`. If a model name ever contains `|`, the key decoder breaks. No current model has `|` in its name.
-- high-speed cameras still have no DR stops; min-DR filter silently excludes them when > 0.
+- Compare diff-detection uses simple string equality on rendered values. Near-equal numbers rendered identically count as "same"; off-by-one in fields like DR stops would correctly be flagged, but unit mismatches ("14.5 stops" vs "14.5") would show as diff. Acceptable.
+- Compare modal max-width 1200px. At 4 cameras on a narrow viewport, horizontal scroll kicks in. Spec-label column is sticky-width 140px but doesn't pin on scroll. Cheap fix if needed: `position: sticky; left: 0` on the th.
+- ESC key handler stacks: ESC closes compare first, then detail. Correct precedence.
+- The `+` button uses `stopPropagation()` on click to prevent card-open. Mobile touch events are untested; if tap events bubble differently, card detail might open when user wanted to just add-to-compare.
 
 ## Context for Next Session
 Live URL: https://cia-mac.github.io/overcrank/
-Example deep links (bookmarkable, shareable):
-  - https://cia-mac.github.io/overcrank/#cat=cinema&dr=14 (all cinema cams with ≥14 stops DR)
-  - https://cia-mac.github.io/overcrank/#w=1920&h=1080&fps=1000 (all cams that can do 1080p @ 1000fps)
-  - https://cia-mac.github.io/overcrank/#cam=Phantom|TMX%207510 (deep-link to single camera detail)
-GitHub: https://github.com/cia-mac/overcrank (public)
-Latest SHA: 108cac0
-Modal feels good for desktop; mobile layout works but hasn't been hands-on tested. Most impactful next step is the custom domain + analytics combo, or IDT data deepening if Ciamac has the time to dump the insider specs.
+Latest SHA: de28ad4 (feature) / about-to-commit (state).
+Compare is a meaningful crossing point: tool now does the thing it's for (cross-brand side-by-side). Three shipped features stacked today:
+  1. v9 cinema DB (140 high-speed + 77 cinema = 217 cams)
+  2. Category filter, mount filter, min DR stops filter, codec pills
+  3. Card detail modal + URL hash state + camera deep-links
+  4. Compare mode (today)
+Priority order for next session: domain → analytics → IDT data. Everything else is nice-to-have polish.
