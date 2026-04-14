@@ -1,0 +1,784 @@
+{
+  "verified_date": "2026-04-13",
+  "source_base_url": "https://www.ix-cameras.com",
+  "notes": "v4: Full resolution/FPS tables extracted from official iX Cameras PDF datasheets. 7 cameras, 94 modes (deduplicated to max fps per resolution). v3 had only 2 modes per camera.",
+  "cameras": [
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 727",
+      "series": "i-SPEED 7",
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "2072x1536",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "datasheet_url": "",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 8512,
+          "mode_type": "standard",
+          "note": "2072x1536 full sensor"
+        },
+        {
+          "res_width": 1904,
+          "res_height": 1410,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1904x1410"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 12742,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1512,
+          "res_height": 1134,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1512x1134"
+        },
+        {
+          "res_width": 1344,
+          "res_height": 978,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1344x978"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 798,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "1064x798"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 474,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "1064x474"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 228,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "1064x228"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 102,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "1064x102"
+        },
+        {
+          "res_width": 1232,
+          "res_height": 24,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 1120,
+          "res_height": 12,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 560,
+          "res_height": 24,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 280,
+          "res_height": 12,
+          "max_fps": 2450000,
+          "mode_type": "ultimate-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 721",
+      "series": "i-SPEED 7",
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "2072x1536",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "datasheet_url": "",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 6642,
+          "mode_type": "standard",
+          "note": "2072x1536 full sensor"
+        },
+        {
+          "res_width": 1960,
+          "res_height": 1428,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1960x1428"
+        },
+        {
+          "res_width": 1680,
+          "res_height": 1242,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1680x1242"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 9944,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1344,
+          "res_height": 1008,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1344x1008"
+        },
+        {
+          "res_width": 1176,
+          "res_height": 864,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1176x864"
+        },
+        {
+          "res_width": 952,
+          "res_height": 696,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "952x696"
+        },
+        {
+          "res_width": 840,
+          "res_height": 462,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "840x462"
+        },
+        {
+          "res_width": 840,
+          "res_height": 216,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "840x216"
+        },
+        {
+          "res_width": 840,
+          "res_height": 96,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "840x96"
+        },
+        {
+          "res_width": 896,
+          "res_height": 24,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 448,
+          "res_height": 36,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 448,
+          "res_height": 24,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 280,
+          "res_height": 12,
+          "max_fps": 2450000,
+          "mode_type": "ultimate-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 717",
+      "series": "i-SPEED 7",
+      "sensor_size": "28.0x20.7mm",
+      "crop_factor": 1.24,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "2072x1536",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_scientific_research_and_engineering.php",
+      "datasheet_url": "https://www.ix-cameras.com/downloads/high-speed_cameras_for_scientific_research_and_engineering_i-SPEED_7.pdf",
+      "modes": [
+        {
+          "res_width": 2072,
+          "res_height": 1536,
+          "max_fps": 5315,
+          "mode_type": "standard",
+          "note": "2072x1536 full sensor"
+        },
+        {
+          "res_width": 1736,
+          "res_height": 1284,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1736x1284"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 7960,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1512,
+          "res_height": 1098,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1512x1098"
+        },
+        {
+          "res_width": 1232,
+          "res_height": 888,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1232x888"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 762,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1064x762"
+        },
+        {
+          "res_width": 840,
+          "res_height": 624,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "840x624"
+        },
+        {
+          "res_width": 672,
+          "res_height": 456,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "672x456"
+        },
+        {
+          "res_width": 672,
+          "res_height": 216,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "672x216"
+        },
+        {
+          "res_width": 672,
+          "res_height": 96,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "672x96"
+        },
+        {
+          "res_width": 672,
+          "res_height": 24,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 448,
+          "res_height": 24,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 336,
+          "res_height": 24,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 280,
+          "res_height": 12,
+          "max_fps": 2450000,
+          "mode_type": "ultimate-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 514",
+      "series": "i-SPEED 5",
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "1920x1080",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "datasheet_url": "",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 6382,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1792,
+          "res_height": 996,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1792x996"
+        },
+        {
+          "res_width": 1512,
+          "res_height": 852,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1512x852"
+        },
+        {
+          "res_width": 1232,
+          "res_height": 696,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1232x696"
+        },
+        {
+          "res_width": 1064,
+          "res_height": 600,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1064x600"
+        },
+        {
+          "res_width": 672,
+          "res_height": 366,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "672x366"
+        },
+        {
+          "res_width": 504,
+          "res_height": 228,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "504x228"
+        },
+        {
+          "res_width": 504,
+          "res_height": 96,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "504x96"
+        },
+        {
+          "res_width": 504,
+          "res_height": 60,
+          "max_fps": 300000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 560,
+          "res_height": 24,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 504,
+          "res_height": 12,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 112,
+          "res_height": 48,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 511",
+      "series": "i-SPEED 5",
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "1920x1080",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "datasheet_url": "",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 4980,
+          "mode_type": "standard",
+          "note": "1920x1080 full sensor"
+        },
+        {
+          "res_width": 1904,
+          "res_height": 1074,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "slight crop from full res"
+        },
+        {
+          "res_width": 1512,
+          "res_height": 1080,
+          "max_fps": 6382,
+          "mode_type": "standard",
+          "note": "width crop, full height"
+        },
+        {
+          "res_width": 1368,
+          "res_height": 882,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1368x882"
+        },
+        {
+          "res_width": 1344,
+          "res_height": 756,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1344x756"
+        },
+        {
+          "res_width": 1120,
+          "res_height": 606,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1120x606"
+        },
+        {
+          "res_width": 952,
+          "res_height": 528,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "952x528"
+        },
+        {
+          "res_width": 560,
+          "res_height": 318,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "560x318"
+        },
+        {
+          "res_width": 392,
+          "res_height": 216,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "392x216"
+        },
+        {
+          "res_width": 392,
+          "res_height": 96,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "392x96"
+        },
+        {
+          "res_width": 392,
+          "res_height": 54,
+          "max_fps": 300000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 392,
+          "res_height": 24,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 112,
+          "res_height": 60,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 112,
+          "res_height": 36,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 509",
+      "series": "i-SPEED 5",
+      "sensor_size": "25.9x14.6mm",
+      "crop_factor": 1.46,
+      "bit_depth": 12,
+      "pixel_size_um": 13.5,
+      "native_resolution": "1920x1080",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/high-speed_cameras_for_slow_motion_analysis.php",
+      "datasheet_url": "https://www.ix-cameras.com/downloads/High-Speed_Cameras_for_Slow_Motion_Analysis.pdf",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3985,
+          "mode_type": "standard",
+          "note": "1920x1080 full sensor"
+        },
+        {
+          "res_width": 1736,
+          "res_height": 960,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1736x960"
+        },
+        {
+          "res_width": 1512,
+          "res_height": 1080,
+          "max_fps": 4980,
+          "mode_type": "standard",
+          "note": "width crop begins"
+        },
+        {
+          "res_width": 1344,
+          "res_height": 966,
+          "max_fps": 6382,
+          "mode_type": "standard",
+          "note": "1344x966"
+        },
+        {
+          "res_width": 1400,
+          "res_height": 786,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1400x786"
+        },
+        {
+          "res_width": 1232,
+          "res_height": 666,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1232x666"
+        },
+        {
+          "res_width": 1008,
+          "res_height": 534,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1008x534"
+        },
+        {
+          "res_width": 840,
+          "res_height": 474,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "840x474"
+        },
+        {
+          "res_width": 504,
+          "res_height": 282,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "504x282"
+        },
+        {
+          "res_width": 336,
+          "res_height": 192,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "336x192"
+        },
+        {
+          "res_width": 336,
+          "res_height": 84,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "336x84"
+        },
+        {
+          "res_width": 336,
+          "res_height": 48,
+          "max_fps": 300000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 392,
+          "res_height": 18,
+          "max_fps": 500000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 112,
+          "res_height": 42,
+          "max_fps": 750000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        },
+        {
+          "res_width": 112,
+          "res_height": 30,
+          "max_fps": 1000000,
+          "mode_type": "ultra-high-speed",
+          "note": "export restricted"
+        }
+      ]
+    },
+    {
+      "brand": "iX Cameras",
+      "model": "i-SPEED 203",
+      "series": "i-SPEED 2",
+      "sensor_size": "17.5x11.8mm",
+      "crop_factor": 2.05,
+      "bit_depth": 8,
+      "pixel_size_um": 13.7,
+      "native_resolution": "1280x864",
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://www.ix-cameras.com/compact_high_speed_cameras.php",
+      "datasheet_url": "",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 864,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "1280x864 full sensor"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 768,
+          "max_fps": 2813,
+          "mode_type": "standard",
+          "note": "1280x768"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 4219,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 480,
+          "max_fps": 4501,
+          "mode_type": "standard",
+          "note": "1280x480"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 240,
+          "max_fps": 9002,
+          "mode_type": "standard",
+          "note": "1280x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 128,
+          "max_fps": 16879,
+          "mode_type": "standard",
+          "note": "1280x128"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 64,
+          "max_fps": 33758,
+          "mode_type": "standard",
+          "note": "1280x64"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 32,
+          "max_fps": 67516,
+          "mode_type": "standard",
+          "note": "1280x32"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 24,
+          "max_fps": 90022,
+          "mode_type": "standard",
+          "note": "1280x24"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 12,
+          "max_fps": 180044,
+          "mode_type": "standard",
+          "note": "1280x12"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 8,
+          "max_fps": 225000,
+          "mode_type": "standard",
+          "note": "maximum frame rate"
+        }
+      ]
+    }
+  ]
+}
