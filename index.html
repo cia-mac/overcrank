@@ -945,6 +945,222 @@
       padding: 48px 16px;
     }
   }
+
+  /* ── Camera card clickability ── */
+  .camera-card {
+    cursor: pointer;
+  }
+  .camera-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* ── Detail modal ── */
+  .detail-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+  }
+  .detail-backdrop.show {
+    display: flex;
+  }
+  .detail-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 820px;
+    padding: 32px 36px 36px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .detail-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .detail-close:hover {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+  .detail-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  .detail-brand {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .detail-model {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .detail-status {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  .detail-section {
+    margin-bottom: 24px;
+  }
+  .detail-section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .detail-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px 20px;
+  }
+  .detail-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .detail-spec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .detail-spec-value {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .detail-spec-value.accent {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .detail-spec-value.strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .detail-mode-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+  .detail-mode-table th {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .detail-mode-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: middle;
+  }
+  .detail-mode-table tr:last-child td {
+    border-bottom: none;
+  }
+  .detail-mode-table td.fps-cell {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .detail-mode-table td.res-cell {
+    color: var(--text);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .detail-mode-table .mode-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.04);
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+  .detail-source {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .detail-source a {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    word-break: break-all;
+  }
+  .detail-source a:hover {
+    text-decoration: underline;
+  }
+  .detail-share-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .detail-share-btn:hover {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+  @media (max-width: 600px) {
+    .detail-modal {
+      padding: 24px 20px 28px;
+    }
+    .detail-model {
+      font-size: 22px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1024,6 +1240,13 @@
 </div>
 
 <div id="results"></div>
+
+<div class="detail-backdrop" id="detail-backdrop" role="dialog" aria-modal="true" aria-labelledby="detail-model">
+  <div class="detail-modal" id="detail-modal">
+    <button class="detail-close" id="detail-close" aria-label="Close">&times;</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
 
 <script>
 let DB = null;
@@ -1164,6 +1387,7 @@ function parseInput() {
 
 function search() {
   if (!DB) return;
+  serializeStateToHash();
   const { w, h, fps, text, dr } = parseInput();
   const noResFilter = w === 0 && h === 0 && fps === 0;
   const hasAnyFilter = !noResFilter || text || activeBrands.size > 0 || activeMounts.size > 0 || dr > 0;
@@ -1258,16 +1482,18 @@ function render(matches, w, h, fps, noResFilter) {
         <span class="sort-label">Sort</span>
         <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
         <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
+        <button class="sort-btn" onclick="copyShareLink(this)" title="Copy link to these results">Share</button>
       </div>
     </div>
     <div class="cards-grid">
   `;
 
   for (const { cam, matchingModes, bestFps } of matches) {
-    const isUnverified = cam.data_quality === 'gemini_unverified';
-    const badgeHtml = isUnverified
-      ? `<span class="badge badge-unverified">Unverified</span>`
-      : `<span class="badge badge-verified">Verified</span>`;
+    const dq = cam.data_quality;
+    let badgeHtml;
+    if (dq === 'needs_review') badgeHtml = `<span class="badge badge-unverified">Needs Review</span>`;
+    else if (dq === 'gemini_unverified') badgeHtml = `<span class="badge badge-unverified">Unverified</span>`;
+    else badgeHtml = `<span class="badge badge-verified">Verified</span>`;
 
     const camCat = cam.category || 'high_speed';
     const catTagHtml = camCat === 'cinema'
@@ -1336,8 +1562,9 @@ function render(matches, w, h, fps, noResFilter) {
       metaItems.push(`<div class="meta-item"><span class="meta-label">Tier</span><span class="meta-value">${priceVal}</span></div>`);
     }
 
+    const camKey = `${cam.brand}|${cam.model}`;
     html += `
-      <div class="camera-card">
+      <div class="camera-card" data-cam-key="${camKey.replace(/"/g, '&quot;')}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
         <div class="card-header">
           <div class="card-identity">
             <div class="card-brand">${cam.brand}${catTagHtml}</div>
@@ -1362,6 +1589,245 @@ function render(matches, w, h, fps, noResFilter) {
 
   html += `</div>`;
   el.innerHTML = html;
+
+  // Wire up card clicks to open detail modal
+  el.querySelectorAll('.camera-card').forEach(card => {
+    const open = () => openCameraDetail(card.dataset.camKey);
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+}
+
+function openCameraDetail(camKey) {
+  if (!DB) return;
+  const [brand, model] = camKey.split('|');
+  const cam = DB.cameras.find(c => c.brand === brand && c.model === model);
+  if (!cam) return;
+
+  const camCat = cam.category || 'high_speed';
+  const isUnverified = cam.data_quality === 'gemini_unverified';
+  const isNeedsReview = cam.data_quality === 'needs_review';
+  const catTagHtml = camCat === 'cinema'
+    ? `<span class="card-cat-tag cinema">Cinema</span>`
+    : `<span class="card-cat-tag high_speed">High-Speed</span>`;
+  let badgeHtml;
+  if (isNeedsReview) badgeHtml = `<span class="badge badge-unverified">Needs Review</span>`;
+  else if (isUnverified) badgeHtml = `<span class="badge badge-unverified">Unverified</span>`;
+  else badgeHtml = `<span class="badge badge-verified">Verified</span>`;
+
+  const specs = [];
+  const addSpec = (label, value, opts = {}) => {
+    if (value === null || value === undefined || value === '') return;
+    if (Array.isArray(value)) { if (!value.length) return; value = value.join(', '); }
+    const cls = opts.accent ? 'accent' : (opts.strong ? 'strong' : '');
+    specs.push(`<div class="detail-spec"><span class="detail-spec-label">${label}</span><span class="detail-spec-value ${cls}">${value}</span></div>`);
+  };
+
+  if (camCat === 'cinema') {
+    addSpec('DR Stops', cam.dynamic_range_stops, { accent: true });
+    addSpec('Sensor Format', cam.sensor_format, { strong: true });
+    addSpec('Sensor Size', cam.sensor_size);
+    addSpec('Crop Factor', cam.crop_factor ? cam.crop_factor + 'x' : null);
+    addSpec('Native Res', cam.native_resolution);
+    addSpec('Max Rec Res', cam.max_resolution_recording);
+    addSpec('Bit Depth', cam.bit_depth ? cam.bit_depth + '-bit' : null);
+    const isoLabel = cam.dual_native_iso ? 'Dual Native ISO' : 'Base ISO';
+    addSpec(isoLabel, cam.base_iso);
+    addSpec('Lens Mount', cam.lens_mount_native, { strong: true });
+    addSpec('Other Mounts', cam.other_mounts);
+    addSpec('ND Filter', cam.nd_filter);
+    addSpec('Codecs', cam.codecs);
+    addSpec('Media', cam.media);
+    addSpec('Max Shutter', cam.max_shutter_angle ? cam.max_shutter_angle + '°' : null);
+    addSpec('Price Tier', cam.price_tier);
+    addSpec('Price USD', cam.price_usd ? '$' + cam.price_usd.toLocaleString() : null);
+  } else {
+    addSpec('Sensor Size', cam.sensor_size, { strong: true });
+    addSpec('Crop Factor', cam.crop_factor ? cam.crop_factor + 'x' : null);
+    addSpec('Bit Depth', cam.bit_depth ? cam.bit_depth + '-bit' : null);
+    addSpec('Price Tier', cam.price_tier);
+    addSpec('Price USD', cam.price_usd ? '$' + cam.price_usd.toLocaleString() : null);
+  }
+
+  const sortedModes = [...cam.modes].sort((a, b) => (b.max_fps || 0) - (a.max_fps || 0));
+  const hasCodec = sortedModes.some(m => m.codec);
+  const hasType = sortedModes.some(m => m.mode_type && m.mode_type !== 'standard');
+  const hasNote = sortedModes.some(m => m.note && m.note !== `${m.res_width}x${m.res_height}`);
+
+  let modeRowsHtml = '';
+  for (const m of sortedModes) {
+    const resCell = m.res_width && m.res_height ? `${m.res_width} &times; ${m.res_height}` : (m.note || '—');
+    const fpsCell = m.max_fps ? m.max_fps.toLocaleString() + ' fps' : '—';
+    const typeCell = (m.mode_type && m.mode_type !== 'standard') ? `<span class="mode-badge">${m.mode_type}</span>` : '';
+    const codecCell = m.codec ? `<span class="mode-badge">${m.codec}</span>` : '';
+    const noteCell = (m.note && m.note !== `${m.res_width}x${m.res_height}`) ? m.note : '';
+    modeRowsHtml += `<tr>
+      <td class="res-cell">${resCell}</td>
+      <td class="fps-cell">${fpsCell}</td>
+      ${hasType ? `<td>${typeCell}</td>` : ''}
+      ${hasCodec ? `<td>${codecCell}</td>` : ''}
+      ${hasNote ? `<td>${noteCell}</td>` : ''}
+    </tr>`;
+  }
+
+  const modeTableHtml = sortedModes.length > 0 ? `
+    <div class="detail-section">
+      <div class="detail-section-label">All Modes (${sortedModes.length})</div>
+      <div style="overflow-x:auto;">
+      <table class="detail-mode-table">
+        <thead>
+          <tr>
+            <th>Resolution</th>
+            <th>Max FPS</th>
+            ${hasType ? '<th>Mode</th>' : ''}
+            ${hasCodec ? '<th>Codec</th>' : ''}
+            ${hasNote ? '<th>Note</th>' : ''}
+          </tr>
+        </thead>
+        <tbody>${modeRowsHtml}</tbody>
+      </table>
+      </div>
+    </div>
+  ` : '';
+
+  const hybridHtml = cam.hybrid_note ? `
+    <div class="detail-section">
+      <div class="detail-section-label">Note</div>
+      <div style="font-size:13px;color:var(--text-dim);line-height:1.6;">${cam.hybrid_note}</div>
+    </div>
+  ` : '';
+
+  const sourceHtml = cam.source_url
+    ? `<div><span style="color:var(--text-muted);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">Source</span><br><a href="${cam.source_url}" target="_blank" rel="noopener">${cam.source_url}</a></div>`
+    : `<div style="color:var(--text-muted);font-size:12px;">No source URL</div>`;
+
+  const body = `
+    <div class="detail-head">
+      <div>
+        <div class="detail-brand">${cam.brand}${catTagHtml}</div>
+        <div class="detail-model" id="detail-model">${cam.model}</div>
+        ${cam.series ? `<div class="detail-status">${cam.series}</div>` : ''}
+        ${cam.status && cam.status !== 'Current' ? `<div class="detail-status">Status: ${cam.status}</div>` : ''}
+      </div>
+      ${badgeHtml}
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-label">Specifications</div>
+      <div class="detail-specs-grid">${specs.join('')}</div>
+    </div>
+    ${hybridHtml}
+    ${modeTableHtml}
+    <div class="detail-source">
+      ${sourceHtml}
+      <button class="detail-share-btn" id="detail-share">Copy Link</button>
+    </div>
+  `;
+
+  document.getElementById('detail-body').innerHTML = body;
+  document.getElementById('detail-backdrop').classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  const shareBtn = document.getElementById('detail-share');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      const url = window.location.origin + window.location.pathname + '#cam=' + encodeURIComponent(camKey);
+      navigator.clipboard.writeText(url).then(() => {
+        shareBtn.textContent = 'Copied';
+        setTimeout(() => { shareBtn.textContent = 'Copy Link'; }, 1500);
+      }).catch(() => {
+        shareBtn.textContent = 'Press Ctrl+C';
+      });
+    });
+  }
+}
+
+function closeCameraDetail() {
+  document.getElementById('detail-backdrop').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// ── URL state ──
+let suppressHashSync = false;
+
+function serializeStateToHash() {
+  if (suppressHashSync) return;
+  const parts = [];
+  const w = document.getElementById('inp-w').value;
+  const h = document.getElementById('inp-h').value;
+  const fps = document.getElementById('inp-fps').value;
+  const text = document.getElementById('inp-text').value;
+  const dr = document.getElementById('inp-dr').value;
+  if (w) parts.push('w=' + encodeURIComponent(w));
+  if (h) parts.push('h=' + encodeURIComponent(h));
+  if (fps) parts.push('fps=' + encodeURIComponent(fps));
+  if (text) parts.push('q=' + encodeURIComponent(text));
+  if (dr) parts.push('dr=' + encodeURIComponent(dr));
+  if (activeCategory !== 'all') parts.push('cat=' + activeCategory);
+  if (activeBrands.size > 0) parts.push('brands=' + encodeURIComponent([...activeBrands].join(',')));
+  if (activeMounts.size > 0) parts.push('mounts=' + encodeURIComponent([...activeMounts].join(',')));
+  if (currentSort !== 'fps') parts.push('sort=' + currentSort);
+  const newHash = parts.length ? '#' + parts.join('&') : '';
+  if (newHash !== window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search + newHash);
+  }
+}
+
+function hydrateFromHash() {
+  const hash = window.location.hash.replace(/^#/, '');
+  if (!hash) return false;
+  const params = {};
+  hash.split('&').forEach(p => {
+    const [k, v] = p.split('=');
+    if (k) params[k] = decodeURIComponent(v || '');
+  });
+  // Camera detail deep-link
+  if (params.cam) {
+    setTimeout(() => openCameraDetail(params.cam), 50);
+  }
+  // Filter hydrate
+  let anyFilter = false;
+  if (params.w) { document.getElementById('inp-w').value = params.w; anyFilter = true; }
+  if (params.h) { document.getElementById('inp-h').value = params.h; anyFilter = true; }
+  if (params.fps) { document.getElementById('inp-fps').value = params.fps; anyFilter = true; }
+  if (params.q) { document.getElementById('inp-text').value = params.q; anyFilter = true; }
+  if (params.dr) { document.getElementById('inp-dr').value = params.dr; anyFilter = true; }
+  if (params.cat && ['all', 'cinema', 'high_speed'].includes(params.cat)) {
+    activeCategory = params.cat;
+    const container = document.getElementById('cat-filter');
+    if (container) {
+      container.querySelectorAll('.cat-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.cat === params.cat);
+      });
+    }
+    anyFilter = true;
+  }
+  if (params.brands) {
+    activeBrands = new Set(params.brands.split(',').filter(Boolean));
+    anyFilter = true;
+  }
+  if (params.mounts) {
+    activeMounts = new Set(params.mounts.split(',').filter(Boolean));
+    anyFilter = true;
+  }
+  if (params.sort && ['fps', 'brand'].includes(params.sort)) {
+    currentSort = params.sort;
+    anyFilter = true;
+  }
+  return anyFilter;
+}
+
+function copyShareLink(btn) {
+  serializeStateToHash();
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  }).catch(() => {
+    btn.textContent = 'Ctrl+C';
+  });
 }
 
 function setSort(s) {
@@ -1450,7 +1916,43 @@ document.getElementById('clear').addEventListener('click', () => {
   });
 });
 
-loadDB();
+// Modal close handlers
+document.getElementById('detail-close').addEventListener('click', closeCameraDetail);
+document.getElementById('detail-backdrop').addEventListener('click', (e) => {
+  if (e.target.id === 'detail-backdrop') closeCameraDetail();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('detail-backdrop').classList.contains('show')) {
+    closeCameraDetail();
+  }
+});
+
+loadDB().then(() => {
+  // Hydrate filters from URL hash, then rebuild filter UIs so chip active states match
+  suppressHashSync = true;
+  const hadFilters = hydrateFromHash();
+  // Rebuild filter bars so active brand/mount chips reflect the hydrated sets
+  buildMfrFilter();
+  buildMountFilter();
+  // Reflect active state on brand chips
+  if (activeBrands.size > 0) {
+    const mfr = document.getElementById('mfr-filter');
+    mfr.querySelector('[data-brand="__all__"]').classList.remove('active');
+    mfr.querySelectorAll('.mfr-chip').forEach(chip => {
+      if (activeBrands.has(chip.dataset.brand)) chip.classList.add('active');
+    });
+  }
+  if (activeMounts.size > 0) {
+    document.getElementById('mount-filter').querySelectorAll('.mount-chip').forEach(chip => {
+      if (activeMounts.has(chip.dataset.mount)) chip.classList.add('active');
+    });
+  }
+  // Reflect active sort
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  updateCinemaFieldsVisibility();
+  suppressHashSync = false;
+  if (hadFilters) search();
+});
 </script>
 </body>
 </html>
