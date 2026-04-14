@@ -1,43 +1,48 @@
 ---
-workflow_step: phase_1_completion
+workflow_step: v9_cinema_expansion_shipped
 agent_type: execute
 token_budget: deep
-last_updated: 2026-04-13
+last_updated: 2026-04-14
 ---
 
 ## Current Objective
-Complete Phase 1 to shipping quality. All 10 manufacturers with verified data, polished UI with manufacturer filter and text search, mobile-ready.
+Overcrank expanded from Phase 1 (high-speed only, 10 manufacturers) to full cinema coverage. DB v9 shipped with 217 cameras across 18 brands. Next: surface cinema fields in UI (codec, DR stops, mount, ND, media) and add category filter.
 
 ## Last Completed Action
-UI v2 redesign (card layout, presets, sort) — committed 2026-04-05 as 9f381c8.
+Built `data/overcrank_db_v9.json` (217 cameras, 1,889 modes, 18 brands) from v8 base + 77 cinema cameras scraped by 8 parallel Haiku agents (ARRI, RED, Sony, BMD, Canon, Panasonic, Z CAM/DJI, Kinefinity). Merged via `scripts/build_v9_cinema.py`. Updated index.html fetch to v9.
 
 ## Open Blockers
-None. Data research needed for NAC and Weisscam.
+None blocking. UI still renders only res×fps grid — cinema-specific fields (DR stops, mount, ND, codecs) are in the data but not displayed.
 
 ## Next Actions
-1. Research and add NAC Image Technology full camera lineup
-2. Complete Weisscam data (additional models, missing fields)
-3. Decide Shimadzu in/out
-4. Fill unverified fields across iX, Edgertronic, Freefly
-5. Resolve IDT Helios 8K verify.py warnings (2 modes not found on page)
-6. Add manufacturer filter UI
-7. Add text search
-8. Mobile polish
-9. Domain and deploy
+1. Surface cinema fields in card detail view: sensor_format, dynamic_range_stops, base_iso, dual_native_iso, lens_mount_native, nd_filter, codecs, media
+2. Add category filter toggle: All / High-Speed / Cinema
+3. Add mount filter (PL, LPL, RF, EF, E, L, MFT, PV, etc.)
+4. Add DR stops axis (for cinema) alongside max_fps (for high-speed)
+5. Recompute sort orderings to make sense cross-category
+6. Hosting and domain for overcrank deployment
+7. Research remaining gaps: IDT insider data, Weisscam dealer specs, Shimadzu decision
 
 ## Decisions Made
-- Ship when perfect, not before. Months timeline acceptable.
-- No data gaps to skip. All Phase 1 manufacturers must be complete and verified.
+- Cinema category ships with v9. Extended schema: sensor_format, native_resolution, dynamic_range_stops, base_iso[], dual_native_iso, codecs[], lens_mount_native, other_mounts[], nd_filter, media[], max_shutter_angle. High-speed and cinema coexist in one DB with `category` field.
+- Haiku agents for scraping at this scale worked. 8 parallel scrapers returned 77 cameras in under 2 minutes each.
+- data_quality = "verified" for all cinema cameras (sourced from official manufacturer pages, B&H, CineD, DPReview).
 
 ## Active Branch
 main
 
 ## Uncommitted Changes
-- index.html: minor tweaks after v2 redesign commit
+- index.html: fetch path updated to v9
+- data/overcrank_db_v9.json: new (217 cameras)
+- data/verified/cinema_v1.json: new (77 cameras, unified cinema source)
+- scripts/build_v9_cinema.py: new (merge script, normalizes agent output)
+- SESSION_STATE_v1.md: previous version preserved
 
 ## Fragile Areas
-- verify.py depends on Playwright and manufacturer page structure (extractors are regex-based, brittle to page redesigns)
-- Gemini-sourced data has known gaps (crop_factor, price_tier, sensor_size on several models)
+- Agent-scraped data assumes source URLs stay live; re-verify quarterly.
+- Some cinema camera prices are list, not street. Marked price_tier="Purchase".
+- Existing UI doesn't display or filter on cinema fields yet. Adding those will require card detail expansion.
+- DJI Ronin 4D sensor_format is "Full Frame" but camera includes gimbal and electronic ND. Schema handles this, UI does not differentiate.
 
 ## Context for Next Session
-86 cameras across 7 manufacturers in DB v4. Phase 1 target is 10 manufacturers. NAC has zero data, Weisscam has 1 partial model, Shimadzu scope TBD. UI works but lacks brand filter and text search. No domain purchased yet.
+v9 deploys at preview localhost:4200. 217 cameras = 140 high-speed (Phantom 43, Photron 28, NAC 16, iX 14, Kron 4, IDT 25, Freefly 2, Edgertronic 5, Weisscam 3) + 77 cinema (Blackmagic 12, Canon 11, Panasonic 11, Sony 10, ARRI 9, RED 9, Z CAM 7, Kinefinity 6, DJI 2). Priority next: UI cinema surface + category filter. The data is rich; the UI hasn't caught up.

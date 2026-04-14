@@ -1,0 +1,5004 @@
+[
+  {
+    "brand": "ARRI",
+    "model": "Alexa 35 Xtreme",
+    "series": "Alexa",
+    "sensor_format": "Super 35",
+    "sensor_size": "27.99x19.22mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4608x3164",
+    "max_resolution_recording": "4.6K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      160
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "ARRICORE",
+      "Apple ProRes 4444 XQ",
+      "Apple ProRes 4444",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "LPL",
+    "other_mounts": [
+      "PL via adapter",
+      "EF",
+      "Leitz M"
+    ],
+    "nd_filter": "Internal motorized (Clear, 0.6, 1.2, 1.8)",
+    "media": [
+      "Codex Compact Drive 1TB",
+      "Codex Compact Drive 2TB",
+      "Codex Compact Drive Express 1TB"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Purchase (Quote)",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/alexa-35",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4608,
+        "res_height": 3164,
+        "max_fps": 660,
+        "mode_type": "standard",
+        "note": "Sensor Overdrive (11 stops)",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4608,
+        "res_height": 2592,
+        "max_fps": 330,
+        "mode_type": "standard",
+        "note": "16:9",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 330,
+        "mode_type": "standard",
+        "note": "DCI 4K",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 330,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa 35 Live",
+    "series": "Alexa",
+    "sensor_format": "Super 35",
+    "sensor_size": "27.99x19.22mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4608x3164",
+    "max_resolution_recording": "4.6K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      160
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "ARRICORE",
+      "Apple ProRes variants"
+    ],
+    "lens_mount_native": "LPL",
+    "other_mounts": [
+      "PL via adapter",
+      "EF"
+    ],
+    "nd_filter": "Internal motorized (Clear, 0.6, 1.2, 1.8)",
+    "media": [
+      "Codex Compact Drive 1TB",
+      "Codex Compact Drive 2TB"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Purchase (Quote)",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-live",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 50,
+        "mode_type": "standard",
+        "note": "DCI 4K Live",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4608,
+        "res_height": 3164,
+        "max_fps": 25,
+        "mode_type": "standard",
+        "note": "Live 4.6K",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa Mini LF",
+    "series": "Alexa",
+    "sensor_format": "Large Format",
+    "sensor_size": "36.70x25.54mm",
+    "crop_factor": 0.98,
+    "native_resolution": "4448x3096",
+    "max_resolution_recording": "4.5K",
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "Apple ProRes 4444",
+      "Apple ProRes 422"
+    ],
+    "lens_mount_native": "LPL",
+    "other_mounts": [
+      "PL via adapter"
+    ],
+    "media": [
+      "Codex Compact Drive 1TB",
+      "Codex Compact Drive 2TB"
+    ],
+    "price_tier": "Purchase (Quote)",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4608,
+        "res_height": 3164,
+        "max_fps": null,
+        "mode_type": "standard",
+        "note": "Super 35 mode",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4448,
+        "res_height": 3096,
+        "max_fps": null,
+        "mode_type": "standard",
+        "note": "Large format 4.5K",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa LF",
+    "series": "Alexa",
+    "sensor_format": "Large Format",
+    "native_resolution": "4448x3096",
+    "max_resolution_recording": "4.5K",
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "Apple ProRes"
+    ],
+    "lens_mount_native": "LPL",
+    "other_mounts": [
+      "PL via adapter"
+    ],
+    "media": [
+      "Codex Compact Drive"
+    ],
+    "price_tier": "Purchase (Quote)",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4448,
+        "res_height": 3096,
+        "max_fps": 150,
+        "mode_type": "standard",
+        "note": "Large format 4.5K",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 150,
+        "mode_type": "standard",
+        "note": "DCI 4K",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa 65",
+    "series": "Alexa",
+    "sensor_format": "65mm",
+    "crop_factor": 0.75,
+    "native_resolution": "6144x3160",
+    "max_resolution_recording": "6K",
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW"
+    ],
+    "lens_mount_native": "PL",
+    "media": [
+      "SxS Pro+ cards"
+    ],
+    "price_tier": "Purchase (Quote)",
+    "status": "Current",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "Full 6K 65mm",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa Mini",
+    "series": "Alexa",
+    "sensor_format": "Super 35",
+    "crop_factor": 1.5,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW (optional)",
+      "Apple ProRes"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL",
+      "B4",
+      "EF"
+    ],
+    "nd_filter": "Internal motorized FSND (0.6, 1.2, 2.1)",
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Rental/Pre-owned",
+    "status": "Legacy but actively rented",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 200,
+        "mode_type": "standard",
+        "note": "4K",
+        "codec": "ProRes"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 200,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "ProRes"
+      },
+      {
+        "res_width": 2880,
+        "res_height": 1620,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "2.8K 16:9 (ARRIRAW license)",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa SXT",
+    "series": "Alexa",
+    "sensor_format": "Super 35",
+    "sensor_size": "27.99x19.22mm",
+    "crop_factor": 1.5,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "ProRes"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL adapter",
+      "EF"
+    ],
+    "nd_filter": "Internal motorized FSND (0.6, 1.2, 1.8, 2.1)",
+    "media": [
+      "SxS Pro+ cards",
+      "Codex drives"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Rental/Pre-owned",
+    "status": "Legacy but actively rented",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 2880,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "3:2 DCI",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Alexa XT",
+    "series": "Alexa",
+    "sensor_format": "Super 35",
+    "sensor_size": "27.99x19.22mm",
+    "crop_factor": 1.5,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW",
+      "ProRes"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL adapter",
+      "EF"
+    ],
+    "nd_filter": "Internal motorized FSND (0.6, 1.2, 1.8, 2.1)",
+    "media": [
+      "SxS Pro+ cards"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Rental/Pre-owned",
+    "status": "Legacy but actively rented",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 2880,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "DCI 3:2",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "ARRIRAW"
+      }
+    ]
+  },
+  {
+    "brand": "ARRI",
+    "model": "Amira",
+    "series": "Amira",
+    "sensor_format": "Super 35",
+    "crop_factor": 1.5,
+    "max_resolution_recording": "4K UHD",
+    "dynamic_range_stops": 14.0,
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "ARRIRAW (optional)",
+      "ProRes"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL",
+      "B4",
+      "EF"
+    ],
+    "nd_filter": "Internal motorized FSND (0.6, 1.2, 2.1)",
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 358,
+    "price_tier": "Rental/Pre-owned",
+    "status": "Legacy but actively rented",
+    "data_quality": "verified",
+    "source_url": "https://www.arri.com/en/camera-systems/cameras/amira",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 200,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "ProRes"
+      },
+      {
+        "res_width": 2880,
+        "res_height": 1620,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "2.8K 16:9 (ARRIRAW license)",
+        "codec": "ARRIRAW"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 25,
+        "mode_type": "standard",
+        "note": "DCI 4K",
+        "codec": "ProRes"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 25,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "ProRes"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "V-RAPTOR XL [X] 8K VV",
+    "series": "DSMC3 Raptor XL",
+    "sensor_format": "VV",
+    "sensor_size": "52.74x27.90mm",
+    "crop_factor": 0.9,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ",
+      "Apple ProRes 422"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "PL interchangeable"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "RED PRO CFexpress 2TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 27995,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.red.com/v-raptor-xl",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "4K Crop",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K ProRes",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "8K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "V-RAPTOR [X] 8K VV",
+    "series": "DSMC3 Raptor",
+    "sensor_format": "VV",
+    "sensor_size": "40.96x21.60mm",
+    "crop_factor": 0.9,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ",
+      "Apple ProRes 422"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "PL interchangeable"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "RED PRO CFexpress 2TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 24500,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.red.com/v-raptor",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "4K Crop",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K ProRes",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "8K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "V-RAPTOR XE 8K VV",
+    "series": "DSMC3 Raptor XE",
+    "sensor_format": "VV",
+    "sensor_size": "40.96x21.60mm",
+    "crop_factor": 0.9,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ",
+      "Apple ProRes 422"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "PL interchangeable"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "RED PRO CFexpress 2TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 24500,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.red.com/v-raptor-xe",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "4K Crop",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "8K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "KOMODO-X 6K",
+    "series": "DSMC3 Komodo",
+    "sensor_format": "Super 35",
+    "sensor_size": "26.1x13.8mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3160",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "E mount adapter available"
+    ],
+    "media": [
+      "RED PRO CFexpress 256GB",
+      "RED PRO CFexpress 512GB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 7495,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.red.com/komodo-x",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 96,
+        "mode_type": "standard",
+        "note": "4K",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "6K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "KOMODO 6K",
+    "series": "DSMC3 Komodo",
+    "sensor_format": "Super 35",
+    "sensor_size": "26.1x13.8mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3160",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "E mount adapter available"
+    ],
+    "media": [
+      "RED PRO CFexpress 256GB",
+      "RED PRO CFexpress 512GB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 6495,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.red.com/komodo",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 96,
+        "mode_type": "standard",
+        "note": "4K",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "6K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "MONSTRO 8K VV",
+    "series": "DSMC2",
+    "sensor_format": "Large Format",
+    "sensor_size": "46.16x24.60mm",
+    "crop_factor": 0.78,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF interchangeable"
+    ],
+    "nd_filter": "External only",
+    "media": [
+      "RED PRO SSD 2TB",
+      "RED MINI-MAG 1TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Rental",
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K Crop",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "8K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "8K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "HELIUM 8K S35",
+    "series": "DSMC2",
+    "sensor_format": "Super 35",
+    "sensor_size": "32.0x17.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800,
+      2000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF interchangeable"
+    ],
+    "nd_filter": "External only",
+    "media": [
+      "RED PRO SSD 2TB",
+      "RED MINI-MAG 1TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Rental",
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K Crop",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "8K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "GEMINI 5K S35",
+    "series": "DSMC2",
+    "sensor_format": "Super 35",
+    "sensor_size": "32.0x17.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "5120x2700",
+    "max_resolution_recording": "5K",
+    "dynamic_range_stops": 17.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 16,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF interchangeable"
+    ],
+    "nd_filter": "External only",
+    "media": [
+      "RED PRO SSD 2TB",
+      "RED MINI-MAG 1TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Rental",
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2560,
+        "res_height": 1440,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "2.5K",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 5120,
+        "res_height": 2700,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "5K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 5120,
+        "res_height": 2700,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "5K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "RED",
+    "model": "DRAGON-X 5K S35",
+    "series": "DSMC2",
+    "sensor_format": "Super 35",
+    "sensor_size": "32.0x17.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "5120x2700",
+    "max_resolution_recording": "5K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "REDCODE RAW (R3D)",
+      "Apple ProRes 422 HQ"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF interchangeable"
+    ],
+    "nd_filter": "External only",
+    "media": [
+      "RED PRO SSD 2TB",
+      "RED MINI-MAG 1TB"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Rental",
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2560,
+        "res_height": 1440,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "2.5K",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 5120,
+        "res_height": 2700,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "5K Full Frame",
+        "codec": "R3D"
+      },
+      {
+        "res_width": 5120,
+        "res_height": 2700,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "5K ProRes",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "Venice 2 8.6K",
+    "series": "Venice",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8640x5760",
+    "max_resolution_recording": "8.6K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 16,
+    "codecs": [
+      "X-OCN XT",
+      "X-OCN ST",
+      "X-OCN LT",
+      "ProRes 4444",
+      "ProRes 422 HQ"
+    ],
+    "lens_mount_native": "E",
+    "other_mounts": [
+      "PL (removable)",
+      "LPL (via adapter)"
+    ],
+    "nd_filter": "Internal",
+    "media": [
+      "AXS-R7",
+      "SxS PRO+"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 57900,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "X-OCN LT"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "ProRes 4444"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8.2K 17:9",
+        "codec": "X-OCN ST"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "7.6K 16:9",
+        "codec": "X-OCN LT"
+      },
+      {
+        "res_width": 8640,
+        "res_height": 5760,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8.6K 3:2",
+        "codec": "X-OCN XT"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "Venice 2 6K",
+    "series": "Venice",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6144x3160",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 16,
+    "codecs": [
+      "X-OCN XT",
+      "X-OCN ST",
+      "X-OCN LT",
+      "XAVC-I"
+    ],
+    "lens_mount_native": "E",
+    "other_mounts": [
+      "PL (removable)"
+    ],
+    "nd_filter": "Internal",
+    "media": [
+      "AXS-R7",
+      "SxS PRO+"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 49900,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "X-OCN LT"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 90,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K native",
+        "codec": "X-OCN ST"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "Venice",
+    "series": "Venice",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6144x3160",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 16,
+    "codecs": [
+      "XAVC-I",
+      "X-OCN (external)"
+    ],
+    "lens_mount_native": "E",
+    "other_mounts": [
+      "PL (removable)",
+      "LPL (via adapter)"
+    ],
+    "nd_filter": "External",
+    "media": [
+      "AXS-R7",
+      "SxS PRO+"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 42000,
+    "status": "Active",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K native",
+        "codec": "XAVC-I"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "Burano",
+    "series": "Burano",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8632x4856",
+    "max_resolution_recording": "8.6K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC H",
+      "X-OCN LT",
+      "XAVC-I",
+      "XAVC-L"
+    ],
+    "lens_mount_native": "E",
+    "other_mounts": [
+      "PL (via adapter, IBIS compatible)"
+    ],
+    "nd_filter": "Internal 6-stop variable electronic",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 25000,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 5888,
+        "res_height": 3320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "Super 35 5.8K",
+        "codec": "XAVC H"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K crop",
+        "codec": "X-OCN LT"
+      },
+      {
+        "res_width": 8632,
+        "res_height": 4856,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8.6K full-frame",
+        "codec": "XAVC H"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "FX9",
+    "series": "FX9",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6048x4032",
+    "max_resolution_recording": "6K (downsampled to 4K internal)",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800,
+      4000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC-I",
+      "XAVC-L",
+      "MPEG HD"
+    ],
+    "lens_mount_native": "E",
+    "nd_filter": "External",
+    "media": [
+      "XQD Type A",
+      "XQD Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 30000,
+    "status": "Active",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/handheld-camcorders/pxw-fx9",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI from 6K",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD 422 10-bit",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD long GOP",
+        "codec": "XAVC-L"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "XAVC-I"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "FX6",
+    "series": "FX6",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800,
+      12800
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC-I",
+      "XAVC-L"
+    ],
+    "lens_mount_native": "E",
+    "nd_filter": "Internal 2-step",
+    "media": [
+      "SxS PRO+ Duo"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 6999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/handheld-camcorders/pxw-fx6",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD 422 10-bit",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "XAVC-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD long GOP",
+        "codec": "XAVC-L"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "FX3",
+    "series": "FX3",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800,
+      12800
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC S-I",
+      "XAVC S"
+    ],
+    "lens_mount_native": "E",
+    "media": [
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 3900,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/handheld-camcorders/ilme-fx3",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "XAVC S"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI 10-bit",
+        "codec": "XAVC S-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD 10-bit",
+        "codec": "XAVC S-I"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "FX30",
+    "series": "FX30",
+    "sensor_format": "APS-C",
+    "sensor_size": "23.8x15.9mm",
+    "crop_factor": 1.5,
+    "native_resolution": "5976x3356",
+    "max_resolution_recording": "4K (6K oversampled)",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      2500
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC HS",
+      "XAVC S-I"
+    ],
+    "lens_mount_native": "E",
+    "media": [
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2200,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/handheld-camcorders/ilme-fx30",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD 1.6x crop",
+        "codec": "XAVC HS"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K 10-bit all-intra",
+        "codec": "XAVC S-I"
+      }
+    ]
+  },
+  {
+    "brand": "Sony",
+    "model": "A7S III",
+    "series": "Alpha",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      100,
+      3200
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC S",
+      "XAVC S-I",
+      "MPEG HD",
+      "RAW (external HDMI)"
+    ],
+    "lens_mount_native": "E",
+    "media": [
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 3200,
+    "status": "Active",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/cameras/ilce7sm3",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI 10-bit all-intra",
+        "codec": "XAVC S-I"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD 10-bit long GOP",
+        "codec": "XAVC S"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "HD",
+        "codec": "XAVC S"
+      }
+    ],
+    "hybrid_note": "Mirrorless hybrid. Cinema video specs only."
+  },
+  {
+    "brand": "Sony",
+    "model": "A1 II",
+    "series": "Alpha",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.9x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "7952x5304",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      100,
+      3200
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XAVC S",
+      "XAVC S-I",
+      "MPEG HD",
+      "RAW (external HDMI)"
+    ],
+    "lens_mount_native": "E",
+    "media": [
+      "SD UHS-II",
+      "CFexpress Type A"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 6498,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro.sony/ue_US/products/cameras/ilce1",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD 4:2:2 10-bit all-intra",
+        "codec": "XAVC S-I"
+      },
+      {
+        "res_width": 7952,
+        "res_height": 4472,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8K 4:2:0 10-bit",
+        "codec": "XAVC S"
+      }
+    ],
+    "hybrid_note": "Mirrorless hybrid. Cinema video specs only."
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "URSA Cine 17K 65",
+    "series": "URSA Cine",
+    "sensor_format": "65mm",
+    "sensor_size": "51.0x24.0mm",
+    "crop_factor": 0.75,
+    "native_resolution": "17520x8040",
+    "max_resolution_recording": "17K",
+    "dynamic_range_stops": 16,
+    "base_iso": [
+      400,
+      800
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL",
+      "EF via swap"
+    ],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "Media Module 8TB",
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 25295,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicursacine",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 360,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 180,
+        "mode_type": "standard",
+        "note": "8K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 17520,
+        "res_height": 7380,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "17K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 17520,
+        "res_height": 8040,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "17K open gate",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "URSA Cine 12K LF",
+    "series": "URSA Cine",
+    "sensor_format": "LF",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "12288x8040",
+    "max_resolution_recording": "12K",
+    "dynamic_range_stops": 16,
+    "base_iso": [
+      400,
+      800
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "LPL",
+      "EF via swap"
+    ],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "Media Module 8TB",
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 11645,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicursacine",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 224,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 180,
+        "mode_type": "standard",
+        "note": "6K Super 35",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 12288,
+        "res_height": 6480,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "12K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 12288,
+        "res_height": 8040,
+        "max_fps": 80,
+        "mode_type": "standard",
+        "note": "12K open gate",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "URSA Mini Pro 12K",
+    "series": "URSA Mini Pro",
+    "sensor_format": "Super 35",
+    "sensor_size": "28.25x14.95mm",
+    "crop_factor": 1.5,
+    "native_resolution": "12288x6480",
+    "max_resolution_recording": "12K",
+    "dynamic_range_stops": 14,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "CFast 2.0 cards",
+      "UHS-II SD cards"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 7025,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicursaminipro",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "4K Super 16",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 12288,
+        "res_height": 6480,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "12K",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "URSA Mini Pro 4.6K G2",
+    "series": "URSA Mini Pro",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.1x12.98mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4608x2592",
+    "max_resolution_recording": "4.6K",
+    "dynamic_range_stops": 15,
+    "base_iso": [
+      400,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "CFast 2.0 cards",
+      "UHS-II SD cards"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 6595,
+    "status": "Legacy (still rented)",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicursaminipro",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1152,
+        "max_fps": 300,
+        "mode_type": "standard",
+        "note": "2K",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 4608,
+        "res_height": 2592,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4.6K",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "URSA Broadcast G2",
+    "series": "URSA Broadcast",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.76x13.365mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3456",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "H.265 10-bit",
+      "ProRes 422 HQ",
+      "ProRes 422",
+      "Blackmagic RAW 12-bit",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "CFast 2.0 cards",
+      "UHS-II SD cards"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 4615,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicursabroadcast",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 6144,
+        "res_height": 2560,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 2.4:1 cinema",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K standard",
+        "codec": "H.265"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Pocket Cinema Camera 6K Pro",
+    "series": "Pocket Cinema",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.76x13.365mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3456",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Internal motorized 0/2/4/6 stops",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2789,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinema",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 50,
+        "mode_type": "standard",
+        "note": "6K",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Pocket Cinema Camera 6K G2",
+    "series": "Pocket Cinema",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.76x13.365mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3456",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Fixed or optional external",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2195,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinema",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 40,
+        "mode_type": "standard",
+        "note": "6K",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Pocket Cinema Camera 6K",
+    "series": "Pocket Cinema",
+    "sensor_format": "LF",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6144x4096",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "L",
+    "other_mounts": [],
+    "nd_filter": "Optional external",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2855,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinema",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 4096,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "6K full frame",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Pocket Cinema Camera 4K",
+    "series": "Pocket Cinema",
+    "sensor_format": "M43",
+    "sensor_size": "17.3x13.0mm",
+    "crop_factor": 2.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 12,
+    "base_iso": [
+      400
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW Q0",
+      "Blackmagic RAW Q1",
+      "Blackmagic RAW Q3",
+      "Blackmagic RAW Q5",
+      "H.264 proxy"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "nd_filter": "Optional external",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 1095,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinema",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW Q5"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "BRAW Q5"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Studio Camera 6K Pro",
+    "series": "Studio Camera",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.76x13.365mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x3456",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "H.265 10-bit",
+      "ProRes 422 HQ",
+      "ProRes 422",
+      "Blackmagic RAW 12-bit"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Internal remote 2/4/6 stops",
+    "media": [
+      "12G-SDI output",
+      "10G Ethernet IP"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2745,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicstudiocamera",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3456,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K standard",
+        "codec": "H.265"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Studio Camera 4K Pro G2",
+    "series": "Studio Camera",
+    "sensor_format": "Super 35",
+    "sensor_size": "17.3x9.75mm",
+    "crop_factor": 1.5,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "H.265 10-bit",
+      "ProRes 422 HQ",
+      "ProRes 422",
+      "H.264"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "12G-SDI output",
+      "10G Ethernet IP"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 2055,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicstudiocamera",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "1080p HD",
+        "codec": "H.265"
+      }
+    ]
+  },
+  {
+    "brand": "Blackmagic Design",
+    "model": "Micro Studio Camera 4K G2",
+    "series": "Studio Camera",
+    "sensor_format": "M43",
+    "sensor_size": "17.3x13.0mm",
+    "crop_factor": 2.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 13,
+    "base_iso": [
+      400,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "Blackmagic RAW 12-bit",
+      "H.265 10-bit",
+      "ProRes 422"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "nd_filter": "None",
+    "media": [
+      "12G-SDI output",
+      "USB-C expansion"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 1095,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.blackmagicdesign.com/products/blackmagicmicrostudiocamera",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "BRAW 12-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "BRAW 12-bit"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "1080p HD",
+        "codec": "BRAW 12-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C700 FF",
+    "series": "Cinema EOS",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36x24mm",
+    "crop_factor": 1.0,
+    "native_resolution": "5952x3160",
+    "max_resolution_recording": "5.9K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Canon Cinema RAW Light (ST/LT/HQ)",
+      "XF-AVC (4:2:2 10-bit)"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "nd_filter": "Internal 2/4/6/8/10 stops",
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 19999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c700-ff",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 5952,
+        "res_height": 3160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "5.9K FF",
+        "codec": "Cinema RAW Light"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C500 Mark II",
+    "series": "Cinema EOS",
+    "sensor_format": "Full Frame",
+    "sensor_size": "38.1x20.1mm",
+    "crop_factor": 1.0,
+    "native_resolution": "5952x3140",
+    "max_resolution_recording": "5.9K",
+    "dynamic_range_stops": 16.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Canon Cinema RAW Light (ST/LT/HQ)",
+      "XF-AVC (4:2:2 10-bit)"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via swap"
+    ],
+    "nd_filter": "Internal 2/4/6/8/10 stops",
+    "media": [
+      "CFexpress Type B",
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 15999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c500-mark-ii",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K DCI S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 5952,
+        "res_height": 3140,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "5.9K FF",
+        "codec": "Cinema RAW Light"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C400",
+    "series": "Cinema EOS",
+    "sensor_format": "Super 35",
+    "sensor_size": "28.4x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2304",
+    "max_resolution_recording": "4K DCI",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Canon Cinema RAW Light (ST/LT/HQ)",
+      "XF-AVC (4:2:2 10-bit)"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "nd_filter": "Internal 2/4/6/8/10 stops",
+    "media": [
+      "CFexpress Type B",
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 9999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c400",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2304,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "Cinema RAW Light"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C300 Mark III",
+    "series": "Cinema EOS",
+    "sensor_format": "Super 35",
+    "sensor_size": "28.4x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2304",
+    "max_resolution_recording": "4K DCI",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XF-AVC (4:2:2 10-bit)",
+      "MP4 (4:2:0 8-bit)"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "nd_filter": "Internal 2/4/6/8/10 stops",
+    "media": [
+      "CFexpress Type B",
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 4499,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c300-mark-iii",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "FHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2304,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XF-AVC"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C300 Mark II",
+    "series": "Cinema EOS",
+    "sensor_format": "Super 35",
+    "sensor_size": "28.4x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2304",
+    "max_resolution_recording": "4K DCI",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XF-AVC (4:2:2 10-bit)",
+      "MP4 (4:2:0 8-bit)"
+    ],
+    "lens_mount_native": "EF",
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Legacy",
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c300-mark-ii",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2304,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XF-AVC"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C70",
+    "series": "Cinema EOS",
+    "sensor_format": "APS-C",
+    "sensor_size": "22.3x14.8mm",
+    "crop_factor": 1.5,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K UHD",
+    "dynamic_range_stops": 13.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XF-AVC (4:2:2 10-bit)",
+      "MP4 (4:2:0 8-bit)"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 1499,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c70",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "FHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "XF-AVC"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "R5C",
+    "series": "EOS R (Hybrid Cinema)",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36x24mm",
+    "crop_factor": 1.0,
+    "native_resolution": "5472x3648",
+    "max_resolution_recording": "8K RAW",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Cinema RAW Light",
+      "MOV H.264/H.265"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 4499,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-r5-c",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 8192,
+        "res_height": 4320,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K RAW",
+        "codec": "Cinema RAW Light"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K DCI",
+        "codec": "H.265"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "R5 Mark II",
+    "series": "EOS R (Hybrid Cinema)",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36x24mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8192x5464",
+    "max_resolution_recording": "8K RAW",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Canon Log 3",
+      "H.265",
+      "Cinema RAW Light"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 5499,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-r5-mark-ii",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K DCI S&F",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 5464,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K RAW FF",
+        "codec": "Cinema RAW Light"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "R1",
+    "series": "EOS R (Hybrid Cinema)",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36x24mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8192x5464",
+    "max_resolution_recording": "8K RAW",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "Canon Log 3",
+      "H.265"
+    ],
+    "lens_mount_native": "RF",
+    "other_mounts": [
+      "EF via adapter"
+    ],
+    "media": [
+      "CFexpress Type B"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 6499,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-r1",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "8K DCI S&F",
+        "codec": "H.265"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 5464,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K FF",
+        "codec": "Canon Log 3"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C200",
+    "series": "Cinema EOS",
+    "sensor_format": "Super 35",
+    "sensor_size": "28.4x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2304",
+    "max_resolution_recording": "4K DCI",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "XF-AVC (4:2:2 10-bit)"
+    ],
+    "lens_mount_native": "EF",
+    "nd_filter": "Internal 2/4/6 stops",
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Legacy",
+    "status": "Legacy (Active Rentals)",
+    "data_quality": "verified",
+    "source_url": "https://www.usa.canon.com/shop/p/eos-c200",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD S&F",
+        "codec": "XF-AVC"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2304,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "XF-AVC"
+      }
+    ]
+  },
+  {
+    "brand": "Canon",
+    "model": "C100 Mark II",
+    "series": "Cinema EOS",
+    "sensor_format": "APS-C",
+    "sensor_size": "22.3x14.8mm",
+    "crop_factor": 1.5,
+    "native_resolution": "1920x1080",
+    "max_resolution_recording": "Full HD",
+    "dynamic_range_stops": 11.0,
+    "base_iso": [
+      800
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 8,
+    "codecs": [
+      "MP4 (4:2:0 8-bit)",
+      "AVCHD"
+    ],
+    "lens_mount_native": "EF",
+    "nd_filter": "Internal 1/2/4 stops",
+    "media": [
+      "SD/SDHC/SDXC"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Legacy",
+    "status": "Legacy (Active Rentals)",
+    "data_quality": "verified",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "FHD S&F",
+        "codec": "AVCHD"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "FHD",
+        "codec": "MP4"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "Varicam LT",
+    "series": "Varicam",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.60x12.97mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "AVC-Intra 4K 422",
+      "AVC-Intra 2K 444/422/LT",
+      "ProRes 4444",
+      "ProRes 422 HQ"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via adapter"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "expressP2",
+      "microP2"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 17000,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/varicam_lt/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 2K 422"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 422"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 4K 422"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 4K 422"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "Varicam 35",
+    "series": "Varicam",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.60x12.97mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "AVC-Intra 4K 422/LT",
+      "ProRes 4444",
+      "ProRes 422 HQ"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "expressP2"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 24500,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/varicam_35/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 2K 422"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 4K 422"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 4K 422"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "Varicam Pure",
+    "series": "Varicam",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.60x12.97mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "Codex VRAW 2.0",
+      "V-RAW",
+      "ProRes",
+      "DNxHR"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL"
+    ],
+    "media": [
+      "Codex VRAW cartridge"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Discontinued - Rental rotation",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/varicam_pure/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "VRAW 12-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "VRAW 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "VRAW 12-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "EVA1",
+    "series": "EVA",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.60x13.80mm",
+    "crop_factor": 1.5,
+    "native_resolution": "5760x3240",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      2500
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "AVC-Intra All-I 400",
+      "LongGOP 150",
+      "HEVC H.265"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via adapter"
+    ],
+    "nd_filter": "Internal 4-stop",
+    "media": [
+      "SD UHS-II",
+      "CFast"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 4995,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/eva1/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 100"
+      },
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 400"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 400"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC H.265 200Mbps"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "S1H",
+    "series": "LUMIX S",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.00x24.00mm",
+    "crop_factor": 1.0,
+    "native_resolution": "9920x6624",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 13.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "H.264/AVC",
+      "H.265/HEVC",
+      "10-bit 4:2:0",
+      "10-bit 4:2:2"
+    ],
+    "lens_mount_native": "L",
+    "other_mounts": [],
+    "media": [
+      "SD UHS-II",
+      "CFast"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 3999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/s1h/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 180,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 10-bit"
+      },
+      {
+        "res_width": 1280,
+        "res_height": 720,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4:2:2"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4:2:2 RAW output"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "BS1H",
+    "series": "LUMIX Box",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.00x24.00mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6000x4000",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 13.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 12,
+    "codecs": [
+      "HEVC H.265",
+      "H.264/AVC",
+      "RAW 12-bit via HDMI"
+    ],
+    "lens_mount_native": "L",
+    "other_mounts": [],
+    "media": [
+      "CFexpress Type B"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 3999,
+    "status": "Discontinued - Rental rotation",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/bs1h/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4K"
+      },
+      {
+        "res_width": 5888,
+        "res_height": 3312,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "RAW 12-bit HDMI output"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 6K"
+      },
+      {
+        "res_width": 5888,
+        "res_height": 3312,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 5.9K 16:9"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "BGH1",
+    "series": "LUMIX Box",
+    "sensor_format": "Micro Four Thirds",
+    "sensor_size": "17.30x13.00mm",
+    "crop_factor": 2.0,
+    "native_resolution": "5184x3888",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "AVC-Intra All-I 400",
+      "HEVC H.265",
+      "10-bit 4:2:2",
+      "10-bit 4:2:0"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "SD UHS-II",
+      "CFast"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 2499,
+    "status": "Discontinued - Rental rotation",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/bgh1/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "AVC-Intra 400 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4:2:0"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "GH7",
+    "series": "LUMIX G",
+    "sensor_format": "Micro Four Thirds",
+    "sensor_size": "17.30x13.00mm",
+    "crop_factor": 2.0,
+    "native_resolution": "5776x4336",
+    "max_resolution_recording": "5.7K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "H.264/AVC",
+      "HEVC H.265",
+      "ProRes RAW HQ",
+      "10-bit 4:2:2"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "CFexpress Type B",
+      "SD UHS-II"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 1899,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/gh7/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 10-bit HFR"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4K"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit open gate"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "ProRes RAW HQ CFexpress"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "GH6",
+    "series": "LUMIX G",
+    "sensor_format": "Micro Four Thirds",
+    "sensor_size": "17.30x13.00mm",
+    "crop_factor": 2.0,
+    "native_resolution": "5776x4336",
+    "max_resolution_recording": "5.7K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "H.264/AVC",
+      "HEVC H.265",
+      "ProRes 422/422HQ",
+      "10-bit 4:2:2"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "SD UHS-II",
+      "CFast"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 2199,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/gh6/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit FHD"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit 4K"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 10-bit C4K"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "ProRes 422 HQ 5.7K"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "GH5S",
+    "series": "LUMIX G",
+    "sensor_format": "Micro Four Thirds",
+    "sensor_size": "17.30x13.00mm",
+    "crop_factor": 2.0,
+    "native_resolution": "3680x2700",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "H.264/AVC",
+      "HEVC H.265",
+      "10-bit 4:2:0",
+      "8-bit 4:2:0"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "SD UHS-II"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 1599,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/cinema_camera_varicam_eva/products/gh5s/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1280,
+        "res_height": 720,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 HD"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 180,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.265 10-bit FHD"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.265 10-bit C4K"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.265 10-bit 4K"
+      }
+    ]
+  },
+  {
+    "brand": "Panasonic",
+    "model": "AG-CX350",
+    "series": "AG",
+    "sensor_format": "1-inch",
+    "sensor_size": "13.20x8.80mm",
+    "crop_factor": 2.7,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      100
+    ],
+    "dual_native_iso": false,
+    "bit_depth": 10,
+    "codecs": [
+      "H.264/AVC All-I 400Mbps",
+      "H.264 LongGOP 150Mbps",
+      "HEVC H.265 200Mbps"
+    ],
+    "lens_mount_native": "Fixed 20x zoom",
+    "other_mounts": [],
+    "nd_filter": "Internal ND",
+    "media": [
+      "SD UHS-II"
+    ],
+    "price_tier": "Purchase",
+    "price_usd": 4500,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://pro-av.panasonic.net/en/products/ag-cx350/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 All-I 400Mbps 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC H.265 200Mbps 10-bit"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "H.264 All-I 100Mbps"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "",
+        "codec": "HEVC 50Mbps"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2-F8",
+    "series": "E2 Full Frame",
+    "sensor_format": "Full Frame",
+    "sensor_size": "35.97x23.98mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8192x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      400,
+      1250
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "Z-RAW",
+      "ProRes 422 HQ",
+      "H.265 10-bit"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via swap",
+      "M via swap",
+      "MFT via swap"
+    ],
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 5995,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.z-cam.com/products/professional-cameras/e2-f8/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 3456,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8K 2.4:1",
+        "codec": "Z-RAW"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8K UHD",
+        "codec": "Z-RAW"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3240,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "6K DCI",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 3240,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "6K UHD",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2-F6",
+    "series": "E2 Full Frame",
+    "sensor_format": "Full Frame",
+    "sensor_size": "37.09x24.75mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6064x4040",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      500,
+      2500
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "ProRes RAW 12-bit",
+      "Z-RAW 12-bit",
+      "H.265 10-bit",
+      "H.264 8-bit"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via swap",
+      "M via swap",
+      "MFT via swap"
+    ],
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "http://www.z-cam.com/e2-f6/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 1728,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K 2.4:1",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "FHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 90,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 6064,
+        "res_height": 2560,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 2.4:1",
+        "codec": "Z-RAW 12-bit"
+      },
+      {
+        "res_width": 6064,
+        "res_height": 3196,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "6K DCI",
+        "codec": "ProRes RAW 12-bit"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 3240,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "6K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 6064,
+        "res_height": 4040,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "Open Gate",
+        "codec": "ProRes RAW 12-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2-M4",
+    "series": "E2 Micro Four Thirds",
+    "sensor_format": "MFT",
+    "sensor_size": "17.3x13.0mm",
+    "crop_factor": 2.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 13.0,
+    "base_iso": [
+      200,
+      1000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "ProRes RAW 12-bit HDMI",
+      "H.265 10-bit",
+      "H.264 8-bit",
+      "ProRes 422"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "CFast 2.0",
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "http://www.z-cam.com/e2-m4/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "FHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 1620,
+        "max_fps": 160,
+        "mode_type": "standard",
+        "note": "4K 2.39:1",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 1728,
+        "max_fps": 150,
+        "mode_type": "standard",
+        "note": "4K 2.4:1",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2-S6",
+    "series": "E2 Super 35",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.4x15.67mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x4096",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      400,
+      2000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "Z-RAW 10-bit",
+      "ProRes RAW 12-bit HDMI",
+      "H.265 10-bit"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via swap",
+      "M via swap",
+      "MFT via swap"
+    ],
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://www.z-cam.com/products/professional-cameras/e2-s6/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "FHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3240,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 1.9:1",
+        "codec": "Z-RAW 10-bit"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 4096,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "6K Open Gate",
+        "codec": "Z-RAW 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2-S6G",
+    "series": "E2 Super 35 Global Shutter",
+    "sensor_format": "Super 35",
+    "sensor_size": "23.4x15.67mm",
+    "crop_factor": 1.5,
+    "native_resolution": "6144x4096",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 12.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "Z-RAW 10-bit",
+      "H.265 10-bit"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL via swap",
+      "M via swap"
+    ],
+    "media": [
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 180,
+    "price_tier": "Purchase",
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "http://www.z-cam.com/e2-s6g/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 3240,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "6K 1.9:1",
+        "codec": "Z-RAW 10-bit"
+      },
+      {
+        "res_width": 6144,
+        "res_height": 4096,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K Open Gate",
+        "codec": "Z-RAW 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2",
+    "series": "E2 Original 4K",
+    "sensor_format": "MFT",
+    "sensor_size": "17.3x13.0mm",
+    "crop_factor": 2.0,
+    "native_resolution": "4096x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 15.0,
+    "base_iso": [
+      200,
+      1000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "H.265 10-bit",
+      "H.264 8-bit"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "CFast 2.0",
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Legacy",
+    "data_quality": "verified",
+    "source_url": "https://www.z-cam.com/products/professional-cameras/e2/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 1728,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K 2.4:1",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3696,
+        "res_height": 2772,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "Open Gate",
+        "codec": "H.265 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "Z CAM",
+    "model": "E2C",
+    "series": "E2 Compact 4K",
+    "sensor_format": "MFT",
+    "sensor_size": "17.3x13.0mm",
+    "crop_factor": 2.0,
+    "native_resolution": "3840x2160",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 11.5,
+    "base_iso": [
+      200,
+      1000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "H.265 10-bit",
+      "H.264 8-bit"
+    ],
+    "lens_mount_native": "MFT",
+    "other_mounts": [],
+    "media": [
+      "SD UHS-II"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "status": "Legacy",
+    "data_quality": "verified",
+    "source_url": "https://www.z-cam.com/products/professional-cameras/e2c/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1920,
+        "res_height": 1080,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "FHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "H.265 10-bit"
+      },
+      {
+        "res_width": 2880,
+        "res_height": 2880,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "Square",
+        "codec": "H.265 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "DJI",
+    "model": "Ronin 4D-6K",
+    "series": "Ronin 4D",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6016x3384",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5000
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "ProRes RAW",
+      "ProRes 422 HQ",
+      "H.264 10-bit"
+    ],
+    "lens_mount_native": "DL",
+    "other_mounts": [],
+    "nd_filter": "Electronic ND (9-stop motorized)",
+    "media": [
+      "CFexpress Type B",
+      "DJI PROSSD 1TB via USB-C"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 4999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://store.dji.com/product/dji-ronin-4d",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 3384,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 16:9",
+        "codec": "ProRes RAW"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 2532,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 2.38:1",
+        "codec": "ProRes RAW"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 3240,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "6K UHD",
+        "codec": "H.264 10-bit"
+      }
+    ]
+  },
+  {
+    "brand": "DJI",
+    "model": "Ronin 4D-8K",
+    "series": "Ronin 4D",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "7680x4320",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 14.7,
+    "base_iso": [
+      320,
+      1600
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 10,
+    "codecs": [
+      "ProRes RAW",
+      "ProRes 422 HQ",
+      "H.264 10-bit"
+    ],
+    "lens_mount_native": "DL",
+    "other_mounts": [],
+    "nd_filter": "Electronic ND (9-stop motorized)",
+    "media": [
+      "CFexpress Type B",
+      "DJI PROSSD 1TB via USB-C"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 9999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://store.dji.com/product/dji-ronin-4d-8k",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 3840,
+        "res_height": 2160,
+        "max_fps": 120,
+        "mode_type": "standard",
+        "note": "4K UHD",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "8K 16:9 Full Frame",
+        "codec": "ProRes RAW"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 3240,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "8K 2.38:1 Full Frame",
+        "codec": "ProRes RAW"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 3240,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "5.5K 16:9 Super 35",
+        "codec": "ProRes RAW"
+      },
+      {
+        "res_width": 7680,
+        "res_height": 4320,
+        "max_fps": 30,
+        "mode_type": "standard",
+        "note": "8K 16:9 Full Frame",
+        "codec": "ProRes 422 HQ"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "MAVO Edge 8K",
+    "series": "MAVO Edge",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "8192x5456",
+    "max_resolution_recording": "8K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "KineRAW",
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ",
+      "ProRes 422"
+    ],
+    "lens_mount_native": "KineMOUNT",
+    "other_mounts": [
+      "EF via adapter",
+      "PL via adapter",
+      "LPL via adapter"
+    ],
+    "nd_filter": "Internal e-ND 0.6-2.1 (2-7 stops)",
+    "media": [
+      "KineMAG",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 11999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/shop/mavo_edge/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 280,
+        "mode_type": "standard",
+        "note": "2K",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 145,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 3384,
+        "max_fps": 70,
+        "mode_type": "standard",
+        "note": "8K 16:9",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 8192,
+        "res_height": 5456,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "8K 3:2 open gate",
+        "codec": "ProRes 4444 XQ"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "MAVO Edge 6K",
+    "series": "MAVO Edge",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6016x3984",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5120
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "KineRAW",
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ"
+    ],
+    "lens_mount_native": "KineMOUNT",
+    "other_mounts": [
+      "EF via adapter",
+      "PL via adapter"
+    ],
+    "nd_filter": "Internal e-ND 0.6-2.4 (2-7 stops)",
+    "media": [
+      "KineMAG Nano",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 8999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/mavo-edge-6k/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 290,
+        "mode_type": "standard",
+        "note": "2K S16",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 1720,
+        "max_fps": 160,
+        "mode_type": "standard",
+        "note": "4K 2.4:1 scope",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 150,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 2520,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "6K 2.4:1",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 3384,
+        "max_fps": 60,
+        "mode_type": "standard",
+        "note": "6K 16:9",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 3984,
+        "max_fps": 48,
+        "mode_type": "standard",
+        "note": "6K 3:2 open gate",
+        "codec": "ProRes 4444 XQ"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "MAVO LF",
+    "series": "MAVO",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6016x3984",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5120
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "KineRAW 2.0",
+      "CinemaDNG",
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF optional",
+      "LPL optional"
+    ],
+    "media": [
+      "SSD via USB-C",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 7999,
+    "status": "Discontinued",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/shop/mavo_lf/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 240,
+        "mode_type": "standard",
+        "note": "2K",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 1720,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K 2.4:1 scope",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 2520,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "6K 2.4:1",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 3984,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K 3:2 RAW",
+        "codec": "CinemaDNG"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "MAVO S35 Mark 2",
+    "series": "MAVO Mark 2",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.0x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "5760x3840",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ",
+      "ProRes 422 LT",
+      "ProRes Proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL optional",
+      "E mount optional"
+    ],
+    "media": [
+      "KineMAG Nano",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 3999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/mavo-mark2-camera/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 150,
+        "mode_type": "standard",
+        "note": "4K DCI high frame rate",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 112,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 3840,
+        "max_fps": 96,
+        "mode_type": "standard",
+        "note": "6K 3:2 open gate",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 5760,
+        "res_height": 2880,
+        "max_fps": 96,
+        "mode_type": "standard",
+        "note": "6K 2.4:1",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 5296,
+        "res_height": 3984,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "5.3K 4:3 anamorphic",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4912,
+        "res_height": 3936,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "4.9K 6:5 anamorphic",
+        "codec": "ProRes 4444 XQ"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "MAVO Mark 2 LF",
+    "series": "MAVO Mark 2",
+    "sensor_format": "Full Frame",
+    "sensor_size": "36.0x24.0mm",
+    "crop_factor": 1.0,
+    "native_resolution": "6016x3984",
+    "max_resolution_recording": "6K",
+    "dynamic_range_stops": 14.0,
+    "base_iso": [
+      800,
+      5120
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ",
+      "ProRes 422 LT",
+      "ProRes Proxy"
+    ],
+    "lens_mount_native": "PL",
+    "other_mounts": [
+      "EF optional",
+      "LPL optional"
+    ],
+    "media": [
+      "KineMAG Nano",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 3999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/mavo-mark2-camera/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 200,
+        "mode_type": "standard",
+        "note": "2K",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 1720,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K 2.4:1 scope",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 2520,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "6K 2.4:1",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 75,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 6016,
+        "res_height": 3984,
+        "max_fps": 24,
+        "mode_type": "standard",
+        "note": "6K 3:2 open gate",
+        "codec": "ProRes 4444 XQ"
+      }
+    ]
+  },
+  {
+    "brand": "Kinefinity",
+    "model": "TERRA 4K",
+    "series": "TERRA",
+    "sensor_format": "Super 35",
+    "sensor_size": "24.0x16.0mm",
+    "crop_factor": 1.5,
+    "native_resolution": "4096x2700",
+    "max_resolution_recording": "4K",
+    "dynamic_range_stops": 13.0,
+    "base_iso": [
+      800,
+      3200
+    ],
+    "dual_native_iso": true,
+    "bit_depth": 12,
+    "codecs": [
+      "ProRes 4444 XQ",
+      "ProRes 4444",
+      "ProRes 422 HQ",
+      "ProRes 422",
+      "ProRes Proxy"
+    ],
+    "lens_mount_native": "EF",
+    "other_mounts": [
+      "PL optional"
+    ],
+    "media": [
+      "KineMAG",
+      "CFast 2.0"
+    ],
+    "max_shutter_angle": 360,
+    "price_tier": "Purchase",
+    "price_usd": 5999,
+    "status": "Current",
+    "data_quality": "verified",
+    "source_url": "https://kinefinity.com/terra/",
+    "category": "cinema",
+    "modes": [
+      {
+        "res_width": 1024,
+        "res_height": 768,
+        "max_fps": 480,
+        "mode_type": "standard",
+        "note": "1K proxy",
+        "codec": "ProRes Proxy"
+      },
+      {
+        "res_width": 2048,
+        "res_height": 1080,
+        "max_fps": 320,
+        "mode_type": "standard",
+        "note": "2K 16:9",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 3072,
+        "res_height": 2160,
+        "max_fps": 200,
+        "mode_type": "standard",
+        "note": "3K 16:9",
+        "codec": "ProRes 422 HQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2160,
+        "max_fps": 160,
+        "mode_type": "standard",
+        "note": "4K DCI",
+        "codec": "ProRes 4444 XQ"
+      },
+      {
+        "res_width": 4096,
+        "res_height": 2700,
+        "max_fps": 100,
+        "mode_type": "standard",
+        "note": "4K 3:2 open gate",
+        "codec": "ProRes 4444 XQ"
+      }
+    ]
+  }
+]

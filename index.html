@@ -825,7 +825,7 @@ let lastResults = [];
 let activeBrands = new Set(); // empty = all brands
 
 async function loadDB() {
-  const r = await fetch('data/overcrank_db_v8.json?v=' + Date.now());
+  const r = await fetch('data/overcrank_db_v9.json?v=' + Date.now());
   DB = await r.json();
   const statsEl = document.getElementById('db-stats');
   statsEl.innerHTML =
