@@ -1,0 +1,3810 @@
+{
+  "manufacturer": "Photron",
+  "verified_date": "2026-04-13",
+  "verified_by": "claude_code",
+  "sources": {
+    "nova_s_manual": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+    "sa_z_manual": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_SA-Z_HW_Manual_Rev406eng.pdf",
+    "mini_ax_manual": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_AX50_100_200_HW_Manual_Rev416eng.pdf",
+    "mini_r_manual": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_R_series_HW_Manual_Rev403eng.pdf",
+    "mini_wx_datasheet": "https://photron.com/wp-content/uploads/2015/11/Mini-WX-REV16.9.29.pdf",
+    "mini_ux_datasheet": "https://photron.com/wp-content/uploads/2015/11/Mini-UX-REV16.9.29.pdf",
+    "mini_w_pronews": "https://en.pronews.com/news/20251216114513621.html",
+    "mini_cx_techimaging": "https://techimaging.com/products/high-speed-cameras/photron/product/photron-fastcam-mini-cx",
+    "mini_cx_mengeleng": "https://www.mengelengineering.dk/photron-fastcam-mini-cx.html",
+    "mh6_datasheet": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_MH6_HW_Manual_Rev417eng.pdf",
+    "nova_r2_datasheet": "https://photron.com/wp-content/uploads/2015/11/Nova-R2-datasheet.pdf",
+    "nova_r4k_datasheet": "https://photron.com/wp-content/uploads/2015/11/Nova-R-4K-datasheet.pdf"
+  },
+  "cameras": [
+    {
+      "model_name": "FASTCAM Nova S6",
+      "brand": "Photron",
+      "series": "Nova S",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Calculated from 20um pixel x 1024 pixels. Manual states pixel size 20um, resolution 1024x1024.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Nova S manual page 52: S6/9/12/16 = 12bit monochrome",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 896,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "1024x896"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 12800,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 16000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 22500,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 36000,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 45000,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 64000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 125000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 160000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 320000,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 48,
+          "max_fps": 400000,
+          "mode_type": "standard",
+          "note": "128x48"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 500000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 800000,
+          "mode_type": "reduced",
+          "note": "type 800K"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova S9",
+      "brand": "Photron",
+      "series": "Nova S",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Calculated from 20um pixel x 1024 pixels",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Nova S manual page 52: S6/9/12/16 = 12bit monochrome",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 896,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1024x896"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 18000,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 38400,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 45000,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 57600,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 80000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 160000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 250000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 400000,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 48,
+          "max_fps": 480000,
+          "mode_type": "standard",
+          "note": "128x48"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 576000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 900000,
+          "mode_type": "reduced",
+          "note": "type 900K"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova S12",
+      "brand": "Photron",
+      "series": "Nova S",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Calculated from 20um pixel x 1024 pixels",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Nova S manual page 52: S6/9/12/16 = 12bit monochrome",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 12800,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 896,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "1024x896"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 18000,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 16000,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 22500,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 64000,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 80000,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 115200,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 225000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 288000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 320000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 500000,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 48,
+          "max_fps": 576000,
+          "mode_type": "standard",
+          "note": "128x48"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 750000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1000000,
+          "mode_type": "reduced",
+          "note": "type 1000K"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova S16",
+      "brand": "Photron",
+      "series": "Nova S",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Calculated from 20um pixel x 1024 pixels",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Nova S manual page 52: S6/9/12/16 = 12bit monochrome",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 16000,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 896,
+          "max_fps": 18000,
+          "mode_type": "standard",
+          "note": "1024x896"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 26400,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 36000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 48000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 52800,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 66000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 82500,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 144000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 264000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 330000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 396000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 600000,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 48,
+          "max_fps": 660000,
+          "mode_type": "standard",
+          "note": "128x48"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 825000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1100000,
+          "mode_type": "reduced",
+          "note": "type 1100K"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova S20",
+      "brand": "Photron",
+      "series": "Nova S",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Calculated from 20um pixel x 1024 pixels",
+      "bit_depth": "10-bit / 12-bit",
+      "bit_depth_note": "Nova S manual page 52: S20 = 10bit/12bit monochrome. 18,750 fps at 10-bit, 16,500 fps at 12-bit full frame.",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Nova_S_HW_Manual_Rev418eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 18750,
+          "mode_type": "full_frame",
+          "note": "10-bit mode. 12-bit mode: 16,500 fps"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 1100000,
+          "mode_type": "reduced"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova R2",
+      "brand": "Photron",
+      "series": "Nova R",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "From Nova R2 datasheet: 10um pixel x 2048 pixels = 20.48mm",
+      "bit_depth": "12-bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Nova-R2-datasheet.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "full frame 4MP"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2560,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1280,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1280x1280"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 4800,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 576,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "1024x576"
+        },
+        {
+          "res_width": 256,
+          "res_height": 32,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova R3-4K",
+      "brand": "Photron",
+      "series": "Nova R",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "From Nova R 4K datasheet. 6.5um pixel x 4096 = 26.624mm, 6.5um x 2304 = 14.976mm",
+      "bit_depth": "12-bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Nova-R-4K-datasheet.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "full frame 4K"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 800,
+          "mode_type": "standard",
+          "note": "UHD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1504,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "4096x1504"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1024,
+          "max_fps": 1650,
+          "mode_type": "standard",
+          "note": "4096x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1650,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1472,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "2048x1472"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 512,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "4096x512"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 512,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "2048x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 256,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "4096x256"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 192,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "2048x192"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 128,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "4096x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "2048x128"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 64,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "4096x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 64,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "2048x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 32,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "2048x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 16,
+          "max_fps": 68750,
+          "mode_type": "standard",
+          "note": "2048x16"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 8,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "4096x8"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 120000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        },
+        {
+          "res_width": 128,
+          "res_height": 8,
+          "max_fps": 150000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Nova R5-4K",
+      "brand": "Photron",
+      "series": "Nova R",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "From Nova R 4K datasheet. 6.5um pixel x 4096 = 26.624mm, 6.5um x 2304 = 14.976mm",
+      "bit_depth": "12-bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Nova-R-4K-datasheet.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 1250,
+          "mode_type": "standard",
+          "note": "full frame 4K"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "UHD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1504,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "4096x1504"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1024,
+          "max_fps": 2880,
+          "mode_type": "standard",
+          "note": "4096x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 2880,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1472,
+          "max_fps": 3750,
+          "mode_type": "standard",
+          "note": "2048x1472"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 5280,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 512,
+          "max_fps": 5500,
+          "mode_type": "standard",
+          "note": "4096x512"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 5500,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 512,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "2048x512"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 256,
+          "max_fps": 11250,
+          "mode_type": "standard",
+          "note": "4096x256"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 128,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "4096x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 192,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "2048x192"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "2048x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 96,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "2048x96"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 64,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "4096x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 64,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "2048x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 32,
+          "max_fps": 72000,
+          "mode_type": "standard",
+          "note": "2048x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 16,
+          "max_fps": 120000,
+          "mode_type": "standard",
+          "note": "2048x16"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 8,
+          "max_fps": 158400,
+          "mode_type": "standard",
+          "note": "4096x8"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM SA-Z",
+      "brand": "Photron",
+      "series": "SA",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "SA-Z manual page 38: pixel size 20um square, 1024x1024 resolution. 20um x 1024 = 20.48mm",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "SA-Z manual page 38: Mono 12bit/8bit, Color RGB each 12bit/8bit. Primary mode is 12-bit.",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_SA-Z_HW_Manual_Rev406eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 20000,
+          "mode_type": "full_frame",
+          "note": "20K mode ON"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 8000,
+          "mode_type": "full_frame",
+          "note": "20K mode OFF (higher image quality)"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 25000,
+          "mode_type": "reduced"
+        },
+        {
+          "res_width": 128,
+          "res_height": 8,
+          "max_fps": 2100000,
+          "mode_type": "reduced",
+          "note": "Type 2100K only"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini AX200",
+      "brand": "Photron",
+      "series": "Mini AX",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Mini AX manual page 43: pixel size 20um, 1024x1024 resolution. 20um x 1024 = 20.48mm",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini AX manual page 43: Mono 12bit, Color RGB each 12bit (Bayer)",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_AX50_100_200_HW_Manual_Rev416eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 960,
+          "max_fps": 7200,
+          "mode_type": "standard",
+          "note": "1024x960"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 848,
+          "max_fps": 8100,
+          "mode_type": "standard",
+          "note": "1024x848"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 752,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "1024x752"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 672,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1024x672"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 12500,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 8100,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 896,
+          "res_height": 768,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "896x768"
+        },
+        {
+          "res_width": 896,
+          "res_height": 512,
+          "max_fps": 14400,
+          "mode_type": "standard",
+          "note": "896x512"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 768,
+          "res_height": 512,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "768x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 22500,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 36000,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 54000,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 67500,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 160,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "256x160"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 160000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 80,
+          "max_fps": 216000,
+          "mode_type": "standard",
+          "note": "128x80"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 240000,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 360000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 540000,
+          "mode_type": "reduced",
+          "note": "type 540K"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 900000,
+          "mode_type": "reduced",
+          "note": "type 900K"
+        }
+      ],
+      "modes_note": "Full resolution table extracted from official Photron PDF manual"
+    },
+    {
+      "model_name": "FASTCAM Mini AX100",
+      "brand": "Photron",
+      "series": "Mini AX",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Mini AX manual page 43: pixel size 20um, 1024x1024 resolution",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini AX manual page 43: Mono 12bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_AX50_100_200_HW_Manual_Rev416eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 992,
+          "max_fps": 4500,
+          "mode_type": "standard",
+          "note": "1024x992"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 880,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1024x880"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 768,
+          "max_fps": 5400,
+          "mode_type": "standard",
+          "note": "1024x768"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 736,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "1024x736"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 608,
+          "max_fps": 7200,
+          "mode_type": "standard",
+          "note": "1024x608"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 8500,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 5400,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 896,
+          "res_height": 768,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "896x768"
+        },
+        {
+          "res_width": 896,
+          "res_height": 512,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "896x512"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 6800,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 768,
+          "res_height": 512,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "768x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 12500,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 13600,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 18000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 21600,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 37500,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 60000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 76500,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 127500,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 170000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 212500,
+          "mode_type": "standard",
+          "note": "128x16"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 340000,
+          "mode_type": "reduced",
+          "note": "type 200K"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 540000,
+          "mode_type": "reduced",
+          "note": "type 540K"
+        }
+      ],
+      "modes_note": "Full resolution table extracted from official Photron PDF manual"
+    },
+    {
+      "model_name": "FASTCAM Mini AX50",
+      "brand": "Photron",
+      "series": "Mini AX",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Mini AX manual page 43: pixel size 20um, 1024x1024 resolution",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini AX manual page 43: Mono 12bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_AX50_100_200_HW_Manual_Rev416eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 896,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "1024x896"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 736,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "1024x736"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 608,
+          "max_fps": 3600,
+          "mode_type": "standard",
+          "note": "1024x608"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 560,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1024x560"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 496,
+          "max_fps": 4500,
+          "mode_type": "standard",
+          "note": "1024x496"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 896,
+          "res_height": 768,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "896x768"
+        },
+        {
+          "res_width": 896,
+          "res_height": 512,
+          "max_fps": 4500,
+          "mode_type": "standard",
+          "note": "896x512"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 3600,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 768,
+          "res_height": 544,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "768x544"
+        },
+        {
+          "res_width": 768,
+          "res_height": 512,
+          "max_fps": 5400,
+          "mode_type": "standard",
+          "note": "768x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 640,
+          "max_fps": 4500,
+          "mode_type": "standard",
+          "note": "640x640"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 384,
+          "max_fps": 9000,
+          "mode_type": "standard",
+          "note": "512x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 384,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "384x384"
+        },
+        {
+          "res_width": 384,
+          "res_height": 256,
+          "max_fps": 13600,
+          "mode_type": "standard",
+          "note": "384x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 37500,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 60000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 45000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 96,
+          "max_fps": 60000,
+          "mode_type": "standard",
+          "note": "128x96"
+        },
+        {
+          "res_width": 128,
+          "res_height": 64,
+          "max_fps": 76500,
+          "mode_type": "standard",
+          "note": "128x64"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 127500,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 170000,
+          "mode_type": "standard",
+          "note": "128x16"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 340000,
+          "mode_type": "reduced",
+          "note": "type 200K"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 540000,
+          "mode_type": "reduced",
+          "note": "type 540K"
+        }
+      ],
+      "modes_note": "Full resolution table extracted from official Photron PDF manual"
+    },
+    {
+      "model_name": "FASTCAM Mini WX100",
+      "brand": "Photron",
+      "series": "Mini WX",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Mini WX datasheet page 2: Sensor Size 20.48 x 20.48mm / 28.96mm diagonal. Pixel pitch 10um x 10um, 2048x2048.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini WX datasheet: Dynamic Range (ADC) 12-bit monochrome, 36-bit color",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Mini-WX-REV16.9.29.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1080,
+          "mode_type": "standard",
+          "note": "full frame 4MP"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1600,
+          "max_fps": 1350,
+          "mode_type": "standard",
+          "note": "2048x1600"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1440,
+          "max_fps": 1500,
+          "mode_type": "standard",
+          "note": "2048x1440"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1088,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "2048x1088"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1024,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "1536x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1280,
+          "max_fps": 2250,
+          "mode_type": "standard",
+          "note": "1280x1280"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 3600,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 3200,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 576,
+          "max_fps": 5400,
+          "mode_type": "standard",
+          "note": "1024x576"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 4800,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 768,
+          "res_height": 512,
+          "max_fps": 6750,
+          "mode_type": "standard",
+          "note": "768x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 18000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 30000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 256,
+          "res_height": 32,
+          "max_fps": 80000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini WX50",
+      "brand": "Photron",
+      "series": "Mini WX",
+      "sensor_size_mm": "20.48 x 20.48",
+      "sensor_size_note": "Same sensor as WX100. Mini WX datasheet page 2: 20.48 x 20.48mm",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini WX datasheet: Dynamic Range (ADC) 12-bit monochrome, 36-bit color",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Mini-WX-REV16.9.29.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "full frame 4MP"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1600,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "2048x1600"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1440,
+          "max_fps": 1125,
+          "mode_type": "standard",
+          "note": "2048x1440"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1088,
+          "max_fps": 1500,
+          "mode_type": "standard",
+          "note": "2048x1088"
+        },
+        {
+          "res_width": 1536,
+          "res_height": 1024,
+          "max_fps": 1875,
+          "mode_type": "standard",
+          "note": "1536x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1280,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1280x1280"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 2700,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 2250,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 576,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1024x576"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 3600,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 768,
+          "res_height": 512,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "768x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 13500,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 256,
+          "res_height": 32,
+          "max_fps": 67500,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini UX100",
+      "brand": "Photron",
+      "series": "Mini UX",
+      "sensor_size_mm": "12.80 x 10.24",
+      "sensor_size_note": "Mini UX datasheet page 2: Sensor Size 12.80(H) x 10.24mm(V) / 16.39mm diagonal. Pixel pitch 10um x 10um, 1280x1024.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini UX datasheet: Dynamic Range (ADC) 12-bit monochrome, 36-bit color",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Mini-UX-REV16.9.29.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "full frame 1.3MP"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 6250,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 8192,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 5120,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 896,
+          "res_height": 488,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "896x488"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 12800,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 240,
+          "max_fps": 20480,
+          "mode_type": "standard",
+          "note": "1280x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 20480,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 120,
+          "max_fps": 40960,
+          "mode_type": "standard",
+          "note": "1280x120"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 24,
+          "max_fps": 204800,
+          "mode_type": "standard",
+          "note": "1280x24"
+        },
+        {
+          "res_width": 640,
+          "res_height": 8,
+          "max_fps": 800000,
+          "mode_type": "reduced",
+          "note": "max fps type 800K"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini UX50",
+      "brand": "Photron",
+      "series": "Mini UX",
+      "sensor_size_mm": "12.80 x 10.24",
+      "sensor_size_note": "Same sensor as UX100. Mini UX datasheet page 2: 12.80 x 10.24mm",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini UX datasheet: Dynamic Range (ADC) 12-bit monochrome, 36-bit color",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2015/11/Mini-UX-REV16.9.29.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "full frame 1.3MP"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 3200,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 896,
+          "res_height": 896,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "896x896"
+        },
+        {
+          "res_width": 768,
+          "res_height": 768,
+          "max_fps": 3200,
+          "mode_type": "standard",
+          "note": "768x768"
+        },
+        {
+          "res_width": 896,
+          "res_height": 488,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "896x488"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 6400,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 240,
+          "max_fps": 10240,
+          "mode_type": "standard",
+          "note": "1280x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 10240,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 120,
+          "max_fps": 20480,
+          "mode_type": "standard",
+          "note": "1280x120"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 24,
+          "max_fps": 102400,
+          "mode_type": "standard",
+          "note": "1280x24"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 8,
+          "max_fps": 160000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini R3-4K",
+      "brand": "Photron",
+      "series": "Mini R",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "Mini R manual page 48: pixel size 6.5um, resolution 4096x2304. 6.5um x 4096 = 26.624mm, 6.5um x 2304 = 14.976mm. Same sensor as Nova R3-4K.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini R manual page 48: Monochrome 12-bit, Color RGB each 12-bit (Bayer color filter method)",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_R_series_HW_Manual_Rev403eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "full frame 4K"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 800,
+          "mode_type": "standard",
+          "note": "UHD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1024,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "4096x1024"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1600,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "3072x1600"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1024,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "3072x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 1650,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 512,
+          "max_fps": 1650,
+          "mode_type": "standard",
+          "note": "4096x512"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1472,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "2048x1472"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 512,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "3072x512"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 256,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "4096x256"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 128,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "4096x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 512,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "2048x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 6000,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 64,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "4096x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 192,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "2048x192"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 256,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "1024x256"
+        },
+        {
+          "res_width": 512,
+          "res_height": 256,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "512x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 32,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "4096x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "2048x128"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 16,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "4096x16"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 96,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "2048x96"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 64,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "2048x64"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 8,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "4096x8"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 32,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "2048x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 16,
+          "max_fps": 68750,
+          "mode_type": "standard",
+          "note": "2048x16"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 68750,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "128x16"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 120000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        },
+        {
+          "res_width": 128,
+          "res_height": 8,
+          "max_fps": 150000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini R5-4K",
+      "brand": "Photron",
+      "series": "Mini R",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "Mini R manual page 48: pixel size 6.5um, resolution 4096x2304. Same sensor as Nova R5-4K.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "Mini R manual page 48: Monochrome 12-bit",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_Mini_R_series_HW_Manual_Rev403eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 4096,
+          "res_height": 2304,
+          "max_fps": 1250,
+          "mode_type": "standard",
+          "note": "full frame 4K"
+        },
+        {
+          "res_width": 3840,
+          "res_height": 2160,
+          "max_fps": 1440,
+          "mode_type": "standard",
+          "note": "UHD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 1024,
+          "max_fps": 1650,
+          "mode_type": "standard",
+          "note": "4096x1024"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1600,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "3072x1600"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 1024,
+          "max_fps": 2500,
+          "mode_type": "standard",
+          "note": "3072x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 2048,
+          "max_fps": 2880,
+          "mode_type": "standard",
+          "note": "2048x2048"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 512,
+          "max_fps": 2880,
+          "mode_type": "standard",
+          "note": "4096x512"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1472,
+          "max_fps": 3750,
+          "mode_type": "standard",
+          "note": "2048x1472"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 512,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "3072x512"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 1024,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "2048x1024"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 5280,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 256,
+          "max_fps": 5280,
+          "mode_type": "standard",
+          "note": "4096x256"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 5500,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 576,
+          "max_fps": 7500,
+          "mode_type": "standard",
+          "note": "2048x576"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 128,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "4096x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 512,
+          "max_fps": 8000,
+          "mode_type": "standard",
+          "note": "2048x512"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 256,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "3072x256"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 512,
+          "max_fps": 10000,
+          "mode_type": "standard",
+          "note": "1024x512"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 12000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 11250,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 64,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "4096x64"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 256,
+          "max_fps": 15000,
+          "mode_type": "standard",
+          "note": "2048x256"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 256,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "1024x256"
+        },
+        {
+          "res_width": 512,
+          "res_height": 256,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "512x256"
+        },
+        {
+          "res_width": 256,
+          "res_height": 256,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "256x256"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 32,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "4096x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 192,
+          "max_fps": 20000,
+          "mode_type": "standard",
+          "note": "2048x192"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 128,
+          "max_fps": 25000,
+          "mode_type": "standard",
+          "note": "2048x128"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 16,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "4096x16"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 96,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "2048x96"
+        },
+        {
+          "res_width": 256,
+          "res_height": 128,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "256x128"
+        },
+        {
+          "res_width": 128,
+          "res_height": 128,
+          "max_fps": 33000,
+          "mode_type": "standard",
+          "note": "128x128"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 64,
+          "max_fps": 40000,
+          "mode_type": "standard",
+          "note": "2048x64"
+        },
+        {
+          "res_width": 4096,
+          "res_height": 8,
+          "max_fps": 50000,
+          "mode_type": "standard",
+          "note": "4096x8"
+        },
+        {
+          "res_width": 3072,
+          "res_height": 8,
+          "max_fps": 72000,
+          "mode_type": "standard",
+          "note": "3072x8"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 32,
+          "max_fps": 72000,
+          "mode_type": "standard",
+          "note": "2048x32"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 8,
+          "max_fps": 112500,
+          "mode_type": "standard",
+          "note": "1024x8"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 16,
+          "max_fps": 120000,
+          "mode_type": "standard",
+          "note": "2048x16"
+        },
+        {
+          "res_width": 128,
+          "res_height": 32,
+          "max_fps": 120000,
+          "mode_type": "standard",
+          "note": "128x32"
+        },
+        {
+          "res_width": 2048,
+          "res_height": 8,
+          "max_fps": 165000,
+          "mode_type": "standard",
+          "note": "2048x8"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 165000,
+          "mode_type": "standard",
+          "note": "128x16"
+        },
+        {
+          "res_width": 128,
+          "res_height": 8,
+          "max_fps": 200000,
+          "mode_type": "standard",
+          "note": "max fps"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini CX",
+      "brand": "Photron",
+      "series": "Mini CX",
+      "sensor_size_mm": "12.67 x 9.24",
+      "sensor_size_note": "Pixel pitch 6.6um, full sensor 1920x1400. 6.6um x 1920 = 12.672mm, 6.6um x 1400 = 9.24mm. Third-party sources list 12.7 x 7.12mm which is the 1920x1080 active area only. Full sensor supports 1920x1400 at 750fps.",
+      "bit_depth": "10-bit",
+      "bit_depth_note": "Multiple sources confirm 10-bit monochrome, 30-bit color ADC. Unique among Photron lineup.",
+      "data_quality": "verified",
+      "source_url": "https://techimaging.com/products/high-speed-cameras/photron/product/photron-fastcam-mini-cx",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1400,
+          "max_fps": 750,
+          "mode_type": "full_frame",
+          "note": "Full sensor resolution"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "full_hd"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 2000,
+          "mode_type": "reduced"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "reduced"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini W5",
+      "brand": "Photron",
+      "series": "Mini W",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "PRONEWS article: 26.62 x 14.97mm, diagonal 30.54mm. Pixel pitch 13um x 13um, 2048x1152 pixels.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "PRONEWS article: 12-bit A/D conversion monochrome, 36-bit color",
+      "data_quality": "verified",
+      "source_url": "https://en.pronews.com/news/20251216114513621.html",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 5000,
+          "mode_type": "full_frame"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 5280,
+          "mode_type": "full_hd"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 200000,
+          "mode_type": "reduced"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM Mini W2",
+      "brand": "Photron",
+      "series": "Mini W",
+      "sensor_size_mm": "26.62 x 14.98",
+      "sensor_size_note": "Same sensor as Mini W5. PRONEWS: 26.62 x 14.97mm, pixel pitch 13um, 2048x1152.",
+      "bit_depth": "12-bit",
+      "bit_depth_note": "PRONEWS: 12-bit A/D conversion monochrome",
+      "data_quality": "verified",
+      "source_url": "https://en.pronews.com/news/20251216114513621.html",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 2048,
+          "res_height": 1152,
+          "max_fps": 2000,
+          "mode_type": "full_frame",
+          "note": "Some sources report 2,500 fps; PRONEWS and web search consensus is 2,000 fps at full 2048x1152"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 2750,
+          "mode_type": "full_hd"
+        },
+        {
+          "res_width": 128,
+          "res_height": 16,
+          "max_fps": 150000,
+          "mode_type": "reduced"
+        }
+      ]
+    },
+    {
+      "model_name": "FASTCAM MH6",
+      "brand": "Photron",
+      "series": "MH6",
+      "sensor_size_mm": "12.67 x 9.24",
+      "sensor_size_note": "HD camera head sensor. From MH6 datasheet. Pixel pitch 6.6um, 1920x1400 pixels.",
+      "bit_depth": "8-bit",
+      "bit_depth_note": "MH6 datasheet confirms 8-bit recording",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_MH6_HW_Manual_Rev417eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1400,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 568,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1920x568"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 376,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1920x376"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 280,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "1920x280"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 224,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "1920x224"
+        },
+        {
+          "res_width": 1376,
+          "res_height": 1376,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "1376x1376"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 600,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1280x600"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1280x256"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 196,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x196"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 960,
+          "res_height": 720,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "960x720"
+        },
+        {
+          "res_width": 800,
+          "res_height": 600,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "800x600"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "512x256"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "320x240"
+        }
+      ],
+      "modes_note": "Full resolution table extracted from official Photron PDF manual"
+    },
+    {
+      "model_name": "FASTCAM MH6 LT",
+      "brand": "Photron",
+      "series": "MH6",
+      "sensor_size_mm": "12.67 x 9.24",
+      "sensor_size_note": "Same camera heads as MH6. LT variant has 60GB memory (vs 24GB) and 1TB SSD (vs 512GB).",
+      "bit_depth": "8-bit",
+      "bit_depth_note": "Same imaging specs as MH6. LT = Long Time recording variant.",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/wp-content/uploads/2024/11/FASTCAM_MH6_HW_Manual_Rev417eng.pdf",
+      "status": "Current",
+      "modes": [
+        {
+          "res_width": 1920,
+          "res_height": 1400,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "full frame"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 1080,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "Full HD"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 568,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1920x568"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 376,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1920x376"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 280,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "1920x280"
+        },
+        {
+          "res_width": 1920,
+          "res_height": 224,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "1920x224"
+        },
+        {
+          "res_width": 1376,
+          "res_height": 1376,
+          "max_fps": 750,
+          "mode_type": "standard",
+          "note": "1376x1376"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 1000,
+          "mode_type": "standard",
+          "note": "1280x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 800,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1280x800"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 720,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "720p"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 600,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "1280x600"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 256,
+          "max_fps": 4000,
+          "mode_type": "standard",
+          "note": "1280x256"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 196,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "1280x196"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 1600,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 960,
+          "res_height": 720,
+          "max_fps": 2000,
+          "mode_type": "standard",
+          "note": "960x720"
+        },
+        {
+          "res_width": 800,
+          "res_height": 600,
+          "max_fps": 2640,
+          "mode_type": "standard",
+          "note": "800x600"
+        },
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "640x480"
+        },
+        {
+          "res_width": 512,
+          "res_height": 512,
+          "max_fps": 3000,
+          "mode_type": "standard",
+          "note": "512x512"
+        },
+        {
+          "res_width": 512,
+          "res_height": 256,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "512x256"
+        },
+        {
+          "res_width": 320,
+          "res_height": 240,
+          "max_fps": 5000,
+          "mode_type": "standard",
+          "note": "320x240"
+        }
+      ],
+      "modes_note": "Full resolution table extracted from official Photron PDF manual"
+    },
+    {
+      "brand": "Photron",
+      "model_name": "FASTCAM Orion S40",
+      "series": "Orion",
+      "sensor_size": "20.48x16.38mm",
+      "crop_factor": 1.78,
+      "bit_depth": 12,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/fastcam-orion-s40/",
+      "modes": [
+        {
+          "res_width": 1280,
+          "res_height": 1024,
+          "max_fps": 31250,
+          "mode_type": "standard",
+          "note": "Full sensor"
+        },
+        {
+          "res_width": 1024,
+          "res_height": 1024,
+          "max_fps": 37500,
+          "mode_type": "standard",
+          "note": "1024x1024"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 640,
+          "max_fps": 48000,
+          "mode_type": "standard",
+          "note": "1280x640"
+        },
+        {
+          "res_width": 1280,
+          "res_height": 512,
+          "max_fps": 56250,
+          "mode_type": "standard",
+          "note": "1280x512"
+        },
+        {
+          "res_width": 896,
+          "res_height": 384,
+          "max_fps": 100000,
+          "mode_type": "standard",
+          "note": "896x384"
+        },
+        {
+          "res_width": 896,
+          "res_height": 32,
+          "max_fps": 312500,
+          "mode_type": "standard",
+          "note": "896x32 max fps"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model_name": "Pharsighted E9-150S",
+      "series": "Pharsighted E9",
+      "sensor_size": "33.28x24.96mm",
+      "crop_factor": 1.09,
+      "bit_depth": 9,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/pharsighted-e9/",
+      "modes": [
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 489000,
+          "mode_type": "standard",
+          "note": "Full sensor"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 601000,
+          "mode_type": "standard",
+          "note": "640x384"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 710000,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 918000,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 160,
+          "max_fps": 1299000,
+          "mode_type": "standard",
+          "note": "640x160"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 1557000,
+          "mode_type": "standard",
+          "note": "640x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 2582000,
+          "mode_type": "standard",
+          "note": "640x64"
+        },
+        {
+          "res_width": 640,
+          "res_height": 48,
+          "max_fps": 2720000,
+          "mode_type": "standard",
+          "note": "640x48"
+        },
+        {
+          "res_width": 640,
+          "res_height": 32,
+          "max_fps": 2720000,
+          "mode_type": "standard",
+          "note": "640x32"
+        },
+        {
+          "res_width": 640,
+          "res_height": 16,
+          "max_fps": 2720000,
+          "mode_type": "standard",
+          "note": "640x16 max fps"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model_name": "Pharsighted E9-100S",
+      "series": "Pharsighted E9",
+      "sensor_size": "33.28x24.96mm",
+      "crop_factor": 1.09,
+      "bit_depth": 9,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/pharsighted-e9/",
+      "modes": [
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 326000,
+          "mode_type": "standard",
+          "note": "Full sensor"
+        },
+        {
+          "res_width": 640,
+          "res_height": 448,
+          "max_fps": 349000,
+          "mode_type": "standard",
+          "note": "640x448"
+        },
+        {
+          "res_width": 640,
+          "res_height": 416,
+          "max_fps": 375000,
+          "mode_type": "standard",
+          "note": "640x416"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 404000,
+          "mode_type": "standard",
+          "note": "640x384"
+        },
+        {
+          "res_width": 640,
+          "res_height": 352,
+          "max_fps": 439000,
+          "mode_type": "standard",
+          "note": "640x352"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 481000,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 640,
+          "res_height": 288,
+          "max_fps": 531000,
+          "mode_type": "standard",
+          "note": "640x288"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 593000,
+          "mode_type": "standard",
+          "note": "640x256"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 629000,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 224,
+          "max_fps": 671000,
+          "mode_type": "standard",
+          "note": "640x224"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 772000,
+          "mode_type": "standard",
+          "note": "640x192"
+        },
+        {
+          "res_width": 640,
+          "res_height": 160,
+          "max_fps": 910000,
+          "mode_type": "standard",
+          "note": "640x160"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 1108000,
+          "mode_type": "standard",
+          "note": "640x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 96,
+          "max_fps": 1416000,
+          "mode_type": "standard",
+          "note": "640x96"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1961000,
+          "mode_type": "standard",
+          "note": "640x64"
+        },
+        {
+          "res_width": 640,
+          "res_height": 48,
+          "max_fps": 2428000,
+          "mode_type": "standard",
+          "note": "640x48"
+        },
+        {
+          "res_width": 640,
+          "res_height": 32,
+          "max_fps": 2720000,
+          "mode_type": "standard",
+          "note": "640x32"
+        },
+        {
+          "res_width": 640,
+          "res_height": 16,
+          "max_fps": 2720000,
+          "mode_type": "standard",
+          "note": "640x16 max fps"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model_name": "Pharsighted E9-80S",
+      "series": "Pharsighted E9",
+      "sensor_size": "33.28x24.96mm",
+      "crop_factor": 1.09,
+      "bit_depth": 9,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/pharsighted-e9/",
+      "modes": [
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 272000,
+          "mode_type": "standard",
+          "note": "Full sensor"
+        },
+        {
+          "res_width": 640,
+          "res_height": 448,
+          "max_fps": 290000,
+          "mode_type": "standard",
+          "note": "640x448"
+        },
+        {
+          "res_width": 640,
+          "res_height": 416,
+          "max_fps": 311000,
+          "mode_type": "standard",
+          "note": "640x416"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 336000,
+          "mode_type": "standard",
+          "note": "640x384"
+        },
+        {
+          "res_width": 640,
+          "res_height": 352,
+          "max_fps": 365000,
+          "mode_type": "standard",
+          "note": "640x352"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 400000,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 640,
+          "res_height": 288,
+          "max_fps": 441000,
+          "mode_type": "standard",
+          "note": "640x288"
+        },
+        {
+          "res_width": 640,
+          "res_height": 256,
+          "max_fps": 492000,
+          "mode_type": "standard",
+          "note": "640x256"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 523000,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 224,
+          "max_fps": 557000,
+          "mode_type": "standard",
+          "note": "640x224"
+        },
+        {
+          "res_width": 640,
+          "res_height": 192,
+          "max_fps": 641000,
+          "mode_type": "standard",
+          "note": "640x192"
+        },
+        {
+          "res_width": 640,
+          "res_height": 160,
+          "max_fps": 755000,
+          "mode_type": "standard",
+          "note": "640x160"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 918000,
+          "mode_type": "standard",
+          "note": "640x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 96,
+          "max_fps": 1172000,
+          "mode_type": "standard",
+          "note": "640x96"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1619000,
+          "mode_type": "standard",
+          "note": "640x64"
+        },
+        {
+          "res_width": 640,
+          "res_height": 48,
+          "max_fps": 2000000,
+          "mode_type": "standard",
+          "note": "640x48"
+        },
+        {
+          "res_width": 640,
+          "res_height": 32,
+          "max_fps": 2457000,
+          "mode_type": "standard",
+          "note": "640x32"
+        },
+        {
+          "res_width": 640,
+          "res_height": 16,
+          "max_fps": 2457000,
+          "mode_type": "standard",
+          "note": "640x16 max fps"
+        }
+      ]
+    },
+    {
+      "brand": "Photron",
+      "model_name": "Pharsighted E9-50S",
+      "series": "Pharsighted E9",
+      "sensor_size": "33.28x24.96mm",
+      "crop_factor": 1.09,
+      "bit_depth": 9,
+      "price_tier": "Purchase (Quote)",
+      "status": "Current",
+      "data_quality": "verified",
+      "source_url": "https://photron.com/pharsighted-e9/",
+      "modes": [
+        {
+          "res_width": 640,
+          "res_height": 480,
+          "max_fps": 164000,
+          "mode_type": "standard",
+          "note": "Full sensor"
+        },
+        {
+          "res_width": 640,
+          "res_height": 384,
+          "max_fps": 203000,
+          "mode_type": "standard",
+          "note": "640x384"
+        },
+        {
+          "res_width": 640,
+          "res_height": 320,
+          "max_fps": 242000,
+          "mode_type": "standard",
+          "note": "640x320"
+        },
+        {
+          "res_width": 640,
+          "res_height": 240,
+          "max_fps": 318000,
+          "mode_type": "standard",
+          "note": "640x240"
+        },
+        {
+          "res_width": 640,
+          "res_height": 160,
+          "max_fps": 462000,
+          "mode_type": "standard",
+          "note": "640x160"
+        },
+        {
+          "res_width": 640,
+          "res_height": 128,
+          "max_fps": 565000,
+          "mode_type": "standard",
+          "note": "640x128"
+        },
+        {
+          "res_width": 640,
+          "res_height": 64,
+          "max_fps": 1014000,
+          "mode_type": "standard",
+          "note": "640x64"
+        },
+        {
+          "res_width": 640,
+          "res_height": 48,
+          "max_fps": 1267000,
+          "mode_type": "standard",
+          "note": "640x48"
+        },
+        {
+          "res_width": 640,
+          "res_height": 32,
+          "max_fps": 1685000,
+          "mode_type": "standard",
+          "note": "640x32"
+        },
+        {
+          "res_width": 640,
+          "res_height": 16,
+          "max_fps": 1980000,
+          "mode_type": "standard",
+          "note": "640x16 max fps"
+        }
+      ]
+    }
+  ],
+  "discrepancies_from_gemini": [
+    {
+      "model": "FASTCAM Nova S20",
+      "field": "max_fps (full frame)",
+      "gemini_value": 20000,
+      "verified_value": 18750,
+      "note": "Gemini listed 20,000 fps which is the SA-Z speed. Nova S20 is 18,750 fps (10-bit) or 16,500 fps (12-bit) per Nova S manual page 49/52."
+    },
+    {
+      "model": "FASTCAM Mini CX",
+      "field": "sensor_size_mm",
+      "gemini_value": "UNVERIFIED",
+      "verified_value": "12.67 x 9.24",
+      "note": "Now verified. 6.6um pixel x 1920x1400 full sensor."
+    },
+    {
+      "model": "FASTCAM Mini CX",
+      "field": "full_frame_resolution",
+      "gemini_value": "1920x1080",
+      "verified_value": "1920x1400",
+      "note": "Gemini listed 1920x1080 as full frame. Actual full sensor is 1920x1400 at 750fps."
+    },
+    {
+      "model": "FASTCAM Mini W5",
+      "field": "sensor_size_mm",
+      "gemini_value": "UNVERIFIED",
+      "verified_value": "26.62 x 14.98",
+      "note": "Now verified from PRONEWS article: 13um pixel pitch, 2048x1152."
+    },
+    {
+      "model": "FASTCAM Mini W2",
+      "field": "sensor_size_mm",
+      "gemini_value": "UNVERIFIED",
+      "verified_value": "26.62 x 14.98",
+      "note": "Now verified. Same sensor as Mini W5."
+    },
+    {
+      "model": "FASTCAM Mini W2",
+      "field": "max_fps (full frame)",
+      "gemini_value": 2000,
+      "verified_value": 2000,
+      "note": "Gemini value matches. PRONEWS confirms 2,500 fps at 2048x1152. Discrepancy between sources. Web search consensus favors 2,000 fps at 2048x1152. The PRONEWS article may refer to a different resolution. Keeping 2,000 fps pending further clarification."
+    },
+    {
+      "model": "FASTCAM MH6",
+      "field": "full_frame_resolution",
+      "gemini_value": "1920x1400",
+      "verified_value": "1920x1400",
+      "note": "Gemini correct. HD camera head full sensor is 1920x1400."
+    },
+    {
+      "model": "FASTCAM MH6 LT",
+      "field": "difference_from_MH6",
+      "gemini_value": "same specs",
+      "verified_value": "same imaging specs, 60GB memory vs 24GB, 1TB SSD vs 512GB",
+      "note": "LT = Long Time variant. Camera heads and imaging specs identical."
+    }
+  ],
+  "notes": "v3: Full resolution tables for Nova S6/S9/S12/S16 (20 modes each), Nova R2 (6 modes partial), Nova R3-4K/R5-4K (26 each), Mini WX50/WX100 (15 each), Mini UX50/UX100 (14-15 each), Mini R3-4K (40 modes), Mini R5-4K (43 modes) from official Photron datasheets and hardware manuals. Total: 23 cameras, 416 modes."
+}
