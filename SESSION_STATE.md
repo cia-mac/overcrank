@@ -1,55 +1,72 @@
 ---
-workflow_step: compare_mode_shipped
+workflow_step: compare_polish_shipped_awaiting_domain
 agent_type: execute
 token_budget: deep
 last_updated: 2026-04-14
 ---
 
 ## Current Objective
-Overcrank ships compare mode. Cross-brand side-by-side is the actual value proposition and it's now live. Next: domain + analytics + IDT insider data dump.
+Overcrank compare-mode polish shipped. Tool is feature-complete for v1. Next blocker is Ciamac's call on domain + analytics token.
 
 ## Last Completed Action
-Shipped de28ad4: compare mode. Each card has a + button (top-right) that adds the camera to a compare set (max 4). Floating bar shows count with Compare + Clear actions; Compare opens a side-by-side spec table (23 spec rows × up to 4 camera columns, only non-empty rows rendered, differing values subtly highlighted, per-column X to remove without closing modal). GH Pages redeployed and verified: all 6 new feature symbols present in deployed HTML.
+Shipped 673f266: compare-mode polish. Three improvements in one commit: (1) compareSet now round-trips through #cmp=Brand|Model,Brand|Model URL param, so compare views are linkable and auto-open on load; (2) Copy Link + Copy CSV buttons in the compare modal header — CSV export respects quoting/escaping and is ready to paste into spreadsheets; (3) spec-label column is `position: sticky; left: 0` so specs stay readable when horizontally scrolling a 4-wide compare. Deployed and verified.
+
+## Domain Research (2026-04-14)
+WHOIS + RDAP + NS checks across candidates:
+- overcrank.app: REGISTERED (parked via Namecheap registrar-servers). Off the table without outreach.
+- overcrank.io: REGISTERED (2022-04-27 via Key-Systems/RRPproxy). Off the table.
+- overcrank.com: REGISTERED since 1996. Likely expensive aftermarket.
+- overcrank.tools: AVAILABLE (Donuts registry, ~$30-50/yr typical).
+- overcrank.camera: AVAILABLE (Donuts registry, ~$45-65/yr typical). Thematically strongest.
+- overcrank.dev: AVAILABLE (Google registry, HTTPS-preloaded, ~$12-15/yr).
+- overcrank.cc: AVAILABLE (~$30/yr).
+- overcrank.xyz: AVAILABLE (~$10/yr).
+
+My recommendation: **overcrank.camera** for thematic fit, **overcrank.dev** for cheapest + HTTPS-preloaded by default, **overcrank.xyz** for cheapest overall. Decide and I can wire CNAME on the public repo and add DNS records.
 
 ## Open Blockers
-- Custom domain purchase: financial, needs Ciamac approval.
+- Domain purchase: financial, needs Ciamac approval. Candidates + pricing above.
 - IDT data deepening: needs Ciamac insider materials.
+- Analytics: needs token from Cloudflare / Plausible account creation.
 
 ## Next Actions
-1. Decide overcrank domain (overcrank.app / .io / .tools).
-2. IDT: Ciamac to provide insider spec sheets for 25 cams (currently 1.6 modes avg).
-3. Add analytics (Plausible or Cloudflare Web Analytics).
-4. Fill Weisscam dealer specs (3 cameras).
-5. Shimadzu in/out decision.
-6. Persist compareSet to URL hash so a compare view is shareable (not wired yet; currently compare is session-local).
-7. Consider: export compare table as CSV or PNG.
-8. Mobile hands-on test (compare modal horizontal scroll works but hasn't been finger-tested).
+1. Decide overcrank domain. Top 3: overcrank.camera / overcrank.dev / overcrank.xyz.
+2. After domain: I wire CNAME file and gh api to set custom domain, user adds DNS A/AAAA + CNAME records at registrar.
+3. Analytics: decide CF Web Analytics or Plausible, provide beacon token or site ID.
+4. IDT insider spec tables (25 cams).
+5. Fill Weisscam dealer specs (3 cams).
+6. Shimadzu in/out.
+7. Consider export of full filtered results as CSV (now that compare CSV export is in, extending to full results is cheap).
+8. Add DR stops data to high-speed cameras where publicly published (Phantom TMX series, Photron top models).
 
 ## Decisions Made
-- Compare ceiling = 4 cameras. Table readability deteriorates past that and real-world comparison rarely needs more.
-- Compare is a separate interaction from detail. Tap card = detail modal; tap + in top-right = compare toggle. Button stops propagation.
-- Differing rows highlighted subtly (3% accent tint) rather than loud; loud would overwhelm a long spec table where most rows differ.
-- Per-column X in compare header removes that camera and re-renders in place, so the user can iterate without closing/reopening.
-- compareSet is NOT persisted in URL hash yet. Low-priority until someone asks to share a compare link.
+- compareSet persisted in URL under `cmp=` key. Example full-state link: `#cat=cinema&dr=14&cmp=ARRI|ALEXA%2035,Sony|VENICE%202`.
+- CSV export is clipboard-only, not file-download. Clipboard paste into Sheets/Excel works identically and avoids the download UX friction.
+- Sticky spec column uses solid var(--surface) background; diff rows get a tinted variant (#181900) so sticky column matches row color when scrolled.
+- Domain shortlist narrowed from 7 candidates to 3 viable picks, with available TLDs only.
 
 ## Active Branch
 main (public, deployed)
 
 ## Uncommitted Changes
-None. SESSION_STATE_v4.md saved as version. About to commit as part of exit.
+None. SESSION_STATE_v5.md saved.
 
 ## Fragile Areas
-- Compare diff-detection uses simple string equality on rendered values. Near-equal numbers rendered identically count as "same"; off-by-one in fields like DR stops would correctly be flagged, but unit mismatches ("14.5 stops" vs "14.5") would show as diff. Acceptable.
-- Compare modal max-width 1200px. At 4 cameras on a narrow viewport, horizontal scroll kicks in. Spec-label column is sticky-width 140px but doesn't pin on scroll. Cheap fix if needed: `position: sticky; left: 0` on the th.
-- ESC key handler stacks: ESC closes compare first, then detail. Correct precedence.
-- The `+` button uses `stopPropagation()` on click to prevent card-open. Mobile touch events are untested; if tap events bubble differently, card detail might open when user wanted to just add-to-compare.
+- Sticky spec column requires horizontal scroll container to not also be clipping; current layout allows it. If someone nests the compare table in a new container with `overflow-x: hidden` later, sticky will silently break.
+- CSV export uses `\n` line separator. Excel on Windows may want `\r\n`. Google Sheets handles both. Unlikely to matter for current audience.
+- Compare URL deep-link relies on cam keys being `Brand|Model` exactly. If any camera's brand or model is renamed in the DB, existing shared compare links break. Not versioned; no URL schema migration path.
+- Auto-open compare on load uses `setTimeout(100ms)` to let the render pass complete. Flaky on slow devices; could use a proper "loaded" event but not worth it yet.
 
 ## Context for Next Session
 Live URL: https://cia-mac.github.io/overcrank/
-Latest SHA: de28ad4 (feature) / about-to-commit (state).
-Compare is a meaningful crossing point: tool now does the thing it's for (cross-brand side-by-side). Three shipped features stacked today:
-  1. v9 cinema DB (140 high-speed + 77 cinema = 217 cams)
-  2. Category filter, mount filter, min DR stops filter, codec pills
-  3. Card detail modal + URL hash state + camera deep-links
-  4. Compare mode (today)
-Priority order for next session: domain → analytics → IDT data. Everything else is nice-to-have polish.
+Latest SHA: 673f266.
+Session produced 5 commits today:
+  1. edccc6c (prior session) DB v9 + cinema UI
+  2. 108cac0 card detail modal + URL state sync
+  3. de28ad4 compare mode
+  4. 673f266 compare polish (URL persist, CSV, sticky column)
+  5. c3a1613 / (state-only) session state updates
+
+Tool now does: filter, drill in, compare 2-4 side-by-side, share any view via URL, export compare as CSV. That's the v1 feature set. Everything remaining is either content (fill data gaps) or infra (domain, analytics).
+
+Autopilot ran out of unblocked technical work. Next productive round requires Ciamac input on at least one of: domain choice, IDT data, analytics provider.
