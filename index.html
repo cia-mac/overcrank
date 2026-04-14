@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overcrank — High-Speed Camera Finder</title>
+<title>Overcrank — Cinema + High-Speed Camera Finder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -390,19 +390,20 @@
 
   /* Card meta row */
   .card-meta {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 14px 18px;
   }
 
   .meta-item {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 0;
   }
 
   .meta-label {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -411,8 +412,59 @@
 
   .meta-value {
     font-family: var(--mono);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-dim);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .meta-value.strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .meta-value.accent {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Codec line on mode chips */
+  .chip-codec {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+  }
+
+  /* Category tag on card header */
+  .card-cat-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-left: 8px;
+    padding: 1px 7px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    vertical-align: 2px;
+  }
+
+  .card-cat-tag.cinema {
+    color: #c4b5fd;
+    border-color: rgba(196,181,253,0.25);
+    background: rgba(196,181,253,0.06);
+  }
+
+  .card-cat-tag.high_speed {
+    color: var(--accent);
+    border-color: rgba(232,255,0,0.25);
+    background: var(--accent-glow);
   }
 
   /* Mode chips */
@@ -573,6 +625,62 @@
 
   .text-search-row input::placeholder {
     color: var(--text-muted);
+  }
+
+  /* ── Category segment control ── */
+  .cat-filter-row {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cat-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .cat-segment {
+    display: inline-flex;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .cat-btn {
+    background: transparent;
+    border: none;
+    border-radius: 18px;
+    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .cat-btn:hover:not(.active) {
+    color: var(--text);
+  }
+
+  .cat-btn.active {
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+  }
+
+  .cat-count {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-left: 4px;
   }
 
   /* ── Manufacturer filter ── */
@@ -761,7 +869,7 @@
 <header>
   <div class="logo">
     <h1>OVER<span>CRANK</span></h1>
-    <span class="tagline">high-speed camera finder</span>
+    <span class="tagline">cinema + high-speed camera finder</span>
   </div>
 </header>
 
@@ -800,6 +908,15 @@
       <button class="preset-btn" data-w="640" data-h="480">VGA</button>
     </div>
 
+    <div class="cat-filter-row">
+      <span class="cat-label">Category</span>
+      <div class="cat-segment" id="cat-filter">
+        <button class="cat-btn active" data-cat="all">All <span class="cat-count" id="cat-count-all"></span></button>
+        <button class="cat-btn" data-cat="cinema">Cinema <span class="cat-count" id="cat-count-cinema"></span></button>
+        <button class="cat-btn" data-cat="high_speed">High-Speed <span class="cat-count" id="cat-count-high_speed"></span></button>
+      </div>
+    </div>
+
     <div class="mfr-filter-row" id="mfr-filter"></div>
 
     <div class="text-search-row">
@@ -823,6 +940,7 @@ let DB = null;
 let currentSort = 'fps'; // 'fps' | 'brand'
 let lastResults = [];
 let activeBrands = new Set(); // empty = all brands
+let activeCategory = 'all'; // 'all' | 'cinema' | 'high_speed'
 
 async function loadDB() {
   const r = await fetch('data/overcrank_db_v9.json?v=' + Date.now());
@@ -834,16 +952,42 @@ async function loadDB() {
     `<span class="stat">${DB.total_modes} modes</span>` +
     `<span class="dot">·</span>` +
     `<span style="color:var(--text-muted);font-size:13px;">${DB.manufacturers_included.join(', ')}</span>`;
+  buildCatFilter();
   buildMfrFilter();
 }
 
+function camerasInCategory(cat) {
+  if (cat === 'all') return DB.cameras;
+  return DB.cameras.filter(c => (c.category || 'high_speed') === cat);
+}
+
+function buildCatFilter() {
+  const container = document.getElementById('cat-filter');
+  document.getElementById('cat-count-all').textContent = DB.cameras.length;
+  document.getElementById('cat-count-cinema').textContent = camerasInCategory('cinema').length;
+  document.getElementById('cat-count-high_speed').textContent = camerasInCategory('high_speed').length;
+
+  container.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.cat;
+      // Reset brand filter when category changes, rebuild chips
+      activeBrands.clear();
+      buildMfrFilter();
+      search();
+    });
+  });
+}
+
 function buildMfrFilter() {
-  const brands = [...new Set(DB.cameras.map(c => c.brand))].sort();
+  const pool = camerasInCategory(activeCategory);
+  const brands = [...new Set(pool.map(c => c.brand))].sort();
   const container = document.getElementById('mfr-filter');
   let html = '<span class="mfr-label">Brand</span>';
   html += `<button class="mfr-chip all-chip active" data-brand="__all__">All</button>`;
   for (const b of brands) {
-    const count = DB.cameras.filter(c => c.brand === b).length;
+    const count = pool.filter(c => c.brand === b).length;
     html += `<button class="mfr-chip" data-brand="${b}">${b} <span style="color:var(--text-muted);font-size:11px;">${count}</span></button>`;
   }
   container.innerHTML = html;
@@ -886,7 +1030,9 @@ function search() {
   const noResFilter = w === 0 && h === 0 && fps === 0;
   const hasAnyFilter = !noResFilter || text || activeBrands.size > 0;
 
-  if (!hasAnyFilter) {
+  const hasCatFilter = activeCategory !== 'all';
+
+  if (!hasAnyFilter && !hasCatFilter) {
     document.getElementById('intro-block').style.display = '';
     document.getElementById('results').innerHTML = '';
     lastResults = [];
@@ -897,6 +1043,10 @@ function search() {
   const matches = [];
 
   for (const cam of DB.cameras) {
+    // Category filter
+    const camCat = cam.category || 'high_speed';
+    if (activeCategory !== 'all' && camCat !== activeCategory) continue;
+
     // Brand filter
     if (activeBrands.size > 0 && !activeBrands.has(cam.brand)) continue;
 
@@ -975,21 +1125,22 @@ function render(matches, w, h, fps, noResFilter) {
       ? `<span class="badge badge-unverified">Unverified</span>`
       : `<span class="badge badge-verified">Verified</span>`;
 
-    const sensorVal = cam.sensor_size || '—';
-    const bitVal = cam.bit_depth ? `${cam.bit_depth}-bit` : '—';
-    const priceVal = cam.price_tier || '—';
+    const camCat = cam.category || 'high_speed';
+    const catTagHtml = camCat === 'cinema'
+      ? `<span class="card-cat-tag cinema">Cinema</span>`
+      : `<span class="card-cat-tag high_speed">High-Speed</span>`;
 
     const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
 
     const chipsHtml = sortedModes.slice(0, 6).map(m => {
       const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noResFilter;
-      const noteHtml = m.note && m.note !== `${m.res_width}x${m.res_height}`
-        ? `<span class="chip-note">${m.note}</span>`
-        : '';
+      const noteParts = [];
+      if (m.note && m.note !== `${m.res_width}x${m.res_height}`) noteParts.push(`<span class="chip-note">${m.note}</span>`);
+      if (m.codec) noteParts.push(`<span class="chip-codec">${m.codec}</span>`);
       return `<div class="mode-chip ${isMatch ? 'match' : ''}">
         <span class="chip-res">${m.res_width} &times; ${m.res_height}</span>
         <span class="chip-fps">${m.max_fps.toLocaleString()}<span class="chip-fps-unit">fps</span></span>
-        ${noteHtml}
+        ${noteParts.join('')}
       </div>`;
     }).join('');
 
@@ -1002,32 +1153,60 @@ function render(matches, w, h, fps, noResFilter) {
       ? `<div class="card-status">${cam.status}</div>`
       : '';
 
+    // Build meta row based on category
+    const metaItems = [];
+    if (camCat === 'cinema') {
+      // Dynamic range (hero metric for cinema)
+      if (cam.dynamic_range_stops) {
+        metaItems.push(`<div class="meta-item"><span class="meta-label">DR Stops</span><span class="meta-value accent">${cam.dynamic_range_stops}</span></div>`);
+      }
+      // Sensor format
+      if (cam.sensor_format) {
+        metaItems.push(`<div class="meta-item"><span class="meta-label">Format</span><span class="meta-value strong">${cam.sensor_format}</span></div>`);
+      }
+      // Mount
+      if (cam.lens_mount_native) {
+        metaItems.push(`<div class="meta-item"><span class="meta-label">Mount</span><span class="meta-value">${cam.lens_mount_native}</span></div>`);
+      }
+      // ND filter
+      if (cam.nd_filter) {
+        const ndShort = cam.nd_filter.length > 18 ? 'Internal' : cam.nd_filter;
+        metaItems.push(`<div class="meta-item"><span class="meta-label">ND</span><span class="meta-value">${ndShort}</span></div>`);
+      }
+      // Base ISO
+      if (cam.base_iso && cam.base_iso.length) {
+        const isoLabel = cam.dual_native_iso ? 'Dual ISO' : 'Base ISO';
+        metaItems.push(`<div class="meta-item"><span class="meta-label">${isoLabel}</span><span class="meta-value">${cam.base_iso.join(' / ')}</span></div>`);
+      }
+      // Bit depth
+      if (cam.bit_depth) {
+        metaItems.push(`<div class="meta-item"><span class="meta-label">Bit Depth</span><span class="meta-value">${cam.bit_depth}-bit</span></div>`);
+      }
+    } else {
+      // High-speed: existing layout with tier
+      const sensorVal = cam.sensor_size || '—';
+      const bitVal = cam.bit_depth ? `${cam.bit_depth}-bit` : '—';
+      const priceVal = cam.price_tier || '—';
+      metaItems.push(`<div class="meta-item"><span class="meta-label">Sensor</span><span class="meta-value">${sensorVal}</span></div>`);
+      metaItems.push(`<div class="meta-item"><span class="meta-label">Bit Depth</span><span class="meta-value">${bitVal}</span></div>`);
+      metaItems.push(`<div class="meta-item"><span class="meta-label">Tier</span><span class="meta-value">${priceVal}</span></div>`);
+    }
+
     html += `
       <div class="camera-card">
         <div class="card-header">
           <div class="card-identity">
-            <div class="card-brand">${cam.brand}</div>
+            <div class="card-brand">${cam.brand}${catTagHtml}</div>
             <div class="card-model">${cam.model}</div>
             ${statusHtml}
           </div>
           ${badgeHtml}
         </div>
         <div class="card-meta">
-          <div class="meta-item">
-            <span class="meta-label">Sensor</span>
-            <span class="meta-value">${sensorVal}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Bit Depth</span>
-            <span class="meta-value">${bitVal}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Tier</span>
-            <span class="meta-value">${priceVal}</span>
-          </div>
+          ${metaItems.join('')}
         </div>
         <div>
-          <div class="card-modes-label">Matching Modes</div>
+          <div class="card-modes-label">${noResFilter ? 'Top Modes' : 'Matching Modes'}</div>
           <div class="modes-chips">
             ${chipsHtml}
             ${moreHtml}
@@ -1068,11 +1247,14 @@ document.getElementById('clear').addEventListener('click', () => {
   document.getElementById('intro-block').style.display = '';
   document.getElementById('results').innerHTML = '';
   lastResults = [];
-  // Reset brand filter
+  // Reset category filter
+  activeCategory = 'all';
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  const allCatBtn = document.querySelector('.cat-btn[data-cat="all"]');
+  if (allCatBtn) allCatBtn.classList.add('active');
+  // Reset brand filter (rebuild since category changed)
   activeBrands.clear();
-  document.querySelectorAll('.mfr-chip').forEach(c => c.classList.remove('active'));
-  const allChip = document.querySelector('[data-brand="__all__"]');
-  if (allChip) allChip.classList.add('active');
+  buildMfrFilter();
 });
 
 [document.getElementById('inp-w'), document.getElementById('inp-h'), document.getElementById('inp-fps')]
