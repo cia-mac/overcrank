@@ -1154,12 +1154,55 @@
     color: var(--text);
   }
   @media (max-width: 600px) {
-    .detail-modal {
-      padding: 24px 20px 28px;
+    .detail-backdrop { padding: 12px 10px; }
+    .detail-modal { padding: 22px 18px 26px; }
+    .detail-model { font-size: 22px; }
+    .detail-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
     }
-    .detail-model {
-      font-size: 22px;
+    .detail-specs-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
     }
+    .detail-mode-table { font-size: 11.5px; }
+    .detail-mode-table th,
+    .detail-mode-table td { padding: 7px 6px; }
+    .detail-source {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-top: 14px;
+    }
+
+    .compare-modal { padding: 22px 16px 26px; }
+    .compare-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+    .compare-head > div { flex-wrap: wrap; gap: 8px; }
+    .compare-table { font-size: 12px; }
+    .compare-table th,
+    .compare-table td { padding: 8px 10px; }
+    .compare-table th { width: 108px; font-size: 9px; }
+    .compare-table td { min-width: 140px; }
+
+    .compare-bar {
+      bottom: 14px;
+      padding: 8px 10px 8px 16px;
+      gap: 8px;
+    }
+    .compare-bar-btn { padding: 7px 14px; font-size: 12px; }
+    .compare-bar-count { font-size: 12px; }
+
+    .results-toolbar { padding: 12px 16px; gap: 8px; }
+    .sort-group { margin-left: 0; width: 100%; justify-content: flex-end; flex-wrap: wrap; }
   }
 
   /* ── Compare controls ── */
@@ -1694,6 +1737,7 @@ function render(matches, w, h, fps, noResFilter) {
         <span class="sort-label">Sort</span>
         <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
         <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
+        <button class="sort-btn" onclick="exportResultsCSV(this)" title="Copy filtered results as CSV">Export CSV</button>
         <button class="sort-btn" onclick="copyShareLink(this)" title="Copy link to these results">Share</button>
       </div>
     </div>
@@ -2262,6 +2306,68 @@ function copyShareLink(btn) {
   });
 }
 
+function exportResultsCSV(btn) {
+  if (!lastResults || lastResults.length === 0) {
+    if (btn) {
+      const o = btn.textContent;
+      btn.textContent = 'No results';
+      setTimeout(() => { btn.textContent = o; }, 1500);
+    }
+    return;
+  }
+  const esc = (v) => {
+    const s = v == null ? '' : String(v);
+    if (/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  };
+  const headers = [
+    'Brand','Model','Category','Status','Best FPS',
+    'Sensor Format','Sensor Size','DR Stops','Bit Depth',
+    'Mount','Base ISO','ND Filter','Price Tier',
+    'Data Quality','All Modes','Source URL'
+  ];
+  const lines = [headers.map(esc).join(',')];
+  for (const { cam, bestFps } of lastResults) {
+    const modesStr = (cam.modes || [])
+      .slice()
+      .sort((a, b) => b.max_fps - a.max_fps)
+      .map(m => {
+        const noteSuffix = m.note && m.note !== `${m.res_width}x${m.res_height}` ? ` (${m.note})` : '';
+        return `${m.res_width}x${m.res_height}@${m.max_fps}${noteSuffix}`;
+      })
+      .join('; ');
+    const baseIso = Array.isArray(cam.base_iso) ? cam.base_iso.join(' / ') : (cam.base_iso || '');
+    lines.push([
+      cam.brand || '',
+      cam.model || '',
+      cam.category || 'high_speed',
+      cam.status || '',
+      bestFps || '',
+      cam.sensor_format || '',
+      cam.sensor_size || '',
+      cam.dynamic_range_stops || '',
+      cam.bit_depth || '',
+      cam.lens_mount_native || '',
+      baseIso,
+      cam.nd_filter || '',
+      cam.price_tier || '',
+      cam.data_quality || '',
+      modesStr,
+      cam.source_url || '',
+    ].map(esc).join(','));
+  }
+  const csv = lines.join('\n');
+  navigator.clipboard.writeText(csv).then(() => {
+    if (btn) {
+      const o = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => { btn.textContent = o; }, 1500);
+    }
+  }).catch(() => {
+    if (btn) btn.textContent = 'Copy failed';
+  });
+}
+
 function setSort(s) {
   currentSort = s;
   if (lastResults.length > 0) {
@@ -2360,9 +2466,57 @@ document.getElementById('compare-backdrop').addEventListener('click', (e) => {
 document.getElementById('compare-open').addEventListener('click', openCompareModal);
 document.getElementById('compare-clear').addEventListener('click', clearCompare);
 document.addEventListener('keydown', (e) => {
-  if (e.key !== 'Escape') return;
-  if (document.getElementById('compare-backdrop').classList.contains('show')) closeCompareModal();
-  else if (document.getElementById('detail-backdrop').classList.contains('show')) closeCameraDetail();
+  // Escape always closes modals, even when typing
+  if (e.key === 'Escape') {
+    if (document.getElementById('compare-backdrop').classList.contains('show')) closeCompareModal();
+    else if (document.getElementById('detail-backdrop').classList.contains('show')) closeCameraDetail();
+    return;
+  }
+
+  // Skip other shortcuts while typing or with modifiers held
+  const tgt = e.target;
+  if (tgt && (tgt.tagName === 'INPUT' || tgt.tagName === 'TEXTAREA' || tgt.isContentEditable)) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+  // "/" → focus the text search
+  if (e.key === '/') {
+    const txt = document.getElementById('inp-text');
+    if (txt) {
+      e.preventDefault();
+      txt.focus();
+      txt.select();
+    }
+    return;
+  }
+
+  // "c" → open compare modal if ≥2 selected
+  if (e.key === 'c' || e.key === 'C') {
+    if (compareSet.size >= 2) {
+      e.preventDefault();
+      openCompareModal();
+    }
+    return;
+  }
+
+  // Arrow keys → step focus across visible cards
+  if (['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)) {
+    const cards = Array.from(document.querySelectorAll('.camera-card'));
+    if (cards.length === 0) return;
+    const active = document.activeElement;
+    const idx = cards.indexOf(active);
+    const dir = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : -1;
+    if (idx === -1) {
+      e.preventDefault();
+      cards[0].focus();
+      return;
+    }
+    const next = Math.max(0, Math.min(cards.length - 1, idx + dir));
+    if (next !== idx) {
+      e.preventDefault();
+      cards[next].focus();
+      cards[next].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
 });
 
 loadDB().then(() => {
