@@ -9,7 +9,7 @@ last_updated: 2026-04-14
 Overcrank v1 is complete. Three unblocked dev improvements just shipped (full-results CSV, keyboard nav, mobile pass). Next move requires Ciamac picks on domain + analytics. IDT work is on ice per 2026-04-14 directive.
 
 ## Last Completed Action
-Shipped c3630e9: Copy MD button in compare modal. Markdown pipe-table export joins Copy Link and Copy CSV. Pipes and newlines in cell content escape correctly. Reuses compareLastSnapshot so no extra data walk. Purpose: Ciamac uses Notion as SSOT, Markdown table paste goes directly into a Notion toggle or page without import step. Prior ship same day was 1325526: full-results CSV + keyboard nav + mobile pass.
+Shipped 1325526: three features in one commit. (1) Export CSV button in the results toolbar copies all currently-filtered cameras as a 16-column CSV (Brand, Model, Category, Status, Best FPS, Sensor Format/Size, DR Stops, Bit Depth, Mount, Base ISO, ND Filter, Price Tier, Data Quality, All Modes, Source URL). Clipboard-only, RFC 4180 quoting, matches compare-CSV pattern. (2) Keyboard navigation: "/" focuses text search and selects existing query, "c" opens compare modal when ≥2 selected, arrow keys step focus across visible cards with smooth scroll-into-view, Esc still closes modals. Shortcuts are suppressed while typing in inputs or when modifiers are held. (3) Mobile pass (≤600px): detail modal and compare modal both collapse head rows vertically, detail spec grid drops to 2 columns, compare table font/padding shrunk, compare bar and results toolbar reflowed. Deployed, awaiting GH Pages rebuild verify.
 
 ## Domain Research (2026-04-14)
 WHOIS + RDAP + NS checks across candidates:
@@ -62,16 +62,13 @@ None. SESSION_STATE_v6.md saved.
 
 ## Context for Next Session
 Live URL: https://cia-mac.github.io/overcrank/
-Latest SHA: c3630e9.
-Session produced 4 commits beyond prior rounds:
-  1. 1325526 full-results CSV + keyboard nav + mobile pass
-  2. 9c98222 state v6 (IDT scrubbed)
-  3. c3630e9 Copy MD (Markdown table for Notion paste)
-  4. (this state file commit)
+Latest SHA: 1325526.
+Session produced 3 commits:
+  1. 0833926 (prior turn) state for compare polish
+  2. (last round) 673f266 compare polish (URL persist, CSV, sticky column)
+  3. 1325526 full-results CSV + keyboard nav + mobile pass
 
-Tool now does: filter, drill in, compare 2-4 side-by-side, share any view via URL, export compare as CSV/Markdown or full results as CSV, navigate by keyboard, usable on phones.
-
-Export pattern established: all three compare exports (Link, MD, CSV) share compareLastSnapshot + clipboard. If a fourth format is needed (JSON, TSV), follow the same pattern.
+Tool now does: filter, drill in, compare 2-4 side-by-side, share any view via URL, export compare OR full results as CSV, navigate by keyboard, usable on phones. That's the v1 feature set. Dev work is capped until Ciamac unblocks domain, analytics, or data-fill work (or lifts IDT freeze).
 
 Next productive round requires at least one of:
 - Domain pick (.dev recommended, 2-minute purchase).
