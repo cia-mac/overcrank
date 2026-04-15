@@ -1493,6 +1493,7 @@
       <div style="display:flex;align-items:center;gap:14px;">
         <span id="compare-subtitle" style="font-size:12px;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;">0 cameras</span>
         <button class="detail-share-btn" id="compare-copy-link" type="button">Copy Link</button>
+        <button class="detail-share-btn" id="compare-copy-md" type="button" title="Copy as Markdown table (paste into Notion)">Copy MD</button>
         <button class="detail-share-btn" id="compare-copy-csv" type="button">Copy CSV</button>
       </div>
     </div>
@@ -2205,6 +2206,25 @@ function openCompareModal() {
         const orig = csvBtn.textContent;
         csvBtn.textContent = 'Copied';
         setTimeout(() => { csvBtn.textContent = orig; }, 1500);
+      });
+    };
+  }
+  const mdBtn = document.getElementById('compare-copy-md');
+  if (mdBtn) {
+    mdBtn.onclick = () => {
+      if (!compareLastSnapshot) return;
+      // Escape pipe and newline for markdown pipe-table cells
+      const cell = (v) => String(v).replace(/\|/g, '\\|').replace(/\n/g, '<br>');
+      const header = '| ' + compareLastSnapshot.headers.map(cell).join(' | ') + ' |';
+      const sep = '|' + compareLastSnapshot.headers.map(() => '---').join('|') + '|';
+      const body = compareLastSnapshot.rows
+        .map(r => '| ' + r.map(cell).join(' | ') + ' |')
+        .join('\n');
+      const md = [header, sep, body].join('\n');
+      navigator.clipboard.writeText(md).then(() => {
+        const orig = mdBtn.textContent;
+        mdBtn.textContent = 'Copied';
+        setTimeout(() => { mdBtn.textContent = orig; }, 1500);
       });
     };
   }
