@@ -467,6 +467,79 @@
     background: var(--accent-glow);
   }
 
+  /* ── Headroom hero (shown when fps filter is active) ── */
+  .headroom-hero {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-left-width: 3px;
+  }
+
+  .headroom-number {
+    font-family: var(--mono);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .headroom-number .hx {
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 2px;
+    opacity: 0.7;
+  }
+
+  .headroom-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .headroom-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .headroom-detail {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .camera-card.hr-good {
+    border-color: rgba(34,197,94,0.35);
+  }
+  .camera-card.hr-good .headroom-hero {
+    border-left-color: var(--green);
+    background: rgba(34,197,94,0.06);
+  }
+  .camera-card.hr-good .headroom-number { color: var(--green); }
+
+  .camera-card.hr-ok .headroom-hero {
+    border-left-color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .camera-card.hr-ok .headroom-number { color: var(--accent); }
+
+  .camera-card.hr-tight .headroom-hero {
+    border-left-color: var(--orange);
+    background: rgba(249,115,22,0.05);
+  }
+  .camera-card.hr-tight .headroom-number { color: var(--orange); }
+
   /* Mode chips */
   .card-modes-label {
     font-size: 12px;
@@ -1687,11 +1760,12 @@ function search() {
     );
 
     if (noResFilter || matchingModes.length > 0) {
-      const bestFps = noResFilter
-        ? Math.max(...cam.modes.map(m => m.max_fps))
-        : Math.max(...matchingModes.map(m => m.max_fps));
+      const pool = noResFilter ? cam.modes : matchingModes;
+      const bestMode = pool.reduce((a, b) => (b.max_fps > a.max_fps ? b : a), pool[0]);
+      const bestFps = bestMode.max_fps;
+      const headroom = fps > 0 ? bestFps / fps : null;
 
-      matches.push({ cam, matchingModes: noResFilter ? cam.modes : matchingModes, bestFps });
+      matches.push({ cam, matchingModes: pool, bestFps, bestMode, headroom });
     }
   }
 
@@ -1745,12 +1819,33 @@ function render(matches, w, h, fps, noResFilter) {
     <div class="cards-grid">
   `;
 
-  for (const { cam, matchingModes, bestFps } of matches) {
+  for (const { cam, matchingModes, bestFps, bestMode, headroom } of matches) {
     const dq = cam.data_quality;
-    let badgeHtml;
+    let badgeHtml = '';
     if (dq === 'needs_review') badgeHtml = `<span class="badge badge-unverified">Needs Review</span>`;
     else if (dq === 'gemini_unverified') badgeHtml = `<span class="badge badge-unverified">Unverified</span>`;
-    else badgeHtml = `<span class="badge badge-verified">Verified</span>`;
+    // verified and default: no badge (100% of current DB is verified, so the badge carries no signal)
+
+    let hrClass = '';
+    let headroomHtml = '';
+    if (headroom != null && bestMode) {
+      if (headroom >= 3) hrClass = 'hr-good';
+      else if (headroom >= 1.5) hrClass = 'hr-ok';
+      else hrClass = 'hr-tight';
+      const hrDisplay = headroom >= 10 ? Math.round(headroom) : headroom.toFixed(1);
+      const resPart = bestMode.res_width && bestMode.res_height
+        ? `${bestMode.res_width.toLocaleString()} &times; ${bestMode.res_height.toLocaleString()}`
+        : '';
+      headroomHtml = `
+        <div class="headroom-hero">
+          <div class="headroom-number">${hrDisplay}<span class="hx">&times;</span></div>
+          <div class="headroom-right">
+            <div class="headroom-label">Headroom at your spec</div>
+            <div class="headroom-detail">${bestMode.max_fps.toLocaleString()} fps${resPart ? ' @ ' + resPart : ''}</div>
+          </div>
+        </div>
+      `;
+    }
 
     const camCat = cam.category || 'high_speed';
     const catTagHtml = camCat === 'cinema'
@@ -1759,7 +1854,10 @@ function render(matches, w, h, fps, noResFilter) {
 
     const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
 
-    const chipsHtml = sortedModes.slice(0, 6).map(m => {
+    // When headroom hero is shown, the top mode is already surfaced. Skip it in the chip list.
+    const chipSource = headroomHtml ? sortedModes.slice(1) : sortedModes;
+
+    const chipsHtml = chipSource.slice(0, 6).map(m => {
       const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noResFilter;
       const noteParts = [];
       if (m.note && m.note !== `${m.res_width}x${m.res_height}`) noteParts.push(`<span class="chip-note">${m.note}</span>`);
@@ -1771,10 +1869,12 @@ function render(matches, w, h, fps, noResFilter) {
       </div>`;
     }).join('');
 
-    const moreCount = sortedModes.length - 6;
+    const moreCount = chipSource.length - 6;
     const moreHtml = moreCount > 0
       ? `<div class="more-modes">+${moreCount} more modes</div>`
       : '';
+
+    const hasOtherModes = chipSource.length > 0;
 
     const statusHtml = cam.status !== 'Current'
       ? `<div class="card-status">${cam.status}</div>`
@@ -1823,7 +1923,7 @@ function render(matches, w, h, fps, noResFilter) {
     const safeKey = camKey.replace(/"/g, '&quot;');
     const inCompare = compareSet.has(camKey);
     html += `
-      <div class="camera-card" data-cam-key="${safeKey}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
+      <div class="camera-card ${hrClass}" data-cam-key="${safeKey}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
         <button class="compare-btn ${inCompare ? 'active' : ''}" data-cam-key="${safeKey}" aria-label="Add to compare" aria-pressed="${inCompare}" title="Add to compare">${inCompare ? '&#10003;' : '+'}</button>
         <div class="card-header">
           <div class="card-identity">
@@ -1833,16 +1933,17 @@ function render(matches, w, h, fps, noResFilter) {
           </div>
           ${badgeHtml}
         </div>
+        ${headroomHtml}
         <div class="card-meta">
           ${metaItems.join('')}
         </div>
-        <div>
-          <div class="card-modes-label">${noResFilter ? 'Top Modes' : 'Matching Modes'}</div>
+        ${hasOtherModes ? `<div>
+          <div class="card-modes-label">${noResFilter ? 'Top Modes' : (headroomHtml ? 'Other Matching Modes' : 'Matching Modes')}</div>
           <div class="modes-chips">
             ${chipsHtml}
             ${moreHtml}
           </div>
-        </div>
+        </div>` : ''}
       </div>
     `;
   }
