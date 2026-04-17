@@ -5,7 +5,7 @@ Cross-brand high-speed camera search tool. Input resolution + FPS, get every cam
 
 ## Stack
 - Single `index.html` (vanilla JS, no framework)
-- `data/overcrank_db_v4.json` loaded at runtime
+- `data/overcrank_db_v9.json` loaded at runtime
 - Served on port 4200 via `python3 -m http.server 4200`
 - No backend, no build step
 
@@ -27,4 +27,4 @@ Each mode: res_width, res_height, max_fps, mode_type, note.
 
 ## Phase 1 Target
 10 manufacturers: Phantom, Photron, IDT, iX Cameras, Kron Technologies, Freefly, Edgertronic, NAC, Weisscam, Shimadzu (TBD).
-Currently have 7 of 10. Missing: NAC, Weisscam (partial), Shimadzu (TBD).
+Currently have 9 of 10 (217 cameras total, all verified). Missing: Shimadzu (TBD). Weisscam at 3 cams, may need dealer-spec expansion.

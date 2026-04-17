@@ -16,7 +16,7 @@ from pathlib import Path
 from collections import defaultdict
 
 ROOT = Path(__file__).parent.parent
-DB_PATH = ROOT / "data" / "overcrank_db_v4.json"
+DB_PATH = ROOT / "data" / "overcrank_db_v9.json"
 LOG_PATH = ROOT / "data" / "discrepancy_log.json"
 
 # ──────────────────────────────────────────────
