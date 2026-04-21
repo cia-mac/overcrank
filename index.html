@@ -1754,10 +1754,12 @@ function buildMfrFilter() {
 function normalizePriceTier(raw) {
   if (!raw) return '—';
   const s = String(raw).trim();
-  if (/quote/i.test(s)) return 'Quote';
-  if (/rental.*purchase|purchase.*rental|both/i.test(s)) return 'Both';
-  if (/rental/i.test(s)) return 'Rental';
+  // Check compound modes first — "Rental / Purchase (Quote)" is both, not just quote
+  if (/rental.*purchase|purchase.*rental|\bboth\b/i.test(s)) return 'Both';
+  if (/pre-owned/i.test(s)) return 'Rental';
   if (/legacy/i.test(s)) return 'Legacy';
+  if (/rental/i.test(s)) return 'Rental';
+  if (/quote/i.test(s)) return 'Quote';
   if (/purchase/i.test(s)) return 'Purchase';
   return s.length > 12 ? s.slice(0, 12) + '…' : s;
 }
@@ -1852,10 +1854,11 @@ function search() {
     );
 
     if (noResFilter || matchingModes.length > 0) {
-      const pool = noResFilter ? cam.modes : matchingModes;
-      const bestMode = pool.reduce((a, b) => (b.max_fps > a.max_fps ? b : a), pool[0]);
-      const bestFps = bestMode.max_fps;
-      const headroom = fps > 0 ? bestFps / fps : null;
+      const pool = noResFilter ? (cam.modes || []) : matchingModes;
+      if (pool.length === 0) continue;
+      const bestMode = pool.reduce((a, b) => ((b.max_fps || 0) > (a.max_fps || 0) ? b : a), pool[0]);
+      const bestFps = bestMode.max_fps || 0;
+      const headroom = fps > 0 && bestFps > 0 ? bestFps / fps : null;
 
       matches.push({ cam, matchingModes: pool, bestFps, bestMode, headroom });
     }
@@ -1971,10 +1974,11 @@ function render(matches, w, h, fps, noResFilter) {
     ).join('');
 
     const catLabel = camCat === 'cinema' ? 'Cinema' : 'High-Speed';
-    const thumbLabel = cam.brand.length > 4 ? cam.brand.replace(/\s+/g, '').slice(0, 4).toUpperCase() : cam.brand.toUpperCase();
+    const brand = cam.brand || 'CAM';
+    const thumbLabel = brand.length > 4 ? brand.replace(/\s+/g, '').slice(0, 4).toUpperCase() : brand.toUpperCase();
     // Status chip only when non-Current — decision-useful signal for legacy/discontinued cams
     const statusChipHtml = cam.status && cam.status !== 'Current' && cam.status !== 'Active'
-      ? `<span class="row-status">${cam.status.replace(/\(.*?\)/g, '').trim().split(/\s+/).slice(0, 2).join(' ')}</span>`
+      ? `<span class="row-status">${cam.status.replace(/\(.*?\)/g, '').split(/[\s\-]+/).filter(w => /[a-z]/i.test(w)).slice(0, 2).join(' ')}</span>`
       : '';
 
     html += `
@@ -2069,7 +2073,7 @@ function openCameraDetail(camKey) {
     addSpec('Price USD', cam.price_usd ? '$' + cam.price_usd.toLocaleString() : null);
   }
 
-  const sortedModes = [...cam.modes].sort((a, b) => (b.max_fps || 0) - (a.max_fps || 0));
+  const sortedModes = [...(cam.modes || [])].sort((a, b) => (b.max_fps || 0) - (a.max_fps || 0));
   const hasCodec = sortedModes.some(m => m.codec);
   const hasType = sortedModes.some(m => m.mode_type && m.mode_type !== 'standard');
   const hasNote = sortedModes.some(m => m.note && m.note !== `${m.res_width}x${m.res_height}`);
@@ -2240,16 +2244,21 @@ function openCompareModal() {
 
   const rows = [
     { label: 'Category', get: c => (c.category || 'high_speed') === 'cinema' ? 'Cinema' : 'High-Speed' },
-    { label: 'Max FPS', get: c => Math.max(...c.modes.map(m => m.max_fps || 0)).toLocaleString() + ' fps', accent: true },
+    { label: 'Max FPS', get: c => {
+        const modes = c.modes || [];
+        const fpsVals = modes.map(m => m.max_fps).filter(v => typeof v === 'number');
+        return fpsVals.length ? Math.max(...fpsVals).toLocaleString() + ' fps' : '—';
+      }, accent: true },
     { label: 'Max Resolution', get: c => {
-        const max = c.modes.reduce((best, m) => {
+        const modes = c.modes || [];
+        const max = modes.reduce((best, m) => {
           const px = (m.res_width || 0) * (m.res_height || 0);
           return px > (best.px || 0) ? { px, m } : best;
         }, { px: 0 });
         return max.m ? `${max.m.res_width} × ${max.m.res_height}` : '—';
       }
     },
-    { label: 'Modes', get: c => c.modes.length },
+    { label: 'Modes', get: c => (c.modes || []).length },
     { label: 'Sensor Format', get: c => fmtArr(c.sensor_format) },
     { label: 'Sensor Size', get: c => fmtArr(c.sensor_size) },
     { label: 'Crop Factor', get: c => fmtCrop(c.crop_factor) },
@@ -2512,10 +2521,12 @@ function exportResultsCSV(btn) {
   for (const { cam, bestFps } of lastResults) {
     const modesStr = (cam.modes || [])
       .slice()
-      .sort((a, b) => b.max_fps - a.max_fps)
+      .sort((a, b) => (b.max_fps || 0) - (a.max_fps || 0))
       .map(m => {
-        const noteSuffix = m.note && m.note !== `${m.res_width}x${m.res_height}` ? ` (${m.note})` : '';
-        return `${m.res_width}x${m.res_height}@${m.max_fps}${noteSuffix}`;
+        const res = m.res_width && m.res_height ? `${m.res_width}x${m.res_height}` : '—';
+        const fps = m.max_fps ? `@${m.max_fps}` : '';
+        const noteSuffix = m.note && m.note !== res ? ` (${m.note})` : '';
+        return `${res}${fps}${noteSuffix}`;
       })
       .join('; ');
     const baseIso = Array.isArray(cam.base_iso) ? cam.base_iso.join(' / ') : (cam.base_iso || '');
