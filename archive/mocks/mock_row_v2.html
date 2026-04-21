@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Overcrank — Listing row mock v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #0d0d0d;
+    --surface:      #141414;
+    --surface-2:    #1a1a1a;
+    --surface-3:    #222222;
+    --border:       #272727;
+    --border-focus: #3a3a3a;
+    --accent:       #e8ff00;
+    --accent-dim:   #b8cc00;
+    --accent-glow:  rgba(232,255,0,0.08);
+    --text:         #f0f0f0;
+    --text-dim:     #909090;
+    --text-muted:   #4a4a4a;
+    --green:        #22c55e;
+    --orange:       #f97316;
+    --mono:         'SF Mono','Fira Code','Consolas',monospace;
+    --sans:         'Inter',system-ui,-apple-system,sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 120px;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 22px 48px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+  header h1 span { color: var(--accent); }
+  header .tagline {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  /* ── Search form ── */
+  .search-bar {
+    padding: 28px 48px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: flex-end;
+  }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .field input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 15px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 90px;
+  }
+  .field input:focus { outline: none; border-color: var(--accent); }
+  .x-sep, .at-sep {
+    color: var(--text-muted);
+    font-size: 18px;
+    padding: 0 2px;
+    padding-bottom: 10px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* ── Filter chips ── */
+  .chips {
+    padding: 8px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .chips-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 8px;
+  }
+  .chip {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .chip:hover { border-color: var(--border-focus); color: var(--text); }
+  .chip.active {
+    background: var(--accent-glow);
+    border-color: rgba(232,255,0,0.35);
+    color: var(--accent);
+  }
+  .chip .count {
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .chip.active .count { color: var(--accent-dim); }
+
+  /* ── Results toolbar ── */
+  .results-toolbar {
+    padding: 20px 48px 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    max-width: 1420px;
+  }
+  .result-count {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -1px;
+  }
+  .result-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    flex: 1;
+  }
+  .sort-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .sort-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 6px;
+  }
+  .sort-btn {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .sort-btn.active {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+  .sort-btn:hover:not(.active) { border-color: var(--border-focus); color: var(--text); }
+
+  /* ── Listing rows ── */
+  .rows {
+    padding: 0 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 1420px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 100px 90px 1fr 280px 100px 80px 90px 44px;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 18px 10px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left-width: 3px;
+    border-radius: 10px;
+    transition: background 0.12s, border-color 0.12s;
+    cursor: pointer;
+    min-height: 92px;
+  }
+  .row:hover {
+    background: var(--surface-2);
+    border-color: var(--border-focus);
+  }
+  .row.hr-good   { border-left-color: var(--green); }
+  .row.hr-ok     { border-left-color: var(--accent); }
+  .row.hr-tight  { border-left-color: var(--orange); }
+
+  /* Thumbnail with SVG silhouette */
+  .thumb {
+    width: 82px;
+    height: 72px;
+    margin-left: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .thumb.idt      { background: linear-gradient(135deg,#262f1a,#0a0a0a); }
+  .thumb.phantom  { background: linear-gradient(135deg,#1a2030,#0a0a0a); }
+  .thumb.photron  { background: linear-gradient(135deg,#2a1a1a,#0a0a0a); }
+  .thumb.kron     { background: linear-gradient(135deg,#1a2a2a,#0a0a0a); }
+  .thumb.freefly  { background: linear-gradient(135deg,#2a241a,#0a0a0a); }
+  .thumb.nac      { background: linear-gradient(135deg,#24202a,#0a0a0a); }
+  .thumb.ix       { background: linear-gradient(135deg,#2a1e2a,#0a0a0a); }
+  .thumb.weisscam { background: linear-gradient(135deg,#1e2a2a,#0a0a0a); }
+  .thumb svg { width: 62px; height: 52px; opacity: 0.85; }
+  .thumb .mono-label {
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    font-family: var(--mono);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  /* Headroom chip */
+  .hr {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1px;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .hr-num  { font-size: 30px; line-height: 1; }
+  .hr-x    { font-size: 18px; opacity: 0.7; font-weight: 500; }
+  .row.hr-good  .hr { background: rgba(34,197,94,0.1);  color: var(--green); }
+  .row.hr-ok    .hr { background: var(--accent-glow);   color: var(--accent); }
+  .row.hr-tight .hr { background: rgba(249,115,22,0.1); color: var(--orange); }
+
+  /* Identity */
+  .id { min-width: 0; }
+  .id-top {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .id-top .cat {
+    padding: 1px 7px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    letter-spacing: 0.1em;
+    font-size: 10px;
+  }
+  .id-top .cat.hs  { color: var(--accent); border-color: rgba(232,255,0,0.25); background: var(--accent-glow); }
+  .id-top .cat.cin { color: #c4b5fd; border-color: rgba(196,181,253,0.25); background: rgba(196,181,253,0.06); }
+  .id-model {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Best match */
+  .match {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .match-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .match-val {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .match-val .big { color: var(--accent); font-weight: 700; font-size: 15px; }
+
+  /* Spec column */
+  .spec {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .spec-lbl {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .spec-val {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Compare button */
+  .cmp {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+  }
+  .cmp:hover { border-color: var(--accent); color: var(--accent); }
+  .cmp.active {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+
+  /* ── Expanded row ── */
+  .row.expanded {
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:
+      "thumb main"
+      "thumb body";
+    align-items: flex-start;
+    padding: 16px 18px 18px 10px;
+    background: var(--surface-2);
+    border-color: var(--border-focus);
+  }
+  .row.expanded > .thumb { grid-area: thumb; }
+  .row.expanded > .main-line {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 90px 1fr 280px 100px 80px 90px 44px;
+    gap: 18px;
+    align-items: center;
+    min-height: 72px;
+  }
+  .row.expanded > .expand-body {
+    grid-area: body;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--border);
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .expand-section h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .mode-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .mode-line.match {
+    background: rgba(232,255,0,0.04);
+    color: var(--text);
+  }
+  .mode-line .res { width: 140px; }
+  .mode-line .fps { color: var(--accent); font-weight: 700; width: 90px; }
+  .spec-pair {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 13px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .spec-pair .k { color: var(--text-muted); }
+  .spec-pair .v { font-family: var(--mono); color: var(--text); }
+  .expand-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .expand-actions a {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(232,255,0,0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: var(--accent-glow);
+  }
+  .expand-actions .btn-ghost { font-size: 12px; padding: 6px 14px; }
+
+  /* ── Sticky compare bar ── */
+  .compare-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface-2);
+    border: 1px solid var(--border-focus);
+    border-radius: 999px;
+    padding: 10px 14px 10px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    z-index: 50;
+  }
+  .compare-bar-count {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .compare-bar-count strong {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--mono);
+    font-size: 15px;
+  }
+  .cmp-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .cmp-btn.primary { background: var(--accent); color: #000; }
+  .cmp-btn.secondary { background: transparent; color: var(--text-dim); border: 1px solid var(--border); font-weight: 500; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1>OVER<span>CRANK</span></h1>
+    <span class="tagline">/ cinema + high-speed camera finder</span>
+  </div>
+</header>
+
+<div class="search-bar">
+  <div class="field">
+    <span class="field-label">Min Width (px)</span>
+    <input type="text" value="1920">
+  </div>
+  <span class="x-sep">×</span>
+  <div class="field">
+    <span class="field-label">Min Height (px)</span>
+    <input type="text" value="1080">
+  </div>
+  <span class="at-sep">@</span>
+  <div class="field">
+    <span class="field-label">Min FPS</span>
+    <input type="text" value="1000">
+  </div>
+  <button class="btn-primary">Search</button>
+  <button class="btn-ghost">Clear</button>
+</div>
+
+<div class="chips">
+  <span class="chips-label">Preset</span>
+  <span class="chip">8K</span>
+  <span class="chip">4K DCI</span>
+  <span class="chip">4K UHD</span>
+  <span class="chip">2K DCI</span>
+  <span class="chip active">1080p</span>
+  <span class="chip">720p</span>
+</div>
+
+<div class="chips">
+  <span class="chips-label">Category</span>
+  <span class="chip">All <span class="count">217</span></span>
+  <span class="chip">Cinema <span class="count">77</span></span>
+  <span class="chip active">High-Speed <span class="count">140</span></span>
+</div>
+
+<div class="chips">
+  <span class="chips-label">Brand</span>
+  <span class="chip active">All</span>
+  <span class="chip">Edgertronic <span class="count">5</span></span>
+  <span class="chip">Freefly <span class="count">2</span></span>
+  <span class="chip">IDT <span class="count">25</span></span>
+  <span class="chip">Kron <span class="count">4</span></span>
+  <span class="chip">NAC <span class="count">16</span></span>
+  <span class="chip">Phantom <span class="count">43</span></span>
+  <span class="chip">Photron <span class="count">28</span></span>
+  <span class="chip">Weisscam <span class="count">3</span></span>
+  <span class="chip">iX Cameras <span class="count">14</span></span>
+</div>
+
+<div class="results-toolbar">
+  <span class="result-count">69</span>
+  <span class="result-desc">cameras matching 1920px × 1080px at 1,000 fps min · sorted by headroom</span>
+  <div class="sort-group">
+    <span class="sort-label">Sort</span>
+    <button class="sort-btn active">Headroom</button>
+    <button class="sort-btn">Brand</button>
+    <button class="sort-btn">Sensor</button>
+    <button class="sort-btn">Export</button>
+  </div>
+</div>
+
+<div class="rows">
+
+  <!-- Row 1: 20× -->
+  <div class="row hr-good">
+    <div class="thumb idt">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#c9d896" stroke-width="1.5">
+        <rect x="6" y="14" width="50" height="32" rx="3"/>
+        <circle cx="36" cy="30" r="10"/>
+        <circle cx="36" cy="30" r="5" fill="#0a0a0a" stroke="none"/>
+        <rect x="56" y="20" width="18" height="20" rx="2"/>
+        <rect x="12" y="8" width="8" height="6" rx="1"/>
+      </svg>
+      <span class="mono-label">IDT</span>
+    </div>
+    <div class="hr"><span class="hr-num">20</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">IDT <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">Phoenix HD</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">20,040</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">20 × 15 mm</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">10-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+  <!-- Row 2: 14× — EXPANDED -->
+  <div class="row hr-good expanded">
+    <div class="thumb phantom">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#8ab0e0" stroke-width="1.5">
+        <rect x="4" y="12" width="58" height="36" rx="3"/>
+        <circle cx="30" cy="30" r="12"/>
+        <circle cx="30" cy="30" r="6" fill="#0a0a0a" stroke="none"/>
+        <rect x="62" y="18" width="14" height="24" rx="1"/>
+        <line x1="14" y1="18" x2="22" y2="18" stroke-width="2"/>
+      </svg>
+      <span class="mono-label">PHAN</span>
+    </div>
+    <div class="main-line">
+      <div class="hr"><span class="hr-num">14</span><span class="hr-x">×</span></div>
+      <div class="id">
+        <div class="id-top">Phantom <span class="cat hs">High-Speed</span></div>
+        <div class="id-model">T4040</div>
+      </div>
+      <div class="match">
+        <span class="match-label">Best match at spec</span>
+        <span class="match-val"><span class="big">13,510</span> fps @ 2048 × 1152</span>
+      </div>
+      <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">23.7 × 15.4</span></div>
+      <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+      <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+      <button class="cmp active" title="Added to compare">&#10003;</button>
+    </div>
+    <div class="expand-body">
+      <div class="expand-section">
+        <h4>All matching modes (3)</h4>
+        <div class="mode-line match"><span class="res">2048 × 1152</span><span class="fps">13,510 fps</span><span>Full res</span></div>
+        <div class="mode-line match"><span class="res">2560 × 1440</span><span class="fps">10,810 fps</span><span>Max res</span></div>
+        <div class="mode-line match"><span class="res">2560 × 1664</span><span class="fps">9,350 fps</span><span>2.5K</span></div>
+      </div>
+      <div class="expand-section">
+        <h4>Full spec</h4>
+        <div class="spec-pair"><span class="k">Sensor</span><span class="v">23.7 × 15.4 mm (CMOS)</span></div>
+        <div class="spec-pair"><span class="k">Pixel pitch</span><span class="v">13.5 μm</span></div>
+        <div class="spec-pair"><span class="k">Bit depth</span><span class="v">12-bit</span></div>
+        <div class="spec-pair"><span class="k">Mount</span><span class="v">PL, EF, F</span></div>
+        <div class="spec-pair"><span class="k">Memory</span><span class="v">288 GB</span></div>
+        <div class="spec-pair"><span class="k">Status</span><span class="v">Current</span></div>
+      </div>
+      <div class="expand-actions">
+        <a href="#">Full spec sheet →</a>
+        <a href="#">Manufacturer →</a>
+        <button class="btn-ghost">Copy share link</button>
+        <button class="btn-ghost">Collapse</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: 13× -->
+  <div class="row hr-good">
+    <div class="thumb idt">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#c9d896" stroke-width="1.5">
+        <rect x="6" y="14" width="50" height="32" rx="3"/>
+        <circle cx="36" cy="30" r="10"/>
+        <circle cx="36" cy="30" r="5" fill="#0a0a0a" stroke="none"/>
+        <rect x="56" y="20" width="18" height="20" rx="2"/>
+        <rect x="12" y="8" width="8" height="6" rx="1"/>
+      </svg>
+      <span class="mono-label">IDT</span>
+    </div>
+    <div class="hr"><span class="hr-num">13</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">IDT <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">Galileo 3K</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">13,000</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">23 × 18.4</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+    <button class="cmp active" title="Added to compare">&#10003;</button>
+  </div>
+
+  <!-- Row 4: 12.5× Photron -->
+  <div class="row hr-good">
+    <div class="thumb photron">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#e09a9a" stroke-width="1.5">
+        <rect x="4" y="10" width="55" height="40" rx="2"/>
+        <circle cx="32" cy="30" r="14"/>
+        <circle cx="32" cy="30" r="7" fill="#0a0a0a" stroke="none"/>
+        <rect x="59" y="16" width="18" height="28" rx="2"/>
+        <circle cx="68" cy="22" r="1.5" fill="#e09a9a" stroke="none"/>
+      </svg>
+      <span class="mono-label">PHOT</span>
+    </div>
+    <div class="hr"><span class="hr-num">12.5</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">Photron <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">FASTCAM SA-Z</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">12,500</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">20 × 20 mm</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+  <!-- Row 5: 7× iX -->
+  <div class="row hr-good">
+    <div class="thumb ix">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#d5a8e0" stroke-width="1.5">
+        <rect x="8" y="14" width="48" height="32" rx="3"/>
+        <circle cx="32" cy="30" r="10"/>
+        <circle cx="32" cy="30" r="5" fill="#0a0a0a" stroke="none"/>
+        <rect x="56" y="18" width="16" height="24" rx="1"/>
+      </svg>
+      <span class="mono-label">iX</span>
+    </div>
+    <div class="hr"><span class="hr-num">7.0</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">iX Cameras <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">i-SPEED 727</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">7,000</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">28 × 20.7</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+  <!-- Row 6: 2.9× Freefly -->
+  <div class="row hr-ok">
+    <div class="thumb freefly">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#e0c68a" stroke-width="1.5">
+        <rect x="10" y="18" width="44" height="28" rx="4"/>
+        <circle cx="32" cy="32" r="10"/>
+        <circle cx="32" cy="32" r="5" fill="#0a0a0a" stroke="none"/>
+        <path d="M54 24 L66 20 L66 44 L54 40 Z"/>
+      </svg>
+      <span class="mono-label">FF</span>
+    </div>
+    <div class="hr"><span class="hr-num">2.9</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">Freefly <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">Ember S2.5K</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">2,922</span> fps @ 2560 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">S35</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">$$$</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+  <!-- Row 7: 2.4× IDT XSM -->
+  <div class="row hr-ok">
+    <div class="thumb idt">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#c9d896" stroke-width="1.5">
+        <rect x="10" y="18" width="44" height="28" rx="2"/>
+        <circle cx="30" cy="32" r="10"/>
+        <circle cx="30" cy="32" r="5" fill="#0a0a0a" stroke="none"/>
+        <rect x="54" y="22" width="14" height="20" rx="1"/>
+      </svg>
+      <span class="mono-label">IDT</span>
+    </div>
+    <div class="hr"><span class="hr-num">2.4</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">IDT <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">XSM 3520</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">2,400</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">20 × 12 mm</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">10-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">Quote</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+  <!-- Row 8: 1.5× Phantom Miro -->
+  <div class="row hr-tight">
+    <div class="thumb phantom">
+      <svg viewBox="0 0 80 60" fill="none" stroke="#8ab0e0" stroke-width="1.5">
+        <rect x="10" y="20" width="42" height="24" rx="3"/>
+        <circle cx="28" cy="32" r="8"/>
+        <circle cx="28" cy="32" r="4" fill="#0a0a0a" stroke="none"/>
+        <rect x="52" y="24" width="12" height="16" rx="1"/>
+      </svg>
+      <span class="mono-label">PHAN</span>
+    </div>
+    <div class="hr"><span class="hr-num">1.5</span><span class="hr-x">×</span></div>
+    <div class="id">
+      <div class="id-top">Phantom <span class="cat hs">High-Speed</span></div>
+      <div class="id-model">Miro C321</div>
+    </div>
+    <div class="match">
+      <span class="match-label">Best match at spec</span>
+      <span class="match-val"><span class="big">1,480</span> fps @ 1920 × 1080</span>
+    </div>
+    <div class="spec"><span class="spec-lbl">Sensor</span><span class="spec-val">23 × 12 mm</span></div>
+    <div class="spec"><span class="spec-lbl">Bit</span><span class="spec-val">12-bit</span></div>
+    <div class="spec"><span class="spec-lbl">Tier</span><span class="spec-val">$$$</span></div>
+    <button class="cmp" title="Add to compare">+</button>
+  </div>
+
+</div>
+
+<!-- Sticky compare bar -->
+<div class="compare-bar">
+  <span class="compare-bar-count"><strong>2</strong> selected for compare</span>
+  <button class="cmp-btn primary">Compare →</button>
+  <button class="cmp-btn secondary">Clear</button>
+</div>
+
+</body>
+</html>

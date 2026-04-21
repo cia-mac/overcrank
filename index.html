@@ -15,9 +15,9 @@
     --surface-3:    #222222;
     --border:       #272727;
     --border-focus: #3a3a3a;
-    --accent:       #e8ff00;
-    --accent-dim:   #b8cc00;
-    --accent-glow:  rgba(232,255,0,0.08);
+    --accent:       #d9883b;
+    --accent-dim:   #a86c2c;
+    --accent-glow:  rgba(217,136,59,0.09);
     --text:         #f0f0f0;
     --text-dim:     #909090;
     --text-muted:   #4a4a4a;
@@ -237,7 +237,7 @@
 
   .preset-btn.active {
     background: var(--accent-glow);
-    border-color: rgba(232,255,0,0.4);
+    border-color: rgba(217,136,59,0.45);
     color: var(--accent);
   }
 
@@ -290,7 +290,7 @@
   }
 
   .sort-btn.active {
-    border-color: rgba(232,255,0,0.4);
+    border-color: rgba(217,136,59,0.45);
     color: var(--accent);
     background: var(--accent-glow);
   }
@@ -302,21 +302,25 @@
 
   /* ── Card grid ── */
   .cards-grid {
-    padding: 32px 48px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 16px;
+    padding: 16px 48px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 1600px;
   }
 
   .camera-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 22px 24px;
-    transition: border-color 0.15s, background 0.15s;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    border-radius: 8px;
+    padding: 10px 18px 10px 10px;
+    transition: background 0.12s, border-color 0.12s;
+    display: grid;
+    grid-template-columns: 88px 96px 1fr 260px 100px 80px 90px 44px;
+    align-items: center;
+    gap: 18px;
+    min-height: 92px;
+    position: relative;
   }
 
   .camera-card:hover {
@@ -463,7 +467,7 @@
 
   .card-cat-tag.high_speed {
     color: var(--accent);
-    border-color: rgba(232,255,0,0.25);
+    border-color: rgba(217,136,59,0.28);
     background: var(--accent-glow);
   }
 
@@ -519,26 +523,141 @@
     text-overflow: ellipsis;
   }
 
-  .camera-card.hr-good {
-    border-color: rgba(34,197,94,0.35);
-  }
-  .camera-card.hr-good .headroom-hero {
-    border-left-color: var(--green);
-    background: rgba(34,197,94,0.06);
-  }
-  .camera-card.hr-good .headroom-number { color: var(--green); }
+  /* Monochromatic headroom scale: amber for good, neutral for ok, dim for tight */
+  .camera-card:hover { background: var(--surface-2); border-color: var(--border-focus); }
+  .camera-card.hr-good  { border-left: 3px solid var(--accent); padding-left: 8px; }
+  .camera-card.hr-ok    { border-left: 3px solid var(--text-dim); padding-left: 8px; }
+  .camera-card.hr-tight { border-left: 3px solid var(--text-muted); padding-left: 8px; opacity: 0.78; }
+  .camera-card.hr-tight:hover { opacity: 1; }
 
-  .camera-card.hr-ok .headroom-hero {
-    border-left-color: var(--accent);
-    background: var(--accent-glow);
+  /* ── Listing row internals ── */
+  .row-thumb {
+    width: 78px;
+    height: 72px;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
   }
-  .camera-card.hr-ok .headroom-number { color: var(--accent); }
+  .row-thumb svg { width: 60px; height: 48px; opacity: 0.55; }
+  .row-thumb-label {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+    font-family: var(--mono);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
 
-  .camera-card.hr-tight .headroom-hero {
-    border-left-color: var(--orange);
-    background: rgba(249,115,22,0.05);
+  .row-hr {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    padding: 10px 4px;
+    font-family: var(--mono);
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
-  .camera-card.hr-tight .headroom-number { color: var(--orange); }
+  .row-hr .hr-num { font-size: 30px; line-height: 1; }
+  .row-hr .hr-x { font-size: 18px; font-weight: 400; opacity: 0.55; }
+  .camera-card.hr-good  .row-hr .hr-num { color: var(--accent); }
+  .camera-card.hr-good  .row-hr .hr-x   { color: var(--accent-dim); }
+  .camera-card.hr-ok    .row-hr .hr-num { color: var(--text); }
+  .camera-card.hr-ok    .row-hr .hr-x   { color: var(--text-muted); }
+  .camera-card.hr-tight .row-hr .hr-num { color: var(--text-muted); }
+  .camera-card.hr-tight .row-hr .hr-x   { color: var(--text-muted); opacity: 0.6; }
+
+  .row-id { min-width: 0; }
+  .row-id-top {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .row-cat {
+    padding: 1px 7px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: var(--text-dim);
+    background: var(--surface-2);
+  }
+  .row-cat.cinema { color: #c4b5fd; border-color: rgba(196,181,253,0.25); background: rgba(196,181,253,0.06); }
+  .row-id-model {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .row-match { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .row-match-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .row-match-val {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .row-match-val .big { color: var(--text); font-weight: 700; font-size: 15px; }
+  .camera-card.hr-good .row-match-val .big { color: var(--accent); }
+
+  .row-spec { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .row-spec-lbl {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .row-spec-val {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Responsive: stack on narrow viewports */
+  @media (max-width: 1100px) {
+    .camera-card {
+      grid-template-columns: 78px 1fr auto;
+      grid-template-areas:
+        "thumb id cmp"
+        "thumb hr match"
+        "thumb specs specs";
+      gap: 10px 14px;
+      padding-left: 10px !important;
+    }
+    .camera-card > .row-thumb { grid-area: thumb; }
+    .camera-card > .row-hr    { grid-area: hr; padding: 0; }
+    .camera-card > .row-id    { grid-area: id; }
+    .camera-card > .row-match { grid-area: match; }
+    .camera-card > .compare-btn { grid-area: cmp; position: relative !important; top: 0 !important; right: 0 !important; }
+    .camera-card > .row-spec  { display: none; }
+  }
 
   /* Mode chips */
   .card-modes-label {
@@ -568,8 +687,8 @@
   }
 
   .mode-chip.match {
-    background: rgba(232,255,0,0.05);
-    border-color: rgba(232,255,0,0.14);
+    background: rgba(217,136,59,0.07);
+    border-color: rgba(217,136,59,0.16);
   }
 
   .chip-res {
@@ -880,7 +999,7 @@
 
   .mfr-chip.active {
     background: var(--accent-glow);
-    border-color: rgba(232,255,0,0.4);
+    border-color: rgba(217,136,59,0.45);
     color: var(--accent);
   }
 
@@ -1458,7 +1577,7 @@
   }
   .compare-table thead td .cam-remove:hover { color: var(--text); }
   .compare-table td.accent { color: var(--accent); font-weight: 600; }
-  .compare-table .diff-row td { background: rgba(232,255,0,0.03); }
+  .compare-table .diff-row td { background: rgba(217,136,59,0.05); }
   .compare-empty {
     padding: 40px 20px;
     text-align: center;
@@ -1480,6 +1599,11 @@
   <div class="search-panel-inner">
     <div class="search-row">
       <div class="field">
+        <label>Min FPS</label>
+        <input type="number" id="inp-fps" placeholder="1000" min="1">
+      </div>
+      <div class="input-sep">@</div>
+      <div class="field">
         <label>Min Width (px)</label>
         <input type="number" id="inp-w" placeholder="1920" min="1">
       </div>
@@ -1488,11 +1612,6 @@
         <label>Min Height (px)</label>
         <input type="number" id="inp-h" placeholder="1080" min="1">
       </div>
-      <div class="input-sep">@</div>
-      <div class="field">
-        <label>Min FPS</label>
-        <input type="number" id="inp-fps" placeholder="1000" min="1">
-      </div>
       <div class="search-actions">
         <button id="search">Search</button>
         <button id="clear">Clear</button>
@@ -1500,15 +1619,27 @@
     </div>
 
     <div class="presets-row">
-      <span class="presets-label">Presets</span>
-      <button class="preset-btn" data-w="7680" data-h="4320">8K</button>
-      <button class="preset-btn" data-w="4096" data-h="2160">4K DCI</button>
-      <button class="preset-btn" data-w="3840" data-h="2160">4K UHD</button>
-      <button class="preset-btn" data-w="2048" data-h="1080">2K DCI</button>
-      <button class="preset-btn" data-w="1920" data-h="1080">1080p</button>
-      <button class="preset-btn" data-w="1280" data-h="720">720p</button>
-      <button class="preset-btn" data-w="1024" data-h="1024">1K sq</button>
-      <button class="preset-btn" data-w="640" data-h="480">VGA</button>
+      <span class="presets-label">Speed</span>
+      <button class="preset-btn fps-preset" data-fps="60">60 fps</button>
+      <button class="preset-btn fps-preset" data-fps="120">120</button>
+      <button class="preset-btn fps-preset" data-fps="240">240</button>
+      <button class="preset-btn fps-preset" data-fps="480">480</button>
+      <button class="preset-btn fps-preset" data-fps="1000">1,000</button>
+      <button class="preset-btn fps-preset" data-fps="5000">5,000</button>
+      <button class="preset-btn fps-preset" data-fps="10000">10,000</button>
+      <button class="preset-btn fps-preset" data-fps="100000">100,000+</button>
+    </div>
+
+    <div class="presets-row">
+      <span class="presets-label">Resolution</span>
+      <button class="preset-btn res-preset" data-w="7680" data-h="4320">8K</button>
+      <button class="preset-btn res-preset" data-w="4096" data-h="2160">4K DCI</button>
+      <button class="preset-btn res-preset" data-w="3840" data-h="2160">4K UHD</button>
+      <button class="preset-btn res-preset" data-w="2048" data-h="1080">2K DCI</button>
+      <button class="preset-btn res-preset" data-w="1920" data-h="1080">1080p</button>
+      <button class="preset-btn res-preset" data-w="1280" data-h="720">720p</button>
+      <button class="preset-btn res-preset" data-w="1024" data-h="1024">1K sq</button>
+      <button class="preset-btn res-preset" data-w="640" data-h="480">VGA</button>
     </div>
 
     <div class="cat-filter-row">
@@ -1820,130 +1951,75 @@ function render(matches, w, h, fps, noResFilter) {
   `;
 
   for (const { cam, matchingModes, bestFps, bestMode, headroom } of matches) {
-    const dq = cam.data_quality;
-    let badgeHtml = '';
-    if (dq === 'needs_review') badgeHtml = `<span class="badge badge-unverified">Needs Review</span>`;
-    else if (dq === 'gemini_unverified') badgeHtml = `<span class="badge badge-unverified">Unverified</span>`;
-    // verified and default: no badge (100% of current DB is verified, so the badge carries no signal)
+    const camCat = cam.category || 'high_speed';
+    const camKey = `${cam.brand}|${cam.model}`;
+    const safeKey = camKey.replace(/"/g, '&quot;');
+    const inCompare = compareSet.has(camKey);
 
+    // Headroom tier class + display number
     let hrClass = '';
-    let headroomHtml = '';
-    if (headroom != null && bestMode) {
+    let hrNumHtml = '<div class="row-hr"></div>';
+    if (headroom != null) {
       if (headroom >= 3) hrClass = 'hr-good';
       else if (headroom >= 1.5) hrClass = 'hr-ok';
       else hrClass = 'hr-tight';
       const hrDisplay = headroom >= 10 ? Math.round(headroom) : headroom.toFixed(1);
+      hrNumHtml = `<div class="row-hr"><span class="hr-num">${hrDisplay}</span><span class="hr-x">&times;</span></div>`;
+    }
+
+    // Best match line (uses bestMode — the top matching mode, or overall top if no fps filter)
+    let matchHtml = '<div class="row-match"></div>';
+    if (bestMode) {
       const resPart = bestMode.res_width && bestMode.res_height
-        ? `${bestMode.res_width.toLocaleString()} &times; ${bestMode.res_height.toLocaleString()}`
+        ? ` @ ${bestMode.res_width.toLocaleString()} × ${bestMode.res_height.toLocaleString()}`
         : '';
-      headroomHtml = `
-        <div class="headroom-hero">
-          <div class="headroom-number">${hrDisplay}<span class="hx">&times;</span></div>
-          <div class="headroom-right">
-            <div class="headroom-label">Headroom at your spec</div>
-            <div class="headroom-detail">${bestMode.max_fps.toLocaleString()} fps${resPart ? ' @ ' + resPart : ''}</div>
-          </div>
-        </div>
-      `;
-    }
-
-    const camCat = cam.category || 'high_speed';
-    const catTagHtml = camCat === 'cinema'
-      ? `<span class="card-cat-tag cinema">Cinema</span>`
-      : `<span class="card-cat-tag high_speed">High-Speed</span>`;
-
-    const sortedModes = [...matchingModes].sort((a, b) => b.max_fps - a.max_fps);
-
-    // When headroom hero is shown, the top mode is already surfaced. Skip it in the chip list.
-    const chipSource = headroomHtml ? sortedModes.slice(1) : sortedModes;
-
-    const chipsHtml = chipSource.slice(0, 6).map(m => {
-      const isMatch = m.res_width >= w && m.res_height >= h && m.max_fps >= fps && !noResFilter;
-      const noteParts = [];
-      if (m.note && m.note !== `${m.res_width}x${m.res_height}`) noteParts.push(`<span class="chip-note">${m.note}</span>`);
-      if (m.codec) noteParts.push(`<span class="chip-codec">${m.codec}</span>`);
-      return `<div class="mode-chip ${isMatch ? 'match' : ''}">
-        <span class="chip-res">${m.res_width} &times; ${m.res_height}</span>
-        <span class="chip-fps">${m.max_fps.toLocaleString()}<span class="chip-fps-unit">fps</span></span>
-        ${noteParts.join('')}
+      const matchLabel = headroom != null ? 'Best match at spec' : 'Top mode';
+      matchHtml = `<div class="row-match">
+        <span class="row-match-lbl">${matchLabel}</span>
+        <span class="row-match-val"><span class="big">${bestMode.max_fps.toLocaleString()}</span> fps${resPart}</span>
       </div>`;
-    }).join('');
-
-    const moreCount = chipSource.length - 6;
-    const moreHtml = moreCount > 0
-      ? `<div class="more-modes">+${moreCount} more modes</div>`
-      : '';
-
-    const hasOtherModes = chipSource.length > 0;
-
-    const statusHtml = cam.status !== 'Current'
-      ? `<div class="card-status">${cam.status}</div>`
-      : '';
-
-    // Build meta row based on category
-    const metaItems = [];
-    if (camCat === 'cinema') {
-      // Dynamic range (hero metric for cinema)
-      if (cam.dynamic_range_stops) {
-        metaItems.push(`<div class="meta-item"><span class="meta-label">DR Stops</span><span class="meta-value accent">${cam.dynamic_range_stops}</span></div>`);
-      }
-      // Sensor format
-      if (cam.sensor_format) {
-        metaItems.push(`<div class="meta-item"><span class="meta-label">Format</span><span class="meta-value strong">${cam.sensor_format}</span></div>`);
-      }
-      // Mount
-      if (cam.lens_mount_native) {
-        metaItems.push(`<div class="meta-item"><span class="meta-label">Mount</span><span class="meta-value">${cam.lens_mount_native}</span></div>`);
-      }
-      // ND filter
-      if (cam.nd_filter) {
-        const ndShort = cam.nd_filter.length > 18 ? 'Internal' : cam.nd_filter;
-        metaItems.push(`<div class="meta-item"><span class="meta-label">ND</span><span class="meta-value">${ndShort}</span></div>`);
-      }
-      // Base ISO
-      if (cam.base_iso && cam.base_iso.length) {
-        const isoLabel = cam.dual_native_iso ? 'Dual ISO' : 'Base ISO';
-        metaItems.push(`<div class="meta-item"><span class="meta-label">${isoLabel}</span><span class="meta-value">${cam.base_iso.join(' / ')}</span></div>`);
-      }
-      // Bit depth
-      if (cam.bit_depth) {
-        metaItems.push(`<div class="meta-item"><span class="meta-label">Bit Depth</span><span class="meta-value">${cam.bit_depth}-bit</span></div>`);
-      }
-    } else {
-      // High-speed: existing layout with tier
-      const sensorVal = cam.sensor_size || '—';
-      const bitVal = cam.bit_depth ? `${cam.bit_depth}-bit` : '—';
-      const priceVal = cam.price_tier || '—';
-      metaItems.push(`<div class="meta-item"><span class="meta-label">Sensor</span><span class="meta-value">${sensorVal}</span></div>`);
-      metaItems.push(`<div class="meta-item"><span class="meta-label">Bit Depth</span><span class="meta-value">${bitVal}</span></div>`);
-      metaItems.push(`<div class="meta-item"><span class="meta-label">Tier</span><span class="meta-value">${priceVal}</span></div>`);
     }
 
-    const camKey = `${cam.brand}|${cam.model}`;
-    const safeKey = camKey.replace(/"/g, '&quot;');
-    const inCompare = compareSet.has(camKey);
+    // Three spec slots, category-aware
+    const specs = [];
+    if (camCat === 'cinema') {
+      if (cam.dynamic_range_stops) specs.push({ lbl: 'DR Stops', val: cam.dynamic_range_stops });
+      if (cam.sensor_format) specs.push({ lbl: 'Format', val: cam.sensor_format });
+      if (cam.lens_mount_native) specs.push({ lbl: 'Mount', val: cam.lens_mount_native });
+      if (cam.bit_depth && specs.length < 3) specs.push({ lbl: 'Bit', val: cam.bit_depth + '-bit' });
+    } else {
+      specs.push({ lbl: 'Sensor', val: cam.sensor_size || '—' });
+      specs.push({ lbl: 'Bit', val: cam.bit_depth ? cam.bit_depth + '-bit' : '—' });
+      specs.push({ lbl: 'Tier', val: cam.price_tier || '—' });
+    }
+    while (specs.length < 3) specs.push({ lbl: '', val: '' });
+    const specsHtml = specs.slice(0, 3).map(s =>
+      `<div class="row-spec">${s.lbl ? `<span class="row-spec-lbl">${s.lbl}</span><span class="row-spec-val">${s.val}</span>` : ''}</div>`
+    ).join('');
+
+    const catLabel = camCat === 'cinema' ? 'Cinema' : 'High-Speed';
+    const thumbLabel = cam.brand.length > 4 ? cam.brand.replace(/\s+/g, '').slice(0, 4).toUpperCase() : cam.brand.toUpperCase();
+
     html += `
       <div class="camera-card ${hrClass}" data-cam-key="${safeKey}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
+        <div class="row-thumb">
+          <svg viewBox="0 0 80 60" fill="none" stroke="#777" stroke-width="1.25">
+            <rect x="6" y="14" width="50" height="32" rx="3"/>
+            <circle cx="34" cy="30" r="10"/>
+            <circle cx="34" cy="30" r="5" fill="#777" stroke="none" opacity="0.25"/>
+            <rect x="56" y="20" width="18" height="20" rx="2"/>
+            <rect x="12" y="8" width="8" height="6" rx="1"/>
+          </svg>
+          <span class="row-thumb-label">${thumbLabel}</span>
+        </div>
+        ${hrNumHtml}
+        <div class="row-id">
+          <div class="row-id-top">${cam.brand} <span class="row-cat ${camCat}">${catLabel}</span></div>
+          <div class="row-id-model">${cam.model}</div>
+        </div>
+        ${matchHtml}
+        ${specsHtml}
         <button class="compare-btn ${inCompare ? 'active' : ''}" data-cam-key="${safeKey}" aria-label="Add to compare" aria-pressed="${inCompare}" title="Add to compare">${inCompare ? '&#10003;' : '+'}</button>
-        <div class="card-header">
-          <div class="card-identity">
-            <div class="card-brand">${cam.brand}${catTagHtml}</div>
-            <div class="card-model">${cam.model}</div>
-            ${statusHtml}
-          </div>
-          ${badgeHtml}
-        </div>
-        ${headroomHtml}
-        <div class="card-meta">
-          ${metaItems.join('')}
-        </div>
-        ${hasOtherModes ? `<div>
-          <div class="card-modes-label">${noResFilter ? 'Top Modes' : (headroomHtml ? 'Other Matching Modes' : 'Matching Modes')}</div>
-          <div class="modes-chips">
-            ${chipsHtml}
-            ${moreHtml}
-          </div>
-        </div>` : ''}
       </div>
     `;
   }
@@ -2412,7 +2488,21 @@ function hydrateFromHash() {
   if (params.cmp) {
     compareSet = new Set(params.cmp.split(',').filter(Boolean));
   }
+  // Sync preset buttons to input values
+  syncPresetButtons();
   return anyFilter;
+}
+
+function syncPresetButtons() {
+  const w = document.getElementById('inp-w').value;
+  const h = document.getElementById('inp-h').value;
+  const fps = document.getElementById('inp-fps').value;
+  document.querySelectorAll('.preset-btn.res-preset').forEach(b => {
+    b.classList.toggle('active', b.dataset.w === w && b.dataset.h === h);
+  });
+  document.querySelectorAll('.preset-btn.fps-preset').forEach(b => {
+    b.classList.toggle('active', b.dataset.fps === fps);
+  });
 }
 
 function copyShareLink(btn) {
@@ -2551,14 +2641,23 @@ document.getElementById('inp-text').addEventListener('input', () => {
 });
 document.getElementById('inp-text').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
 
-// Preset buttons
-document.querySelectorAll('.preset-btn').forEach(btn => {
+// Resolution preset buttons (only affect W + H, keep fps)
+document.querySelectorAll('.preset-btn.res-preset').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.preset-btn.res-preset').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('inp-w').value = btn.dataset.w;
     document.getElementById('inp-h').value = btn.dataset.h;
-    // Keep fps as-is, let user set it
+    search();
+  });
+});
+
+// FPS preset buttons (only affect fps, keep res)
+document.querySelectorAll('.preset-btn.fps-preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn.fps-preset').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('inp-fps').value = btn.dataset.fps;
     search();
   });
 });
@@ -2568,11 +2667,15 @@ document.getElementById('clear').addEventListener('click', () => {
   document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
 }, true);
 
-// Typing in the inputs deactivates the active preset
-[document.getElementById('inp-w'), document.getElementById('inp-h')].forEach(el => {
-  el.addEventListener('input', () => {
-    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-  });
+// Typing in the inputs deactivates the matching preset row
+document.getElementById('inp-w').addEventListener('input', () => {
+  document.querySelectorAll('.preset-btn.res-preset').forEach(b => b.classList.remove('active'));
+});
+document.getElementById('inp-h').addEventListener('input', () => {
+  document.querySelectorAll('.preset-btn.res-preset').forEach(b => b.classList.remove('active'));
+});
+document.getElementById('inp-fps').addEventListener('input', () => {
+  document.querySelectorAll('.preset-btn.fps-preset').forEach(b => b.classList.remove('active'));
 });
 
 // Modal close handlers
