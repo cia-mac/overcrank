@@ -315,6 +315,37 @@
     color: var(--text);
   }
 
+  /* Headroom legend (shown under toolbar when fps filter is active) */
+  .hr-legend {
+    padding: 8px 48px 4px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 11px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .hr-legend-label {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hr-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+  }
+  .hr-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .hr-dot-good  { background: var(--accent); }
+  .hr-dot-ok    { background: var(--text-dim); }
+  .hr-dot-tight { background: var(--text-muted); }
+
   /* Utility actions (Export, Share) — visually distinct from sort */
   .action-group {
     display: flex;
@@ -494,7 +525,22 @@
     color: var(--text-dim);
     background: var(--surface-2);
   }
-  .row-cat.cinema { color: #c4b5fd; border-color: rgba(196,181,253,0.25); background: rgba(196,181,253,0.06); }
+  /* Cinema and high-speed category pills share the same neutral treatment — category is structural, not a signal */
+
+  .row-status {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    vertical-align: 1px;
+    background: var(--surface-2);
+  }
   .row-id-model {
     font-size: 17px;
     font-weight: 600;
@@ -1704,6 +1750,53 @@ function buildMfrFilter() {
   });
 }
 
+// Normalize price_tier display — data has verbose strings like "Purchase (Quote)"
+function normalizePriceTier(raw) {
+  if (!raw) return '—';
+  const s = String(raw).trim();
+  if (/quote/i.test(s)) return 'Quote';
+  if (/rental.*purchase|purchase.*rental|both/i.test(s)) return 'Both';
+  if (/rental/i.test(s)) return 'Rental';
+  if (/legacy/i.test(s)) return 'Legacy';
+  if (/purchase/i.test(s)) return 'Purchase';
+  return s.length > 12 ? s.slice(0, 12) + '…' : s;
+}
+
+// Silhouette variant — mapped by brand/category to suggest body form-factor
+const CINEMA_BRANDS = new Set(['ARRI', 'RED', 'RED Digital Cinema', 'Sony', 'Canon', 'Blackmagic Design', 'Blackmagic', 'Kinefinity', 'DJI', 'Panasonic', 'Z CAM', 'Z-Cam']);
+const COMPACT_BRANDS = new Set(['Freefly', 'Edgertronic', 'Weisscam']);
+
+function thumbSvgFor(cam) {
+  const camCat = cam.category || 'high_speed';
+  if (camCat === 'cinema' || CINEMA_BRANDS.has(cam.brand)) {
+    // Cinema body: tall rectangle + top handle + viewfinder
+    return `<svg viewBox="0 0 80 60" fill="none" stroke="#777" stroke-width="1.25">
+      <rect x="16" y="12" width="46" height="38" rx="3"/>
+      <rect x="20" y="6" width="30" height="6" rx="1"/>
+      <circle cx="34" cy="31" r="9"/>
+      <circle cx="34" cy="31" r="4" fill="#777" stroke="none" opacity="0.25"/>
+      <rect x="62" y="18" width="14" height="18" rx="1"/>
+    </svg>`;
+  }
+  if (COMPACT_BRANDS.has(cam.brand)) {
+    // Compact/drone: low-profile horizontal body, lens prominent
+    return `<svg viewBox="0 0 80 60" fill="none" stroke="#777" stroke-width="1.25">
+      <rect x="8" y="22" width="44" height="22" rx="4"/>
+      <circle cx="30" cy="33" r="9"/>
+      <circle cx="30" cy="33" r="4" fill="#777" stroke="none" opacity="0.25"/>
+      <path d="M52 26 L66 22 L66 44 L52 40 Z"/>
+    </svg>`;
+  }
+  // Studio high-speed (default): boxy with separate control box
+  return `<svg viewBox="0 0 80 60" fill="none" stroke="#777" stroke-width="1.25">
+    <rect x="6" y="14" width="50" height="32" rx="3"/>
+    <circle cx="34" cy="30" r="10"/>
+    <circle cx="34" cy="30" r="5" fill="#777" stroke="none" opacity="0.25"/>
+    <rect x="56" y="20" width="18" height="20" rx="2"/>
+    <rect x="12" y="8" width="8" height="6" rx="1"/>
+  </svg>`;
+}
+
 function parseInput() {
   const w = parseInt(document.getElementById('inp-w').value) || 0;
   const h = parseInt(document.getElementById('inp-h').value) || 0;
@@ -1803,6 +1896,14 @@ function render(matches, w, h, fps, noResFilter) {
     ? 'cameras matching ' + filterParts.join(', ')
     : 'all cameras';
 
+  const legendHtml = fps > 0 ? `
+    <div class="hr-legend">
+      <span class="hr-legend-label">Headroom</span>
+      <span class="hr-legend-item"><span class="hr-dot hr-dot-good"></span>Good &ge; 3&times;</span>
+      <span class="hr-legend-item"><span class="hr-dot hr-dot-ok"></span>OK 1.5&ndash;3&times;</span>
+      <span class="hr-legend-item"><span class="hr-dot hr-dot-tight"></span>Tight &lt; 1.5&times;</span>
+    </div>` : '';
+
   let html = `
     <div class="results-toolbar">
       <span class="results-count">${matches.length}</span>
@@ -1817,6 +1918,7 @@ function render(matches, w, h, fps, noResFilter) {
         <button class="action-btn" onclick="copyShareLink(this)" title="Copy link to these results">Share</button>
       </div>
     </div>
+    ${legendHtml}
     <div class="cards-grid">
   `;
 
@@ -1844,9 +1946,10 @@ function render(matches, w, h, fps, noResFilter) {
         ? ` @ ${bestMode.res_width.toLocaleString()} × ${bestMode.res_height.toLocaleString()}`
         : '';
       const matchLabel = headroom != null ? 'Best match at spec' : 'Top mode';
+      const fpsPart = bestMode.max_fps ? `<span class="big">${bestMode.max_fps.toLocaleString()}</span> fps` : '<span class="big">—</span>';
       matchHtml = `<div class="row-match">
         <span class="row-match-lbl">${matchLabel}</span>
-        <span class="row-match-val"><span class="big">${bestMode.max_fps.toLocaleString()}</span> fps${resPart}</span>
+        <span class="row-match-val">${fpsPart}${resPart}</span>
       </div>`;
     }
 
@@ -1860,7 +1963,7 @@ function render(matches, w, h, fps, noResFilter) {
     } else {
       specs.push({ lbl: 'Sensor', val: cam.sensor_size || '—' });
       specs.push({ lbl: 'Bit', val: cam.bit_depth ? cam.bit_depth + '-bit' : '—' });
-      specs.push({ lbl: 'Tier', val: cam.price_tier || '—' });
+      specs.push({ lbl: 'Available', val: normalizePriceTier(cam.price_tier) });
     }
     while (specs.length < 3) specs.push({ lbl: '', val: '' });
     const specsHtml = specs.slice(0, 3).map(s =>
@@ -1869,22 +1972,20 @@ function render(matches, w, h, fps, noResFilter) {
 
     const catLabel = camCat === 'cinema' ? 'Cinema' : 'High-Speed';
     const thumbLabel = cam.brand.length > 4 ? cam.brand.replace(/\s+/g, '').slice(0, 4).toUpperCase() : cam.brand.toUpperCase();
+    // Status chip only when non-Current — decision-useful signal for legacy/discontinued cams
+    const statusChipHtml = cam.status && cam.status !== 'Current' && cam.status !== 'Active'
+      ? `<span class="row-status">${cam.status.replace(/\(.*?\)/g, '').trim().split(/\s+/).slice(0, 2).join(' ')}</span>`
+      : '';
 
     html += `
       <div class="camera-card ${hrClass}" data-cam-key="${safeKey}" tabindex="0" role="button" aria-label="View full spec for ${cam.brand} ${cam.model}">
         <div class="row-thumb">
-          <svg viewBox="0 0 80 60" fill="none" stroke="#777" stroke-width="1.25">
-            <rect x="6" y="14" width="50" height="32" rx="3"/>
-            <circle cx="34" cy="30" r="10"/>
-            <circle cx="34" cy="30" r="5" fill="#777" stroke="none" opacity="0.25"/>
-            <rect x="56" y="20" width="18" height="20" rx="2"/>
-            <rect x="12" y="8" width="8" height="6" rx="1"/>
-          </svg>
+          ${thumbSvgFor(cam)}
           <span class="row-thumb-label">${thumbLabel}</span>
         </div>
         ${hrNumHtml}
         <div class="row-id">
-          <div class="row-id-top">${cam.brand} <span class="row-cat ${camCat}">${catLabel}</span></div>
+          <div class="row-id-top">${cam.brand} <span class="row-cat ${camCat}">${catLabel}</span>${statusChipHtml}</div>
           <div class="row-id-model">${cam.model}</div>
         </div>
         ${matchHtml}
