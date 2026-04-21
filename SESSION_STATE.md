@@ -1,68 +1,81 @@
 ---
-workflow_step: headroom_view_shipped_awaiting_ab_review
+workflow_step: rows_amber_fps_first_shipped_awaiting_review
 agent_type: execute
 token_budget: deep
-last_updated: 2026-04-17
+last_updated: 2026-04-20
 ---
 
 ## Current Objective
-Headroom-view branch is live on GitHub, not yet merged to main. Awaiting Ciamac's A/B judgment vs main before promotion. Housekeeping commit already on main.
+Three design directions landed on headroom-view branch and pushed (1b5ba7f): listing rows replace card tiles, palette swapped to tungsten amber, FPS-first input order with split SPEED/RESOLUTION preset rows. Awaiting Ciamac A/B against main before promoting.
 
 ## Last Completed Action
-Shipped 927214c on branch `headroom-view`: per-card Headroom hero (multiplier = best_matching_fps / requested_fps) with green/yellow/amber tier coloring, surfaced when fps filter > 0. Dropped Verified badge. Verified in preview at 1920x1080@1000fps: 31 hr-good / 24 hr-ok / 14 hr-tight across 69 cards. Top card Phoenix HD at 20x. Edge card Phantom Miro C321 at 1.5x.
+Shipped 1b5ba7f. Three changes folded into one commit:
+1. Listing rows: each row ~94 px tall (was ~400 px), 4x density. 8-col grid (thumb | HR | identity | match | sensor | bit | tier | compare). Responsive stack under 1100 px.
+2. Amber palette: --accent #e8ff00 → #d9883b. All 7 hardcoded rgba(232,255,0,*) refs swept to rgba(217,136,59,*). Monochromatic headroom: amber / white / muted-gray replacing green / yellow / orange.
+3. FPS-first: form reads FPS @ W × H. New SPEED preset row (60/120/240/480/1,000/5,000/10,000/100,000+) above RESOLUTION row. Preset chips auto-activate from URL hash via new syncPresetButtons().
 
-Pushed `headroom-view` to origin. Also pushed earlier housekeeping commit aa0a775 to main (CLAUDE.md v4→v9, verify.py v4→v9, .gitignore +=.claude/, archive/ of SESSION_STATE_v1-v7 + index_v1).
+Also moved mock_row_v1/v2/v3.html to archive/mocks/ so the repo root stays clean.
 
 ## Open Blockers
-- Domain: Ciamac decision (top pick: overcrank.dev). Ciamac said "no rush".
-- Analytics: Ciamac decision. No change.
-- Headroom merge: Ciamac A/B between main (https://cia-mac.github.io/overcrank/) and local branch (http://localhost:4200/) before merging to main.
+- Ciamac A/B: main (cards, neon yellow, res-first) vs headroom-view (rows, amber, fps-first). Decide merge or iterate.
+- Dead CSS cleanup pending: card-header, card-identity, card-brand, card-model, card-meta, meta-item, headroom-hero, modes-chips, mode-chip, chip-*, card-modes-label, more-modes. All unused by new row render but still in the file. Non-blocking; do in a cleanup commit before merge.
+- Camera thumbnail images still missing. Current SVG silhouette is a placeholder. Real images would 10x recognition. Parked sub-project.
+- Domain + analytics picks — unchanged from prior session.
 
 ## Next Actions
-1. Ciamac compares headroom-view branch against main. If approved: merge, push, GH Pages updates automatically. If not: iterate on headroom branch or revert.
-2. Domain pick (when ready).
-3. Analytics pick (when ready).
-4. Compare button discoverability: "+" at 28px top-right is still subtle. Considered but deferred this session — compare bar already pops up on first click, so the audit's "invisible" claim was half-wrong. Revisit only if users still miss it.
-5. Price filter: not implemented. price_tier is a string ("Quote", "$X-Y range"), not a sortable number. Would need a data-model add. Defer until after domain/analytics are decided.
+1. Ciamac compares branches. If approved: `git checkout main && git merge --no-ff headroom-view && git push`. GH Pages updates automatically.
+2. Follow-up commit: strip dead card CSS.
+3. Follow-up branch: source thumbnail images for top 20 brand/cam combos.
+4. Price filter (still deferred — price_tier is string not sortable number).
+5. Domain + analytics picks (user said no rush).
 
 ## Decisions Made
-- Headroom as organizing metric: the card's lead signal is headroom-at-your-spec, not max fps. Max fps remains visible in the hero detail line.
-- Three tiers with hard thresholds: ≥3x green, 1.5–3x yellow, <1.5x amber. Tuned against the 1920x1080@1000fps query which split 31/24/14.
-- Drop Verified badge since 100% of v9 is verified. If gemini_unverified or needs_review returns, the badge logic still handles those cases.
-- Dedupe the top matching mode from the "Other Matching Modes" chip list (hero already shows it).
-- Relabel "Matching Modes" → "Other Matching Modes" only when the hero is present, to keep language honest when fps filter is off.
-- Do not introduce a new "Headroom" sort option. With fps fixed across the query, sort-by-MaxFPS and sort-by-Headroom produce identical ordering. Adding a button for identical behavior would just confuse.
-- Autopilot-authorized: commit + push headroom-view branch + push housekeeping to main, WITHOUT merging headroom-view to main. User still needs to A/B it.
+- Neon yellow (#e8ff00) reads "tech startup," not "cinema tool." Replaced with tungsten amber (#d9883b) as the single brand accent.
+- Headroom tiers go monochromatic. Only the good tier uses the accent amber. Ok = neutral white. Tight = muted gray with 0.78 opacity so the barely-passing cameras visually recede. Color is reserved for signal, not decoration.
+- FPS is this tool's primary constraint, not resolution. Input order flipped. Two preset rows created with SPEED above RESOLUTION.
+- Cards out, rows in. 94 px row height vs 400 px card height delivers 4x density. Comparison across rows is native.
+- Thumbnail slot gets a generic SVG silhouette + brand monogram (first 4 chars uppercase) as placeholder. One silhouette used for all brands, one stroke color. Brand tints from v2 mock explicitly rejected ("colors are disgusting").
+- Preset chips now auto-sync with inputs on URL hydrate. Previously they only activated on click.
+- Detail modal left intact. Click-to-open-modal behavior preserved from card era. Inline row expand (as shown in v3 mock) deferred — bigger change, can follow if wanted.
+- Dead card CSS retained in file. Safer than stripping in the same commit that's already large. Cleanup commit to follow.
 
 ## Active Branch
-headroom-view (pushed, tracking origin/headroom-view). Main also pushed, current.
+headroom-view at 1b5ba7f. Pushed. Main is still at aa0a775 (housekeeping only).
 
 ## Uncommitted Changes
-None. SESSION_STATE.md itself about to be committed.
+None other than this SESSION_STATE update.
 
 ## Fragile Areas
-- Headroom threshold boundaries (3.0 and 1.5) are hard-coded in render(). If future queries land near 1.5x, the color will flip amber/yellow with small changes to cam DB. Acceptable for now; revisit if we hit misleading flips.
-- Hero uses bestMode via reduce() — if matchingModes is empty and noResFilter is true, pool is cam.modes; reduce initial value is pool[0]. If a camera has zero modes in DB, this would throw. No such cam in v9. Guard if we see Cinema-only cams with modes:[].
-- Dedupe of top mode uses slice(1) on sortedModes. If two modes tie at max_fps, only the first tie-breaker is removed; the second identical one stays. Not observed in v9 but possible.
-- CSS tier classes sit on .camera-card. If the compare-btn's :hover state or another selector stacks border-color after hr-good's border-color declaration, the tier tint could be lost. Confirmed OK with current stylesheet.
-- Unpushed .claude/launch.json edit at ~/.claude/launch.json added an "overcrank" entry for preview_start. That's user-level, not repo, and saved as launch_v2.json per versioning rule.
+- Responsive breakpoint at 1100 px. Viewports in the 1100-1400 px range may feel cramped with 8 cols. Test on a 13" MBP in Safari before merging.
+- The `.camera-card` class name is now misleading (they're rows, not cards). Left as-is to avoid cascading renames through query selectors, event handlers, CSS, and serializer code. Rename in a dedicated commit.
+- Dead CSS can interfere if a future commit adds new rules matching the same selectors. Flag in the cleanup commit.
+- Thumbnail SVG uses stroke="#777" — hardcoded color. If --text-muted changes, the silhouette won't follow. Minor.
+- The `.row-cat.cinema` still uses the violet tint (#c4b5fd). That's a second accent color. Arguably still "multiple colors" per the brand-tint rejection. Decision pending — could neutralize to match high-speed chip.
+- bestMode can be undefined if a camera has zero modes. reduce() seeds with pool[0], so if pool is empty (shouldn't happen in v9 but could in Cinema-only entries without modes) it throws. Guarded elsewhere but audit if Cinema data grows.
 
 ## Context for Next Session
-Live URL (main): https://cia-mac.github.io/overcrank/
-Branch preview (local only): http://localhost:4200/ while python server is running.
+Live URL (main, old cards + yellow): https://cia-mac.github.io/overcrank/
+Branch (rows + amber + fps-first): http://localhost:4200/ via preview server "overcrank" (port 4200)
+Last SHA on branch: 1b5ba7f
+
 Commits this session:
-  1. aa0a775 Housekeeping (on main)
-  2. 927214c Headroom view (on headroom-view)
+  1. aa0a775 Housekeeping (already on main)
+  2. 927214c Headroom view
+  3. 7e7ad95 State v8
+  4. 1b5ba7f Listing rows + amber + fps-first
 
-To resume the A/B comparison:
-  `git checkout main` → open https://cia-mac.github.io/overcrank/ (or local)
-  `git checkout headroom-view` → open localhost:4200/
+To merge headroom-view to main:
+  git checkout main && git merge --no-ff headroom-view && git push origin main
 
-To ship headroom to main:
-  `git checkout main && git merge --no-ff headroom-view && git push origin main`
-GitHub Pages will update automatically on push.
+To discard:
+  git branch -D headroom-view && git push origin --delete headroom-view
 
-To abandon headroom:
-  `git branch -D headroom-view` (branch) + `git push origin --delete headroom-view` (remote).
+Test query URL: http://localhost:4200/#w=1920&h=1080&fps=1000&cat=high_speed
+At that query: 69 cams, 31 hr-good / 24 hr-ok / 14 hr-tight. Top card Phoenix HD at 20x.
 
-The one UX observation still on the table: the "+" compare button is small (28px top-right). Compare bar does pop up on first click, which mitigates it. Leave for now.
+Follow-up ideas captured:
+- Strip dead card CSS in a cleanup commit
+- Source thumbnail images (brand-by-brand, press kits + manufacturer sites)
+- Inline row expand to replace detail modal (v3 mock showed it working)
+- Price filter once price_tier is normalized to a sortable field
+- Compare button polish — still 30 px circle at right edge; "Compare" pill label could help discoverability but not urgent since compare bar auto-appears on first click
