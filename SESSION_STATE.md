@@ -1,76 +1,78 @@
 ---
-workflow_step: v2_shipped_to_main_awaiting_domain_and_analytics
+workflow_step: v3_tier1_tier2_shipped_awaiting_domain_and_analytics
 agent_type: execute
 token_budget: deep
 last_updated: 2026-04-20
 ---
 
 ## Current Objective
-Overcrank v2 is LIVE on main. Listing rows, tungsten amber palette, FPS-first input order all merged and pushed. GitHub Pages redeploying automatically. Branches archived but retained. Back to waiting on Ciamac picks for domain and analytics, which were the original Phase-1 blockers before the UX rework.
+Overcrank v3 live. Two audit-and-improve rounds landed end-to-end: Tier 1 (amber discipline, brand chip collapse, empty state hook, label cleanup) + Tier 2 (thumbnail variants, price normalization, headroom legend, status chips). Back to the original Phase 1 blockers: domain + analytics picks.
 
 ## Last Completed Action
-Pushed 4a39de9 on main: dead CSS cleanup after the row conversion. Removed 245 lines of unused card-era CSS (card-header, card-meta, meta-item, mode-chip, chip-*, headroom-hero, etc.). File is 2537 lines, down from 2710. All row rendering still green at http://localhost:4200/.
+Shipped 32ddf69 + follow-up label tweak. Tier 2 delivered:
+- Thumbnail silhouettes now vary by form factor (cinema vs high-speed vs compact)
+- Price tier "Purchase (Quote)" → "Quote", column renamed "Available"
+- Headroom legend (colored dots + thresholds) under toolbar when fps filter is set
+- Status chip next to model name for non-Current cams (26/217 cams)
+- Cinema pill violet neutralized — category is structure, not signal
+- Guard against null bestMode.max_fps
 
-Prior two commits on main:
-- 85914db merge commit from headroom-view (rows + amber + fps-first)
-- 4a39de9 CSS cleanup on top
+Prior session commits shipped to main today:
+- afd2c65 Tier 1 polish (amber discipline + brand collapse + empty state)
+- 45645b6 State v2 live
+- 4a39de9 Dead CSS cleanup
+- 85914db Merge headroom-view
+- 1b5ba7f Rows + amber + fps-first
+- 927214c Headroom feature
+- aa0a775 Housekeeping
 
 ## Open Blockers
-- Domain: Ciamac pick (overcrank.dev recommended). Still "no rush" per 2026-04-14 direction.
-- Analytics: Ciamac pick (Cloudflare Web Analytics recommended).
-- Shimadzu cameras: still 0/10 for Phase 1 target. Parked pending research or Ciamac direction.
-- Thumbnail images: generic SVG silhouette in place. Real product images would 10x recognition but is a separate sub-project.
+- Domain: Ciamac pick. overcrank.dev recommended. "No rush" per earlier direction.
+- Analytics: Ciamac pick. Cloudflare Web Analytics recommended (free, privacy-first).
+- Thumbnail images: 3 SVG silhouette variants are placeholders. Real product images would 10x recognition. Parked sub-project, needs ~half day of scraping manufacturer press kits.
+- Shimadzu: 0/10 for Phase 1 target. Parked pending dealer outreach or Ciamac direction.
 
 ## Next Actions
-1. Ciamac reviews live site at https://cia-mac.github.io/overcrank/ after GH Pages redeploys (~1–2 min after push).
-2. Domain pick. Once bought, wire CNAME + provide DNS records.
+1. Ciamac reviews live site at https://cia-mac.github.io/overcrank/ after GH Pages redeploys.
+2. Domain pick. Wire CNAME once bought.
 3. Analytics pick. Wire snippet.
-4. Thumbnail images sub-project when ready (brand-by-brand from press kits).
-5. Inline row expand to replace detail modal (deferred but demonstrated in archive/mocks/mock_row_v3.html).
-6. Price filter (still deferred — price_tier is string, not sortable).
-7. Weisscam dealer specs / Phantom TMX / Photron DR stops fills — need explicit JSON guardrail go-ahead.
+4. Consider sticky filter summary on scroll (not done this session, bigger interaction change).
+5. Source real thumbnail images, brand-by-brand.
+6. Weisscam dealer specs / Phantom TMX / Photron DR stops fills — explicit JSON guardrail approval still pending.
+7. Price filter (still deferred — price_tier is categorical not numeric).
 
 ## Decisions Made
-- Merge to main without further review. User said "autopilot the whole thing" twice, second instance after seeing the full redesign in browser. Treated as ship-it authorization.
-- Dead CSS stripped in a separate commit post-merge for clean diff review.
-- Kept badge, card-cat-tag, and some chip-era classes because the detail modal still references them. Verified with grep before each deletion.
-- .camera-card class name retained despite being rows now. Renaming would cascade through CSS, JS query selectors, serializer, event handlers. Not worth the churn this session. Flagged for later.
-- Hot cache left untouched (active thread there is a separate project — ITD Engine MVP — per user's update between my reads).
+- Amber is a semantic signal, not a UI state. Only applies to hr-good. Selected filter states use neutral white text on darker surface. Rule enforced across preset chips, category chips, brand chips, sort buttons.
+- Brand chip collapse shows top 6 by count. Any currently-active brand stays visible even if below top 6.
+- "Tier" column renamed to "Available" because price_tier describes access model (Quote / Purchase / Rental), not a budget hierarchy.
+- Thumbnail silhouettes vary by brand/category without introducing per-brand colors (user rejected that in v2 mock). Three shape variants share one stroke color.
+- Status chip only shows when non-Current. Most cams are Current so the chip would be dead weight on 191 rows if always rendered.
+- Cinema category pill no longer violet-tinted. Category is structural, not a signal.
+- Empty state gets a hero line + three clickable demo queries instead of a dry explanation paragraph.
+- FPS preset chip "60 fps" unified to "60"; the "fps" unit moved to the row label.
+- Input labels dropped "Min " prefix. Context (filter form) implies "minimum" already.
 
 ## Active Branch
-main at 4a39de9. Pushed.
-headroom-view at 0e684b2. Pushed. Now redundant with main but retained for history until next cleanup.
+main at 32ddf69 (+ uncommitted label tweak on "Best match" coming in next commit or bundled).
+headroom-view at 0e684b2. Pushed. Fully merged into main and now redundant but retained for history.
 
 ## Uncommitted Changes
-Only this SESSION_STATE update about to land.
+1 line edit: "Best match at spec" → "Best match" in the row match label. Harmless. Will bundle into next commit or push standalone.
 
 ## Fragile Areas
-- Responsive breakpoint at 1100px collapses 8 cols to a 3-area stack. Untested on 1100-1400px range where padding and col widths could feel cramped. Test on a 13" laptop in real use.
-- .camera-card class name is now a lie (it's a row, not a card). Renaming deferred.
-- .row-cat.cinema still uses violet (#c4b5fd) — the one non-amber accent in the palette. Could neutralize to match the high-speed pill if "single accent color" is the rule.
-- Dead CSS swept once. If the detail modal is ever rewritten to stop using badge/chip classes, those can also go. For now they're load-bearing in modal markup.
-- headroom-view branch could be deleted now that it's merged. Holding off unless user asks — it's the artifact of the design session and the mock files only live there too (actually now in archive/mocks/ on main).
+- Responsive breakpoint at 1100 px still untested in 1100–1400 px range on actual hardware.
+- .camera-card class is still called "card" despite being a row. Rename deferred.
+- bestMode.max_fps null guard added this session; if DB adds more cinema modes without fps, the guard handles it but the value displays as "—" which may look broken. Consider showing base spec instead.
+- Status chip text truncation uses string split + slice(0,2) — e.g. "Legacy but actively rented" → "Legacy but". Works for the 9 status values in current DB, not generalized.
+- Cinema BRANDS set hardcoded in JS. If DB adds a cinema brand not in the set, it falls back to high-speed silhouette. Minor visual issue, not functional.
 
 ## Context for Next Session
-Live URL: https://cia-mac.github.io/overcrank/ (GH Pages from main, redeploys automatically)
-Local dev: http://localhost:4200/ via preview server "overcrank"
+Live URL: https://cia-mac.github.io/overcrank/
+Test query showing all improvements: https://cia-mac.github.io/overcrank/#w=1920&h=1080&fps=1000&cat=high_speed
+Test cinema: https://cia-mac.github.io/overcrank/#w=3840&h=2160&cat=cinema
 
-Commits since last session:
-  aa0a775 Housekeeping (v4→v9 doc sync)
-  927214c Headroom view feature
-  7e7ad95 State v8
-  1b5ba7f Rows + amber + fps-first
-  0e684b2 State v9 on branch
-  85914db Merge to main
-  4a39de9 Dead CSS cleanup
+All previous session mocks live at archive/mocks/mock_row_v1.html through v3.html if you need to see the design iteration history.
 
-Test query: http://localhost:4200/#w=1920&h=1080&fps=1000&cat=high_speed
-Expect: 69 rows, 31 hr-good (amber) / 24 hr-ok (white) / 14 hr-tight (dimmed). Top row Phoenix HD at 20x headroom.
+The tool is now in a defensible v3 state. Any further improvement (sticky filter, real images, price filter, expand-in-place detail) is additive. What's blocking ship to a real domain is Ciamac's picks on overcrank.dev (or alternate) and Cloudflare Web Analytics (or alternate).
 
-How to roll back if needed:
-- `git revert --no-edit 4a39de9 85914db` (both in one revert)
-- Or `git reset --hard aa0a775 && git push --force-with-lease` (destructive, last resort)
-
-Design session mocks live at `archive/mocks/mock_row_v1.html` through `v3.html`. Still loadable at http://localhost:4200/archive/mocks/mock_row_v3.html if referencing the inline-expand pattern.
-
-Notion / dashboard / task queue: unchanged. User has consistently deferred those pushes this session to avoid duplicates.
+Notion / dashboard / task queue: unchanged. User has consistently deferred those pushes across this session.

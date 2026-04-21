@@ -1945,7 +1945,7 @@ function render(matches, w, h, fps, noResFilter) {
       const resPart = bestMode.res_width && bestMode.res_height
         ? ` @ ${bestMode.res_width.toLocaleString()} × ${bestMode.res_height.toLocaleString()}`
         : '';
-      const matchLabel = headroom != null ? 'Best match at spec' : 'Top mode';
+      const matchLabel = headroom != null ? 'Best match' : 'Top mode';
       const fpsPart = bestMode.max_fps ? `<span class="big">${bestMode.max_fps.toLocaleString()}</span> fps` : '<span class="big">—</span>';
       matchHtml = `<div class="row-match">
         <span class="row-match-lbl">${matchLabel}</span>
