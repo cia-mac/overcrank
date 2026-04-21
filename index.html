@@ -84,7 +84,7 @@
 
   /* ── Search panel ── */
   .search-panel {
-    padding: 32px 48px 28px;
+    padding: 22px 48px 18px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
   }
@@ -198,7 +198,7 @@
 
   /* ── Presets ── */
   .presets-row {
-    margin-top: 20px;
+    margin-top: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -213,6 +213,19 @@
     color: var(--text-muted);
     margin-right: 4px;
     flex-shrink: 0;
+  }
+  .presets-unit {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    opacity: 0.6;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    margin-left: 2px;
+  }
+  .mfr-more {
+    color: var(--text-muted) !important;
+    font-style: italic;
   }
 
   .preset-btn {
@@ -236,9 +249,10 @@
   }
 
   .preset-btn.active {
-    background: var(--accent-glow);
-    border-color: rgba(217,136,59,0.45);
-    color: var(--accent);
+    background: var(--surface-3);
+    border-color: var(--text-dim);
+    color: var(--text);
+    font-weight: 600;
   }
 
   /* ── Results header / toolbar ── */
@@ -290,12 +304,39 @@
   }
 
   .sort-btn.active {
-    border-color: rgba(217,136,59,0.45);
-    color: var(--accent);
-    background: var(--accent-glow);
+    border-color: var(--text-dim);
+    color: var(--text);
+    background: var(--surface-3);
+    font-weight: 600;
   }
 
   .sort-btn:hover:not(.active) {
+    border-color: var(--border-focus);
+    color: var(--text);
+  }
+
+  /* Utility actions (Export, Share) — visually distinct from sort */
+  .action-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+  }
+  .action-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .action-btn:hover {
     border-color: var(--border-focus);
     color: var(--text);
   }
@@ -520,7 +561,54 @@
   /* ── Intro block ── */
   .intro-block {
     padding: 48px 48px 0;
-    max-width: 680px;
+    max-width: 780px;
+  }
+
+  .intro-hero {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .intro-sub {
+    font-size: 16px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 560px;
+  }
+
+  .intro-demos {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .intro-demos-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+  .intro-demo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .intro-demo:hover {
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   .intro-block p {
@@ -573,7 +661,7 @@
 
   /* ── Text search ── */
   .text-search-row {
-    margin-top: 16px;
+    margin-top: 12px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -605,7 +693,7 @@
 
   /* ── Category segment control ── */
   .cat-filter-row {
-    margin-top: 16px;
+    margin-top: 12px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -731,8 +819,8 @@
   }
 
   .cat-btn.active {
-    background: var(--accent);
-    color: #000;
+    background: var(--text);
+    color: var(--bg);
     font-weight: 600;
   }
 
@@ -744,7 +832,7 @@
 
   /* ── Manufacturer filter ── */
   .mfr-filter-row {
-    margin-top: 14px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -782,9 +870,10 @@
   }
 
   .mfr-chip.active {
-    background: var(--accent-glow);
-    border-color: rgba(217,136,59,0.45);
-    color: var(--accent);
+    background: var(--surface-3);
+    border-color: var(--text-dim);
+    color: var(--text);
+    font-weight: 600;
   }
 
   .mfr-chip.all-chip {
@@ -1355,17 +1444,17 @@
   <div class="search-panel-inner">
     <div class="search-row">
       <div class="field">
-        <label>Min FPS</label>
+        <label>FPS</label>
         <input type="number" id="inp-fps" placeholder="1000" min="1">
       </div>
       <div class="input-sep">@</div>
       <div class="field">
-        <label>Min Width (px)</label>
+        <label>Width</label>
         <input type="number" id="inp-w" placeholder="1920" min="1">
       </div>
       <div class="input-sep">×</div>
       <div class="field">
-        <label>Min Height (px)</label>
+        <label>Height</label>
         <input type="number" id="inp-h" placeholder="1080" min="1">
       </div>
       <div class="search-actions">
@@ -1375,8 +1464,8 @@
     </div>
 
     <div class="presets-row">
-      <span class="presets-label">Speed</span>
-      <button class="preset-btn fps-preset" data-fps="60">60 fps</button>
+      <span class="presets-label">Speed <span class="presets-unit">fps</span></span>
+      <button class="preset-btn fps-preset" data-fps="60">60</button>
       <button class="preset-btn fps-preset" data-fps="120">120</button>
       <button class="preset-btn fps-preset" data-fps="240">240</button>
       <button class="preset-btn fps-preset" data-fps="480">480</button>
@@ -1424,8 +1513,14 @@
 
 <div id="intro-block">
   <div class="intro-block">
-    <p>Enter your minimum resolution and frame rate requirements. Results show every camera and mode that meets or exceeds those specs, sorted by max FPS at the matched resolution.</p>
-    <p>Leave fields empty to browse all cameras.</p>
+    <h2 class="intro-hero">Find the camera for your shot.</h2>
+    <p class="intro-sub">Set your frame rate and resolution. The list re-ranks by how comfortably each camera clears your spec.</p>
+    <div class="intro-demos">
+      <span class="intro-demos-label">Try</span>
+      <button class="intro-demo" data-fps="1000" data-w="1920" data-h="1080">1,000 fps @ 1080p</button>
+      <button class="intro-demo" data-fps="240" data-w="3840" data-h="2160">240 fps @ 4K UHD</button>
+      <button class="intro-demo" data-fps="10000" data-w="1280" data-h="720">10,000 fps @ 720p</button>
+    </div>
   </div>
   <div class="db-stats" id="db-stats"></div>
 </div>
@@ -1556,15 +1651,32 @@ function buildMountFilter() {
   });
 }
 
+let mfrExpanded = false;
+const MFR_TOP_N = 6;
+
 function buildMfrFilter() {
   const pool = camerasInCategory(activeCategory);
-  const brands = [...new Set(pool.map(c => c.brand))].sort();
+  const brandCounts = {};
+  for (const c of pool) brandCounts[c.brand] = (brandCounts[c.brand] || 0) + 1;
+  // Sort brands by count desc, so the top N chips shown are the most-populated ones
+  const brands = Object.keys(brandCounts).sort((a, b) => brandCounts[b] - brandCounts[a]);
+  // Any brand currently in activeBrands must always be visible even if it's below the top N
+  const mustShow = new Set(brands.slice(0, MFR_TOP_N));
+  activeBrands.forEach(b => mustShow.add(b));
+  const shown = mfrExpanded ? brands : brands.filter(b => mustShow.has(b));
+  const hiddenCount = brands.length - shown.length;
+
   const container = document.getElementById('mfr-filter');
   let html = '<span class="mfr-label">Brand</span>';
-  html += `<button class="mfr-chip all-chip active" data-brand="__all__">All</button>`;
-  for (const b of brands) {
-    const count = pool.filter(c => c.brand === b).length;
-    html += `<button class="mfr-chip" data-brand="${b}">${b} <span style="color:var(--text-muted);font-size:11px;">${count}</span></button>`;
+  html += `<button class="mfr-chip all-chip ${activeBrands.size === 0 ? 'active' : ''}" data-brand="__all__">All</button>`;
+  for (const b of shown) {
+    const isActive = activeBrands.has(b);
+    html += `<button class="mfr-chip ${isActive ? 'active' : ''}" data-brand="${b}">${b} <span style="color:var(--text-muted);font-size:11px;">${brandCounts[b]}</span></button>`;
+  }
+  if (hiddenCount > 0) {
+    html += `<button class="mfr-chip mfr-more" data-brand="__more__">+ ${hiddenCount} more</button>`;
+  } else if (mfrExpanded && brands.length > MFR_TOP_N) {
+    html += `<button class="mfr-chip mfr-more" data-brand="__less__">Show less</button>`;
   }
   container.innerHTML = html;
 
@@ -1575,19 +1687,19 @@ function buildMfrFilter() {
         activeBrands.clear();
         container.querySelectorAll('.mfr-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
+        search();
+      } else if (brand === '__more__') {
+        mfrExpanded = true;
+        buildMfrFilter();
+      } else if (brand === '__less__') {
+        mfrExpanded = false;
+        buildMfrFilter();
       } else {
-        container.querySelector('[data-brand="__all__"]').classList.remove('active');
-        chip.classList.toggle('active');
-        if (chip.classList.contains('active')) {
-          activeBrands.add(brand);
-        } else {
-          activeBrands.delete(brand);
-        }
-        if (activeBrands.size === 0) {
-          container.querySelector('[data-brand="__all__"]').classList.add('active');
-        }
+        if (activeBrands.has(brand)) activeBrands.delete(brand);
+        else activeBrands.add(brand);
+        buildMfrFilter();
+        search();
       }
-      search();
     });
   });
 }
@@ -1699,8 +1811,10 @@ function render(matches, w, h, fps, noResFilter) {
         <span class="sort-label">Sort</span>
         <button class="sort-btn ${currentSort === 'fps' ? 'active' : ''}" onclick="setSort('fps')">Max FPS</button>
         <button class="sort-btn ${currentSort === 'brand' ? 'active' : ''}" onclick="setSort('brand')">Brand</button>
-        <button class="sort-btn" onclick="exportResultsCSV(this)" title="Copy filtered results as CSV">Export CSV</button>
-        <button class="sort-btn" onclick="copyShareLink(this)" title="Copy link to these results">Share</button>
+      </div>
+      <div class="action-group">
+        <button class="action-btn" onclick="exportResultsCSV(this)" title="Copy filtered results as CSV">Export</button>
+        <button class="action-btn" onclick="copyShareLink(this)" title="Copy link to these results">Share</button>
       </div>
     </div>
     <div class="cards-grid">
@@ -2354,6 +2468,17 @@ function setSort(s) {
 }
 
 document.getElementById('search').addEventListener('click', search);
+
+// Intro demo chips — set fps+res and search
+document.querySelectorAll('.intro-demo').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('inp-fps').value = btn.dataset.fps;
+    document.getElementById('inp-w').value = btn.dataset.w;
+    document.getElementById('inp-h').value = btn.dataset.h;
+    syncPresetButtons();
+    search();
+  });
+});
 document.getElementById('clear').addEventListener('click', () => {
   document.getElementById('inp-w').value = '';
   document.getElementById('inp-h').value = '';
