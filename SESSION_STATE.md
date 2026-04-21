@@ -1,81 +1,76 @@
 ---
-workflow_step: rows_amber_fps_first_shipped_awaiting_review
+workflow_step: v2_shipped_to_main_awaiting_domain_and_analytics
 agent_type: execute
 token_budget: deep
 last_updated: 2026-04-20
 ---
 
 ## Current Objective
-Three design directions landed on headroom-view branch and pushed (1b5ba7f): listing rows replace card tiles, palette swapped to tungsten amber, FPS-first input order with split SPEED/RESOLUTION preset rows. Awaiting Ciamac A/B against main before promoting.
+Overcrank v2 is LIVE on main. Listing rows, tungsten amber palette, FPS-first input order all merged and pushed. GitHub Pages redeploying automatically. Branches archived but retained. Back to waiting on Ciamac picks for domain and analytics, which were the original Phase-1 blockers before the UX rework.
 
 ## Last Completed Action
-Shipped 1b5ba7f. Three changes folded into one commit:
-1. Listing rows: each row ~94 px tall (was ~400 px), 4x density. 8-col grid (thumb | HR | identity | match | sensor | bit | tier | compare). Responsive stack under 1100 px.
-2. Amber palette: --accent #e8ff00 → #d9883b. All 7 hardcoded rgba(232,255,0,*) refs swept to rgba(217,136,59,*). Monochromatic headroom: amber / white / muted-gray replacing green / yellow / orange.
-3. FPS-first: form reads FPS @ W × H. New SPEED preset row (60/120/240/480/1,000/5,000/10,000/100,000+) above RESOLUTION row. Preset chips auto-activate from URL hash via new syncPresetButtons().
+Pushed 4a39de9 on main: dead CSS cleanup after the row conversion. Removed 245 lines of unused card-era CSS (card-header, card-meta, meta-item, mode-chip, chip-*, headroom-hero, etc.). File is 2537 lines, down from 2710. All row rendering still green at http://localhost:4200/.
 
-Also moved mock_row_v1/v2/v3.html to archive/mocks/ so the repo root stays clean.
+Prior two commits on main:
+- 85914db merge commit from headroom-view (rows + amber + fps-first)
+- 4a39de9 CSS cleanup on top
 
 ## Open Blockers
-- Ciamac A/B: main (cards, neon yellow, res-first) vs headroom-view (rows, amber, fps-first). Decide merge or iterate.
-- Dead CSS cleanup pending: card-header, card-identity, card-brand, card-model, card-meta, meta-item, headroom-hero, modes-chips, mode-chip, chip-*, card-modes-label, more-modes. All unused by new row render but still in the file. Non-blocking; do in a cleanup commit before merge.
-- Camera thumbnail images still missing. Current SVG silhouette is a placeholder. Real images would 10x recognition. Parked sub-project.
-- Domain + analytics picks — unchanged from prior session.
+- Domain: Ciamac pick (overcrank.dev recommended). Still "no rush" per 2026-04-14 direction.
+- Analytics: Ciamac pick (Cloudflare Web Analytics recommended).
+- Shimadzu cameras: still 0/10 for Phase 1 target. Parked pending research or Ciamac direction.
+- Thumbnail images: generic SVG silhouette in place. Real product images would 10x recognition but is a separate sub-project.
 
 ## Next Actions
-1. Ciamac compares branches. If approved: `git checkout main && git merge --no-ff headroom-view && git push`. GH Pages updates automatically.
-2. Follow-up commit: strip dead card CSS.
-3. Follow-up branch: source thumbnail images for top 20 brand/cam combos.
-4. Price filter (still deferred — price_tier is string not sortable number).
-5. Domain + analytics picks (user said no rush).
+1. Ciamac reviews live site at https://cia-mac.github.io/overcrank/ after GH Pages redeploys (~1–2 min after push).
+2. Domain pick. Once bought, wire CNAME + provide DNS records.
+3. Analytics pick. Wire snippet.
+4. Thumbnail images sub-project when ready (brand-by-brand from press kits).
+5. Inline row expand to replace detail modal (deferred but demonstrated in archive/mocks/mock_row_v3.html).
+6. Price filter (still deferred — price_tier is string, not sortable).
+7. Weisscam dealer specs / Phantom TMX / Photron DR stops fills — need explicit JSON guardrail go-ahead.
 
 ## Decisions Made
-- Neon yellow (#e8ff00) reads "tech startup," not "cinema tool." Replaced with tungsten amber (#d9883b) as the single brand accent.
-- Headroom tiers go monochromatic. Only the good tier uses the accent amber. Ok = neutral white. Tight = muted gray with 0.78 opacity so the barely-passing cameras visually recede. Color is reserved for signal, not decoration.
-- FPS is this tool's primary constraint, not resolution. Input order flipped. Two preset rows created with SPEED above RESOLUTION.
-- Cards out, rows in. 94 px row height vs 400 px card height delivers 4x density. Comparison across rows is native.
-- Thumbnail slot gets a generic SVG silhouette + brand monogram (first 4 chars uppercase) as placeholder. One silhouette used for all brands, one stroke color. Brand tints from v2 mock explicitly rejected ("colors are disgusting").
-- Preset chips now auto-sync with inputs on URL hydrate. Previously they only activated on click.
-- Detail modal left intact. Click-to-open-modal behavior preserved from card era. Inline row expand (as shown in v3 mock) deferred — bigger change, can follow if wanted.
-- Dead card CSS retained in file. Safer than stripping in the same commit that's already large. Cleanup commit to follow.
+- Merge to main without further review. User said "autopilot the whole thing" twice, second instance after seeing the full redesign in browser. Treated as ship-it authorization.
+- Dead CSS stripped in a separate commit post-merge for clean diff review.
+- Kept badge, card-cat-tag, and some chip-era classes because the detail modal still references them. Verified with grep before each deletion.
+- .camera-card class name retained despite being rows now. Renaming would cascade through CSS, JS query selectors, serializer, event handlers. Not worth the churn this session. Flagged for later.
+- Hot cache left untouched (active thread there is a separate project — ITD Engine MVP — per user's update between my reads).
 
 ## Active Branch
-headroom-view at 1b5ba7f. Pushed. Main is still at aa0a775 (housekeeping only).
+main at 4a39de9. Pushed.
+headroom-view at 0e684b2. Pushed. Now redundant with main but retained for history until next cleanup.
 
 ## Uncommitted Changes
-None other than this SESSION_STATE update.
+Only this SESSION_STATE update about to land.
 
 ## Fragile Areas
-- Responsive breakpoint at 1100 px. Viewports in the 1100-1400 px range may feel cramped with 8 cols. Test on a 13" MBP in Safari before merging.
-- The `.camera-card` class name is now misleading (they're rows, not cards). Left as-is to avoid cascading renames through query selectors, event handlers, CSS, and serializer code. Rename in a dedicated commit.
-- Dead CSS can interfere if a future commit adds new rules matching the same selectors. Flag in the cleanup commit.
-- Thumbnail SVG uses stroke="#777" — hardcoded color. If --text-muted changes, the silhouette won't follow. Minor.
-- The `.row-cat.cinema` still uses the violet tint (#c4b5fd). That's a second accent color. Arguably still "multiple colors" per the brand-tint rejection. Decision pending — could neutralize to match high-speed chip.
-- bestMode can be undefined if a camera has zero modes. reduce() seeds with pool[0], so if pool is empty (shouldn't happen in v9 but could in Cinema-only entries without modes) it throws. Guarded elsewhere but audit if Cinema data grows.
+- Responsive breakpoint at 1100px collapses 8 cols to a 3-area stack. Untested on 1100-1400px range where padding and col widths could feel cramped. Test on a 13" laptop in real use.
+- .camera-card class name is now a lie (it's a row, not a card). Renaming deferred.
+- .row-cat.cinema still uses violet (#c4b5fd) — the one non-amber accent in the palette. Could neutralize to match the high-speed pill if "single accent color" is the rule.
+- Dead CSS swept once. If the detail modal is ever rewritten to stop using badge/chip classes, those can also go. For now they're load-bearing in modal markup.
+- headroom-view branch could be deleted now that it's merged. Holding off unless user asks — it's the artifact of the design session and the mock files only live there too (actually now in archive/mocks/ on main).
 
 ## Context for Next Session
-Live URL (main, old cards + yellow): https://cia-mac.github.io/overcrank/
-Branch (rows + amber + fps-first): http://localhost:4200/ via preview server "overcrank" (port 4200)
-Last SHA on branch: 1b5ba7f
+Live URL: https://cia-mac.github.io/overcrank/ (GH Pages from main, redeploys automatically)
+Local dev: http://localhost:4200/ via preview server "overcrank"
 
-Commits this session:
-  1. aa0a775 Housekeeping (already on main)
-  2. 927214c Headroom view
-  3. 7e7ad95 State v8
-  4. 1b5ba7f Listing rows + amber + fps-first
+Commits since last session:
+  aa0a775 Housekeeping (v4→v9 doc sync)
+  927214c Headroom view feature
+  7e7ad95 State v8
+  1b5ba7f Rows + amber + fps-first
+  0e684b2 State v9 on branch
+  85914db Merge to main
+  4a39de9 Dead CSS cleanup
 
-To merge headroom-view to main:
-  git checkout main && git merge --no-ff headroom-view && git push origin main
+Test query: http://localhost:4200/#w=1920&h=1080&fps=1000&cat=high_speed
+Expect: 69 rows, 31 hr-good (amber) / 24 hr-ok (white) / 14 hr-tight (dimmed). Top row Phoenix HD at 20x headroom.
 
-To discard:
-  git branch -D headroom-view && git push origin --delete headroom-view
+How to roll back if needed:
+- `git revert --no-edit 4a39de9 85914db` (both in one revert)
+- Or `git reset --hard aa0a775 && git push --force-with-lease` (destructive, last resort)
 
-Test query URL: http://localhost:4200/#w=1920&h=1080&fps=1000&cat=high_speed
-At that query: 69 cams, 31 hr-good / 24 hr-ok / 14 hr-tight. Top card Phoenix HD at 20x.
+Design session mocks live at `archive/mocks/mock_row_v1.html` through `v3.html`. Still loadable at http://localhost:4200/archive/mocks/mock_row_v3.html if referencing the inline-expand pattern.
 
-Follow-up ideas captured:
-- Strip dead card CSS in a cleanup commit
-- Source thumbnail images (brand-by-brand, press kits + manufacturer sites)
-- Inline row expand to replace detail modal (v3 mock showed it working)
-- Price filter once price_tier is normalized to a sortable field
-- Compare button polish — still 30 px circle at right edge; "Compare" pill label could help discoverability but not urgent since compare bar auto-appears on first click
+Notion / dashboard / task queue: unchanged. User has consistently deferred those pushes this session to avoid duplicates.
