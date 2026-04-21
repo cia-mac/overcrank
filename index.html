@@ -19,8 +19,8 @@
     --accent-dim:   #a86c2c;
     --accent-glow:  rgba(217,136,59,0.09);
     --text:         #f0f0f0;
-    --text-dim:     #909090;
-    --text-muted:   #4a4a4a;
+    --text-dim:     #a0a0a0;
+    --text-muted:   #707070;
     --green:        #22c55e;
     --green-bg:     rgba(34,197,94,0.1);
     --green-border: rgba(34,197,94,0.25);
@@ -80,6 +80,61 @@
     letter-spacing: 0.02em;
     padding-left: 18px;
     border-left: 1px solid var(--border);
+  }
+
+  /* ── Sticky summary strip (appears on scroll when results are showing) ── */
+  .sticky-summary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(13,13,13,0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 48px;
+    align-items: center;
+    gap: 18px;
+    font-size: 13px;
+    z-index: 40;
+    display: none;
+  }
+  .sticky-summary.show {
+    display: flex;
+  }
+  .sticky-logo {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    font-size: 14px;
+  }
+  .sticky-logo span { color: var(--accent); }
+  .sticky-echo {
+    font-family: var(--mono);
+    color: var(--text-dim);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-count {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .sticky-edit {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .sticky-edit:hover {
+    border-color: var(--text-dim);
+    color: var(--text);
   }
 
   /* ── Hero (shown on empty state; compressed once a query runs) ── */
@@ -145,6 +200,20 @@
   body.no-query .search-actions button {
     padding: 14px 24px;
     font-size: 15px;
+  }
+
+  /* Empty-state: intro block centered to match hero */
+  body.no-query .intro-block {
+    text-align: center;
+    max-width: none;
+    padding: 40px 48px 8px;
+  }
+  body.no-query .intro-demos {
+    justify-content: center;
+  }
+  body.no-query #db-stats {
+    justify-content: center;
+    padding: 16px 48px 48px;
   }
 
   /* ── Search panel ── */
@@ -607,10 +676,11 @@
     background: var(--surface-2);
   }
   .row-id-model {
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 700;
     color: var(--text);
-    line-height: 1.25;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -756,18 +826,46 @@
   .empty {
     padding: 80px 48px;
     text-align: center;
-    color: var(--text-muted);
+    color: var(--text-dim);
+    max-width: 620px;
+    margin: 0 auto;
   }
 
   .empty h2 {
-    font-size: 20px;
-    color: var(--text-dim);
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 22px;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
   }
 
   .empty p {
     font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+  }
+
+  .empty-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .empty-action {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .empty-action:hover {
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   /* ── Text search ── */
@@ -1551,6 +1649,13 @@
   </div>
 </header>
 
+<div class="sticky-summary" id="sticky-summary">
+  <span class="sticky-logo">OVER<span>CRANK</span></span>
+  <span class="sticky-echo" id="sticky-echo"></span>
+  <span class="sticky-count" id="sticky-count"></span>
+  <button type="button" class="sticky-edit" id="sticky-edit">Edit filters ↑</button>
+</div>
+
 <section class="hero" id="hero">
   <h2 class="hero-title">Find the camera for your shot.</h2>
   <p class="hero-sub">Set a frame rate. Pick a resolution. See which cameras can do it, ranked by how comfortably they clear your spec.</p>
@@ -1685,12 +1790,13 @@ async function loadDB() {
   const r = await fetch('data/overcrank_db_v9.json?v=' + Date.now());
   DB = await r.json();
   const statsEl = document.getElementById('db-stats');
+  const brandCount = DB.manufacturers_included.length;
   statsEl.innerHTML =
-    `<span class="stat">${DB.camera_count} cameras</span>` +
+    `<span class="stat">${DB.camera_count.toLocaleString()} cameras</span>` +
     `<span class="dot">·</span>` +
-    `<span class="stat">${DB.total_modes} modes</span>` +
+    `<span class="stat">${DB.total_modes.toLocaleString()} modes</span>` +
     `<span class="dot">·</span>` +
-    `<span style="color:var(--text-muted);font-size:13px;">${DB.manufacturers_included.join(', ')}</span>`;
+    `<span class="stat">${brandCount} brands</span>`;
   buildCatFilter();
   buildMfrFilter();
   buildMountFilter();
@@ -1954,7 +2060,15 @@ function render(matches, w, h, fps, noResFilter) {
   const el = document.getElementById('results');
 
   if (matches.length === 0) {
-    el.innerHTML = `<div class="empty"><h2>No cameras found</h2><p>Try lowering your resolution or FPS requirements.</p></div>`;
+    el.innerHTML = `<div class="empty">
+      <h2>No cameras match that spec.</h2>
+      <p>Try lowering the frame rate, dropping the resolution, or clearing a brand filter. The biggest jumps tend to come from halving the FPS.</p>
+      <div class="empty-actions">
+        <button type="button" class="empty-action" onclick="document.getElementById('inp-fps').value=''; search();">Clear FPS</button>
+        <button type="button" class="empty-action" onclick="document.getElementById('inp-w').value=''; document.getElementById('inp-h').value=''; search();">Clear resolution</button>
+        <button type="button" class="empty-action" onclick="activeBrands.clear(); buildMfrFilter(); search();">Clear brands</button>
+      </div>
+    </div>`;
     return;
   }
 
@@ -2653,6 +2767,38 @@ function setSort(s) {
 
 document.getElementById('search').addEventListener('click', search);
 
+function wireStickySummary() {
+  const bar = document.getElementById('sticky-summary');
+  const echo = document.getElementById('sticky-echo');
+  const count = document.getElementById('sticky-count');
+  const edit = document.getElementById('sticky-edit');
+  let visible = false;
+  function updateContent() {
+    const { w, h, fps } = parseInput();
+    const parts = [];
+    if (fps) parts.push(fps.toLocaleString() + ' fps');
+    if (w || h) parts.push((w || '?') + ' × ' + (h || '?'));
+    if (activeCategory === 'cinema') parts.push('Cinema');
+    else if (activeCategory === 'high_speed') parts.push('High-Speed');
+    if (activeBrands.size > 0) parts.push([...activeBrands].join(', '));
+    echo.textContent = parts.length ? parts.join(' · ') : 'all cameras';
+    count.textContent = lastResults.length ? lastResults.length + ' cameras' : '';
+  }
+  function onScroll() {
+    const shouldShow = document.body.classList.contains('has-query') && window.scrollY > 180;
+    if (shouldShow === visible) return;
+    visible = shouldShow;
+    if (shouldShow) {
+      updateContent();
+      bar.classList.add('show');
+    } else {
+      bar.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  edit.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
 // Intro demo chips — set fps+res and search
 document.querySelectorAll('.intro-demo').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -2839,6 +2985,7 @@ loadDB().then(() => {
   } else {
     document.body.classList.add('no-query');
   }
+  wireStickySummary();
   // Reflect compare state (rendered cards after search) and auto-open if ≥2
   if (compareSet.size > 0) {
     updateCompareBar();
