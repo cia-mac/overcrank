@@ -82,6 +82,71 @@
     border-left: 1px solid var(--border);
   }
 
+  /* ── Hero (shown on empty state; compressed once a query runs) ── */
+  .hero {
+    padding: 64px 48px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(ellipse at 50% 40%, rgba(217,136,59,0.06), transparent 70%);
+  }
+  .hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    line-height: 1.08;
+    color: var(--text);
+    margin-bottom: 16px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  body.has-query .hero { display: none; }
+
+  /* Filter rows hidden on empty state — they're secondary refinements */
+  body.no-query .cat-filter-row,
+  body.no-query .mfr-filter-row,
+  body.no-query .text-search-row { display: none !important; }
+
+  /* Search form: bigger and centered on empty state */
+  body.no-query .search-panel {
+    padding: 36px 48px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  body.no-query .search-panel-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  body.no-query .search-row {
+    justify-content: center;
+  }
+  body.no-query .search-row .field input {
+    font-size: 22px;
+    padding: 14px 18px;
+    width: 130px;
+    text-align: center;
+  }
+  body.no-query .search-row .field label {
+    text-align: center;
+  }
+  body.no-query .search-row .input-sep {
+    font-size: 22px;
+    padding-bottom: 14px;
+  }
+  body.no-query .presets-row {
+    justify-content: center;
+  }
+  body.no-query .search-actions button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
   /* ── Search panel ── */
   .search-panel {
     padding: 22px 48px 18px;
@@ -1486,6 +1551,11 @@
   </div>
 </header>
 
+<section class="hero" id="hero">
+  <h2 class="hero-title">Find the camera for your shot.</h2>
+  <p class="hero-sub">Set a frame rate. Pick a resolution. See which cameras can do it, ranked by how comfortably they clear your spec.</p>
+</section>
+
 <div class="search-panel">
   <div class="search-panel-inner">
     <div class="search-row">
@@ -1559,8 +1629,6 @@
 
 <div id="intro-block">
   <div class="intro-block">
-    <h2 class="intro-hero">Find the camera for your shot.</h2>
-    <p class="intro-sub">Set your frame rate and resolution. The list re-ranks by how comfortably each camera clears your spec.</p>
     <div class="intro-demos">
       <span class="intro-demos-label">Try</span>
       <button class="intro-demo" data-fps="1000" data-w="1920" data-h="1080">1,000 fps @ 1080p</button>
@@ -1820,10 +1888,14 @@ function search() {
   if (!hasAnyFilter && !hasCatFilter) {
     document.getElementById('intro-block').style.display = '';
     document.getElementById('results').innerHTML = '';
+    document.body.classList.add('no-query');
+    document.body.classList.remove('has-query');
     lastResults = [];
     return;
   }
   document.getElementById('intro-block').style.display = 'none';
+  document.body.classList.remove('no-query');
+  document.body.classList.add('has-query');
 
   const matches = [];
 
@@ -2598,6 +2670,8 @@ document.getElementById('clear').addEventListener('click', () => {
   document.getElementById('inp-text').value = '';
   document.getElementById('intro-block').style.display = '';
   document.getElementById('results').innerHTML = '';
+  document.body.classList.add('no-query');
+  document.body.classList.remove('has-query');
   lastResults = [];
   // Reset category filter
   activeCategory = 'all';
@@ -2760,7 +2834,11 @@ loadDB().then(() => {
   document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
   updateCinemaFieldsVisibility();
   suppressHashSync = false;
-  if (hadFilters) search();
+  if (hadFilters) {
+    search();
+  } else {
+    document.body.classList.add('no-query');
+  }
   // Reflect compare state (rendered cards after search) and auto-open if ≥2
   if (compareSet.size > 0) {
     updateCompareBar();
