@@ -486,30 +486,50 @@
   .preset-btn {
     background: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: 2px;
+    border-radius: 4px;
     color: var(--text);
     font-family: var(--mono);
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: -0.2px;
-    padding: 14px 22px;
-    min-width: 88px;
+    padding: 14px 16px 12px;
+    min-width: 116px;
+    height: 92px;
     cursor: pointer;
-    transition: all 0.12s;
+    transition: all 0.14s;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .preset-num {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 1;
+  }
+  .preset-caption {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
 
   .preset-btn:hover {
     border-color: var(--text-dim);
-    color: var(--text);
     background: var(--surface-3);
+    transform: translateY(-1px);
   }
 
   .preset-btn.active {
     background: var(--text);
     border-color: var(--text);
     color: var(--bg);
-    font-weight: 600;
+  }
+  .preset-btn.active .preset-caption {
+    color: var(--bg);
+    opacity: 0.55;
   }
 
   /* ── Results header / toolbar ── */
@@ -1811,30 +1831,30 @@
     </div>
 
     <div class="presets-row">
-      <span class="presets-label">Frame Rate <span class="presets-unit">fps</span></span>
+      <span class="presets-label">Frame Rate</span>
       <div class="presets-row-inner">
-        <button class="preset-btn fps-preset" data-fps="60">60</button>
-        <button class="preset-btn fps-preset" data-fps="120">120</button>
-        <button class="preset-btn fps-preset" data-fps="240">240</button>
-        <button class="preset-btn fps-preset" data-fps="480">480</button>
-        <button class="preset-btn fps-preset" data-fps="1000">1,000</button>
-        <button class="preset-btn fps-preset" data-fps="5000">5,000</button>
-        <button class="preset-btn fps-preset" data-fps="10000">10,000</button>
-        <button class="preset-btn fps-preset" data-fps="100000">100,000+</button>
+        <button class="preset-btn fps-preset" data-fps="60"><span class="preset-num">60</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="120"><span class="preset-num">120</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="240"><span class="preset-num">240</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="480"><span class="preset-num">480</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="1000"><span class="preset-num">1,000</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="5000"><span class="preset-num">5,000</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="10000"><span class="preset-num">10K</span><span class="preset-caption">fps</span></button>
+        <button class="preset-btn fps-preset" data-fps="100000"><span class="preset-num">100K+</span><span class="preset-caption">fps</span></button>
       </div>
     </div>
 
     <div class="presets-row">
       <span class="presets-label">Resolution</span>
       <div class="presets-row-inner">
-        <button class="preset-btn res-preset" data-w="7680" data-h="4320">8K</button>
-        <button class="preset-btn res-preset" data-w="4096" data-h="2160">4K DCI</button>
-        <button class="preset-btn res-preset" data-w="3840" data-h="2160">4K UHD</button>
-        <button class="preset-btn res-preset" data-w="2048" data-h="1080">2K DCI</button>
-        <button class="preset-btn res-preset" data-w="1920" data-h="1080">1080p</button>
-        <button class="preset-btn res-preset" data-w="1280" data-h="720">720p</button>
-        <button class="preset-btn res-preset" data-w="1024" data-h="1024">1K sq</button>
-        <button class="preset-btn res-preset" data-w="640" data-h="480">VGA</button>
+        <button class="preset-btn res-preset" data-w="7680" data-h="4320"><span class="preset-num">8K</span><span class="preset-caption">7680 × 4320</span></button>
+        <button class="preset-btn res-preset" data-w="4096" data-h="2160"><span class="preset-num">4K DCI</span><span class="preset-caption">4096 × 2160</span></button>
+        <button class="preset-btn res-preset" data-w="3840" data-h="2160"><span class="preset-num">4K UHD</span><span class="preset-caption">3840 × 2160</span></button>
+        <button class="preset-btn res-preset" data-w="2048" data-h="1080"><span class="preset-num">2K DCI</span><span class="preset-caption">2048 × 1080</span></button>
+        <button class="preset-btn res-preset" data-w="1920" data-h="1080"><span class="preset-num">1080p</span><span class="preset-caption">1920 × 1080</span></button>
+        <button class="preset-btn res-preset" data-w="1280" data-h="720"><span class="preset-num">720p</span><span class="preset-caption">1280 × 720</span></button>
+        <button class="preset-btn res-preset" data-w="1024" data-h="1024"><span class="preset-num">1K sq</span><span class="preset-caption">1024 × 1024</span></button>
+        <button class="preset-btn res-preset" data-w="640" data-h="480"><span class="preset-num">VGA</span><span class="preset-caption">640 × 480</span></button>
       </div>
     </div>
 
