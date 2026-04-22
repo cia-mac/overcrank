@@ -229,27 +229,14 @@
     justify-content: center;
   }
   body.no-query .search-row .field input {
-    font-size: 28px;
-    padding: 18px 20px;
-    width: 170px;
     text-align: center;
-    font-weight: 600;
   }
   body.no-query .search-row .field label {
     text-align: center;
-    font-size: 14px;
-  }
-  body.no-query .search-row .input-sep {
-    font-size: 28px;
-    padding-bottom: 18px;
   }
   body.no-query .presets-row {
     justify-content: center;
     margin-top: 18px;
-  }
-  body.no-query .search-actions button {
-    padding: 18px 28px;
-    font-size: 16px;
   }
 
   /* Empty-state: intro block centered to match hero */
@@ -266,11 +253,62 @@
     padding: 16px 48px 48px;
   }
 
-  /* ── Search panel ── */
+  /* ── Search panel (hero input slab) ── */
   .search-panel {
-    padding: 22px 48px 18px;
+    padding: 28px 48px 22px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
+  }
+
+  /* Primary input row: the hero of the page */
+  .search-row {
+    --input-h: 72px;
+  }
+  .field {
+    gap: 6px;
+  }
+  .field label {
+    font-family: var(--mono);
+    font-size: 10px !important;
+    letter-spacing: 0.18em;
+    padding-left: 2px;
+  }
+  .field input {
+    height: var(--input-h);
+    font-size: 40px !important;
+    font-weight: 600 !important;
+    padding: 0 18px !important;
+    width: 156px !important;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    letter-spacing: -1px;
+  }
+  .field input:focus {
+    border-color: var(--text-dim);
+    background: var(--bg);
+    box-shadow: none;
+  }
+  .input-sep {
+    font-family: var(--mono);
+    font-size: 32px;
+    color: var(--text-muted);
+    padding: 0 4px;
+    align-self: flex-end;
+    padding-bottom: 16px;
+  }
+  button#search {
+    height: var(--input-h);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0 32px;
+    align-self: flex-end;
+  }
+  button#clear {
+    height: var(--input-h);
+    font-size: 14px;
+    padding: 0 20px;
+    align-self: flex-end;
   }
 
   .search-panel-inner {
