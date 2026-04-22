@@ -133,17 +133,9 @@
 
   /* ── Hero (shown on empty state; compressed once a query runs) ── */
   .hero {
-    padding: 96px 48px 48px;
+    padding: 72px 48px 40px;
     text-align: center;
     border-bottom: 1px solid var(--border);
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 28px;
   }
   .hero-title {
     font-size: 64px;
@@ -178,9 +170,9 @@
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.05em;
-    padding: 6px 12px;
+    padding: 0 14px;
     cursor: pointer;
-    margin-top: 14px;
+    height: 44px;
     align-items: center;
     gap: 8px;
     transition: all 0.12s;
@@ -207,10 +199,11 @@
   }
   body.has-query .filter-drawer.open {
     display: block;
-    margin-top: 14px;
-    padding-top: 14px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid var(--border);
   }
+  body.has-query .filter-toggle { display: inline-flex; }
 
   /* Empty state: hide the refinement drawer and its toggle entirely */
   body.no-query .filter-toggle,
@@ -255,7 +248,7 @@
 
   /* ── Search panel ── */
   .search-panel {
-    padding: 28px 48px 22px;
+    padding: 22px 48px 18px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
   }
@@ -265,13 +258,13 @@
      are for power users with exact specs. */
   .search-row {
     order: 2;
-    margin-top: 20px;
-    padding-top: 18px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid var(--border);
     display: grid;
     grid-template-columns: 140px auto auto auto auto auto auto 1fr;
     align-items: end;
-    gap: 0 12px;
+    gap: 0 10px;
   }
   .custom-label {
     font-family: var(--mono);
@@ -444,29 +437,29 @@
 
   /* ── Presets ── */
   .presets-row {
-    margin-top: 10px;
+    margin-top: 6px;
     display: grid;
     grid-template-columns: 140px 1fr;
     align-items: start;
     gap: 20px;
   }
   .presets-row + .presets-row {
-    margin-top: 14px;
+    margin-top: 10px;
   }
   .presets-row-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
   }
 
   .presets-label {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-dim);
-    padding-top: 18px;
+    padding-top: 26px;
     flex-shrink: 0;
   }
   .presets-unit {
@@ -489,9 +482,8 @@
     border-radius: 4px;
     color: var(--text);
     font-family: var(--mono);
-    padding: 14px 16px 12px;
-    min-width: 116px;
-    height: 92px;
+    padding: 10px 12px 8px;
+    height: 68px;
     cursor: pointer;
     transition: all 0.14s;
     white-space: nowrap;
@@ -499,19 +491,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
   }
   .preset-num {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.5px;
     line-height: 1;
   }
   .preset-caption {
     font-family: var(--mono);
     font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
@@ -1801,7 +1793,6 @@
 </div>
 
 <section class="hero" id="hero">
-  <div class="hero-eyebrow">Cinema + High-Speed Camera Finder</div>
   <h2 class="hero-title">Find the camera<br>for your shot.</h2>
   <p class="hero-sub">Set a frame rate. Pick a resolution. Ranked by headroom.</p>
 </section>
@@ -1827,6 +1818,10 @@
       <div class="search-actions">
         <button id="search">Search</button>
         <button id="clear">Clear</button>
+        <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false">
+          <span class="filter-toggle-label">Refine</span>
+          <span class="filter-toggle-icon">+</span>
+        </button>
       </div>
     </div>
 
@@ -1857,11 +1852,6 @@
         <button class="preset-btn res-preset" data-w="640" data-h="480"><span class="preset-num">VGA</span><span class="preset-caption">640 × 480</span></button>
       </div>
     </div>
-
-    <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false">
-      <span class="filter-toggle-label">Refine</span>
-      <span class="filter-toggle-icon">+</span>
-    </button>
 
     <div class="filter-drawer" id="filter-drawer">
       <div class="cat-filter-row">
