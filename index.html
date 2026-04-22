@@ -253,35 +253,53 @@
     padding: 16px 48px 48px;
   }
 
-  /* ── Search panel (hero input slab) ── */
+  /* ── Search panel ── */
   .search-panel {
     padding: 28px 48px 22px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
   }
 
-  /* Primary input row: the hero of the page */
+  /* Custom numeric inputs are secondary — filmmakers shouldn't have to
+     remember that 6K is 6144 × 3240. Presets do the heavy lifting; these
+     are for power users with exact specs. */
   .search-row {
-    --input-h: 72px;
+    order: 2;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 140px auto auto auto auto auto auto 1fr;
+    align-items: end;
+    gap: 0 12px;
   }
-  .field {
-    gap: 6px;
+  .custom-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-bottom: 14px;
+  }
+  .search-actions {
+    grid-column: 8;
+    justify-self: end;
   }
   .field label {
     font-family: var(--mono);
-    font-size: 10px !important;
+    font-size: 10px;
     letter-spacing: 0.18em;
-    padding-left: 2px;
   }
   .field input {
-    height: var(--input-h);
-    font-size: 40px !important;
-    font-weight: 600 !important;
-    padding: 0 18px !important;
-    width: 156px !important;
+    height: 44px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 14px;
+    width: 110px;
     background: var(--bg);
     border: 1px solid var(--border);
-    letter-spacing: -1px;
+    letter-spacing: -0.2px;
   }
   .field input:focus {
     border-color: var(--text-dim);
@@ -290,25 +308,31 @@
   }
   .input-sep {
     font-family: var(--mono);
-    font-size: 32px;
+    font-size: 18px;
     color: var(--text-muted);
     padding: 0 4px;
     align-self: flex-end;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
   }
   button#search {
-    height: var(--input-h);
-    font-size: 16px;
+    height: 44px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    padding: 0 32px;
+    padding: 0 22px;
     align-self: flex-end;
   }
   button#clear {
-    height: var(--input-h);
-    font-size: 14px;
-    padding: 0 20px;
+    height: 44px;
+    font-size: 13px;
+    padding: 0 16px;
     align-self: flex-end;
+  }
+
+  /* Preset rows are now the hero selection mechanism */
+  .search-panel-inner {
+    display: flex;
+    flex-direction: column;
   }
 
   .search-panel-inner {
@@ -420,20 +444,29 @@
 
   /* ── Presets ── */
   .presets-row {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: 20px;
+  }
+  .presets-row + .presets-row {
     margin-top: 14px;
+  }
+  .presets-row-inner {
     display: flex;
-    align-items: center;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 8px;
   }
 
   .presets-label {
-    font-size: 13px;
+    font-family: var(--mono);
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-right: 6px;
+    color: var(--text-dim);
+    padding-top: 18px;
     flex-shrink: 0;
   }
   .presets-unit {
@@ -443,7 +476,7 @@
     opacity: 0.6;
     text-transform: lowercase;
     letter-spacing: 0.05em;
-    margin-left: 2px;
+    margin-left: 4px;
   }
   .mfr-more {
     color: var(--text-muted) !important;
@@ -451,21 +484,23 @@
   }
 
   .preset-btn {
-    background: transparent;
+    background: var(--surface-2);
     border: 1px solid var(--border);
     border-radius: 2px;
-    color: var(--text-dim);
+    color: var(--text);
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 500;
-    padding: 7px 14px;
+    letter-spacing: -0.2px;
+    padding: 14px 22px;
+    min-width: 88px;
     cursor: pointer;
     transition: all 0.12s;
     white-space: nowrap;
   }
 
   .preset-btn:hover {
-    border-color: var(--border-focus);
+    border-color: var(--text-dim);
     color: var(--text);
     background: var(--surface-3);
   }
@@ -1754,6 +1789,7 @@
 <div class="search-panel">
   <div class="search-panel-inner">
     <div class="search-row">
+      <span class="custom-label">Custom</span>
       <div class="field">
         <label>FPS</label>
         <input type="number" id="inp-fps" placeholder="1000" min="1">
@@ -1775,27 +1811,31 @@
     </div>
 
     <div class="presets-row">
-      <span class="presets-label">Speed <span class="presets-unit">fps</span></span>
-      <button class="preset-btn fps-preset" data-fps="60">60</button>
-      <button class="preset-btn fps-preset" data-fps="120">120</button>
-      <button class="preset-btn fps-preset" data-fps="240">240</button>
-      <button class="preset-btn fps-preset" data-fps="480">480</button>
-      <button class="preset-btn fps-preset" data-fps="1000">1,000</button>
-      <button class="preset-btn fps-preset" data-fps="5000">5,000</button>
-      <button class="preset-btn fps-preset" data-fps="10000">10,000</button>
-      <button class="preset-btn fps-preset" data-fps="100000">100,000+</button>
+      <span class="presets-label">Frame Rate <span class="presets-unit">fps</span></span>
+      <div class="presets-row-inner">
+        <button class="preset-btn fps-preset" data-fps="60">60</button>
+        <button class="preset-btn fps-preset" data-fps="120">120</button>
+        <button class="preset-btn fps-preset" data-fps="240">240</button>
+        <button class="preset-btn fps-preset" data-fps="480">480</button>
+        <button class="preset-btn fps-preset" data-fps="1000">1,000</button>
+        <button class="preset-btn fps-preset" data-fps="5000">5,000</button>
+        <button class="preset-btn fps-preset" data-fps="10000">10,000</button>
+        <button class="preset-btn fps-preset" data-fps="100000">100,000+</button>
+      </div>
     </div>
 
     <div class="presets-row">
       <span class="presets-label">Resolution</span>
-      <button class="preset-btn res-preset" data-w="7680" data-h="4320">8K</button>
-      <button class="preset-btn res-preset" data-w="4096" data-h="2160">4K DCI</button>
-      <button class="preset-btn res-preset" data-w="3840" data-h="2160">4K UHD</button>
-      <button class="preset-btn res-preset" data-w="2048" data-h="1080">2K DCI</button>
-      <button class="preset-btn res-preset" data-w="1920" data-h="1080">1080p</button>
-      <button class="preset-btn res-preset" data-w="1280" data-h="720">720p</button>
-      <button class="preset-btn res-preset" data-w="1024" data-h="1024">1K sq</button>
-      <button class="preset-btn res-preset" data-w="640" data-h="480">VGA</button>
+      <div class="presets-row-inner">
+        <button class="preset-btn res-preset" data-w="7680" data-h="4320">8K</button>
+        <button class="preset-btn res-preset" data-w="4096" data-h="2160">4K DCI</button>
+        <button class="preset-btn res-preset" data-w="3840" data-h="2160">4K UHD</button>
+        <button class="preset-btn res-preset" data-w="2048" data-h="1080">2K DCI</button>
+        <button class="preset-btn res-preset" data-w="1920" data-h="1080">1080p</button>
+        <button class="preset-btn res-preset" data-w="1280" data-h="720">720p</button>
+        <button class="preset-btn res-preset" data-w="1024" data-h="1024">1K sq</button>
+        <button class="preset-btn res-preset" data-w="640" data-h="480">VGA</button>
+      </div>
     </div>
 
     <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false">
