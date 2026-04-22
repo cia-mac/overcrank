@@ -167,10 +167,54 @@
   }
   body.has-query .hero { display: none; }
 
-  /* Filter rows hidden on empty state — they're secondary refinements */
-  body.no-query .cat-filter-row,
-  body.no-query .mfr-filter-row,
-  body.no-query .text-search-row { display: none !important; }
+  /* Refinement drawer — collapsed by default in query state, expanded on demand */
+  .filter-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-top: 14px;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.12s;
+  }
+  .filter-toggle:hover {
+    border-color: var(--text-dim);
+    color: var(--text);
+  }
+  .filter-toggle-icon {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.15s;
+  }
+  .filter-toggle[aria-expanded="true"] .filter-toggle-icon {
+    transform: rotate(45deg);
+  }
+  body.has-query .filter-toggle {
+    display: inline-flex;
+  }
+  .filter-drawer {
+    display: none;
+  }
+  body.has-query .filter-drawer.open {
+    display: block;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Empty state: hide the refinement drawer and its toggle entirely */
+  body.no-query .filter-toggle,
+  body.no-query .filter-drawer { display: none !important; }
 
   /* Search form: bigger and centered on empty state */
   body.no-query .search-panel {
@@ -1716,26 +1760,33 @@
       <button class="preset-btn res-preset" data-w="640" data-h="480">VGA</button>
     </div>
 
-    <div class="cat-filter-row">
-      <span class="cat-label">Category</span>
-      <div class="cat-segment" id="cat-filter">
-        <button class="cat-btn active" data-cat="all">All <span class="cat-count" id="cat-count-all"></span></button>
-        <button class="cat-btn" data-cat="cinema">Cinema <span class="cat-count" id="cat-count-cinema"></span></button>
-        <button class="cat-btn" data-cat="high_speed">High-Speed <span class="cat-count" id="cat-count-high_speed"></span></button>
+    <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false">
+      <span class="filter-toggle-label">Refine</span>
+      <span class="filter-toggle-icon">+</span>
+    </button>
+
+    <div class="filter-drawer" id="filter-drawer">
+      <div class="cat-filter-row">
+        <span class="cat-label">Category</span>
+        <div class="cat-segment" id="cat-filter">
+          <button class="cat-btn active" data-cat="all">All <span class="cat-count" id="cat-count-all"></span></button>
+          <button class="cat-btn" data-cat="cinema">Cinema <span class="cat-count" id="cat-count-cinema"></span></button>
+          <button class="cat-btn" data-cat="high_speed">High-Speed <span class="cat-count" id="cat-count-high_speed"></span></button>
+        </div>
+
+        <div class="cinema-only-field" id="dr-field">
+          <label>Min DR stops</label>
+          <input type="number" id="inp-dr" placeholder="13" min="0" step="0.5">
+        </div>
       </div>
 
-      <div class="cinema-only-field" id="dr-field">
-        <label>Min DR stops</label>
-        <input type="number" id="inp-dr" placeholder="13" min="0" step="0.5">
+      <div class="mfr-filter-row" id="mfr-filter"></div>
+
+      <div class="mount-filter-row cinema-only-row" id="mount-filter"></div>
+
+      <div class="text-search-row">
+        <input type="text" id="inp-text" placeholder="Search by camera or brand name...">
       </div>
-    </div>
-
-    <div class="mfr-filter-row" id="mfr-filter"></div>
-
-    <div class="mount-filter-row cinema-only-row" id="mount-filter"></div>
-
-    <div class="text-search-row">
-      <input type="text" id="inp-text" placeholder="Search by camera or brand name...">
     </div>
   </div>
 </div>
@@ -2770,6 +2821,19 @@ function setSort(s) {
 }
 
 document.getElementById('search').addEventListener('click', search);
+
+// Filter drawer toggle
+(function wireFilterToggle() {
+  const toggle = document.getElementById('filter-toggle');
+  const drawer = document.getElementById('filter-drawer');
+  if (!toggle || !drawer) return;
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    drawer.classList.toggle('open', !expanded);
+    toggle.querySelector('.filter-toggle-label').textContent = expanded ? 'Refine' : 'Hide refine';
+  });
+})();
 
 function wireStickySummary() {
   const bar = document.getElementById('sticky-summary');
